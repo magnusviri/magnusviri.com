@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>OS X Server - Basics - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li class="active"><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>OS X Server - Basics</h1>
+
+<div class="horizontal_line"></div>
+
+<p>[Update 2019-04-13: I no longer run a Mac OS X Server and <a href="https://support.apple.com/en-us/HT208312">Mac OS X Server is dead</a>.]</p>
+
+<p>Here are my notes for debugging and maintaining an OS X Server (3.1.2) on Mavericks 10.9.4.  This is mostly command line stuff, very little GUI stuff.</p>
+
+<p>Note, this post is part of a series.  Here are the other posts.</p>
+
+<ul>
+<li>OS X Server - Basics (this page)</li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-managing-user-accounts.html">Managing user accounts</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix.html">Postfix</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-dovecot.html">Dovecot</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-sieve.html">Sieve</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix-queues.html">Postfix Queues</a></li>
+</ul>
+
+<h2>About OS X Server</h2>
+
+<p>OS X Server is a product that reached it's peak around 2009-2011 with Mac OS X Server 10.6.  Back then it was a complete OS install and was different from Mac OS X client.  Since then Apple has scaled the product back, made it very inexpensive ($20), released very little documentation compared to 10.5 and 10.6, and made the server an app download from the Mac App Store that is installed on the client OS (rather then being a OS unto itself).</p>
+
+<p>The OS X Server (3.1 on OS X 10.9) installs and pre-configures some of the best open source server products such as apache, php, postfix, dovecot, and openldap.  I am unsure if the bugs I've seen are in the Server.app, modifications Apple has made to the open source products, or in how Apple has configured all of these 3rd party server products to work with each other.</p>
+
+<h2>Working with OS X Server</h2>
+
+<h4>Make sure everything is ok</h4>
+
+<pre><code>sudo changeip -checkhostname
+</code></pre>
+
+<h4>To change the IP</h4>
+
+<p>Do not change the IP of the server if you are using Open Directory.  Changing the IP destroys the LDAP and Kerberos databases.  If you are not using Open Directory, this is how you change the IP.</p>
+
+<pre><code>sudo changeip &lt;old-ip&gt; &lt;new-ip&gt; &lt;old-hostname&gt; &lt;new-hostname&gt;
+</code></pre>
+
+<p>Then go to System Preferences.app and change the IP there.  Then reboot the server.</p>
+
+<p>If you are using Open Directory, all hope is not lost.  Assuming you don't have replicas and you don't need to retain the passwords then run <strong>something like</strong> these commands (I did something like this, but I didn't save my history, so I don't remember exactly what I did):</p>
+
+<p>Backup data</p>
+
+<pre><code>sudo slapconfig -backupdb /full/path/to/archive
+</code></pre>
+
+<p>Export data</p>
+
+<pre><code>dsexport -e dsAttrTypeStandard:AuthenticationAuthority -e dsAttrTypeStandard:AltSecurityIdentities \
+  users.txt /LDAPv3/127.0.0.1 dsRecTypeStandard:Users
+dsexport groups.txt /Local/Default dsRecTypeStandard:Groups
+</code></pre>
+
+<p>Destroy database</p>
+
+<pre><code>sudo serveradmin stop dirserv
+sudo slapconfig -destroyldapserver
+</code></pre>
+
+<p>Start over</p>
+
+<pre><code>sudo slapconfig -createldapmasterandadmin
+</code></pre>
+
+<p>Reimport</p>
+
+<pre><code>dsimport users.txt /LDAPv3/127.0.0.1 M --username &lt;diradmin&gt;
+dsimport groups.txt /Local/Default M --username &lt;diradmin&gt; &lt;dirpassword&gt;
+</code></pre>
+
+<p>If you need to keep passwords probably the easiest solution is to replicate your Open Directory database to a different server, promote the replica to a master, bind the first server to the new master, change the IP of the first server, then replicate the Open Directory database back.  But I don't know how to do any of this.  Years ago I seem to remember being told this is how it's done, but I don't remember too well because I didn't manage OS X Server's back then.</p>
+
+<p>It should also be possible to export the Kerberos database but <code>kadmin -l dump</code> says "kadmin: hdb_foreach: iteration over database only supported for DSLocal".</p>
+
+<h2>Modifications to the system.</h2>
+
+<p><a name="periodic"></a></p>
+
+<div class="spacer"><br /></div>
+
+<h4>Have the output from the periodic scripts emailed to you.</h4>
+
+<p>/etc/periodic.conf</p>
+
+<pre><code>daily_output="you@example.com"
+weekly_output="you@example.com"
+monthly_output="you@example.com"
+</code></pre>
+
+<h2>Backups</h2>
+
+<p>The common wisdom is that you never know if your backup solution actually works unless you use it.  I'd like to add that you'll never know how your backup solution works unless you use it.  I've had to restore my system twice before it was even in production yet.</p>
+
+<p>I'm just going to say this, you must know your backup software inside and out.  And if you're using TimeMachine as your backup, don't be deceived by the silly TimeMachine System Preferences pane.  <em>Read the <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/Manpages/man8/tmutil.8.html">tmutil</a> man page!</em></p>
+
+<h2>Firewall</h2>
+
+<p>Hey, OS X Server opens <em>a lot</em> of ports.  I haven't fully tested this yet, but I don't want all of these ports open, so I'm going to shut them off and see if the server still works.  So remember, these are my notes, and as of the moment I'm writing this, I haven't actually tested them yet, so don't take this as truth yet.</p>
+
+<p>This is all of the open ports on a server with Open Directory, Mail, ssh, and vnc turned on.</p>
+
+<pre><code>22          ssh
+25          smtp
+80          http
+88          kerberos
+106         3com-tsmux
+110         pop3
+143         imap
+389         ldap
+443         https
+464         kpasswd
+587         submission
+625         dec_dlm
+636         ldaps
+749         kerberos-adm
+993         imaps
+995         pop3s
+1640        cert-responder
+2012        ttyinfo
+3659        apple-sasl
+4190        sieve
+5900        rfb
+</code></pre>
+
+<p>The the mail ports are 25, 110, 143, 587, 993, 995, they all need to be open.  4190 is used by dovecot for filtering mail, and I'm not sure if it actually needs to be open.</p>
+
+<p>The ports for ssh and ARD are 22 and 5900.  I have a gateway and only the gateway can contact those ports.</p>
+
+<p>The ports for Open Directory are 88, 106, 389, 464, 625, 636, 749, 3659 and for my setup, I don't want any of these open at all for anyone.  1640 and 2012 have something to do with certs.  80 and 443 are apache, and I have no idea why that is running, and ironically when I connect to the computer with a web browser it shows this text "Websites are turned off.
+An administrator can turn them on using the Server application."  That's not "off" in my book...</p>
+
+<h4>Run a firewall script at startup.</h4>
+
+<p>I have my own startup solution using Xhooks (no real link for that anymore since I left my last job and haven't set up a new site for it).  Anyway, you can just create a launchdaemon or you can hijack Apple's /etc/rc.server.firewall script.  That script is executed by /etc/rc.server, and that script is executed by none other then <a href="http://opensource.apple.com/source/launchd/launchd-842.90.1/support/launchctl.c">launchd</a> at startup (search that source file for rc.server).  And you thought the rc scripts were gone!</p>
+
+<p>I can't explain all the ins and outs of setting up a firewall because there are too many things I don't know about them.  I'll just list a simple ipfw (deprecated) ruleset.  I'm not the best networking guru so I'm not sure if all of these rules are even needed for this, but I think it works so what the heck.</p>
+
+<pre><code># Default stuff
+sysctl -w net.inet.ip.fw.enable=1
+ipfw -q -f flush
+ipfw -q add allow all from any to any via lo0
+ipfw -q add deny log all from any to 127.0.0.0/8
+ipfw -q add deny log ip from 192.168.0.0/16 to any in via en0
+ipfw -q add deny log ip from 172.16.0.0/12 to any in via en0
+ipfw -q add deny log ip from 10.0.0.0/8 to any in via en0
+ipfw -q add deny log ip from any to 192.168.0.0/16 in via en0
+ipfw -q add deny log ip from any to 172.16.0.0/12 in via en0
+ipfw -q add deny log ip from any to 10.0.0.0/8 in via en0
+ipfw -q add allow tcp from any to any established
+ipfw -q add allow icmp from any to any
+ipfw -q add allow icmp from any to any icmptypes 3,4,11,12
+
+# Allow your GATEWAY (replace 10.0.0.9) with your IP or CIDR
+ipfw -q add allow ip from 10.0.0.9 to any
+
+# Allow the mail service (this isn't needed because it's a mostly open ruleset)
+ipfw -q add allow tcp from any to any 25, 110, 143, 587, 993, 995 in
+
+# Stop Open Directory
+ipfw -q add reset tcp from any to any 88, 106, 389, 464, 625, 636, 749, 3659 in
+# Stop Apache
+ipfw -q add reset tcp from any to any 80, 443 in
+# Stop Cert thingies
+ipfw -q add reset tcp from any to any 1640, 2012 in
+
+# Allow everything else
+ipfw add 65535 allow ip from any to any
+</code></pre>
+
+<p>If you wanted to really hijack /etc/rc.server.firewall, then create a directory at /etc/ipfilter and create an empty file named /etc/ipfilter/ipfwstate-on and a file named /etc/ipfilter/ipfw.conf that contains your rules.  Here is an example (note, this file is missing the 'ipfw' command because rc.server.firewall sends this whole thing to ipfw).</p>
+
+<pre><code>add allow all from any to any via lo0
+add deny log all from any to 127.0.0.0/8
+add deny log ip from 192.168.0.0/16 to any in via en0
+add deny log ip from 172.16.0.0/12 to any in via en0
+add deny log ip from 10.0.0.0/8 to any in via en0
+add deny log ip from any to 192.168.0.0/16 in via en0
+add deny log ip from any to 172.16.0.0/12 in via en0
+add deny log ip from any to 10.0.0.0/8 in via en0
+add allow tcp from any to any established
+add allow icmp from any to any
+add allow icmp from any to any icmptypes 3,4,11,12
+</code></pre>
+
+<p>And just add this to protect the server from someone attempting to hack in.</p>
+
+<pre><code>add deny log ip from 10.0.0.1 to any
+</code></pre>
+
+<h2>More information on OS X Server</h2>
+
+<ul>
+<li><a href="https://help.apple.com/advancedserveradmin/mac/3.1/">Apple's advanced guide</a></li>
+<li><a href="http://krypted.com/guides/mavericks-server/">krypted.com guide</a></li>
+<li><a href="http://arstechnica.com/apple/2013/12/a-power-users-guide-to-os-x-server-mavericks-edition">arstechnica.com review</a></li>
+<li><a href="http://www.macgasm.net/2013/10/31/os-x-10-9-mavericks-server-review/">Macgasm review</a></li>
+<li><a href="https://yesdevnull.net/2013/10/os-x-mavericks-server-my-tutorials/https://yesdevnull.net/2013/10/os-x-mavericks-server-my-tutorials/">yesdevnull.net</a></li>
+<li><a href="http://www.peachpit.com/store/apple-pro-training-series-os-x-server-essentials-10-9780321963543">OS X Server Essentials 10.9 book</a></li>
+<li><a href="http://tidbits.com/article/14744">Take Control of OS X Server book</a></li>
+</ul>
+<p>Published: 2014-07-16, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "os-x-server-basics.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

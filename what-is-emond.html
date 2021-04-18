@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>What is emond? - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first active"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>What is emond?</h1>
+
+<div class="horizontal_line"></div>
+
+<p>I've been struggling with my log scanner that emails and sends SMS texts and I wondered if there was a better way.  I found that emond does basically the same thing and found little documentation about it (but enough that I could figure out how to use it).  So I got on one of those tangents and figured out so much that I felt compelled to write it down so that when I forget it all I can find better documentation if I ever wanted to use it again.</p>
+
+<p>The name emond is short for Event Monitor Daemon.  It is an OS X command located at /sbin/emond.  I think it was added to OS X Server around 10.5 (2007).  It was added to regular OS X in 10.7 (2011).  There is very little documentation about this command (a short man page, a half a page in the 10.6 Server Admin guide, and a mention in a Peachpit book).</p>
+
+<p>There are a few things that imply this tool has been neglected by Apple.  First, it's has had bugs.  Doing a websearch for emond brings up many webpages of people who have trouble with emond either taking 100% of the processor, either crashing (and restarting over and over thanks to launchd), or it fills up the system.log file with messages.  I've seen this myself but because of the lack of documentation and my lack of understanding of what it was I fixed it with a restart.</p>
+
+<p>Second, a supporting script at /usr/libexec/emlog.pl looks sloppy.  There are sections that were commented out in 10.9 with mention that the functionality was replaced by the audit mechanism and it's still the same in 10.11.  There are variables that are declared but not used and even a whole subroutine that isn't used (it was used in 10.8 and below).  There is also the text "(for now...)" tacked onto an explanation, indicating that some functionality is likely to change in the future, a change that never occurred.</p>
+
+<p>I have been able to figure a little about how emond works and it just has the same plist configuration driven feel of launchd.  This is just a guess, but it looks to me like emond was meant to be a full featured notification system that was conceived around the same time as launchd and the Apple System Logger (ASL), both which were introduced in 10.4.  I also think it was eventually suppose to be documented more so that others could use it (like me).</p>
+
+<p>Apple changed directions between 10.6 and 10.7.  I don't know what happened inside of the company (ok, it was the iPhone) and I haven't really thought all of the changes out, but 10.5 (released Oct 2007) and 10.6 (released Aug 2009) were amazingly well documented.  And of course 10.7 (released Jul 2011) was when OS X Server became an application instead of an OS, lost a large portion of it's functionality, and there hasn't really been much documentation since 10.6.  I think emond was affected by this change.</p>
+
+<p>The whole time I've written this I've debated if this is worth documenting as much as I am especially because Apple should document it and also because 10.9 OS X Server almost migrated away from it completely.  Maybe it will go away in a future OS.  But I know I'll forget all of this once I go back to my regular tasks and it still works in 10.11 and I might want to use it more than just what I've already decided to do.</p>
+
+<p>I've mostly looked at 10.8 Server, 10.9, 10.9 Server, and 10.11.  I briefly looked at 10.7 to see if it was there (it was--probably because the server OS version was replaced by the app so they had to move this to the regular OS--and suddenly I'm wondering just how much of 10.6 Server was moved to 10.7...).  It's not in 10.6 (non-server version).  I don't have easy access to the server versions of 10.5, 10.6, 10.10 or 10.11 right now, but based on a comment on a webpage I think it first showed up in 10.5 Server.</p>
+
+<p>So, here is what I've found, presented as quickly as possible.</p>
+
+<h2>What starts emond (launchd)</h2>
+
+<p>It all starts with launchd.  The plist at /System/Library/LaunchDaemons/com.apple.emond.plist specifies the QueueDirectories of /private/var/db/emondClients.  On my 10.9 OS X Server, there is an empty file in there named com.apple.server.  So if something is in that directory, emond starts up.  I just ran this command on a non-server to start it.</p>
+
+<pre><code>sudo touch /private/var/db/emondClients/bla
+</code></pre>
+
+<h2>emond's config and rule files</h2>
+
+<p>When emond starts up, it reads it's plist file at /etc/emond.d/emond.plist.  There is a man page for this file, which suggest to me that Apple intended on others to modify it (there are many missing man pages, I can't see why Apple would make one unless it was done by a developer on his own initiative).  This plist file doesn't really contain anything remarkable.  On my 10.9 OS X Server the following line is added, which tells it to look for more rules in the Server.app bundle.</p>
+
+<pre><code>&lt;key&gt;additionalRulesPaths&lt;/key&gt;
+&lt;array&gt;
+    &lt;string&gt;/Applications/Server.app/Contents/ServerRoot/private/etc/emond.d/rules/&lt;/string&gt;
+</code></pre>
+
+<p>After it reads it's pref file it reads all of the files located in /etc/emond.d/rules/.  All of my computers have this file in it, which is disabled by default.</p>
+
+<ul>
+<li>SampleRules.plist</li>
+</ul>
+
+<p>Some of my computers have this file.  I didn't see a pattern to explain why some have it and others don't.</p>
+
+<ul>
+<li>Xsan.plist</li>
+</ul>
+
+<p>On my 10.8 Server I have these files in /Applications/Server.app/Contents/ServerRoot/private/etc/emond.d/rules/.</p>
+
+<ul>
+<li>AdaptiveFirewall.plist</li>
+<li>DHABlock.plist</li>
+<li>DiskStatus.plist</li>
+<li>EmondCertificateExpiring.plist</li>
+<li>HostBlockingLogic.plist</li>
+<li>NetworkAlertControl.plist</li>
+<li>com.apple.assetcache.plist</li>
+<li>com.apple.disks.disappeared.plist</li>
+<li>com.apple.disks.smart.status.plist</li>
+<li>com.apple.disks.space.plist</li>
+<li>com.apple.dovecot.plist</li>
+<li>com.apple.mail.virus.plist</li>
+<li>com.apple.network.configurationchange.plist</li>
+<li>com.apple.softwareupdate.updateavailable.plist</li>
+<li>com.apple.timemachine.alerts.plist</li>
+</ul>
+
+<p>On my 10.9 Server I have these 3 files in that directory.</p>
+
+<ul>
+<li>AdaptiveFirewall.plist</li>
+<li>DHABlock.plist</li>
+<li>HostBlockingLogic.plist</li>
+</ul>
+
+<p>It looks like all of the files from 10.8 Server have been replaced in 10.9 Server by everything in this directory: /Applications/Server.app/Contents/ServerRoot/System/Library/Alerts</p>
+
+<ul>
+<li>Caching.bundle</li>
+<li>CertificateAlerts.bundle</li>
+<li>Common.bundle</li>
+<li>Disk.bundle</li>
+<li>Firewall.bundle</li>
+<li>Mail.bundle</li>
+<li>NetworkConfiguration.bundle</li>
+<li>ProfileManager.bundle</li>
+<li>SoftwareUpdate.bundle</li>
+<li>TimeMachine.bundle</li>
+<li>XcodeServer.bundle</li>
+</ul>
+
+<p>10.8 also includes a file at this path.</p>
+
+<p>/Applications/Server.app/Contents/ServerRoot/private/etc/emond.d/alert<em>mail</em>theme.mime</p>
+
+<p>It is pretty obvious this is the template for sending emails.  This file has been slightly changed and moved to the following path in 10.9 Server.</p>
+
+<p>/Applications/Server.app/Contents/ServerRoot/System/Library/Alerts/Common.bundle/Contents/Resources/AlertsMailTheme.mime</p>
+
+<p>On 10.9 Server I ran fs_usage and sent a test alert to see if emond is executed and it's not.  Instead it looks like control goes from Server.app to servermgrd, to AlertsDaemon, then to sendmail.</p>
+
+<p>This is one of the things that says to me that Apple is moving away from emond.  If I had 10.11 Server I could check, but I'm guessing emond is totally unused.</p>
+
+<h2>Triggering events at startup, periodic.daily.midnight, and with the Mach service</h2>
+
+<p>Once emond reads the rule files it processes all rules with an event type of "startup".  In some rule files you'll see this text.</p>
+
+<pre><code>&lt;key&gt;eventTypes&lt;/key&gt;
+&lt;array&gt;
+    &lt;string&gt;startup&lt;/string&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>After these startup events are executed emond just sits and waits for a message or for a periodic event.  The config file for emond has a key named "periodicEvents", which defines the periodic.daily.midnight event.  It looks like this.</p>
+
+<pre><code>&lt;key&gt;periodicEvents&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;eventType&lt;/key&gt;
+        &lt;string&gt;periodic.daily.midnight&lt;/string&gt;
+        &lt;key&gt;startTime&lt;/key&gt;
+        &lt;string&gt;0&lt;/string&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>Other than startup and periodic events, emond just sits and waits.</p>
+
+<p>The launchd plist file for emond specifies a Mach service named com.apple.emond.evtq.  I think "evtq" is short for "event queue."  Anything should be able to send something directly to emond using this Mach service (too bad I don't know how to send messages to a Mach service with a script--I bet Python could do it, but I'm not interested enough to check).</p>
+
+<h2>emlog.pl</h2>
+
+<p>The script emlog.pl (10.11 version) is started by a launchd plist file (/System/Library/LaunchDaemons/com.apple.emlog.plist).  The plist file specifies a socket listener on port 60762.  Based on the contents of the script I am pretty sure that typically this script processes one line of text from system.log or secure.log and then quits. I have no idea what is reading the log files and sending the text to the script and don't much care.</p>
+
+<p>The script checks to see if the line it is parsing matches some patterns and if it does then it constructs an event string and sends that to xssendevent.  The event string is formated as  ASCII plist.  Here are some example event strings.</p>
+
+<pre><code>$eventString = "{ eventType = auth.failure; eventSource = emlog.pl; eventDetails = {clientIP = \"$addr\"; hostPort = 21; protocolName = \"ftp\";};}";
+$eventString = "{ eventType = auth.failure; eventSource = emlog.pl; eventDetails = {clientIP = \"$address\"; protocolName = \"SSH\";};}";
+$eventString = "{ eventType = auth.failure; eventSource = emlog.pl; eventDetails = {username = \"$username\"; clientIP = \"$address\"; protocolName = \"SSH\";};}";
+$eventString = "{ eventType = auth.success; eventSource = emlog.pl; eventDetails = {username = \"$username\"; clientIP = \"$address\"; protocolName = \"SSH\";};}";
+$eventString = "{ eventType = network.probe; eventSource = emlog.pl; eventDetails = #{sourceIP = \"$address\"; port = 22;};}";
+</code></pre>
+
+<p>emlog.pl sends the event string to xssendevent using this perl code.</p>
+
+<pre><code>open $OUTSTREAM, "|/usr/libexec/xssendevent" or die "Cannot launch /usr/libexec/xssendevent $!";
+...
+print $OUTSTREAM $eventString;
+</code></pre>
+
+<h2>xssendevent</h2>
+
+<p>I am pretty sure xssendevent is one of the things that sends messages to the com.apple.emond.evtq Mach service.  So xssendevent just reads stdin and I believe xssendevent turns the plist to an NSDictionary object and sends that to the Mach service com.apple.emond.evtq.  This kind of makes xssendevent a command line bridge emond.</p>
+
+<h2>Event type</h2>
+
+<p>Once an event is sent to emond, I believe emond looks through all of the rules it has and finds any events that match the "eventType".  I already mentioned the "startup" and "periodic.daily.midnight" events.  The other event types are all defined in the event strings and the rule plist files.  For example, emlog.pl creates an event with the following string.</p>
+
+<pre><code>"{ eventType = auth.failure; eventSource = emlog.pl; eventDetails = {clientIP = \"$addr\"; hostPort = 21; protocolName = \"ftp\";};}";
+</code></pre>
+
+<p>The file /Applications/Server.app/Contents/ServerRoot/private/etc/emond.d/rules/AdaptiveFirewall.plist contains an event with that name "auth.failure" with this code.</p>
+
+<pre><code>&lt;key&gt;eventTypes&lt;/key&gt;
+&lt;array&gt;
+    &lt;string&gt;auth.failure&lt;/string&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>So the event type names can really be anything you want, you just have to have an event match a rule.  This system sounds a lot like (NSDistributedNotificationCenter)[https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDistributedNotificationCenter_Class/].</p>
+
+<p>This is a list of some of the event types I've seen.</p>
+
+<ul>
+<li>auth.failure</li>
+<li>auth.success</li>
+<li>com.apple.network.suppress.notifications</li>
+<li>com.apple.network.suppress.notifications</li>
+<li>com.apple.xsan.fibreEvents</li>
+<li>com.apple.xsan.overQuota.group</li>
+<li>com.apple.xsan.overQuota.user</li>
+<li>com.apple.xsan.testNotification</li>
+<li>com.apple.xsan.volFreespace</li>
+<li>com.apple.xsan.volRestart</li>
+<li>security.action.host_blocked</li>
+<li>smtp.receive.badrecipient</li>
+</ul>
+
+<h2>Variables</h2>
+
+<p>Before I can talk about the next step you have to understand variables.  Rules can define variables.  Here is an example of a rule defined variable.  This is what you'd see in the plist file for a rule.</p>
+
+<pre><code>&lt;key&gt;variables&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;hostBlockThreshold&lt;/key&gt;
+    &lt;integer&gt;25&lt;/integer&gt;
+    &lt;key&gt;hostMinBlockTime&lt;/key&gt;
+    &lt;integer&gt;15&lt;/integer&gt;
+&lt;/dict&gt;
+</code></pre>
+
+<p>I am pretty sure variables can also be defined by the eventDetails portion of the event string sent to xssendevent.  For example, this event string from emlog.pl defines "clientIP", "hostPort", and "protocolName".  I believe eventType is also turned into a variable.</p>
+
+<pre><code>"{ eventType = auth.failure; eventSource = emlog.pl; eventDetails = {clientIP = \"$addr\"; hostPort = 21; protocolName = \"ftp\";};}";
+</code></pre>
+
+<p>There are also some builtin variables.  Here are the 2 I've observed.</p>
+
+<pre><code>builtin:hostName
+builtin:now
+</code></pre>
+
+<p>You can also use the global keyword.  This implies there is variable scope...</p>
+
+<pre><code>global:lastSuppressionTime
+</code></pre>
+
+<p>Use a variable like this:</p>
+
+<pre><code>${variableName}
+</code></pre>
+
+<p>Here are real examples (including one named eventType).</p>
+
+<pre><code>${event:blockDuration}
+${event:clientIP}
+${event:eventTimestamp}
+${event:eventType}
+${event:hostAddress}
+</code></pre>
+
+<p>Since a rule plist file can have multiple rules (the root of the plist is an array instead of a dict) you can have rules that actually change variables that were previously defined.  For example here is how one variable was incremented.</p>
+
+<pre><code>&lt;key&gt;${old}&lt;/key&gt;
+&lt;string&gt;${old} + 1&lt;/string&gt;
+</code></pre>
+
+<p>You can also do some other fancy stuff in the brackets.</p>
+
+<pre><code>${builtin:now-24:00:00.00}
+${event:freePercent%.2f}
+</code></pre>
+
+<p>You can also load variables from a file</p>
+
+<pre><code>&lt;key&gt;loadVariablesFromFile&lt;/key&gt;
+&lt;string&gt;/Library/Preferences/Xsan/notifications3.plist&lt;/string&gt;
+</code></pre>
+
+<p>There are also a section in the emond.plist file for initialVariables.</p>
+
+<h2>Event criterion</h2>
+
+<p>Next, there is criterion.  If a criterion exists, it must be true for the actions to be executed.  Criterion are basically if statements formated as plist.  You have an operator and operands.  The operators I've seen are as follows.</p>
+
+<ul>
+<li>LessThan</li>
+<li>GreaterThan</li>
+<li>True</li>
+<li>Defined</li>
+<li>NotEmpty</li>
+</ul>
+
+<p>There are probably more (like Equal or NotEqual) and you'd probably see them if you ran strings on the emond binary.</p>
+
+<p>The operand is a variable name or, if you use the bracket notation, the value of the variable.  Here are a few examples.</p>
+
+<p>${FreeSpaceThreshold} > ${event:Percentage}</p>
+
+<pre><code>&lt;key&gt;criterion&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;operator&lt;/key&gt;
+        &lt;string&gt;GreaterThan&lt;/string&gt;
+        &lt;key&gt;operands&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;${FreeSpaceThreshold}&lt;/string&gt;
+            &lt;string&gt;${event:Percentage}&lt;/string&gt;
+        &lt;/array&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>true</p>
+
+<pre><code>&lt;key&gt;criterion&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;operator&lt;/key&gt;
+        &lt;string&gt;True&lt;/string&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>defined event:clientIP</p>
+
+<pre><code>&lt;key&gt;criterion&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;operator&lt;/key&gt;
+        &lt;string&gt;Defined&lt;/string&gt;
+        &lt;key&gt;operands&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;event:clientIP&lt;/string&gt;
+        &lt;/array&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>global:notificationContacts != ""</p>
+
+<pre><code>&lt;key&gt;criterion&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;operator&lt;/key&gt;
+        &lt;string&gt;NotEmpty&lt;/string&gt;
+        &lt;key&gt;operands&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;global:notificationContacts&lt;/string&gt;
+        &lt;/array&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>${${event:clientIP}-BadAuthCount} > ${hostBlockThreshold}</p>
+
+<pre><code>&lt;key&gt;criterion&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;operator&lt;/key&gt;
+        &lt;string&gt;GreaterThan&lt;/string&gt;
+        &lt;key&gt;operands&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;${${event:clientIP}-BadAuthCount}&lt;/string&gt;
+            &lt;string&gt;${hostBlockThreshold}&lt;/string&gt;
+        &lt;/array&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+</code></pre>
+
+<p>Putting if statements in plist form takes a whole lot more text than if you were to just write "if ( something1 > something2 )".</p>
+
+<p>There is also this key.  I'm guessing this turns the array of criterion into or's instead of and's.</p>
+
+<pre><code>&lt;key&gt;allowPartialCriterionMatch&lt;/key&gt;
+</code></pre>
+
+<h2>Actions</h2>
+
+<p>Once an eventType matches and the criterion (if any) are met, then the actions are performed.  I found these different actions.</p>
+
+<ul>
+<li>Log</li>
+<li>SendEmail</li>
+<li>SendSMS</li>
+<li>SendNotification</li>
+<li>RunCommand</li>
+</ul>
+
+<p>This is what the log action looks like.</p>
+
+<pre><code>&lt;dict&gt;
+    &lt;key&gt;type&lt;/key&gt;
+    &lt;string&gt;Log&lt;/string&gt;
+    &lt;key&gt;message&lt;/key&gt;
+    &lt;string&gt;Host at ${event:clientIP} will be blocked for at least ${hostMinBlockTime} minutes&lt;/string&gt;
+    &lt;key&gt;facility&lt;/key&gt;
+    &lt;string&gt;AdaptiveFirewall&lt;/string&gt;
+    &lt;key&gt;logLevel&lt;/key&gt;
+    &lt;string&gt;Notice&lt;/string&gt;
+    &lt;key&gt;logType&lt;/key&gt;
+    &lt;string&gt;Syslog&lt;/string&gt;
+&lt;/dict&gt;
+</code></pre>
+
+<p>Here is another log action that uses ASL instead of syslog.</p>
+
+<pre><code>&lt;dict&gt;
+    &lt;key&gt;type&lt;/key&gt;
+    &lt;string&gt;Log&lt;/string&gt;
+    &lt;key&gt;message&lt;/key&gt;
+    &lt;string&gt;${event:eventTimestamp} Host at ${event:hostAddress} was blocked for ${event:blockDuration}&lt;/string&gt;
+    &lt;key&gt;facility&lt;/key&gt;
+    &lt;string&gt;AdaptiveFirewall&lt;/string&gt;
+    &lt;key&gt;logLevel&lt;/key&gt;
+    &lt;string&gt;Warning&lt;/string&gt;
+    &lt;key&gt;logType&lt;/key&gt;
+    &lt;string&gt;ASL&lt;/string&gt;
+    &lt;key&gt;parameters&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;eventType&lt;/key&gt;
+        &lt;string&gt;${event:eventType}&lt;/string&gt;
+        &lt;key&gt;hostAddress&lt;/key&gt;
+        &lt;string&gt;${event:hostAddress}&lt;/string&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+</code></pre>
+
+<p>Send Email.  Not all of these keys are required.  I got by with just type, message, subject, and recipientAddresses.</p>
+
+<pre><code>&lt;dict&gt;
+    &lt;key&gt;type&lt;/key&gt;
+    &lt;string&gt;SendEmail&lt;/string&gt;
+    &lt;key&gt;message&lt;/key&gt;
+    &lt;string&gt;Please do not be alarmed. This is only a test for SAN ${event:SANName}.&lt;/string&gt;
+    &lt;key&gt;subject&lt;/key&gt;
+    &lt;string&gt;${event:SANName}: Test notification&lt;/string&gt;
+    &lt;key&gt;localizationBundlePath&lt;/key&gt;
+    &lt;string&gt;/usr/libexec/xsanmgr/bundles/xsanmgr_xsan.bundle&lt;/string&gt;
+    &lt;key&gt;relayHost&lt;/key&gt;
+    &lt;string&gt;${event:relayHost}&lt;/string&gt;
+    &lt;key&gt;adminEmail&lt;/key&gt;
+    &lt;string&gt;${event:adminEmail}&lt;/string&gt;
+    &lt;key&gt;recipientAddresses&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;${event:emailRecipients}&lt;/string&gt;
+    &lt;/array&gt;
+&lt;/dict&gt;
+</code></pre>
+
+<p>Send SMS.  I couldn't get this to work.  If you really want to send an SMS you can use the SendEmail action and an email to text message service.  Most carriers have their own and you can find many at <a href="http://www.emailtextmessages.com">www.emailtextmessages.com</a>.</p>
+
+<p>It is also worth mentioning that if you use a small carrier that rents from a larger carrier, use the larger carrier's service.  Since some carriers rent from multiple larger carriers you might need to try several different large carriers or call them and ask what  cell towers your phone connects to (it depends on the SIM card).</p>
+
+<pre><code>&lt;dict&gt;
+    &lt;key&gt;type&lt;/key&gt;
+    &lt;string&gt;SendSMS&lt;/string&gt;
+    &lt;key&gt;message&lt;/key&gt;
+    &lt;string&gt;Please do not be alarmed. This is only a test for SAN ${event:SANName}.&lt;/string&gt;
+    &lt;key&gt;localizationBundlePath&lt;/key&gt;
+    &lt;string&gt;/usr/libexec/xsanmgr/bundles/xsanmgr_xsan.bundle&lt;/string&gt;
+    &lt;key&gt;relayHost&lt;/key&gt;
+    &lt;string&gt;${event:relayHost}&lt;/string&gt;
+    &lt;key&gt;adminEmail&lt;/key&gt;
+    &lt;string&gt;${event:adminEmail}&lt;/string&gt;
+    &lt;key&gt;recipientAddresses&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;${event:smsRecipients}&lt;/string&gt;
+    &lt;/array&gt;
+&lt;/dict&gt;
+</code></pre>
+
+<p>Send notification.  The OS Notification Center?...  I don't know (didn't feel like testing).</p>
+
+<pre><code>&lt;dict&gt;
+    &lt;key&gt;type&lt;/key&gt;
+    &lt;string&gt;SendNotification&lt;/string&gt;
+    &lt;key&gt;name&lt;/key&gt;
+    &lt;string&gt;EventMonitorNotification&lt;/string&gt;
+    &lt;key&gt;message&lt;/key&gt;
+    &lt;string&gt;EventMonitorNotification&lt;/string&gt;
+    &lt;key&gt;details&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;hostBlockedTime&lt;/key&gt;
+        &lt;string&gt;${hostMinBlockTime}&lt;/string&gt;
+        &lt;key&gt;message&lt;/key&gt;
+        &lt;string&gt;HostBlocked&lt;/string&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+</code></pre>
+
+<p>Just run a command.</p>
+
+<pre><code>&lt;dict&gt;
+    &lt;key&gt;type&lt;/key&gt;
+    &lt;string&gt;RunCommand&lt;/string&gt;
+    &lt;key&gt;command&lt;/key&gt;
+    &lt;string&gt;/System/Library/Filesystems/acfs.fs/Contents/bin/xsandaily&lt;/string&gt;
+    &lt;key&gt;user&lt;/key&gt;
+    &lt;string&gt;root&lt;/string&gt;
+    &lt;key&gt;group&lt;/key&gt;
+    &lt;string&gt;wheel&lt;/string&gt;
+    &lt;key&gt;arguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;-a&lt;/string&gt;
+        &lt;string&gt;${event:clientIP}&lt;/string&gt;
+        &lt;string&gt;-t&lt;/string&gt;
+        &lt;string&gt;${hostMinBlockTime}&lt;/string&gt;
+    &lt;/array&gt;
+&lt;/dict&gt;
+</code></pre>
+
+<h2>More reading</h2>
+
+<ul>
+<li><p>There's a paragraph that mentions emond in the book (Mac OS X Security and Mobility v10.6: Using a Firewall)[http://www.peachpit.com/articles/article.aspx?p=1573022&amp;seqNum=2].  The most interesting part of that paragraph is that it says, "emond is an off-limits subsystem".  That makes me smile.</p></li>
+<li><p>There's also an old very interesting <a href="https://discussions.apple.com/thread/1314366?start=0&amp;tstart=0">Apple discussion thread</a>.  In it keeperofthecheese says, "the Leopard release of this feature was intended to be Apple-internal, which is why this (pretty powerful, IMHO) feature is not yet widely used throughout the system."  I'm pretty sure that refers to emond.  This seems to indicate to me that emond was intended to be much more.  I wonder if keeperofthecheese worked on emond or knew the person who did.</p></li>
+<li><p><a href="https://www.scribd.com/doc/238424342/Mac-OS-X-Server-Advanced-Server-Administration-Version-10-6-Snow-Leopard">Mac OS X Server Advanced Server Administration Version 10.6 Snow Leopard</a> spends half of page 184 discussing emond in more detail than the man pages.  It also says, "the file formats and settings in emond.conf and rules plists are not documented for customer use. Tampering could result in an unusable notification system and is unsupported."</p></li>
+<li><p><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/emond.8.html">emond</a> man page.</p></li>
+<li><p><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man5/emond.plist.5.html#//apple_ref/doc/man/5/emond.plist">emond.plist</a> man page.  The most interesting part is that it tells how to enable debugging and logging, which would probably help figure out a lot more than my documentation.</p></li>
+<li><p><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/emlog.pl.8.html#//apple_ref/doc/man/8/emlog.pl">emlog.pl</a> man page.</p></li>
+<li><p><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/xssendevent.8.html#//apple_ref/doc/man/8/xssendevent">xssendevent</a> man page.</p></li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>So we aren't suppose to use emond and it looks like it's on the chopping block.  But it's there for now and there is enough information to figure out how to use it if you want.  I've been struggling with my own version of a log scanner that emails and texts and that's what finally motivated me to look at emond.</p>
+
+<p>But seriously, after looking at it, I'm not too convinced it is even worth it.  It appears to be a plist (data) driven system just to send emails, log messages, etc.  Considering how easy it is to log (logger), run a command (system or ``), or send an email in a perl script (pipe to sendmail), I can't see why I'd want to use emond instead of a script.  And the criterion section is just atrocious.  This whole system could be replaced with a few dozen much more readable lines of Perl (or any other scripting language, even BASH).  There's got to be more to this than I know about.  In fact, as I write that, I remember the alert<em>mail</em>theme.mime file and that it is an email template.  Ok, it would take more than a few dozen lines of Perl to duplicate that functionality.  But I guess I don't need that much power.</p>
+
+<p>I think for now all I'm really going to do is create a startup rule that sends me an email.  That way I know when one of my servers restarts.  Here it is.</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;name&lt;/key&gt;
+        &lt;string&gt;Startup Email&lt;/string&gt;
+        &lt;key&gt;enabled&lt;/key&gt;
+        &lt;true/&gt;
+        &lt;key&gt;eventTypes&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;startup&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;actions&lt;/key&gt;
+        &lt;array&gt;
+            &lt;dict&gt;
+                &lt;key&gt;type&lt;/key&gt;
+                &lt;string&gt;SendEmail&lt;/string&gt;
+                &lt;key&gt;message&lt;/key&gt;
+                &lt;string&gt;${builtin:hostName} started up.&lt;/string&gt;
+                &lt;key&gt;subject&lt;/key&gt;
+                &lt;string&gt;${builtin:hostName} started up.&lt;/string&gt;
+                &lt;key&gt;adminEmail&lt;/key&gt;
+                &lt;string&gt;root&lt;/string&gt;
+                &lt;key&gt;recipientAddresses&lt;/key&gt;
+                &lt;array&gt;
+                    &lt;string&gt;james.reynolds@example.com&lt;/string&gt;
+                &lt;/array&gt;
+            &lt;/dict&gt;
+            &lt;dict&gt;
+                &lt;key&gt;type&lt;/key&gt;
+                &lt;string&gt;SendEmail&lt;/string&gt;
+                &lt;key&gt;message&lt;/key&gt;
+                &lt;string&gt;${builtin:hostName} started up.&lt;/string&gt;
+                &lt;key&gt;subject&lt;/key&gt;
+                &lt;string&gt;${builtin:hostName} started up.&lt;/string&gt;
+                &lt;key&gt;adminEmail&lt;/key&gt;
+                &lt;string&gt;root&lt;/string&gt;
+                &lt;key&gt;recipientAddresses&lt;/key&gt;
+                &lt;array&gt;
+                    &lt;string&gt;123-456-7890@txt.att.net&lt;/string&gt;
+                &lt;/array&gt;
+            &lt;/dict&gt;
+        &lt;/array&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>Of course, the server that I really needed to be notified when it restarts is running OS X 10.6 client, so it doesn't even have emond.  Irony.  Here's the perl script and launchd plist that I'm using for it.</p>
+
+<pre><code>#!/usr/bin/perl -w
+
+use strict;
+
+chomp ( my $hostname = `hostname` );
+send_mail (
+    'to' =&gt; 'james.reynolds@example.com',
+    'from' =&gt; 'root',
+    'subject' =&gt; "$hostname started up.",
+    'message' =&gt; "$hostname started up.",
+);
+send_mail (
+    'to' =&gt; '123-456-7890@txt.att.net',
+    'from' =&gt; 'root',
+    'subject' =&gt; "$hostname started up.",
+    'message' =&gt; "$hostname started up.",
+);
+
+sub send_mail {
+    my %h = @_;
+    open SENDMAIL, "|/usr/sbin/sendmail -oi -t" or die "/usr/sbin/sendmail: $!\n";
+    print SENDMAIL &lt;&lt; "EOF";
+From: $h{'from'}
+To: $h{'to'}
+Subject: $h{'subject'}
+
+$h{'message'}
+EOF
+    close SENDMAIL;
+}
+</code></pre>
+
+<p>And the launchd plist.</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;com.magnusviri.startup_email&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/local/bin/startup_email.pl&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;LaunchOnlyOnce&lt;/key&gt;
+    &lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>Anyway, back to work I guess and figure out how to get my logscanner to work.</p>
+
+<p>Published: 2016-04-07, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "what-is-emond.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

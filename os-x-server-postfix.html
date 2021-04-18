@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>OS X Server - Postfix - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li class="active"><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>OS X Server - Postfix</h1>
+
+<div class="horizontal_line"></div>
+
+<p>[Update 2019-04-13: I no longer run a Mac OS X Server and <a href="https://support.apple.com/en-us/HT208312">Mac OS X Server is dead</a>.]</p>
+
+<p>Postfix handles the mail sending and receiving.  Email servers and email clients connect to postfix and either give it email to send somewhere else (either to another email server, or send it to dovecot for local users).  It does SMTP, not IMAP or POP.  Dovecot does IMAP and POP.</p>
+
+<p>Here are my notes on managing postfix on OS X Server (3.1.2) on Mavericks 10.9.4.  This all assumes you know the basics of starting and configuring the Mail service using Server.app.  A lot of this information also applies to the default postfix installation in OS X.</p>
+
+<p>Note, this post is part of a series.  Here are the other posts.</p>
+
+<ul>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-basics.html">Basics</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-managing-user-accounts.html">Managing user accounts</a></li>
+<li>OS X Server - Postfix (this page)</li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-dovecot.html">Dovecot</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-sieve.html">Sieve</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix-queues.html">Postfix Queues</a></li>
+</ul>
+
+<h2>Working with the Postfix using non-postfix tools.</h2>
+
+<h4>Make sure MX record is set correctly</h4>
+
+<pre><code>dig -t MX example.com
+</code></pre>
+
+<h4>Check the status</h4>
+
+<pre><code>sudo serveradmin fullstatus mail
+</code></pre>
+
+<h4>Stop the mail service</h4>
+
+<pre><code>sudo serveradmin stop mail
+</code></pre>
+
+<h4>Start the mail service</h4>
+
+<pre><code>sudo serveradmin start mail
+</code></pre>
+
+<h4>A full list of settings</h4>
+
+<pre><code>sudo serveradmin settings mail
+</code></pre>
+
+<p>A lot of information on the different settings that can be configured is detailed at <a href="http://krypted.com/mac-os-x/configure-the-mail-service-in-mavericks-server/">krypted.com</a>.</p>
+
+<h2>OS X Client vs Server</h2>
+
+<p>OS X has postfix installed by default and it has a default set of config files.  The default config files are configured to send email only, it will not act as an email server.</p>
+
+<p>The launchdaemon at /System/Library/LaunchDaemons/org.postfix.master.plist controls how the system launches postfix.  By default, that launchdaemon instructs launchd to watch the directory /var/spool/postfix/maildrop, and if it changes, then it executes /usr/libexec/postfix/master, the master postfix daemon.  The launchdaemon also gives the master daemon the arguments "-e 60", which tells master to quit after 60 seconds.</p>
+
+<p>The Server.app changes a few things.  It installs a new set of config files at /Library/Server/Mail/Config/postfix.  It changes the launchdaemon shown above to launch postfix using the new config files.  It doesn't quit the master daemon after 60 seconds.  And it watches a different directory for email to send, /Library/Server/Mail/Data/spool/maildrop.</p>
+
+<p>If you want to see the differences between OS X client and server, compare /etc/postfix with /Library/Server/Mail/Config/postfix.</p>
+
+<h2>Specify the correct config files with <code>-c config_dir</code></h2>
+
+<p>When running postfix commands you need to specify which config files located at /etc/postfix you want to read or else it will read the default config files that are installed with the OS.</p>
+
+<p>I'm not going to show the -c argument in this document for every command I run.  If I show the output of a command, I'll probably show the output of the default /etc/postfix directory, and maybe I'll show what is different for /Library/Server/Mail/Config/postfix.  Either way, you kind of have to read the text to figure out if I'm talking about /etc/postfix or /Library/Server/Mail/Config/postfix because I don't want to list "-c /Library/Server/Mail/Config/postfix" all the time.</p>
+
+<p>View non-default settings on OS X client (/etc/postfix).</p>
+
+<pre><code>postconf -n
+</code></pre>
+
+<p>View non-default settings on OS X Server.</p>
+
+<pre><code>postconf -n -c /Library/Server/Mail/Config/postfix
+</code></pre>
+
+<p>If you get tired of typing that -c argument, you could create an alias.</p>
+
+<p>For sh (using a hypothetical postsomething command)</p>
+
+<pre><code>alias postsomething2="postsomething -c /Library/Server/Mail/Config/postfix"
+</code></pre>
+
+<p>For tcsh (using a hypothetical postsomething command)</p>
+
+<pre><code>alias postsomething2 "postsomething -c /Library/Server/Mail/Config/postfix"
+</code></pre>
+
+<p>Or you could assign it to a shell variable.</p>
+
+<p>For sh (dc is short for "dash c")</p>
+
+<pre><code>dc="-c /Library/Server/Mail/Config/postfix"
+postconf -n $dc
+</code></pre>
+
+<p>For tcsh</p>
+
+<pre><code>setenv dc "-c /Library/Server/Mail/Config/postfix"
+postconf -n $dc
+</code></pre>
+
+<p>You might want to setup your shell to always alias these commands or assign the variables if you use the command line often, because I can imagine typing that path is going to get lame fast.</p>
+
+<p>Or if you're lazy like me, you could just create a symlink so you don't have to type the full path.</p>
+
+<pre><code>ln -s /Library/Server/Mail/Config/postfix /p
+postconf -n -c /p
+</code></pre>
+
+<h2>Learning Postfix</h2>
+
+<p>Official docs can be found at <a href="http://www.postfix.org/documentation.html">postfix.org</a>.  Note, OS X Server 3.1 includes Postfix 2.9.4 (I found that by looking at /var/log/mail.log while starting the mail service, and by running <code>postconf mail_version</code>).</p>
+
+<p>The Postfix version matters because the documentation is for all versions of Postfix and when different versions behave differently, the documentation specifies which version does what. As of July 2014, the lastest version of Postfix is 2.11.  I have heard that many institutions are about 2 dot versions behind, so I don't think it's too alarming that OS X Server is 2 dot versions behind.</p>
+
+<p>Read man pages:</p>
+
+<ul>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/postfix.1.html">postfix(1)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/postconf.1.html">postconf(1)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/postmap.1.html">postmap(1)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/postalias.1.html">postalias(1)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/newaliases.1.html">newaliases(1)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/postlog.1.html">postlog(1)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/postcat.1.html">postcat(1)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/postsuper.1.html">postsuper(1)</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/sendmail.1.html">sendmail(1)</a></li>
+<li>Many more (see <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/postfix.1.html">postfix(1)</a> man page for a full list)</li>
+</ul>
+
+<h2>Postfix Basics</h2>
+
+<h4>Start and Stop Postfix</h4>
+
+<pre><code>postfix start
+postfix stop
+</code></pre>
+
+<h4>To re-read configuration files (after you make a change), enter:</h4>
+
+<pre><code>postfix reload
+</code></pre>
+
+<p>The log is located at: /var/log/mail.log.  This is set by /etc/asl.conf.</p>
+
+<p>If you <code>tail -f /var/log/mail.log</code> you'll see the mail server sending and receiving mail as it runs.  It's very informative.</p>
+
+<h2>Postfix Settings</h2>
+
+<h4>Displaying settings</h4>
+
+<p>This will display a long list (over 800) of settings (including default settings).</p>
+
+<pre><code>postconf
+</code></pre>
+
+<p>Display settings that are not default (changed in main.cf).</p>
+
+<pre><code>postconf -n
+</code></pre>
+
+<p>On OS X it produces this.  OS X Server has a much longer list.</p>
+
+<pre><code>biff = no
+command_directory = /usr/sbin
+config_directory = /Library/Server/Mail/Config/postfix
+daemon_directory = /usr/libexec/postfix
+data_directory = /Library/Server/Mail/Data/mta
+debug_peer_level = 2
+debugger_command = PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin xxgdb $daemon_directory/$process_name $process_id &amp; sleep 5
+dovecot_destination_recipient_limit = 1
+html_directory = /usr/share/doc/postfix/html
+imap_submit_cred_file = /Library/Server/Mail/Config/postfix/submit.cred
+inet_interfaces = loopback-only
+inet_protocols = all
+mail_owner = _postfix
+mailbox_size_limit = 0
+mailq_path = /usr/bin/mailq
+manpage_directory = /usr/share/man
+message_size_limit = 10485760
+mydomain_fallback = localhost
+mynetworks = 127.0.0.0/8, [::1]/128
+newaliases_path = /usr/bin/newaliases
+queue_directory = /Library/Server/Mail/Data/spool
+readme_directory = /usr/share/doc/postfix
+recipient_delimiter = +
+sample_directory = /usr/share/doc/postfix/examples
+sendmail_path = /usr/sbin/sendmail
+setgid_group = _postdrop
+smtpd_client_restrictions = permit_mynetworks permit_sasl_authenticated permit
+smtpd_tls_ciphers = medium
+smtpd_tls_exclude_ciphers = SSLv2, aNULL, ADH, eNULL
+tls_random_source = dev:/dev/urandom
+unknown_local_recipient_reject_code = 550
+use_sacl_cache = yes
+</code></pre>
+
+<p>To see how Mac OS X configures Postfix differently than the default, run these commands.</p>
+
+<pre><code>postconf &gt; /tmp/postconf_all
+postconf -d &gt; /tmp/postconf_default
+diff /tmp/postconf_all /tmp/postconf_default
+</code></pre>
+
+<h4>Display a particular setting:</h4>
+
+<pre><code>postconf -h config-value
+</code></pre>
+
+<h4>Change a setting</h4>
+
+<pre><code>postconf -e param=value
+</code></pre>
+
+<p>Or edit your mail.cf file.</p>
+
+<h4>Some settings you should probably look up</h4>
+
+<p>What the machine name is (this is not shown by postconf -n)</p>
+
+<pre><code>postconf myhostname
+</code></pre>
+
+<p>What Postfix version you have</p>
+
+<pre><code>postconf mail_version
+</code></pre>
+
+<h2>Postfix Mappings</h2>
+
+<p>Mappings are similar but different then settings.  Note, postmap uses the -c to specify the config directory just like postconf.  Mappings are stored in plain text but then they are converted into a database so that postfix and read them quickly.  They have different formats.</p>
+
+<h4>Find out what lookup table types your Postfix supports.</h4>
+
+<pre><code>postconf -m
+</code></pre>
+
+<p>OS X and OS X Server support these lookup tables (that means this version of postfix was compiled with support for these, there are others that could be added but Apple didn't choose to include them).</p>
+
+<pre><code>btree
+cidr
+environ
+fail
+hash
+internal
+ldap
+memcache
+pcre
+proxy
+regexp
+static
+tcp
+texthash
+unix
+</code></pre>
+
+<p>Mostly you will work with hash.</p>
+
+<h4>Lookup tables</h4>
+
+<p>There are many different lookup tables.  They are located in the config directory, /etc/postfix for OS X client (the send only version), or /Library/Server/Mail/Config/postfix for OS X Server.  These are the tables in /etc/postfix.</p>
+
+<pre><code>access
+aliases
+canonical
+custom_header_checks
+generic
+header_checks
+relocated
+transport
+virtual
+</code></pre>
+
+<p>All of these files have commented out instructions and are essentially empty (except for <code>custom_header_checks</code>, which has one entry).  If you ever change one of these files you need to run postmap and point it to the file so that it can update the indexed database that postfix uses whenever you change the canonical table.</p>
+
+<p>Update a mapping</p>
+
+<pre><code>postmap /etc/postfix/canonical
+</code></pre>
+
+<p>The exception is aliases, you need to run <code>newaliases</code>.  There is also the <code>postalias</code> command that allows you to maintain the alias database.  Also, OS X Server appears to be configured to us /etc/aliases instead of /Library/Server/Mail/Config/postfix/aliases (that file exists, but isn't used).  Run <code>postconf -c /Library/Server/Mail/Config/postfix alias_maps</code> to make sure.</p>
+
+<p>OS X Server has a few more lookup tables.  Server.app edits these extra files and they basically have comments telling you not to edit them.</p>
+
+<pre><code>rbl_whitelist
+system_user_maps
+virtual_domains
+virtual_users
+</code></pre>
+
+<p>This is what you see in rbl_whitelist.</p>
+
+<pre><code>### DO NOT MANUALLY EDIT THIS FILE ###
+# This file is automatically generated
+# any manual additions to this file will be lost
+</code></pre>
+
+<h4>Display a mapping.</h4>
+
+<pre><code>postmap -q key lookup_table_type:lookup_table
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code>postmap -q "subject: " regexp:/etc/postfix/custom_header_checks
+</code></pre>
+
+<p>Regular Expressions:</p>
+
+<pre><code>postmap -q "string" regexp:/etc/postfix/filename
+postmap -q - regexp:/etc/postfix/filename &lt;inputfile
+</code></pre>
+
+<p>Perl Compatible Regular Expressions:</p>
+
+<pre><code>postmap -q "string" pcre:/etc/postfix/filename
+postmap -q - pcre:/etc/postfix/filename &lt;inputfile
+</code></pre>
+
+<h2>Name rewriting</h2>
+
+<p>To find out the location for your system, execute the command "postconf alias_maps".</p>
+
+<pre><code>aliases
+alias_maps = hash:/etc/aliases
+</code></pre>
+
+<h2>Queues</h2>
+
+<p>I have a dedicated page discussing <a href="http://www.magnusviri.com/os-x-server-postfix-queues.html">Postfix queues</a>.</p>
+
+<h2>Authentication</h2>
+
+<p>You should read the <a href="http://www.postfix.org/SASL_README.html">SASL_README</a>, and in particular, the section <a href="http://www.postfix.org/SASL_README.html#server_sasl_enable">Enabling SASL authentication and authorization in the Postfix SMTP server</a>.</p>
+
+<p>To see all of the settings related to authentication, use this command</p>
+
+<pre><code>postconf | grep sasl
+</code></pre>
+
+<p>If "smtpd<em>sasl</em>auth_enable" is "yes", then it is turned on.  On OS X in /etc/postfix it is off.  The server config (/Library/Server/Mail/Config/postfix) has it turned on.</p>
+
+<p>Find out the SASL compiled into postfix:</p>
+
+<pre><code>postconf -a
+</code></pre>
+
+<p>OS X and OS X Server include these:</p>
+
+<blockquote>
+  <p>cyrus
+dovecot</p>
+</blockquote>
+
+<h4>Broken Outlook</h4>
+
+<p>Outlook up to and including version 2003 and Outlook Express up to version 6 is broken.  The broken<em>sasl</em>auth_clients configuration option lets Postfix talk to these broken clients using non-standard communications.  This option does not hurt other clients.</p>
+
+<p>To view the setting.</p>
+
+<pre><code>postconf -h broken_sasl_auth_clients
+</code></pre>
+
+<p>To change it.</p>
+
+<pre><code>postconf -e broken_sasl_auth_clients=yes
+</code></pre>
+
+<h4>Disable non TLS plain text password</h4>
+
+<p>By default Postfix allows plain text authentication over a non-TLS connection.  OS X Server uses the default setting as well.  You can change it so that non-TLS will not allow plain text but a TLS connection will allow plaintext like this.</p>
+
+<pre><code>postfix -e smtpd_sasl_tls_security_options=noanonymous
+postfix -e smtpd_sasl_security_options=noanonymous,noplaintext
+</code></pre>
+
+<p><a name="TLS"></a></p>
+
+<div class="spacer"><br /></div>
+
+<h2>TLS/SSL and certificates.</h2>
+
+<p>You should read the <a href="http://www.postfix.org/TLS_README.html">TLS_README</a>.</p>
+
+<p>Learn <a href="https://www.fastmail.fm/help/technical/ssltlsstarttls.html">what TLS, SSL, and STARTTLS really means</a>.  Summary: it means something different to each email client.  STARTTLS is suppose to mean start talking unencrypted and switch to encryption for SMTP, IMAP, and POP over ports 25/587, 143, and 110 respecively.  TLS/SSL is suppose to mean start talking encrypted from the beginning, SMTP, IMAP, and POP over ports 465, 995, and 993 respectively.</p>
+
+<p>Unencrypted at first (STARTTLS switches it to encrypted):</p>
+
+<ul>
+<li>SMTP 25/587 - STARTTLS</li>
+<li>IMAP 143 - STARTTLS</li>
+<li>POP 110 - STARTTLS</li>
+</ul>
+
+<p>Encrypted the whole time:</p>
+
+<ul>
+<li>SMTP 465 - SSL/TLS</li>
+<li>IMAP 993 - SSL/TLS</li>
+<li>POP 995 - SSL/TLS</li>
+</ul>
+
+<p>If you use TLS/SSL you must get a valid certificate for your server or else your clients will get constant warnings that your server certificate is not valid (because OS X self-signs it).  The University of Utah has a <a href="https://uofu.service-now.com/cf/kb_view.do?sysparm_article=KB0000934">contract with a certificate provider</a>.</p>
+
+<p>It took me several attempts to get my certificate to work with OS X.  First you have to generate a certificate signing request (CSR) using the Server app.  You send that to the vendor for a certificate.  When you get the certificate back, you are suppose to drop it in the Server app but I kept getting errors that there was no corresponding private key.  I really hate how OS X does private keys because I haven't been able to find out which one is for what.</p>
+
+<p>Anyway, I did get my certificate installed but I'm not entirely sure what I did.  I believe I dragged it into KeyChain Access.</p>
+
+<h2>Quarantine</h2>
+
+<p>My server gets so much quarantined email that it is impossible to keep up with it.  The server can email you when it gets an alert for one, but I had to filter all of the to the trash because I got so many.  They are stored in /Library/Server/Mail/Data/scanner/quarantine.  They are eventually deleted.</p>
+
+<p>You can read quarantined email with these commands.</p>
+
+<pre><code>zless /Library/Server/Mail/Data/scanner/quarantine/spam-jSrs79ZVXT8I.gz
+gzcat /Library/Server/Mail/Data/scanner/quarantine/spam-jSrs79ZVXT8I.gz
+zgrep "not spam" /Library/Server/Mail/Data/scanner/quarantine/
+</code></pre>
+
+<p>If you are using Time Machine, you can search all the backups like this.</p>
+
+<p>This shows you the part of each file that matches.</p>
+
+<pre><code>zgrep -r "text" /Volumes/TimeMachine/Backups.backupdb/Your_Server/*/Macintosh\ HD/Library/Server/Mail/Data/scanner/quarantine
+</code></pre>
+
+<p>This shows the list of files.</p>
+
+<pre><code>zgrep -rl --null "text" /Volumes/TimeMachine/Backups.backupdb/biomail/*/Macintosh\ HD/Library/Server/Mail/Data/scanner/quarantine | xargs -0 ls -l
+</code></pre>
+
+<p>This shows the first 15 lines of each message.</p>
+
+<pre><code>zgrep -rl --null "text" /Volumes/TimeMachine/Backups.backupdb/biomail/*/Macintosh\ HD/Library/Server/Mail/Data/scanner/quarantine | xargs -0 head -n15
+</code></pre>
+
+<p><a name="content_filtering" /></p>
+
+<div class="spacer"><br /></div>
+
+<h2>Content filtering (checks)</h2>
+
+<p>Postfix allows you to filter emails based on the content.  This is designed to be a lightweight check though since it can significantly slow things down.  By default OS X Server has the header<em>check enabled and it points to /Library/Server/Mail/Config/postfix/custom</em>header_checks.  You can edit this file to add something like the following.</p>
+
+<pre><code>/^subject: [SPAM$/ HOLD
+</code></pre>
+
+<p>Note, when making filters you should use WARN instead of HOLD and you instead of modifying /Library/Server/Mail/Config/postfix/custom<em>header</em>checks create a file like /tmp/test<em>filter that contains your filter.  This way you're not writing and testing filters in production.  So I'm putting this text in a file /tmp/test</em>filter.</p>
+
+<pre><code>/^subject: [SPAM$/ WARN
+</code></pre>
+
+<p>Then I create a test email and save it to /tmp/test_email.  It looks like this.</p>
+
+<pre><code>From: nil@example.com
+Subject: [SPAM-90%] Buy this or that
+bla bla bla
+</code></pre>
+
+<p>Then you can test your filter like this.</p>
+
+<pre><code>postmap -q - pcre:/tmp/test_filter &lt; /tmp/test_email
+</code></pre>
+
+<p>If I run it, it prints a message:</p>
+
+<pre><code>postmap: warning: pcre map /tmp/test_filter, line 1: error in regex at offset 16: missing terminating ] for character class
+</code></pre>
+
+<p>Doh!  Good thing I tested first!  I forgot I was writing regular expressions.  It should look like this.</p>
+
+<pre><code>/^subject: \[SPAM$/ WARN
+</code></pre>
+
+<p>Nothing was printed, which means my regular expression didn't match.  Well, ok, it really should look like this (without the ending $).</p>
+
+<pre><code>/^subject: \[SPAM/ WARN
+</code></pre>
+
+<p>If it matches it will print this.</p>
+
+<pre><code>Subject: [SPAM-90%] Buy this or that    WARN
+</code></pre>
+
+<p>Now I move the contents of /tmp/test<em>filter to /Library/Server/Mail/Config/postfix/custom</em>header_checks and then I run these commands.</p>
+
+<pre><code>postfix reload
+sendmail null@example.com &lt; /tmp/test_email
+</code></pre>
+
+<p>There should be a warning in my mail log (/var/log/mail.log).  When I'm happy with it, I need to change WARN to HOLD or REJECT or DISCARD.</p>
+
+<p>If you search the web for "header_checks examples" you can find webpages that list some examples.  Here's mine.  It's all listed WARN for testing.</p>
+
+<pre><code>#/^subject: *$/                             REJECT empty subject header
+#/^Subject: \[SPAM/                         WARN SPAM subject
+#/^From:(.*)user005@badspammerdomain.com/   WARN #spam Known spammer address
+
+/^To:.*&lt;?Undisclosed Recipients?&gt;?$/        WARN Wrong undisclosed recipients header
+/^Subject: .*      /                        WARN Spam Header Many Spaces 1
+/^Date: .* 19[0-9][0-9]/                    WARN Spam Header Past Date 1
+/^Date: .* 200[0-9]/                        WARN Spam Header Past Date 2
+/^Date: .* 201[0-4]/                        WARN Spam Header Past Date 3
+/^Date: .* 20[2-9][0-9]/                    WARN Spam Header Future Date 1
+/^X-Spam-Level: \*{15,}.*/                  WARN Spam level above 15
+
+#### non-RFC Compliance headers
+/[^[:print:]]{7}/                           WARN 2047rfc
+/^.*=20[a-z]*=20[a-z]*=20[a-z]*=20[a-z]*/   WARN 822rfc1
+/(.*)?\{6,\}/                               WARN 822rfc2
+/(.*)[X|x]\{3,\}/                           WARN 822rfc3
+
+/^Subject:.*=\?(GB2312|big5|euc-kr|ks_c_5601-1987|koi8)\?/ WARN NotReadable1 $1
+/^Content-Type:.*charset="?(GB2312|big5|euc-kr|ks_c_5601-1987|koi8)/ WARN NotReadable2 $1
+/^Content-(Type|Disposition):.*(file)?name=.*\.(bat|com|exe)/ WARN Bad Attachment .${3}
+
+/^Received: from .*\.local/                 WARN
+/^Subject: ADV:/                            WARN Advertisements not accepted by this server
+/^Subject: =?Windows-1251?/                 WARN Russian encoding not allowed by this server 1
+
+/[^[:print:]]{8}/                           WARN Sorry, ascii characters only permitted by this server
+/^(To|From|Cc|Reply-To):.*@optonline/       WARN Sorry, your message is probably spam
+</code></pre>
+
+<h2>Avoiding getting blacklisted</h2>
+
+<h2>Avoiding getting blacklisted</h2>
+
+<p>There are free services you can sign up that will monitor the real-time blacklist servers (RBL).</p>
+
+<ul>
+<li><a href="http://mxtoolbox.com">http://mxtoolbox.com</a></li>
+</ul>
+
+<p>You can also view your mail server score</p>
+
+<ul>
+<li><a href="https://senderscore.org">https://senderscore.org</a></li>
+<li><a href="http://www.senderbase.org">http://www.senderbase.org</a></li>
+</ul>
+
+<p>Other things you should do.  Make sure your DNS is correct. Use an MX record.  Use an SPF record.  <a href="http://www.rackaid.com../blog/email-dns-records/">This article on email server DNS records</a> is pretty helpful.</p>
+
+<h2>Outlook problem #2</h2>
+
+<p>In /Library/Server/Mail/Config/postfix/main.cf, locate the smtpd<em>helo</em>restrictions setting.  Remove "reject<em>non</em>fqdn<em>helo</em>hostname" from the list of settings.  Restart the Mail service.  <a href="http://support.apple.com/kb/TS3023">Apple KB article</a>.</p>
+
+<h2>Debugging</h2>
+
+<p>You should read the <a href="http://www.postfix.org/DEBUG_README.html">DEBUG_README</a>.</p>
+
+<p>You can do <a href="http://www.postfix.org/QSHAPE_README.html">bottleneck analysis</a>.</p>
+
+<p>To debug a particular site:
+    debug<em>peer</em>list = example.com
+    debug<em>peer</em>level = 2</p>
+
+<p>There are several other links about debugging postfix.</p>
+
+<ul>
+<li><a href="http://www.postfix-book.com/debugging.html">Postfix book</a></li>
+<li><a href="OnLamp article">http://www.onlamp.com/pub/a/onlamp/2004/01/22/postfix.html</a></li>
+</ul>
+
+<p>3rd party utils:</p>
+
+<pre><code>[postfinger](http://ftp.wl0.org/SOURCES/postfinger)
+[saslfinger](http://postfix.state-of-mind.de/patrick.koetter/saslfinger/)
+</code></pre>
+
+<p>Postfix version 2.1 and later can produce debugging reports, a "what-if" report and a "what-happened" report.</p>
+
+<p>What-if:</p>
+
+<pre><code>$ /usr/sbin/sendmail -bv address...
+</code></pre>
+
+<p>What happened:</p>
+
+<pre><code>$ /usr/sbin/sendmail -v address...
+</code></pre>
+
+<p>The reports are emailed to you and the format of these reports is practically identical to that of ordinary non-delivery notifications.</p>
+
+<p>To see what ports are listening:</p>
+
+<pre><code>netstat -t -a | grep LISTEN
+lsof -i tcp:25
+</code></pre>
+
+<p>Stress test (don't run this on a production server):</p>
+
+<pre><code>smtp-source
+smtp-sink
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code>smtp-sink -c localhost:25 1000
+
+time smtp-source -s 20 -l 5120 -m 100 -c -f sender@example.com -t recipient@example.com localhost:25
+</code></pre>
+
+<p>Meaning of flags.</p>
+
+<ul>
+<li>"-s 20" - 20 parallel sessions</li>
+<li>"-l 5120" - 5KB message size</li>
+<li>"-m 100" - 100 total messages</li>
+<li>"-c" - display a counter</li>
+<li>"-f sender@example.com" - From</li>
+<li>"-t recipient@example.com" - To</li>
+<li>"localhost:25" - target</li>
+</ul>
+
+<p>Sending email from the command line:</p>
+
+<pre><code>echo bla | /usr/sbin/sendmail -f root root &amp;&amp; tail -f /var/log/mail.log
+</code></pre>
+
+<h2>Working with log files</h2>
+
+<p>Because my log files got really really big after awhile, I added "rotate=local-basic dest=/var/log/mail ttl=1780" to the asl.config.  I specify ttl of 1780 days because I'm pretty sure the default is 7 and I want to save my mail log files so I can process them.  Now the line for mail looks like this.</p>
+
+<pre><code>? [= Facility mail] [&lt;= Level info] file /var/log/mail.log mode=0644 uid=27 gid=27 gid=6 format=bsd rotate=local-basic dest=/var/log/mail ttl=1780
+</code></pre>
+
+<p>I also created the directory /var/log/mail.</p>
+
+<p>There is also the utility <a href="http://jimsun.linxnet.com/postfix_contrib.html">pflogsumm</a>.  I downloaded the script, put it in /usr/local/bin, and then I created a script at /etc/periodic/daily/510.pflogsumm, which grabs the newest file and runs pflogsumm on it.</p>
+
+<pre><code>#!/usr/bin/perl
+
+my $mail_dir = "/var/log/mail";
+opendir(my $DH, $mail_dir) or die "Error opening $mail_dir: $!";
+my %files = map { $_ =&gt; (stat("$mail_dir/$_"))[9] } grep(! /^\.\.?$/, readdir($DH));
+closedir($DH);
+my @sorted_files = sort { $files{$b} &lt;=&gt; $files{$a} } (keys %files);
+my $file = "$mail_dir/$sorted_files[0]";
+
+system "/usr/local/bin/pflogsumm -u 5 -h 5 --problems_first $file | mail -s \"pflogsumm $file\" root";
+</code></pre>
+<p>Published: 2014-10-15, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "os-x-server-postfix.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

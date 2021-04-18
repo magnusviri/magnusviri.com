@@ -1,0 +1,189 @@
+/*------------------------- 28 Magnusviri Style -------------------------*/
+body {
+	margin: 0;
+	padding: 0;
+	background: -webkit-linear-gradient(left,rgba(255,0,0,.4), rgba(0,255,0,.4), rgba(0,0,255,.4)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(right,rgba(255,0,0,.4), rgba(0,255,0,.4), rgba(0,0,255,.4)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(right,rgba(255,0,0,.4), rgba(0,255,0,.4), rgba(0,0,255,.4)); /*Fx 3.6-15*/
+	background: linear-gradient(to right, rgba(255,0,0,.4), rgba(0,255,0,.4), rgba(0,0,255,.4));
+}
+
+p {
+	overflow-y: hidden;
+}
+
+/*--------------------------------- style for "RESPONSIVENESS" ------------------------------*/
+.full {
+	width: 100%;
+}
+/*--------------------------------- styles for TOP navigation menu ------------------------------*/
+.horizontal_line {
+	padding: .1em;
+	width: 100%;
+	background: -webkit-linear-gradient(left,rgba(255,0,0,.4), rgba(0,255,0,.4), rgba(0,0,255,.4)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(right,rgba(255,0,0,.4), rgba(0,255,0,.4), rgba(0,0,255,.4)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(right,rgba(255,0,0,.4), rgba(0,255,0,.4), rgba(0,0,255,.4)); /*Fx 3.6-15*/
+	background: linear-gradient(to right, rgba(255,0,0,.4), rgba(0,255,0,.4), rgba(0,0,255,.4));
+}
+
+/*-------------------------------- styles for other ----------------------------*/
+pre {
+	background: rgba(0,0,0,.5);
+	color: #0f0;
+	padding: 5px;
+}
+
+code, pre {
+	font-family: "Andale Mono", "courier-new", courier, monospace;
+	font-size: 10pt;
+	overflow-y: hidden;
+}
+
+code {
+	border-radius: 3px;
+	padding: 1px;
+}
+
+.title {
+	text-align: center;
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.content {
+	margin: 0 auto;
+	font-weight: normal;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 10px;
+	border-radius: 10px;
+	max-width: 600px;
+}
+
+.content a:link {
+	color: #033;
+}
+
+.content a:visited {
+	color: #066;
+}
+
+.content a:focus {
+	color: blue;
+}
+
+.content a:hover {
+	color: #f66;
+}
+
+.content a:active {
+	color: #600;
+}
+
+#disqus_thread {
+	margin: 20px auto;
+	font-weight: normal;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 10px;
+	border-radius: 10px;
+	max-width: 600px;
+}
+
+/*-------------------------------- Navigation ----------------------------*/
+
+nav {
+	background-color: rgba(102, 255, 255, .7); /*-- turquoise --*/
+	text-align: left;
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+}
+nav ul {
+	font-family: sans-serif;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	padding: .5em;
+	margin: 0 .25em 0 .25em;
+	list-style: none;
+}
+nav a:link {
+	color: #033;
+}
+nav a:visited {
+	color: #066;
+}
+nav a:focus {
+	color: blue;
+}
+nav a:hover {
+	color: #f66;
+}
+nav a:active {
+	color: white;
+}
+nav li ul li:hover {
+/*   background: mediumvioletred; */
+}
+nav li:hover {
+/*   background: lightgray; */
+}
+nav li {
+	display: inline-block;
+	position: relative;
+	padding: .5em;
+}
+nav li ul {
+	background-color: rgba(102, 255, 255, .95); /*-- turquoise --*/
+	display: none;
+	position: absolute;
+	left: 0;
+}
+nav li ul li {
+	display: block;
+}
+nav li ul li a {
+	white-space: nowrap;
+}
+nav li:hover ul {
+	display: block;
+}
+#hamburger {
+	display: none;
+}
+@media only screen and (max-width: 590px) {
+	nav ul {
+		display: none;
+		text-align: center;
+	}
+	nav li ul {
+		position: static;
+	}
+	#hamburger {
+		position: absolute;
+		top: 2rem;
+		left: 1.4rem;
+		display: block;
+		opacity: 0;
+	}
+	/* Toggled State */
+	#hamburger:checked ~ ul {
+		display: block;
+	}
+	#hamburger:checked ~ ul li {
+		display: block;
+	}
+	#hamburger:checked + label:before {
+		content: '\00d7';
+		font-size:20pt;
+	}
+	nav label {
+		display: inline-block;
+		cursor: pointer;
+		padding: .5rem;
+	}
+	nav label:before {
+		content: '\2261';
+		font-size:20pt;
+	}
+}

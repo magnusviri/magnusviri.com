@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Mobile Game Programming Lesson 4 - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li class="active"><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Mobile Game Programming Lesson 4</h1>
+
+<div class="horizontal_line"></div>
+
+<h2>Images, Sounds, Examples, Documentation</h2>
+
+<p>We've looked at several examples already showing simple games.  We've talked about the basic structure of a game, we've looked at some basic programming concepts, and we've talked about numbers, math, and strings. We are going to finish our look at data by looking at images and sound.  With images and sound games are a lot funner!</p>
+
+<p>When you download Gideros there is a folder named "Examples" in the Gideros folder.  We are also going to look at this example code. Download the code if you do not have it. We are also going to start looking at the Lua and Gideros documentation.</p>
+
+<p>While looking at these things we will discuss Lua's tables, classes, and for loops.</p>
+
+<h2>Images</h2>
+
+<p>Creating and displaying an image is easy.  First, you have to add the image to your project in Gideros Studio. Next, you use this code to load the image and store it in memory.  Gideros calls a loaded image a "texture" so I'll use that word from here on out.</p>
+
+<p>Note, "Texture" is part of the Gideros API (Application Programming Interface).  It can not be used as a variable name.  Lua is case sensitive, so "texture" is not the same as "Texture", so "texture" can actually be a variable name.  The same is true with "Bitmap" and "bitmap".</p>
+
+<pre><code>local birdTexture = Texture.new("bird.png")
+local birdBitmap = Bitmap.new(birdTexture)
+stage:addChild(birdBitmap)
+</code></pre>
+
+<p>Texture.new() is a command that loads the image file from the file system (in the case of mobile devices, this isn't a disk but flash memory) and puts it in RAM.  It's better to put images in RAM because RAM is much faster to access than flash memory.  Texture.new() puts the image in memory so we want a variable so we can find the image.  In the example above we are using birdTexture to point to the image.</p>
+
+<p>Bitmap.new() is a command that takes the variable that tells us where the image is at and it gives us a wrapper around it so we can do interesting things with it.  The main purpose of the bitmap is to add it to the stage.  You don't add a texture to the stage, you add the bitmap to the stage.  The reason for this is because you may want to add the same image multiple times.  Well, you don't want to load the image into memory multiple times, you only need to load it once. So you create one texture, but you can create many bitmaps that point to the texture and you save a lot of memory.</p>
+
+<h2>Tables</h2>
+
+<p>Before we dive into a lengthy look at images and bitmaps, I need to explain what a table is.  A Lua table is a thing that stores stuff.  A Lua table is created by using squiggly braces, "{}".</p>
+
+<pre><code>table = {}
+</code></pre>
+
+<p>Then we can add things to the table by using dots, like this.</p>
+
+<pre><code>table.something = 1
+print(table.something)
+</code></pre>
+
+<p>We've actually used tables many times already.  In the Tic Tac Toe game we used a table to store the game board boxes.  In the Which Way game we used tables to store the messages saying which way to go.  In that game we actually created and added things to the table at the same time.</p>
+
+<pre><code>positive = {
+    "x welcomes you",
+    "proceed x",
+    "try to go x",
+    -- etc
+}
+</code></pre>
+
+<p>In this case the strings are a list of items and they are accessed by using square braces with the number that you want to get at.  The first item is [1].  The second item is [2].  In some programming languages (like C) the first item is 0.  But in Lua it is 1.  That's just a friendly warning about your future if you pursue programming.</p>
+
+<pre><code>print( positive[1] ) -- prints "x welcomes you"
+</code></pre>
+
+<p>A table is part of the Lua language.  If you want to learn more about the table you go to this URL.</p>
+
+<p><a href="http://www.lua.org/pil/2.5.html">http://www.lua.org/pil/2.5.html</a></p>
+
+<p>How about you go there now to learn a little about a table directly from the source.  Just about everything you want to know (and maybe a lot you don't want to know) about tables is on that webpage.</p>
+
+<p>In the last chapter we used the Lua string library commands string.gfind(), string.gsub(), and string.sub().  We also used table.getn() and table.remove().  We also used math.random().  These commands are all stored in tables.  That is, "string", "table", and "math" are tables.  If you want to learn about these you go to the Lua Standard Library documentation.</p>
+
+<ul>
+<li>Math: <a href="http://www.lua.org/pil/18.html">http://www.lua.org/pil/18.html</a></li>
+<li>Tables: <a href="http://www.lua.org/pil/19.html">http://www.lua.org/pil/19.html</a> (be sure to use the arrows to view all of the table related pages)</li>
+<li>Strings: <a href="http://www.lua.org/pil/20.html">http://www.lua.org/pil/20.html</a></li>
+</ul>
+
+<h2>Classes</h2>
+
+<p>Now, about this new() command.  We've seen it a few times already.  We've seen Shape.new(), TextField.new() and in the last chapter we actually had BoxTextField.new().  Now we have Texture.new() and Bitmap.new().  In every case, new() creates something in memory just like a number or string and we use a variable to point to it.  But unlike a number or string, the things new() creates in memory have more bells and whistles.  We call these things objects.</p>
+
+<p>Shape, TextField, Texture, and Bitmap are called classes.  To understand what they mean by classes, think of airplanes.  They are categorized by class, for example, a biplane, a single propeller plane, a glider, or a jet.  The class is the blue prints, the new() command is the warehouse that builds the plane, and the thing that comes out of it is something that takes up space in a hanger.  So a class like Texture is the blueprint of our object.  The new() command creates a new Texture object for us.  And we use a variable to remember where our Texture object is.  An object is also called an instance, because well, it exists.</p>
+
+<p>Shape, TextField, Texture, and Bitmap are part of the Gideros Application Programming Interface (API).  That means that Gideros decides what these things are, not Lua.  So if you want to look up the documentation for a Bitmap you need to go to this URL.</p>
+
+<p><a href="http://www.giderosmobile.com/documentation/reference_manual.html#Bitmap">http://www.giderosmobile.com/documentation/reference_manual.html#Bitmap</a>.</p>
+
+<p>However, BoxTextField is not defined by Gideros.  In the last chapter, we actually created the blueprints for BoxTextField ourselves with the following code.</p>
+
+<pre><code>BoxTextField = Core.class(Shape)
+function BoxTextField:init(text,...)
+    -- cut...
+end
+</code></pre>
+
+<p>It is important to examine the similarities and differences between using a table and an object.  You will notice that to use the random function from the math library (which is a table) we use a dot.</p>
+
+<pre><code>print( math.random() )
+</code></pre>
+
+<p>To create an object we use the form SomeName.new().  Between the class name and new() we have a dot, which is the same as when we call a table library command.  When modifying a variable in an object you use a dot, just like you would with a table.  From chapter 1 we used the following code to create and modify an object, all with dots.</p>
+
+<pre><code>board = Shape.new()
+board.width = 300
+board.height = 300
+board.lineWidth = 3
+board.color = 0x000000
+</code></pre>
+
+<p>The main difference between a table library and an object is when you want to execute commands.  In a table library you use a dot, like math.random().  When you want to execute an object command, you use a colon instead of a dot, like board:moveTo().</p>
+
+<p>Let's look at the Shape class and see everything that a Shape object can do.</p>
+
+<p><a href="http://www.giderosmobile.com/documentation/reference_manual.html#Shape">http://www.giderosmobile.com/documentation/reference_manual.html#Shape</a></p>
+
+<p>It has a lot of commands.  Here is the list.</p>
+
+<pre><code>Shape.new()
+Shape:setFillStyle(type, ...)
+Shape:setLineStyle(width, color, alpha)
+Shape:beginPath(winding)
+Shape:moveTo(x, y)
+Shape:lineTo(x, y)
+Shape:endPath()
+Shape:closePath()
+Shape:clear()
+</code></pre>
+
+<p>Also notice this text in the API documentation: "Shape > Sprite".  That means that Shape can do everything that a Sprite can do.  In fact, we say that a Shape is a Sprite.  Bitmaps are listed as "Bitmap > Sprite".  That means Bitmaps are Sprites also.  And the Sprite documentation has "Sprite > EventDispatcher".  Yup, that means that a Sprite can do everything that an EventDispatcher can do and that means that a Sprite is an EventDispatcher.</p>
+
+<p>This is a lot of stuff!  I don't expect you to learn the whole Lua standard libraries or the Gideros API in a week, it's impossible.  Instead, you need to know how to find them and how to read them and most importantly, how to understand them.  Since both the Lua documentation and the Gideros Reference Manual were written for people who pretty much know how to program already, it will be hard to understand everything they say at first.  To get past this, you need to learn to skip things you don't understand and ask questions when you are stuck.</p>
+
+<h2>Jumping Ball Example</h2>
+
+<p>To get further acquainted with textures and bitmaps, let's look at some examples that come with Gideros Studio.  First let's look at Jumping Ball.  Please look at it now, it is located in the folder "Gideros Studio/Examples/Graphics/Jumping Ball".  Within Gideros Studio choose "Open File" and navigate to that path and open "Jumping Ball.gproj".  Then run it.</p>
+
+<p>The very first thing it does is load a background image and put it on the stage.</p>
+
+<pre><code>local background = Bitmap.new(Texture.new("field.png"))
+stage:addChild(background)
+</code></pre>
+
+<p>Remember that everything in parenthesis happen first.  Texture.new() happens before Bitmap.new().  Notice it doesn't store the location of the texture in a variable but instead just gives the location to the Bitmap.new() command.  That's because the background texture isn't going to be used for anything else.</p>
+
+<p>Well, the bitmap isn't used for anything else either, so why not pass that directly to the stage:addChild() command like this?</p>
+
+<pre><code>stage:addChild(Bitmap.new(Texture.new("field.png")))
+</code></pre>
+
+<p>You could actually do this.  It is a little harder to look at, but it's perfectly valid.</p>
+
+<p>Then you see this code.</p>
+
+<pre><code>local ball = Bitmap.new(Texture.new("ball.png"))
+
+-- in Gideros, every created object is an ordinary Lua table
+-- therefore, we can store our custom fields in this table
+ball.xdirection = 1
+ball.ydirection = 1
+ball.xspeed = 2.5
+ball.yspeed = 4.3
+
+-- add the ball sprite to the stage
+stage:addChild(ball)
+</code></pre>
+
+<p>Normally when we modify an object variable it is because it changes the object behavior.  For example, if we had a person object we might set their first name and age and that will affect how the object behaves.  To find out what things we can modify we would look at the API documentation.</p>
+
+<p>In the above code it refers to ball.xdirection. If we looked at the documentation for Bitmap we wouldn't find an explanation for xdirection.  A Bitmap is a Sprite also so maybe it is there, but the Sprite class doesn't have xdirection either.  A Sprite is an EventDispatcher but it doesn't have xdirection either.</p>
+
+<p>What the heck is xdirection?  It is a variable that we are creating.  We can add variables to our objects just like we add them to a table.  In this case, we are adding xdirection, ydirection, xspeed, and yspeed.</p>
+
+<p>The rest of the Jumping Ball example is the onEnterFrame() function that moves the ball and when it reaches the edge of the screen it bounces it in the other direction.  The last line sets up the program so it calls onEnterFrame() every time the frame (the screen) is drawn.</p>
+
+<pre><code>stage:addEventListener(Event.ENTER_FRAME, onEnterFrame)
+</code></pre>
+
+<h2>Jumping Balls (plural) Example</h2>
+
+<p>The Jumping Balls (plural) example is almost identical to the Jumping Ball example with one big difference.  We turn the Ball into it's own class.</p>
+
+<p>The Ball class (the blueprint) is defined in the ball.lua file.  By putting this code in a different file we can use the ball in any game very easily.  Instead of copying and pasting the code from the main file, we just copy that ball.lua file to another game.  If we organize our Ball class right then there wont be anything in it that refers to anything else in the game.  That makes it really easy to just move it from project to project.</p>
+
+<p>Also notice that event listeners do not need to be in the main.lua file.  They can be in any file.  But for the event listener to work, it still needs to be executed.  In this case we add the event listener in Ball:init().  When does Ball:init() get called?  You wont find any examples with init() being callled.  The answer is when you call Ball.new(), Ball:init() will be called for you.  So when you call Ball.new() the event listener will be added.</p>
+
+<p>Here is our blueprint code for the Ball class.  These are the minimum things we need to create a class.</p>
+
+<pre><code>Ball = Core.class(Sprite)
+
+function Ball:init(texture)
+    local bitmap = Bitmap.new(Texture.new(texture))
+    self:addChild(bitmap)
+    -- etc...
+end
+</code></pre>
+
+<p>The code that creates the ball objects is in main.lua and looks like this.</p>
+
+<pre><code>local ball1 = Ball.new("ball1.png")
+local ball2 = Ball.new("ball2.png")
+-- etc...
+
+-- and add ball sprites to the stage
+stage:addChild(ball1)
+stage:addChild(ball2)
+-- etc...
+</code></pre>
+
+<p>Why did we turn Ball into its own class?  If you look at the Jumping Ball example, to create more than one ball you would have to duplicate the code for the single ball once for each extra ball.  Duplicated code is undesirable and leads to many problems.  We can avoid the duplication by using a class to contain the code for our ball.</p>
+
+<h2>For loops</h2>
+
+<p>We've seen for loops before but never talked about them.  Let's look at them now.  Here is an example loop.</p>
+
+<pre><code>for i=0,2 do
+    print( i )
+end
+</code></pre>
+
+<p>Let's unroll this loop.  If we wrote the lines in that loop one at a time, it would look like this.</p>
+
+<pre><code>i = 0
+    print( i )
+i = i + 1
+    print( i )
+i = i + 1
+    print( i )
+</code></pre>
+
+<p>It will print 0, 1, and then 2.</p>
+
+<p>A for loop starts with the first number, in this case 0, executes the code inside of it, in this case print( i ), and when it reaches the end of the loop, it starts over but it adds one to the counter.  It will keep counting up until it reaches the second number, in this case 2.</p>
+
+<p>When you have 2 loops inside of each other it looks like this.</p>
+
+<pre><code>for i=0,2 do
+    for j=0,2 do
+        print( i .. " " .. j )
+    end
+end
+</code></pre>
+
+<p>Let's unroll this loop.  I'm indenting based on the loop (i is the first indentation, j is the second indentation).</p>
+
+<pre><code>i = 0
+    j = 0
+        print( i .. " " .. j )
+    j = j + 1
+        print( i .. " " .. j )
+    j = j + 1
+        print( i .. " " .. j )
+i = i + 1
+    j = 0
+        print( i .. " " .. j )
+    j = j + 1
+        print( i .. " " .. j )
+    j = j + 1
+        print( i .. " " .. j )
+i = i + 1
+    j = 0
+        print( i .. " " .. j )
+    j = j + 1
+        print( i .. " " .. j )
+    j = j + 1
+        print( i .. " " .. j )
+</code></pre>
+
+<p>Notice that j starts over every time i increases.  It prints "0 0", "0 1", "0 2", "1 0", "1 1", "1 2", "2 0", "2 1", and "2 2".</p>
+
+<p>The next example uses a for loop just like this one.</p>
+
+<h2>Hierarchy Example</h2>
+
+<p>The hierarchy example shows how Sprites can be added to Sprites. When a Sprite object is added to another they become child and parent.  Wherever the parent goes, the child will be locked to the same position as the parent.  So when you use setPosition() on the parent, the child will move with the parent.  When you use setPosition() to the child, the parent will not move.</p>
+
+<p>The position of the child is based on the parent as well.  A good way to view this is if you put a cat on a rug and move the rug around the room.  Assuming the cat is a very lazy cat, it will stay on the same place on the rug even though you are moving the rug.</p>
+
+<p>The rug's position on the floor is based on the floor.  0, 0 would be the top left of the floor.  When you put the cat on the rug, the cat's position is based on the rug.  0, 0 is the top left corner of the rug.  The rug can be anywhere, but if the cat is at 0, 0, no matter where you move the rug the cat will stay at the top left corner of the rug.</p>
+
+<p>Now back to the example.  At first it creates the textures objects.</p>
+
+<pre><code>dot1tex = Texture.new("dot-1.png")
+dot2tex = Texture.new("dot-2.png")
+group1tex = Texture.new("group-1.png")
+group2tex = Texture.new("group-2.png")
+</code></pre>
+
+<p>Then it creates a sprite object.</p>
+
+<pre><code>group1 = Sprite.new()
+</code></pre>
+
+<p>Then it creates a bitmap with one of the textures and adds it to the group1 sprite.</p>
+
+<pre><code>group1:addChild(Bitmap.new(group1tex))
+</code></pre>
+
+<p>Then it performs a for loop like we looked at in the previous section and creates and adds more bitmaps to the sprite.</p>
+
+<pre><code>for i=0,3 do
+    for j=0,3 do
+        local dot = Bitmap.new(dot1tex)
+        dot:setPosition(i * 45 + 10, j * 45 + 60)
+        group1:addChild(dot)
+    end
+end
+</code></pre>
+
+<p>The tricky part here is reading the loop.  I'm going to unroll what the i and j values would look like in the setPosition().</p>
+
+<pre><code>dot:setPosition(0 * 45 + 10, 0 * 45 + 60)
+dot:setPosition(0 * 45 + 10, 1 * 45 + 60)
+dot:setPosition(0 * 45 + 10, 2 * 45 + 60)
+dot:setPosition(0 * 45 + 10, 3 * 45 + 60)
+dot:setPosition(1 * 45 + 10, 0 * 45 + 60)
+dot:setPosition(1 * 45 + 10, 1 * 45 + 60)
+dot:setPosition(1 * 45 + 10, 2 * 45 + 60)
+dot:setPosition(1 * 45 + 10, 3 * 45 + 60)
+dot:setPosition(2 * 45 + 10, 0 * 45 + 60)
+dot:setPosition(2 * 45 + 10, 1 * 45 + 60)
+dot:setPosition(2 * 45 + 10, 2 * 45 + 60)
+dot:setPosition(2 * 45 + 10, 3 * 45 + 60)
+dot:setPosition(3 * 45 + 10, 0 * 45 + 60)
+dot:setPosition(3 * 45 + 10, 1 * 45 + 60)
+dot:setPosition(3 * 45 + 10, 2 * 45 + 60)
+dot:setPosition(3 * 45 + 10, 3 * 45 + 60)
+</code></pre>
+
+<p>By performing the math it looks like this.</p>
+
+<pre><code>dot:setPosition(10, 60)
+dot:setPosition(10, 105)
+dot:setPosition(10, 150)
+dot:setPosition(10, 195)
+dot:setPosition(55, 60)
+dot:setPosition(55, 105)
+dot:setPosition(55, 150)
+dot:setPosition(55, 195)
+dot:setPosition(100, 60)
+dot:setPosition(100, 105)
+dot:setPosition(100, 150)
+dot:setPosition(100, 195)
+dot:setPosition(145, 60)
+dot:setPosition(145, 105)
+dot:setPosition(145, 150)
+dot:setPosition(145, 195)
+</code></pre>
+
+<p>All of these positions are relative to the parent sprite.  Then we set the main sprite position and add it to the stage.</p>
+
+<pre><code>group1:setPosition(10, 10)
+stage:addChild(group1)
+</code></pre>
+
+<p>Notice the parent sprite is added at 10, 10.  The position of the first bitmap is 10, 60 relative to the parent sprite.  The parent sprite is at 10, 10 relative to the stage.  If I were to move the parent sprite, all the children sprites within it will move as well.</p>
+
+<p>The full hierarchy example has 2 parent sprites.  The second parent does basically the same thing as the first one.  Go ahead, change the position of the parent sprites and see what happens.</p>
+
+<h2>Why use for loops?</h2>
+
+<p>The above section we unrolled the for loops and the code was a lot easier to read.  How come we used the loop instead of just writing out the positions of the bitmaps?</p>
+
+<p>So the section above was abbreviated, we left off 2 lines.  All 3 lines look like this.</p>
+
+<pre><code>local dot = Bitmap.new(dot1tex)
+dot:setPosition(i * 45 + 10, j * 45 + 60)
+group1:addChild(dot)
+</code></pre>
+
+<p>If we had unrolled the whole thing properly we would've had to write those 3 lines 16 times, which was the number of times the inner most loop ran.  That's a total of 48 lines.  And what if we wanted to change the spacing from 45 to 50?  We'd have to change all of those numbers.  That's a lot of work.</p>
+
+<p>In fact, go ahead and change the loop values and see what happens.  Change the <code>for i=0,3 do</code> to <code>for i=1,2 do</code>.  Change the <code>dot:setPosition(i * 45 + 10, j * 45 + 60)</code> to <code>dot:setPosition(i * 50 + 5, j * 50 + 50)</code>.  See what happens.</p>
+
+<p>Using for loops requires you to use your imagination and do lots of yucky math in your head.  Not that math is yucky, but typically the math in for loops is very yucky.  In fact, it often helps to print out the math so that you see what is really happening.  For example, this would print out the same math.</p>
+
+<pre><code>print(tostring(i * 45 + 10).." "..tostring(j * 45 + 60))
+</code></pre>
+
+<h2>Fonts Example</h2>
+
+<p>Take a look at the Font example.  There are 2 types of fonts.  The first is an image based font that has a text file that describes it.  Use Gideros Font Creator to make the 2 required files.  The .png image file contains all of the graphics for the font laid out in a grid.  The .txt file lets Gideros know where the characters are in the png file.  Make sure both of these files are part of your project if you use this type of font.</p>
+
+<p>To use the font create a font object and then you can use it with TextField.new().  So far all our TextFields used "nil" as the first parameter and that uses the Gideros' built-in system font.  Take a look at the Fonts example if you haven't already  Here is the relevant code.</p>
+
+<pre><code>local font2 = Font.new("arial.txt", "arial.png")
+
+local text1 = TextField.new(font1, "!!abcdefgh!!")
+</code></pre>
+
+<p>That's how easy it is to use an imaged based font!</p>
+
+<p>The second type of font is based on the font standard called TrueType Font.  TrueType Fonts have the file extension ".ttf".</p>
+
+<p>The difference between ttf fonts and image based fonts is that ttf fonts can be scaled very big and look good still.  When you scale image based fonts to be big you can see the pixels and they look bad.  The downside of ttf fonts is that they are more complicated to make.  In fact, you probably want to limit ttf fonts to ones made by others instead of trying to make your own.</p>
+
+<p>To use a ttf font, include the ttf file in your project and use this code, which looks almost identical to the code above.</p>
+
+<pre><code>local font1 = TTFont.new("arial.ttf", 14)
+
+local text1 = TextField.new(font1, "!!abcdefgh!!")
+</code></pre>
+
+<p>The Fonts example includes the arial.ttf file, but it doesn't use it in the main.lua file.  Change one of the lines to use the TTFont instead of Font class.  Vary the size of the font to see what it does.</p>
+
+<h2>Sounds</h2>
+
+<p>Games must have sounds.  Sounds work very similarly to images, you load them into memory and then you play them.  You can load .wav files for short sounds or .mp3 files for song files.</p>
+
+<pre><code>local sound = Sound.new("soundFile.mp3")
+sound:play()
+</code></pre>
+
+<p>You can optionally specify where the sounds starts in milliseconds and if you want to repeat it.</p>
+
+<pre><code>sound:play(1000, 0)
+</code></pre>
+
+<p>If you want the sound to repeat forever, then use, use math.huge for the repeat value.</p>
+
+<pre><code>sound:play(0, math.huge)
+</code></pre>
+
+<h2>Audio Example</h2>
+
+<p>Let's look at an audio example.  Open up the example project located in "Gideros Studio/Examples/Audio/Audio Example".  In this example the audio code is in the soundbutton.lua file.  The relevant part is the following.</p>
+
+<pre><code>local sound = Sound.new(soundfile)
+button:addEventListener("click", function() sound:play() end)
+</code></pre>
+
+<p>We will look at the button.lua file in the chapter 6 so don't worry about that for now.  But this is how easy it is to play sounds!</p>
+
+<h2>Music Player Example</h2>
+
+<p>The music player example displays a play and pause button and a time indicator.  Unfortunately the time indicator doesn't allow us to drag to a certain spot in the song.  We could add it, but we haven't looked at how to get user input yet (we will in chapter 6).</p>
+
+<p>Notice that <code>sound:play()</code> actually returns something that we can point to with a variable.  The main difference between this music player and the audio example above is that we remember the output of the <code>sound:play()</code> command.  By doing this we can pause the sound.  Here is the code that performs the pausing and playing.  Notice that we have to keep track of the sound, the channel the sound plays on, whether the sound is playing or not, and the last position of the song.</p>
+
+<pre><code>local sound = Sound.new("Pitx_-_Black_Rainbow.mp3")
+
+-- and start playing
+local channel = sound:play()
+
+local playing = true
+
+local lastPosition = 0
+
+function onPlayClick()
+    -- if not playing, start playing from the last position
+    if playing == false then
+        channel = sound:play(lastPosition)
+        playing = true
+    end
+end
+
+function onPauseClick()
+    -- if playing, save the last position and stop the channel
+    if playing == true then
+        lastPosition = channel:getPosition()
+        channel:stop()
+        playing = false
+    end
+end
+</code></pre>
+
+<p>The other interesting thing is how we update the position marker every second.  In this code we get the current position of the song with <code>channel:getPosition()</code> and then we divide it by the total length of the song with <code>sound:getLength()</code>.  This will give us a number between 0 and 1.  For example, if the current spot is 30 seconds and the song is 60 seconds then 30/60 is .5, or halfway.  We then we place the marker that distance along the bar (adjusting by -4 for the size of the marker).</p>
+
+<pre><code>local function onTimer()
+    local sec = math.floor(channel:getPosition() / 1000);
+    time:setText(seconds2str(sec))
+
+    local t = channel:getPosition() / sound:getLength()
+
+    marker:setY(bar:getY() - 9)
+    marker:setX(bar:getX() + t * bar:getWidth() - 4)
+end
+</code></pre>
+
+<h2>Making Sound Effects</h2>
+
+<p>The easiest way to make game sounds is with the great application <a href="http://www.drpetter.se/project_sfxr.html">SFXR</a>.  There is a Mac version called <a href="http://thirdcog.eu/apps/cfxr">CFXR</a>.  Here is a flash version that will run in a web browser: <a href="http://www.bfxr.net/">http://www.bfxr.net/</a>.</p>
+
+<p>You can also get free sounds from <a href="http://www.freesound.org/">http://www.freesound.org/</a>.</p>
+
+<h2>Closing Remarks</h2>
+
+<p>This lesson covered a lot of material.  We looked at how Gideros allows us to use images, fonts, and sounds and we looked at the Gideros documentation of these things.  We also looked at Lua's tables, classes, and for loops.  We also looked at several example projects.  This was a lot of information and far more detailed than the previous lessons.</p>
+
+<p>Programming graphics can be a lot of fun because a fundamental part of computers is displaying visual feedback to users.  Sounds are also a lot of fun.  I've seen some applications that have nothing but sounds (hello, fart apps?).</p>
+
+<p>Programming can be very boring and mind numbing sometimes.  Programming graphics has always been fun for me though.  It's almost always harder than I've expected, but in the end it has been worth it.</p>
+
+<p>Published: 2012-06-21, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "mobile-game-programming-lesson-4.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

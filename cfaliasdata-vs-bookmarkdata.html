@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>CFAliasData vs BookmarkData - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li class="active"><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>CFAliasData vs BookmarkData</h1>
+
+<div class="horizontal_line"></div>
+
+<h2>CFAliasData</h2>
+
+<p>A long time ago I wrote a utility named dockit to help manage the dock.  I didn't know what I was doing then and I never did finish the project.  The main point of dockit was to generate pesky CFAliasData, which required some Carbon calls (FSPathMakeRef and FSNewAlias).</p>
+
+<p>I eventually figured out that the dock plist didn't actually require CFAliasData but would create it from a simple path if it was present.  And finally a month or so ago finally started managing my dock with <a href="https://github.com/kcrawford/dockutil">dockutil</a>, written by Kyle Crawford.</p>
+
+<p>That takes care of the dock, but what about the Sidebar?  ~/Library/Preferences/com.apple.sidebarlists.plist still uses alias data even in 10.7, and it does NOT have a path key.  I've just avoided managing it.  But yes, this issue has been present for a long time.</p>
+
+<p>I finally cleaned up the dockit code so that all it does is print out the CFAliasData for whatever path is passed to it.  This code is not pretty, I understand it, but I got it from somewhere else, so I don't really understand it that well.  And I don't exactly know C or Carbon API's well. There is very likely a much better way to do this.  I would LOVE if someone could clean this code up.  I hate messy looking code.  But anyway, it works.</p>
+
+<p>At the bottom of this article I'm putting the source code for AliasData.c.  Sorry there is no GitHub link or nothing, I am not really good at that stuff.</p>
+
+<h2>Bookmarks</h2>
+
+<p>There is a new kid in town called BookmarkData (since 10.6).  I've bumped into it a few places but mainly in the LaunchPad preferences, which really aren't preferences, but a sqlite3 database.  Yes, I actually figured out how to manage LaunchPad with a perl script and it's not simple.  But as part of it, you need to create the BookmarkData.  This is much easier than creating AliasData because in a perl script you can call Cocoa code using the PerlObjCBridge.  It's really easy in fact.</p>
+
+<pre><code>use Foundation;
+my $path = "/"
+if ( -e $path ) {
+    my $myFileURL = NSURL-&gt;fileURLWithPath_( $path );
+    my $bookmark_data = $myFileURL-&gt;bookmarkDataWithOptions_includingResourceValuesForKeys_relativeToURL_error_(1, 0, 0, 0);
+    my $bookmark_hex = $bookmark_data-&gt;description()-&gt;UTF8String();
+    $bookmark_hex =~ s/[&lt;&gt; ]//g;
+    my $bookmark_binary = pack( 'H*', $bookmark_hex );
+}
+</code></pre>
+
+<p>That's way easier than AliasData!  The main API is  <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/Reference/Reference.html">bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:</a>.  I pass that call a "1", and I think that's because I'm creating a "NSURLBookmarkCreationMinimalBookmark".  Here's the enum for that value.  I think 1 represents NSURLBookmarkCreationMinimalBookmark anyway.  It works for LaunchPad anyway.</p>
+
+<pre><code>NSURLBookmarkCreationPreferFileIDResolution            = ( 1UL &lt;&lt; 8 ),
+NSURLBookmarkCreationMinimalBookmark                   = ( 1UL &lt;&lt; 9 ),
+NSURLBookmarkCreationSuitableForBookmarkFile           = ( 1UL &lt;&lt; 10 ),
+NSURLBookmarkCreationWithSecurityScope                 = ( 1UL &lt;&lt; 11 ),
+NSURLBookmarkCreationSecurityScopeAllowOnlyReadAccess  = ( 1UL &lt;&lt; 12 )
+</code></pre>
+
+<h2>AliasData.c</h2>
+
+<p>Here's the source code for AliasData.c.  Last updated on 2012.03.19.</p>
+
+<pre><code>/*
+gcc -arch i386 -O3 -o AliasData AliasData.c -framework Carbon
+*/
+
+#   import &lt;Carbon/Carbon.h&gt;
+
+int makeDockItem(char *filepath, int start, int end)
+{
+    int                     i;
+    Boolean                 isAlias, isFolder;
+    FSRef                   appFSRef;
+    AliasHandle             myAliasH;
+    OSStatus                anErr = noErr;
+    SInt32                  value = 0;
+    CFDataRef               tCFDataRef;
+    CFDataRef               printMe;
+    CFDictionaryRef         elementCFDictionaryRef;
+    void*                   keys[1];
+    void*                   values[1];
+    CFStringRef             str;
+    CFStringInlineBuffer    inlineBuffer;
+    CFIndex                 cnt;
+    CFIndex                 length;
+
+    // Make sure it doesn't end with "/"
+    for ( i = 0; filepath[ i ] != '\0'; i++ ) { }
+    if (filepath[ i - 1 ] == '/') {
+        filepath[ i - 1 ] = '\0';
+    }
+
+    // Make an FSRef for the file to be added
+    anErr = FSPathMakeRef(filepath, &amp;appFSRef, NULL);
+    if (anErr == fnfErr) {
+        fprintf(stderr, "File not found.\n");
+        exit(1);
+    } else if (anErr != noErr) {
+        fprintf(stderr, "Trouble with the file. FSPathMakeRef error %d.\n", (int)anErr);
+        exit(1);
+    }
+
+    // Make sure the file isn't an alias, and if it is resolve it.
+    anErr = FSIsAliasFile (&amp;appFSRef, &amp;isAlias, &amp;isFolder);
+    if (anErr) {
+        fprintf(stderr, "Error checking if the file is an alias or not.\n");
+        exit(1);
+    }
+    if (isAlias) {
+        anErr = FSResolveAliasFileWithMountFlags(&amp;appFSRef, TRUE, &amp;isFolder, &amp;isAlias, kResolveAliasFileNoUI);
+        if (anErr) {
+            fprintf(stderr, "Alias could not resolved (FSResolveAliasFileWithMountFlags, the alias probably points to a non-mounted file system), will use the alias file.\n");
+        }
+    }
+
+    //
+    // Generate the xml stuff
+    //
+
+    // Create the _CFURLAliasData value for the new app
+    if (noErr != (anErr = FSNewAlias(NULL,&amp;appFSRef,&amp;myAliasH)))
+    {
+        fprintf(stderr, "_CFURLAliasData could not be generated (FSNewAlias error: %ld).\n", anErr);
+        return 0;
+    }
+    tCFDataRef = CFDataCreate(kCFAllocatorDefault,(UInt8*) *myAliasH,GetHandleSize((Handle) myAliasH));
+    if (NULL == tCFDataRef)
+    {
+        fprintf(stderr, "_CFURLAliasData could not be generated (CFDataCreate failed, tCFDataRef == NULL).\n");
+        return 0;
+    }
+
+    keys[0] = (void*) CFSTR("");
+    values[0] = (void*) tCFDataRef;
+
+    elementCFDictionaryRef = CFDictionaryCreate(kCFAllocatorDefault,(const void**) &amp;keys,(const void**) &amp;values,1, &amp;kCFTypeDictionaryKeyCallBacks, &amp;kCFTypeDictionaryValueCallBacks);
+    if (NULL == elementCFDictionaryRef)
+    {
+        fprintf(stderr, "CFDictionaryCreate failed (elementCFDictionaryRef == NULL).\n");
+        return 1;
+    }
+
+    // Print the sucker.
+    printMe = CFPropertyListCreateXMLData(NULL, elementCFDictionaryRef);
+    str = CFStringCreateFromExternalRepresentation(NULL, printMe, kCFStringEncodingUTF8);
+    length = CFStringGetLength(str);
+    CFStringInitInlineBuffer(str, &amp;inlineBuffer, CFRangeMake(0, length));
+
+    for (cnt = start; cnt &lt; (length - end); cnt++) {
+        UniChar ch = CFStringGetCharacterFromInlineBuffer(&amp;inlineBuffer, cnt);
+        printf ("%c", ch);
+    }
+
+    CFRelease(str);
+    CFRelease(printMe);
+    CFRelease(tCFDataRef);
+    CFRelease(elementCFDictionaryRef);
+
+    return 0;
+}
+
+int
+main(int argc, char *argv[])
+{
+    int i;
+
+    if ( argc &lt; 2 ) {
+        fprintf(stderr, "Usage: AliasData &lt;path&gt; [...&lt;path&gt;]\n");
+        exit( 1 );
+    }
+
+    // Get the file to be added
+    for (i = 1; i &lt; argc; i++) {
+        makeDockItem(argv[i], 192, 26); // This gets rid of the beginning and end of the Plist file.
+    }
+    return 0;
+}
+</code></pre>
+
+<h2>Using AliasData</h2>
+
+<p>I'm not going to write a full script to manage the sidebar, but I'll show how to load the current sidebar and add an item (without checking to see if it exists, I'm just doing this as an FYI).  I'll be using my <a href="http://www.magnusviri.com/computers/perlplist.html">perlplist.pl</a> code to manage the plist file.  I even tested this a little and it works.  I couldn't run this script while logged in though.  I don't know what process is in charge of reading the sidebar prefs but killing Finder and the Dock didn't refresh the prefs.</p>
+
+<pre><code>#!/usr/bin/perl
+
+$debug = 1;
+
+use Foundation;
+use lib "/usr/local/lib/";
+require "perlplist.pl";
+
+my $alisDataPath = "/usr/local/bin/AliasData";
+
+#
+my $item_to_add = $ARGV[0];
+if ( ! -e $item_to_add ) {
+    die "$item_to_add doesn't exist.";
+}
+
+# Get the item name
+my $name = $item_to_add;
+$name =~ s/\/+$//; # Remove any trailing /'s
+$name =~ s/.*\///; # Remove everything up to the last /
+
+# Get the alias data
+my $aliasDataBase64 = `$alisDataPath \"$item_to_add\"`;
+$aliasDataBase64 =~ s/\s+//g;
+$aliasDataBin = cocoaDataFromBase64( $aliasDataBase64 );
+
+# Read the plist file
+my $filepath = defined $ARGV[1] ? $ARGV[1] : "/Users/test/Library/Preferences/com.apple.sidebarlists.plist";
+my $dict;
+if ( -e $filepath ) {
+    $dict = loadDefaults( $filepath );
+} else {
+    die "Can't open $filepath.";
+}
+
+# I got this data from com.apple.sidebarlists.plist
+my $generic_folder_icon = cocoaDataFromBase64('SW1nUgAAABwAAAAAU1lTTAAAABAAAAAAZmxkcg=='),
+
+# Make the entry
+my $item = NSMutableDictionary-&gt;dictionary();
+setPlistObject( $item, "Alias", $aliasDataBin );
+setPlistObject( $item, "Name", $name );
+setPlistObject( $item, "Icon", $generic_folder_icon );
+
+printObject( $item ) if $debug;
+
+# Find out how many items there are.
+my $favoritesNSArray = getPlistObject($dict, "favorites", "VolumesList");
+my $count = $favoritesNSArray-&gt;count;
+
+setPlistObject($dict, "favorites", "VolumesList", $count+1, $item );
+saveDefaults( $dict, $filepath );
+</code></pre>
+
+<p>Published: 2012-03-19, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "cfaliasdata-vs-bookmarkdata.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

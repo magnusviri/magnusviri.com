@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Mounting VirtualBox HFS+ VDI files on OS X - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li class="active"><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Mounting VirtualBox HFS+ VDI files on OS X</h1>
+
+<div class="horizontal_line"></div>
+
+<p>Originally this post was much shorter.  I added more than 3 times the information and added a whole new page discussing the UEFI interactive shell.  I wrote this back in Sept 2015 but am just posting it in Apr 2016.  I never posted this because after using VM's I created this way for a few days they quit booting.  So, THIS DIDN'T WORK FOR ME.  DO NOT DO THIS.  IT DOESN'T WORK.</p>
+
+<p>The reason I am posting it is because it's a lot of interesting info.  Maybe someone else will figure out how to do this.  Here's the post.</p>
+
+<hr />
+
+<h2>My motivation</h2>
+
+<p>I wanted to be able to create OS X VirtualBox images quickly and easily without having to run an OS X installer every time.  I tried cloning existing images and resizing them but when I booted the enlarged images Disk Utility would never let me expand the size of the volume.</p>
+
+<p>I also wanted to be able to mount the guest filesystem on the host.</p>
+
+<p>Read on if you want to know how to mount the filesystem and how to make that filesystem bootable.</p>
+
+<p>I tested this all running VirtualBox 5.0.2, Mac OS X 10.9 as the host, and Mac OS X 10.6 as the guest.  I'll try to update this if I find new information as I use this.  All of these things are done on the host unless otherwise stated.</p>
+
+<h2>Mounting fixed size disks only (no Dynamic disks)</h2>
+
+<p>You cannot mount dynamic disks, they must be fixed.  Use this command to convert a dynamic file into a new fixed file.</p>
+
+<pre><code>VBoxManage clonemedium disk old.vdi new.vdi --variant Fixed
+</code></pre>
+
+<p>When you've created a new fixed format disk image you need to go into the settings for each VM that uses the dynamic disk and replace it with the newly created fixed disk.</p>
+
+<h2>Unformatted disks can not be mounted</h2>
+
+<p>If you create a new disk be aware it is unformatted and cannot be mounted.  You need to boot a VM and format the new disk within a guest.  I don't know of any way to format the disk from the host.</p>
+
+<p>Note, when you format a drive I believe it is missing some HFS volume header information that makes it bootable.  The OS X Installer "DVD" (the thing you create to install OS'es) fixes this and makes a disk bootable.  But the <code>bless</code> command or Startup Disk in System Preferences does not make a disk bootable.</p>
+
+<p>I've also found that if you use Carbon Copy Cloner to block copy a bootable disk to a newly formatted disk that the newly formatted disk will be bootable, even if the source disk, which was once bootable, has had all the files deleted.  I'll describe this later on.</p>
+
+<p>There are probably other ways to make a newly formatted disk bootable, such as using Disk Utility and ASR.</p>
+
+<h2>Mounting the main partition</h2>
+
+<p>You mount disks with the <code>hdid</code> command and must use the section flag.  The <code>hdid</code> command will not mount files ending with ".vdi".  The easiest workaround is to use a symlink that ends with ".img".</p>
+
+<pre><code>cd /path/to/folder/containing/vdi
+ln -s disk.vdi disk.img
+</code></pre>
+
+<p>Use section 0x1000 to mount all HFS disks (I found this by trying 1-2000).</p>
+
+<pre><code>hdid -section 0x1000 disk.img
+</code></pre>
+
+<p>This disk will have permissions disabled.  You want to enable permissions using the Finder.</p>
+
+<p>You can unmount the disk using the Finder or one of these commands.</p>
+
+<pre><code>diskutil unmount /Volumes/EFI
+</code></pre>
+
+<p>or</p>
+
+<pre><code>umount /Volumes/&lt;Name-of-disk&gt;
+</code></pre>
+
+<h2>Mounting the EFI and Recovery partitions</h2>
+
+<p>OS X creates more than one partition when you format it.  Your disk will have an EFI partition and it might have a Recovery partition.  You can mount those on the host as well.</p>
+
+<p>First, run <code>hdid -section 0x1000 disk.img</code> if you haven't already.</p>
+
+<p>Then find out what disk it is by typing <code>diskutil list</code> in Terminal.</p>
+
+<pre><code>&gt; diskutil list
+...
+/dev/disk8
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *33.0 GB    disk8
+   1:                        EFI EFI                     209.7 MB   disk8s1
+   2:                  Apple_HFS 10.11                   32.1 GB    disk8s2
+   3:                 Apple_Boot Recovery HD             650.0 MB   disk8s3
+</code></pre>
+
+<p>Use <code>diskutil</code> to mount them.  The disks will have permissions disabled.</p>
+
+<pre><code>diskutil mount /dev/disk8s1
+diskutil mount /dev/disk8s3
+</code></pre>
+
+<p>Or you can use the <code>mount</code> command.  If you use <code>mount</code> the disks will have permissions enabled.</p>
+
+<pre><code>mkdir /Volumes/EFI
+mount_msdos /dev/disk8s1 /Volumes/efi
+
+mkdir /Volumes/EFI
+mount_hfs /dev/disk8s1 /Volumes/efi
+</code></pre>
+
+<p>If you want to forbid writing, you can modify the <code>diskutil</code> or <code>mount</code> commands like this.</p>
+
+<pre><code>diskutil mount readOnly /dev/disk8s1
+</code></pre>
+
+<p>or</p>
+
+<pre><code>mkdir /Volumes/EFI
+mount_msdos -o ro /dev/disk8s1 /Volumes/efi
+</code></pre>
+
+<p>You can use the Finder or one of these commands to unmount.</p>
+
+<pre><code>diskutil unmount /Volumes/EFI
+</code></pre>
+
+<p>or</p>
+
+<pre><code>umount /Volumes/EFI
+</code></pre>
+
+<p>If you want to play around with Disk Utility to see the hidden partitions you can use this command to show the Debug menu.</p>
+
+<pre><code>defaults write com.apple.DiskUtility DUDebugMenuEnabled 1
+</code></pre>
+
+<p>Then you can select "Debug" -&gt; "Show every partition".</p>
+
+<p>I didn't try formatting these disks with Disk Utility from the host.  Who knows what will happen.</p>
+
+<h2>Empty EFI system partition (ESP).</h2>
+
+<p>The EFI partition is also know as the <a href="https://en.wikipedia.org/wiki/EFI_System_partition">EFI system partition</a> (ESP).  Apple plainly says that they do <a href="https://developer.apple.com/library/mac/technotes/tn2166/_index.html#//apple_ref/doc/uid/DTS10003927-CH1-SUBSECTION6">"not currently use it for anything" and that they create in case they "ever need to use ESP-based drivers."</a></p>
+
+<p>Apple does use it <a href="https://en.wikipedia.org/wiki/EFI_System_partition#Usage">to perform firmware updates</a>.  In my ESP I have these files.  I don't remember running a firmware update but I probably have.</p>
+
+<p>d /Volumes/EFI/EFI
+d /Volumes/EFI/EFI/APPLE
+d /Volumes/EFI/EFI/APPLE/EXTENSIONS
+f /Volumes/EFI/EFI/APPLE/EXTENSIONS/Firmware.scap</p>
+
+<h2>The UEFI Interactive Shell</h2>
+
+<p>Earlier I mentioned that newly formatted disks are not bootable.  What that really means is if you try to boot a disk that hasn't been made bootable some way, it will display the UEFI Interactive Shell instead of the normal boot.  I am guessing this is VirtualBox's Interactive Shell since OS X doesn't include one.</p>
+
+<p>Another problem I had is that the VM wouldn't let go of the mouse or keyboard.  I got around it by pressing command-option-esc.  It would open the Force Quit window and then I could use my mouse.</p>
+
+<p>I was so intrigued by this that I had to create another page discussing <a href="virtualbox-uefi.html">UEFI's Interactive Shell</a>.</p>
+
+<p>I think the reason it went to the shell was because the <a href="http://wiki.osx86project.org/wiki/index.php/Apple's_EFI_implementation">"OS loader is usually located through a file ID pointer in the HFS+ volume header."</a>  If that's right, the volume header was missing some info that can't be copied by copying the files, it has to be some sort of block copy.  Another comment seems to indicate that updating the volume header from userspace <a href="http://www.gossamer-threads.com/lists/linux/kernel/1486617?page=last">"is impractical since the kernel will write back the original values on unmount"</a>.  I have no idea if that is what is happening here but it could be.</p>
+
+<p>Running the OS installer over my installed image fixed it (which defeated the whole goal).</p>
+
+<p>But I also figured out that Carbon Copy Cloner fixed it too.  I'm guessing that Disk Image and perhaps ASR might also fix this, but I haven't tried it yet.</p>
+
+<h2>The Carbon Copy Cloner solution</h2>
+
+<p>To solve this with Carbon Copy Cloner you have to start with a bootable image that was created by the OS X installer "DVD".  I cloned one that I had and then I deleted all the files on it.  Yup, all of them.</p>
+
+<p>Attach that disk to a bootable VM that also has the newly formatted disk (so it will have 3 disks).  Then boot that VM and run CCC from within the guest and clone the previously bootable disk to the newly formatted disk.  Make sure you erase the destination.  It only took a few seconds because the source disk was empty.</p>
+
+<p>I was able to copy an OS onto this volume and it booted fine.</p>
+
+<h2>Conclusion</h2>
+
+<p>It's 7 months since I wrote this.  I didn't publish all of this when I wrote it because I kept having errors on the disks I created this way and they quit booting.  I tried to fix them but nothing worked.  I eventually decided not to do this anymore.  YOU HAVE BEEN WARNED.</p>
+
+<p>Published: 2015-09-08, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "virtualbox-vdi-mount.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

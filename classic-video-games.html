@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Classic Video Games - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li class="active"><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Classic Video Games</h1>
+
+<div class="horizontal_line"></div>
+
+<p>YouTube videos of old video games, mostly 16-bit, maybe a modern one in here.</p>
+
+<p>I get very nostalgic when I watch this stuff.  I have heard that little kids' just have to be given enough story before their imaginations run wild.  That is very true of some of these games.  But many of them still look fun today.</p>
+
+<p>Some of these are Atari 400, original Mac, C64, Amiga, Genesis and SNES.  Here are games that I remember very strongly.</p>
+
+<p>Star Raider</p>
+
+<!-- <iframe width="450" height="253" src="http://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe> -->
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/A1Q6ueWYqgA?version=3">
+<param name="movie" value="http://www.youtube.com/v/A1Q6ueWYqgA?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Dark Castle</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/KCkbp4wurW0?version=3">
+<param name="movie" value="http://www.youtube.com/v/KCkbp4wurW0?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Shufflepuck Café</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/vVtYVyyX5NY?version=3">
+<param name="movie" value="http://www.youtube.com/v/vVtYVyyX5NY?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Crystal Quest</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/OEt7OMzvxn0?version=3">
+<param name="movie" value="http://www.youtube.com/v/OEt7OMzvxn0?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Boulder Dash</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/oMIqMU7oI_g?version=3">
+<param name="movie" value="http://www.youtube.com/v/oMIqMU7oI_g?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p><a href="http://codeincomplete.com/projects/boulderdash/">Play Boulder Dash online</a>!</p>
+
+<p>M.U.L.E.</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/p2bOWEGVMuw?version=3">
+<param name="movie" value="http://www.youtube.com/v/p2bOWEGVMuw?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Rampart</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/jNHF2SS-xX8?version=3">
+<param name="movie" value="http://www.youtube.com/v/jNHF2SS-xX8?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Elite</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/FRjaZsVRtgc?version=3">
+<param name="movie" value="http://www.youtube.com/v/FRjaZsVRtgc?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Archon</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/wdfIfC9BHwQ?version=3">
+<param name="movie" value="http://www.youtube.com/v/wdfIfC9BHwQ?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Test Drive</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/drLKG0EKKMg?version=3">
+<param name="movie" value="http://www.youtube.com/v/drLKG0EKKMg?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p><a href=" http://loderunnerwebgame.com/game/">Lode Runner</a> (CLICK TO PLAY IT!)</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/6055aukYx20?version=3">
+<param name="movie" value="http://www.youtube.com/v/6055aukYx20?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Jumpman</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/ImluAY58D2o?version=3">
+<param name="movie" value="http://www.youtube.com/v/ImluAY58D2o?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Airborn Rangers</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/6Ugz2r4A3SY?version=3">
+<param name="movie" value="http://www.youtube.com/v/6Ugz2r4A3SY?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Rad Warrior (I've been trying to find this game since I found emulators 10 years ago...)</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/6hyFZDO0IVc?version=3">
+<param name="movie" value="http://www.youtube.com/v/6hyFZDO0IVc?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Prince of Persia (more about this below)</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/o7NOf-aTCfw?version=3">
+<param name="movie" value="http://www.youtube.com/v/o7NOf-aTCfw?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Rescue on Fractalus</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/FbZ-chrOgGg?version=3">
+<param name="movie" value="http://www.youtube.com/v/FbZ-chrOgGg?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>BC Quest For Tires</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/1BiMYjVvhxE?version=3">
+<param name="movie" value="http://www.youtube.com/v/1BiMYjVvhxE?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>The Bards Tale</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/y8VubXKOdTo?version=3">
+<param name="movie" value="http://www.youtube.com/v/y8VubXKOdTo?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Winter Games</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/xpZGD6m4xOg?version=3">
+<param name="movie" value="http://www.youtube.com/v/xpZGD6m4xOg?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Movie Monster Game</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/Jbuxe4MRxEU?version=3">
+<param name="movie" value="http://www.youtube.com/v/Jbuxe4MRxEU?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Sentinel</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/9V_pgo3vgiI?version=3">
+<param name="movie" value="http://www.youtube.com/v/9V_pgo3vgiI?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Starglider</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/iY1TmC1jFLE?version=3">
+<param name="movie" value="http://www.youtube.com/v/iY1TmC1jFLE?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Law Of The West</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/IrMk9RyCWKI?version=3">
+<param name="movie" value="http://www.youtube.com/v/IrMk9RyCWKI?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Goonies</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/2ZbYAQ2aU6o?version=3">
+<param name="movie" value="http://www.youtube.com/v/2ZbYAQ2aU6o?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Racing Destruction Set</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/Xw3R-_flF4Y?version=3">
+<param name="movie" value="http://www.youtube.com/v/Xw3R-_flF4Y?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Battle Chess</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/hzOZmaIqsF8?version=3">
+<param name="movie" value="http://www.youtube.com/v/hzOZmaIqsF8?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Another World (I never got far in this one but it was such a different sort of game)</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/Zgkf6wooDmw?version=3">
+<param name="movie" value="http://www.youtube.com/v/Zgkf6wooDmw?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>PSI-5 Trading Company (I have been looking for this for so long, I finally found it tonight!)</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/aMs6YvpWc3o?version=3">
+<param name="movie" value="http://www.youtube.com/v/aMs6YvpWc3o?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/Yre8waZlJSI?version=3">
+<param name="movie" value="http://www.youtube.com/v/Yre8waZlJSI?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>I'm not including links to Skate or Die, the many pinball games, Oregan Trails, Lemonade stand, Pitfall, Pong (I had one amazingly--but it was a hand me down lol), some game about robbing fort knox, a mouse game on the Vic-20 that played the 3 blind mice song (whatever it's name was), and a biplane game on the Vic-20.  I can't believe I can still remember that stuff.  I remember this stuff better than I remember my vacations.</p>
+
+<p>Oh and I forgot Zork, and Wumpus, Gorf, Defender, Zaxxon, oh no someone stop me!!</p>
+
+<h2>Consoles</h2>
+
+<p>Red Zone</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/9Efh2Mbygtw?version=3">
+<param name="movie" value="http://www.youtube.com/v/9Efh2Mbygtw?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Zombies ate my Neighbors</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/_NTo94ty0yA?version=3">
+<param name="movie" value="http://www.youtube.com/v/_NTo94ty0yA?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/zE7gZpKlj3s?version=3">
+<param name="movie" value="http://www.youtube.com/v/zE7gZpKlj3s?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/-14a9GEby0E?version=3">
+<param name="movie" value="http://www.youtube.com/v/-14a9GEby0E?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Super Metroid</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/RXVA_RDzxss?version=3">
+<param name="movie" value="http://www.youtube.com/v/RXVA_RDzxss?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Oh my gosh, so many games...</p>
+
+<h2>Arcade</h2>
+
+<p>R-Type (probably my all time favorite game, I still play it on my iPad with iMame4All and an iCade)</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/pVWtI0426mU?version=3">
+<param name="movie" value="http://www.youtube.com/v/pVWtI0426mU?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>R-Type II (probably my all time favorite game, I still play it on my iPad with iMame4All and an iCade)</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/T2ms0lORGiU?version=3">
+<param name="movie" value="http://www.youtube.com/v/T2ms0lORGiU?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Smash TV</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/fFRZcWAdawE?version=3">
+<param name="movie" value="http://www.youtube.com/v/fFRZcWAdawE?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>TMNT</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/XmrIDdSx0mo?version=3">
+<param name="movie" value="http://www.youtube.com/v/XmrIDdSx0mo?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<p>Then there was Marble Madness, Centipede, Tron, the Star Wars games, Rampage, on and on.</p>
+
+<h2>Current Games</h2>
+
+<p>As far as current games go, Smash Bro's on the Wii was cool.  I can't think of any other games that I really liked too much.  Oh, the Tomb Raider series is always fun.</p>
+
+<p>And then there is Halo.  Are there even games on Xbox besides Halo?...</p>
+
+<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/HGrkmDOVbXE?version=3">
+<param name="movie" value="http://www.youtube.com/v/HGrkmDOVbXE?version=3" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+</object>
+
+<h2>Price of Persia</h2>
+
+<p>I've been reading the journals about the making of Prince of Persia. Blast from the past. Amazing. There are so many good quotes in here that are still applicable today it's amazing...</p>
+
+<p><a href="http://jordanmechner.com/wp-content/uploads/resources/POP_sample.pdf">Get a pdf sample</a></p>
+
+<p>Page 15:</p>
+
+<blockquote>
+<p>She said that Broderbund is a really nice, warm, friendly place to work, but for programmers it’s actually not that great a deal. The older ones, like Chris and David, are starting to get scared, because programming’s the only marketable skill they have, and it’s a young man’s game. The new crop of kids coming up are willing to work harder and cheaper, and don’t have girlfriends or families yet to cut into their working hours. And nobody knows how long the games market will be around, or what it’ll be like next year.</p>
+</blockquote>
+
+<p>Page 17:</p>
+
+<blockquote>
+<p>Then a strange thing happened. I started getting images in my head of the characters: the Sultan. the Princess. the Boy. I saw the scenes in my mind as if it were a Disney movie. So I wrote up a scenario — churned it out in an hour.</p>
+</blockquote>
+
+<p>Page 31:</p>
+
+<blockquote>
+<p>Visited Danny Gorlin. He’s sunk more money into developing the development system to end all development systems. Saw the final version of Airheart. It’s got some staggering special effects and it’s no fun at all to play.</p>
+<p>Danny thinks spending a million bucks on a development system will give him an edge. He might be right. But the best Apple games have been developed on a plain Apple II with two disk drives. Lucasfilm spent a million bucks to make Rescue on Fractalus and Ball Blaster, and those games aren’t signicantly better than, or different from, the competition. The real strides forward – Raster Blaster, Choplifter, (what the hell) Karateka – were the work of solo programmers with no special resources.</p>
+</blockquote>
+
+<p>Page 37:</p>
+
+<blockquote>
+<p>Everyone in the office has been playing a lot of Tetris – a Russian submission for the IBM PC. It’s a classic, like Breakout. But I don’t think Broderbund is going to publish it. The knaves.</p>
+</blockquote>
+
+<p>Published: 2012-05-10, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "classic-video-games.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

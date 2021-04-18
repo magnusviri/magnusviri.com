@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>The VirtualBox Interactive Shell - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li class="active"><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>The VirtualBox Interactive Shell</h1>
+
+<div class="horizontal_line"></div>
+
+<p>This post is unfinished and unresolved but I've got a lot of information so I thought I'd post it anyway.  I wrote it back in Sept 2015 but am just posting it in Apr 2016.</p>
+
+<p>The reason why it was unresolved is because I kept having errors on disks I created this way, so I decided it wasn't worth it.  I also never really figured out how to use the interactive shell to do anything useful.  Here's the original post.</p>
+
+<hr />
+
+<p>My goal was to be able to create VirtualBox images quickly and easily without having to run an OS X installer every time.  I tried cloning images and resizing but it wouldn't work.  So I figured if I could mount the filesystem on the host and install the files it would work.  I was wrong.</p>
+
+<h2>Booting to UEFI Interactive Shell</h2>
+
+<p>So if you don't have a bootable disk for some reason, VirtualBox will boot up to the UEFI Interactive Shell.  An easy way to get this is to go to a VM settings and remove all disks and start the VM up.</p>
+
+<p>Normally, OS X boots to it's own EFI boot loader located at /System/Library/CoreServices/boot.efi.  This isn't a standard location for EFI boot loaders.  The following statement makes me think that the location of the OS loader is part of the volume header.</p>
+
+<blockquote>
+  <p>The OS loader is usually located through a file ID pointer in the HFS+ volume header. This info can be set with the bless command-line tool. <a href="http://wiki.osx86project.org/wiki/index.php/Apple's_EFI_implementation">OSX86 project</a></p>
+</blockquote>
+
+<p>So if you install the OS X file system by using a file copy, it will not be bootable (that's what I did).</p>
+
+<p>I attempted many things to try to get the machine to boot including booting to a working drive and running the bless command on the non-booting drive, running the bless command on the host computer while the non-booting drive was mounted, trying to use the Interactive Shell to select the correct drive, installing <a href="http://sourceforge.net/projects/refind/">rEFInd</a>, booting to the install image and repairing the disk, and other things.</p>
+
+<p>I eventually found that running the OS installer or using Carbon Copy Cloner's block copy fixed it.</p>
+
+<p>Either way, I decided to write down everything I learned about the Interactive Shell, since it might be useful someday.</p>
+
+<h2>Version</h2>
+
+<p>Output of <code>ver</code> command.</p>
+
+<pre><code>UEFI Interactive Shell v2.0
+Copyright 2009-2011 Intel(r) Corportation. All rights reserved. Beta build 1.0
+UEFI v2.31 (EDK II, 0x00010000)
+</code></pre>
+
+<p>This is probably contained in the file /Applications/VirtualBox.app/Contents/MacOS/VBoxEFI64.fd.  However, when I ran strings on that file the text wasn't in it (or in any other file in the VirtualBox.app folder).</p>
+
+<p>I tried the Tianocore shell and for some reason it didn't have the <code>bcfg</code> command.</p>
+
+<h2>List of commands</h2>
+
+<p>This is the list of commands printed when you type <code>help</code>. Add <code>-b</code> to any command to show one screen at a time (like less/more).  Typos are part of the real text printed by this shell.</p>
+
+<pre><code>attrib          -Displays or changes the attributes of files or directories.
+cd              -Displays or chagnes the current directory.
+cp              -Copies one or more source files or directories to a destination.
+load            -Loads a UEFI driver into memory.
+map             -Defines a mapping between a user-defined name and a device handle.
+mkdir           -Creates one or more new directories.
+mv              -Moves one or more files to a destination within a file system.
+parse           -Command used to retrieve a value from a particular record which was output in a standard formatted output.
+reset           -Resets the system.
+set             -Displays, changes or deletes a UEFI Shell environment variables.
+ls              -Lists a directory's contents or file information.
+rm              -Deletes one or more files or directories
+vol             -Displays the volume information for the file system taht is specified by fs.
+date            -Displays and sets the current date for the system.
+time            -Displays or sets the current time for the system.
+timezone        -Displays or sets time zone information.
+stall           -Stalls the operation for a specified number of microseconds.
+for             -Starts a loop based on for syntax.
+goto            -moves around the point of execution in a script.
+if              -Controls which script commands will be executed based on provided conditional expressions.
+shift           -moves all in-script parameters down 1 number (allows access over 10).
+exit            -Exits the UEFI Shell or the current script.
+else            -Else identifies the portion of the code executedd if the if was FALSE.
+endif           -Ends the block of a script controlled by an 'if' statement.
+endfor          -Ends a 'for' loop.
+type            -Sends the contents of a file to the standard output device.
+touch           -Updates the time and date on a file to the current time and date.
+ver             -Displays the version information for the UEFI Shell and the underlying UEFI firmware
+alias           -Displays, creates, or deletes aliases in the UEFI Shell environment.
+cls             -Clears the standard ouptut and optionally changes the background color.
+echo            -Controls whether script commands are displayed as they are read for the script file, and prints the given message to the display.
+pause           -Pauses a script and waits for an operator to press a key.
+getmtc          -Gets the MTC from BootServices and displays it.
+help            -Displays the list of commands that are built into the UEFI Shell.
+connect         -Binds a driver to a specific device and starts the driver.
+devices         -Displays the list of devices managed by UEFI drivers.
+openinfo        -Displays the protocols and agents associated with a handle.
+disconnect      -Disconnects one or more drivers from the specified devices.
+reconnect       -Reconnects drivers to the specific device.
+unload          -Unloads a driver image that was already loaded.
+drvdiag         -Invokes the Driver Diagnostics Protocol.
+dh              -Displays the device handles in the UEFI environment.
+drivers         -Displays a list of information for drivers that follow the UEFI Driver Model in the UEFI environment.
+devtree         -Displays the tree of devices compliant with the UEFI Driver Model.
+drvcfg          -Configures the driver using the platform's underlying configuration infrastructure.
+setsize         -Adjust the size of a file.
+comp            -Compares the contents of two files on a byte for byte basis.
+mode            -Displays or changes the console output device mode.
+memmap          -Displays the memory map maintained by the EFI environment.
+eficompress     -Compress a file using EFI Compression Algorithm.
+efidecompress   -Decompress a file using UEFI Decompression Algorithm.
+dmem            -Displays the contents of system or device memory.
+loadpcirom      -Loads a UEFI driver from a file in the format of a PCI Option ROM.
+mm              -Displays or modifies MEM/MMIO/IO/PCI/PCIE address space.
+setvar          -Changes the value of a UEFI variable.
+setmode         -Sets serial port attributes.
+pci             -Displays PCI device list or PCI function configuration space.
+smbiosview      -Displays SMBIOS informatino.
+dmpstore        -Manages all UEFI NVRAM variables.
+dblk            -Displays the contents of one or more blocks from a block device.
+edit            -Full screen editor for ASCII or UCS-2 files.
+hexedit         -Full screen hex editor for files, block devices, or memory.
+bcfg            -Manages the boot and driver options that are stored in NVRAM.
+ping            -Ping the target host with IPv4 stack.
+ifconfig        -Modify the default IP address of the UEFI IP4 Network Stack.
+</code></pre>
+
+<h2>Moving around the filesystem</h2>
+
+<pre><code>ls fs1:\
+
+09/11/2015  19:22           0 .com.apple.timemachine.donopresent
+08/25/2015  00:16           0 .file
+09/11/2015  21:37 &lt;DIR&gt;   175 .fseventsd
+...
+</code></pre>
+
+<p>Yup, that's Mac OS X.</p>
+
+<p>A weird thing is that when I ran <code>ls fs1:\System</code> it didn't list "Library", it listed "System".  And when I tried to list that it said it was empty.</p>
+
+<h2>Configuring boot options</h2>
+
+<p>To see the current boot options, use this command.</p>
+
+<pre><code>bcfg boot dump -v
+</code></pre>
+
+<p>To set the boot disk, you'd do something like this.</p>
+
+<pre><code>bcfg boot dump -v
+bcfg boot add 3 fs0:EFI[Your path][Your EFI name].efi
+bcfg boot mv 3 0
+</code></pre>
+
+<p>If you want to remove it use this.</p>
+
+<pre><code>bcfg boot rm 3
+</code></pre>
+
+<p>I tried to add Apple's boot.efi like this.</p>
+
+<pre><code>bcfg boot add 3 fs1:\System\Library\CoreServices\boot.efi "10.6"
+</code></pre>
+
+<p>It didn't work, I don't remember what it said.  It had something to do with not being able to find a file there (I'm guessing because it saw fs1:\System\System and nothing else).</p>
+
+<h2>NVRAM variables</h2>
+
+<p>The only NVRAM variable that appears to be settable is boot-args.</p>
+
+<p><a href="http://www.virtualbox.org/manual/ch03.html#efi">3.12.2. Specifying boot arguments</a></p>
+
+<blockquote>
+  <p>It is currently not possible to manipulate EFI variables from within a running guest (e.g., setting the "boot-args" variable by running the nvram tool in a Mac OS X guest will not work). As an alternative way, "VBoxInternal2/EfiBootArgs" extradata can be passed to a VM in order to set the "boot-args" variable. To change the "boot-args" EFI variable:</p>
+
+<p><code>VBoxManage setextradata "VM name" VBoxInternal2/EfiBootArgs &lt;value&gt;</code></p>
+</blockquote>
+
+<p>When I ran <code>dmpstore</code> I clearly can see differences in variables for Boot0001 between a bootable disk and a non-bootable disk.  I didn't figure out the differences.</p>
+
+<p>So to set single user mode boot run the following command.</p>
+
+<pre><code>VBoxManage setextradata "VM name" VBoxInternal2/EfiBootArgs -s
+</code></pre>
+
+<p>To see the settings run the following command.</p>
+
+<pre><code>VBoxManage getextradata "VM name" VBoxInternal2/EfiBootArgs
+</code></pre>
+
+<p>And to turn that off run the following command.</p>
+
+<pre><code>VBoxManage setextradata "VM name" VBoxInternal2/EfiBootArgs ""
+</code></pre>
+
+<p>Published: 2015-09-08, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "virtual-box-uefi.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

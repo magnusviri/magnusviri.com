@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Radmind Tricks - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li class="active"><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Radmind Tricks</h1>
+
+<div class="horizontal_line"></div>
+
+<p>The following radmind tricks are things I've learned over the years.  I assume you know how to use radmind, so if you don't know how to use it, I don't know that this document make much sense to you.</p>
+
+<p>I assume that you're managing Mac OS X clients.  A lot of these tricks apply to Linux clients as well, but this document is full of Mac OS X references.</p>
+
+<p>There are tricks to run on the server and tricks to run on the client.  I've also noticed that I tend to have 3 different categories of tricks:</p>
+
+<ul>
+<li>Avoiding errors</li>
+<li>Speeding up overload creation</li>
+<li>Improving discover (answering questions like, "how is the machine configured", "what version is installed", or even "what the heck is on the computers?")</li>
+</ul>
+
+<p>I will be updating this document as I add more tricks.</p>
+
+<p>If you see something that could be added or you know a better way to do something, please leave a comment.</p>
+
+<hr />
+
+<h3>Test computer(s)</h3>
+
+<p>First of all, you need test computers, even if it's just one, even if it happens to be one "production" computer that you can easily access and run your tests on.  For example, if you have a classroom with 20 computers, set aside one of them as the "test" computer.</p>
+
+<p>Ideally you'll have at least one or two test computers in your office or cubicle that you can access easily.  I've heard of people having as many as 8, but two is my sweet spot.</p>
+
+<h3>Partitions on your test computers</h3>
+
+<p>Second, you need to have at least 2 partitions on your test computers with 2 bootable operating systems on each.  They can both be managed by radmind or not.  Either way, if you get into radmind too much, you're bound to accidentally make one of those partitions upbootable at least once if not more.  Having the 2nd bootable partition makes fixing it so much easier and faster.</p>
+
+<h3>Learn how to recover computers quickly</h3>
+
+<p>I have written a whole blog post to <a href="http://www.magnusviri.com/os-x-recovery.html">recovering a computer</a> and you should know all of these methods.  The braver you get with radmind, the more likely you'll kill a computer.  I've killed so many computers using radmind it's not even funny.  It's forced me to learn how to fix them quickly (well, the worst case is me walking around with a firewire drive to each computer).  But the benefit of being able to fix the computers quickly is that it made me quite brave (wreckless?) and so I can push out changes with radmind very quickly.</p>
+
+<h3>Use afp/smb to connect to your radmind server</h3>
+
+<p>I'm assuming everyone uses afp/smb to connect to their radmind server to change the command files.  It's possible to use ssh to do the same thing, and I could, but I use afp/smb for a few reasons.</p>
+
+<p>First, I can copy files back and forth using the Finder.  By extension, I make it as easy as possible to move files between my clients and the server as well, often using Apple Remote Desktop to copy the files to my main workstation and then copying them to the server, or somethings I'll mount the server on the client.</p>
+
+<p>Second, I can edit the files on the server with my favorite text editor (TextWrangler).</p>
+
+<p>Third, I can compare directories on the server easily with TextWrangler.</p>
+
+<p>To use afp to connect to your radmind server you need to turn on file sharing and the best thing to do is to make /var/radmind a mountpoint.</p>
+
+<h3>Use ssh to connect to your radmind server</h3>
+
+<p>A lot of the tricks I talk about in this document will require using the command line.  If you don't already have some experience with the command line, you should spend some time learning.  I've written a document that discusses <a href="http://www.magnusviri.com/os-x-terminal.html">using Terminal instead of the Finder</a> and I think it starts pretty basic.  And there are countless other documents helping people learning the command line as well.</p>
+
+<p>There are two ways to use the command line on the radmind server.  You can ssh into the radmind server, or you can mount the radmind volume using afp/smb and then use the Terminal on your local box and change directory to the mounted volume.  The advantage of ssh'ing into the server is everything is faster.  The advantage of using the mounted volume is that you can drag files from the Finder to the Terminal to get their paths.</p>
+
+<p>I always ssh into my server.  The only time I use the mounted volume is when I'm working in the Finder heavily and I don't want to have to think about file paths so I just open a new Terminal window and drag the files in the Finder to the Terminal.  That isn't very common but it does happen.  Everything command line related in the rest of this document implies you're ssh'ed into the server.</p>
+
+<h3>Use sub directories in /var/radmind/command and /var/radmind/transcript.</h3>
+
+<p>Move all of your command files and transcripts into sub folders.  In my transcript directory I have a several folders named after function like "os", "software", "config", etc.,.  I'll explain that more later.</p>
+
+<p>In my command folder I have all of my machine command files (any command file that is listed in /var/radmind/config) in a folder named /var/radmind/command/machine.  If I have a kink (k-in-k or commandfile in a commandfile) then I put it in a different folder named after function like "os", "software", "config", etc.,.</p>
+
+<p>The worst thing is to have a command file like /var/radmind/command/imac.T because it makes branching hard, which is discussed next.</p>
+
+<h3>Command branching</h3>
+
+<p>Once you have a test computer, you want to put it on a different but parallel branch.  Do this by duplicating your production command file and either rename it or put it in a different folder.  Then change the config file so that your test computer points to this command file.</p>
+
+<p>So say I had this command file:</p>
+
+<pre><code>/var/radmind/command/machines/8_students/sb_150.K
+</code></pre>
+
+<p>I duplicate it and move it so that I now have this:</p>
+
+<pre><code>/var/radmind/command/machines/7_dev/sb_150.K
+/var/radmind/command/machines/8_students/sb_150.K
+</code></pre>
+
+<p>Then I change my config file from this:</p>
+
+<pre><code>10.0.1.&lt;1-20&gt;    machines/8_students/sb_150.K
+</code></pre>
+
+<p>To this:</p>
+
+<pre><code>10.0.1.&lt;1-19&gt;    machines/8_students/sb_150.K
+10.0.1.&lt;20&gt;      machines/7_dev/sb_150.K
+</code></pre>
+
+<p>I now have 2 branches that are exactly the same right now, but it allows me to go in and change machines/7<em>dev/sb</em>150.K without affecting 10.0.1.1-19.  If I screw it up, I only screw up 10.0.1.20.</p>
+
+<p>The reason why I use different folders for my branches instead of just renaming the file and leaving it in the same folder is because I can then use BBEdit (or the free TextWrangler) to compare the 2 folders.  Because the 2 file names are exactly the same, BBEdit will show me the differences between them.  I could just open both files and compare them, but if I have 10 command files, I can compare them all by comparing their parent directories.</p>
+
+<p>Two branches should be good enough unless you embark on some serious long term changes.  In that case, you want 3 branches, one for stable, and one for short term testing, and one for long term testing.  If you don't always have a branch for short term testing, you'll find that you need to make changes but all you've got is long term testing and you aren't ready to push those changes out.  You can simply duplicate the stable environment for the short term testing.</p>
+
+<p>I have no idea if you can use git or some other version control to create this kind of branching.  It would require far more git knowledge and skill than I've got to do it.  And this is such a non-standard why of using git that I don't think anyone ever really discusses it.  I once asked a coworker who understood git pretty well to set it up and he couldn't simply because this is such a crazy setup from the perspective of git.  This is basically why I don't use git or any other version control with my radmind setup except (cringe) Time Machine.</p>
+
+<h3>Transcript branching</h3>
+
+<p>The next step to avoid errors is to have transcript branching as well.  There are 2 ways to do it depending on what you are doing.  For most updates, just put the date and version in the filename.  For example, I name my overloads something like "textwrangler<em>4.5.9</em>2014.07.01<em>jer.T".  When I make a new overload I rename it something like "textwrangler</em>4.5.12<em>2015.01.22</em>jer.T".</p>
+
+<p>Put the new overload in the dev command file and run radmind on the test computer.  When you know there are no problems with the transcript update the stable branch with the new command file.  This is how you avoid most errors.</p>
+
+<p>If you are making major changes to all of the overloads, then yes, duplicate everything in /var/radmind/transcript <em>and</em> /var/radmind/file.  I realize this will take forever and will take a lot of hard disk space.  However, if you are changing all of the overloads, and you want to avoid errors, you pretty much have to do this.  I've tried so many tricks to avoid duplicating the whole thing and I <em>always</em> screw it up, every single time.</p>
+
+<h3>Use grep on the server to figure out what's going on</h3>
+
+<p>You can use twhich to find out what file is being installed on a particular machine, but often you want to find out all of the overloads that have a file.  You can quickly and easily find out what files are part of overloads by ssh'ing in to your server and using grep.  Here are some guidelines for using grep on the server.</p>
+
+<p>If you use sub directories on your radmind server for both command and transcript then you don't always have to search through everything (speeds up searches).  For example, if I'm looking for all of the transcripts that specify /etc/authorization that are OS overloads, then I can run this next command.</p>
+
+<pre><code>grep -r /etc/authorization /var/radmind/transcript/os
+</code></pre>
+
+<p>If you have to search for paths with spaces, you have to use quotes and triple escape them.  Don't ask me why triple escapes work, it just does.  The perfect example is "Application Support"</p>
+
+<pre><code>grep -r "Application\\\bSupport" *
+</code></pre>
+
+<p>Usually I just grep for the partial path like this.</p>
+
+<pre><code>grep -r bSupport/Apple/Remote *
+</code></pre>
+
+<h3>Use relative paths in your transcripts</h3>
+
+<p>When you run fsdiff on a client, always use ".", not "/".</p>
+
+<p>Don't do this:</p>
+
+<pre><code>fsdiff -Ic sha1 -C -o /var/radmind/client/new_transcript.T /
+</code></pre>
+
+<p>Do this:</p>
+
+<pre><code>cd /
+fsdiff -Ic sha1 -C -o /var/radmind/client/new_transcript.T .
+</code></pre>
+
+<p>You can't mix transcripts created with "." with ones created with "/", you will get errors if you try.  You can add a "." to the beginning of all the transcript paths once they are on the server.  It doesn't really change the overload files or anything.  But be sure to change your radmind script on your clients to use "." as well.</p>
+
+<p>If you ever use twhich, remember the paths have to be exact, so they have to start with "." for twhich to work.</p>
+
+<h3>Use case insensitivity in your transcripts</h3>
+
+<p>When you run fsdiff on a client, always use "I".</p>
+
+<pre><code>cd /
+fsdiff -Ic sha1 -C -o /var/radmind/client/new_transcript.T .
+</code></pre>
+
+<p>If you have a bunch of case sensitive transcripts already, use lsort to fix them because you can't mix them.  You'll need to do it all at once.  It's worth the effort.</p>
+
+<p>The biggest problem with resorting files is that hard links may be placed before the actual files are created, and that will create an error.  <a href="https://managingosx.wordpress.com/2008/06/24/radmind-converting-to-case-insensitive-transcripts/">Greg Neagle discusses this and wrote a script that will fix it</a>.  The <a href="https://web.archive.org/web/20090923221403/http://homepage.mac.com/gregneagle/files/converttocaseinsensitive.pl">script can be found here</a>.</p>
+
+<h3>Beware of /private</h3>
+
+<p>/etc, /tmp, and /var are symlinks to /private/etc, /private/tmp, /private/var.  If you have a transcript with a path to /etc, /tmp, or /var, you wont see an error.  But it will mess things up.  Here's why.</p>
+
+<p>Imagine a command file that contains 2 transcripts.  One transcript has /etc/sshd<em>config and the other has /private/etc/sshd</em>config.  It doesn't matter which transcript appears first in the command file because the output of fsdiff will see both files as different files and will list them like this:</p>
+
+<pre><code>/etc/sshd_config
+/private/etc/sshd_config
+</code></pre>
+
+<p>So even if the transcript that specifies /etc/sshd<em>config comes last and should override /private/etc/sshd</em>config, it wont because both files will be listed and /private/etc/sshd<em>config will always come after /etc/sshd</em>config (p comes after e).</p>
+
+<h3>Find the differences between two machine command files by running fsdiff -A on an empty folder</h3>
+
+<p>Once you have two branches, you can use this trick to see exactly what is different beween the two of them.</p>
+
+<p>On a client, run these commands (the "I" assumes case insensitivity):</p>
+
+<pre><code>ktcheck -c sha1 -h radmind.example.com
+cd /var/empty
+fsdiff -IAc sha1 ./ -o /tmp/1
+</code></pre>
+
+<p>On the server, change the config file from the dev branch to the stable branch (or vise versa) and then run this.</p>
+
+<pre><code>ktcheck -c sha1 -h radmind.example.com
+fsdiff -IAc sha1 ./ -o /tmp/2
+diff /tmp/1 /tmp/2
+</code></pre>
+
+<p>You now are looking at the exact differences.</p>
+
+<h3>Linking the transcripts and the command file dirs together</h3>
+
+<p>This is actually how I name the folders in my transcript and command directory.</p>
+
+<p>I create a folder in /var/radmind/transcript and make a sym link in /var/radmind/command that points to it.  Like the following.</p>
+
+<pre><code>mkdir /var/radmind/transcript/shared
+cd /var/radmind/command
+ln -s ../transcript/shared
+</code></pre>
+
+<p>The reason I link command to transcript (instead of the other way) is because it makes more sense to have the folder in transcript because it will have a twin folder in /var/radmind/file.</p>
+
+<p>This is my current folder structure:</p>
+
+<pre><code>/var/radmind/transcript/1_os
+/var/radmind/transcript/2_software
+/var/radmind/transcript/3_radmind
+/var/radmind/transcript/4_xhooks
+/var/radmind/transcript/5_cust
+/var/radmind/transcript/6_servers
+/var/radmind/transcript/7_dev
+
+/var/radmind/command/1_os -&gt; ../transcript/1_os
+/var/radmind/command/2_software -&gt; ../transcript/2_software
+/var/radmind/command/3_radmind -&gt; ../transcript/3_radmind
+/var/radmind/command/4_xhooks -&gt; ../transcript/4_xhooks
+/var/radmind/command/5_cust -&gt; ../transcript/5_cust
+/var/radmind/command/6_servers -&gt; ../transcript/6_servers
+/var/radmind/command/7_dev -&gt; ../transcript/7_dev
+/var/radmind/command/machines
+</code></pre>
+
+<p>Here are 2 lines from a "machine" command file that shows a perfect example of why I do this.</p>
+
+<pre><code>n 1_os/2_10.9_neg.T
+k 1_os/3_10.9_exclude.K
+</code></pre>
+
+<p>Notice one is a negative transcript (starts with "n") and the other is a command file (starts with "k").  They happen to be side by side in the same folder so it is easier for me to go back and forth between the two.</p>
+
+<p>These are the commands I run to make my symlinks.</p>
+
+<pre><code>cd /var/radmind/command
+find ../transcript -depth 1 -type d -print -exec ln -s \{\} \;
+</code></pre>
+
+<h3>Be flexible and quick</h3>
+
+<p>The danger of using command file and transcript branches is that it will become a huge inflexible beast that forces you to do things harder then it should be.  One of the biggest things I've learned is that there is no one solution.  There is no one best way to name your files and folders simply because I keep changing my own over and over and over.  So the goal isn't to find the best solution, it's to be as flexible as possible so that you can change your entire naming or organization structure to meet the needs you have at the moment.</p>
+
+<p>This is such a huge topic and I'm not really prepared to discuss it yet.</p>
+
+<h3>Use BBEdit/TextWrangler's "Compare Folders"</h3>
+
+<p>The whole purpose of the command file branching is to allow you to compare command files using BBEdit or TextWrangler.  I would be so much less productive without this feature.  There are some other apps (including the command diff) but none of them are as useful as BareBone's BBEdit/TextWranger compare.</p>
+
+<h3>Edit transcripts on the server</h3>
+
+<p>So probably the biggest hurdle of beginners is learning to make changes on the server.  It's easy to scan something on a client with fsdiff, upload it with lapply, but once it's on the server don't be afraid to make changes to the uploaded transcript located in /var/radmind/tmp/transcript (or /var/radmind/transcript).</p>
+
+<p>Some changes that you might make include:</p>
+
+<ul>
+<li>Adding commented notes</li>
+<li>Commenting out or deleting lines</li>
+<li>Changing owner/group permissions</li>
+<li>Changing absolute paths to relative</li>
+</ul>
+
+<p>Here is an example of a commented out note.</p>
+
+<pre><code>## james password
+f ./private/var/db/shadow/hash/0F530701-5F2B-47B3-A01C-EB6F6F2376D0 0600     0     0 1414517391    1240 KZBwudO7gyZhgZcwvxd95vXoRuQ=
+</code></pre>
+
+<p>And here is an example of files you would typically want to comment out or delete.  In fact, there are probably better ways to deal with all of these files but I haven't gotten there yet.</p>
+
+<pre><code>f ./Library/Application\bSupport/App\bStore/adoption.plist  0644     0    80 1404239200     798 dYLg/sI0DtlMH6V0cANkhHv4nnI=
+f ./Library/Preferences/com.apple.MCX.plist 0644     0     0 1404245914      86 7/CchUsiJ0uqT5wTB7Moe40YDd8=
+f ./Library/Preferences/SystemConfiguration/com.apple.wifi.message-tracer.plist 0644     0     0 1404241000    4728 NNgZUzUsgDTtfCR90UjnJy+vMq0=
+f ./Library/Printers/InstalledPrinters.plist    0644     0     0 1404244803     432 NXFsDk1mibRjoX/sPCBRz0mK3Fg=
+d ./Library/Updates/031-1878            0755     0     0
+f ./Library/Updates/031-1878/031-1878.English.dist  0644     0     0 1404244811    4210 F+OZYPqP+5HMAyk02PclvNQ3s64=
+</code></pre>
+
+<p>To change an absolute path to a relative is easy.</p>
+
+<p>Absolute:</p>
+
+<pre><code>f /Library/Updates/031-1878/031-1878.English.dist   0644     0     0 1404244811    4210 F+OZYPqP+5HMAyk02PclvNQ3s64=
+</code></pre>
+
+<p>Relative:</p>
+
+<pre><code>f ./Library/Updates/031-1878/031-1878.English.dist  0644     0     0 1404244811    4210 F+OZYPqP+5HMAyk02PclvNQ3s64=
+</code></pre>
+
+<h3>Edit overloads on the server</h3>
+
+<p>Once you're comfortable making changes to transcripts, the next thing is to make changes to the files in overloads.  I usually do this with plist or unix config files.</p>
+
+<p>For example, say I wanted to change the Firefox prefs so that it doesn't show the annoying "Welcome" webpage when it is opened.  I could open the prefs file at</p>
+
+<p>/var/radmind/file/path<em>to</em>firefox.T/Users/your_template/Library/Application Support/Firefox/Profiles/random text.default/prefs.js</p>
+
+<p>Then I'd search for these 2 lines:</p>
+
+<pre><code>user_pref("extensions.lastAppVersion", "34.0.5");
+user_pref("extensions.lastPlatformVersion", "34.0.5");
+</code></pre>
+
+<p>And I'd change them to whatever version was the latest.  More likely I'd just rename the prefs.js file and copy the file from my client directly into the folder.</p>
+
+<p>Whenever you make changes you want to run lcksum to make sure it checks out.</p>
+
+<pre><code>lcksum -Icsha1 path_to_firefox.T
+</code></pre>
+
+<p>If you made changes it should say that it updated what you changed (checksum or file size).</p>
+
+<h3>Make overloads on the server</h3>
+
+<p>Once you are comfortable changing overloads, heck, just make your overloads on the server.  Using the Finder, connect to your server and make a folder for the overload in the file directory.  If I wanted to make autologin prefs, I could do this on my very own workstation by just opening System Preferences and set autologin, then copy these files to the server.</p>
+
+<p>These are the files on the client (my computer).</p>
+
+<pre><code>/private/etc/kcpassword
+/Library/Preferences/com.apple.loginwindow.plist
+</code></pre>
+
+<p>On the server run these commands:</p>
+
+<pre><code>mkdir -p /var/radmind/file/auto_login.T/private/etc/
+mkdir -p /var/radmind/file/auto_login.T/Library/Preferences/
+</code></pre>
+
+<p>Using the Finder copy them to the server.</p>
+
+<pre><code>/var/radmind/file/auto_login.T/private/etc/kcpassword
+/var/radmind/file/auto_login.T/Library/Preferences/com.apple.loginwindow.plist
+</code></pre>
+
+<p>Or you could mount the radmind server on the client and run these Terminal commands.</p>
+
+<pre><code>cp /private/etc/kcpassword /Volumes/radmind_server/var/radmind/file/auto_login.T/private/etc/kcpassword
+cp /Library/Preferences/com.apple.loginwindow.plist /Volumes/radmind_server/var/radmind/file/auto_login.T/Library/Preferences/com.apple.loginwindow.plist
+</code></pre>
+
+<p>Next, on the server run these commands.</p>
+
+<pre><code>cd /var/radmind/file/auto_login.T
+fsdiff -c sha1 -K/dev/null . &gt; ../../transcript/auto_login.T
+</code></pre>
+
+<p>You just created a whole overload on the server.  Piece of cake.</p>
+
+<h3>Quickly create an overload from a package</h3>
+
+<p>I say "quickly" because this is something of a hack.  First, install the package.  Then run this script pointing to the package bom file.  The script reads each line in the bom and sends it to fsdiff.  You may need to massage the transcript a little before it will upload (sorting could be wrong).</p>
+
+<pre><code>#!/bin/sh
+
+if [ "$1" = "" -o ! -e "$1" ]; then
+   echo Please specify a valid bom file.
+   exit
+fi
+
+lsbom -pf "$1" | xargs -I {} -L1 fsdiff -c sha1 -1 "{}"
+</code></pre>
+
+<p>Also, Apple has started using unified packages and I'm not sure how to use this with those packages.  And don't ask me about meta-packages.</p>
+
+<h3>Update a transcript on the client.</h3>
+
+<p>If you make changes on the client and want to update the files in a pre-existing transcript you can run this script.</p>
+
+<pre><code>#!/bin/sh
+
+if [ "$1" = "" -o ! -e "$1" ]; then
+  echo Please specify a valid transcript file.
+  exit
+fi
+
+if [ "$2" = "" ]; then
+  echo Please specify a transcript to save the new results.
+  exit
+fi
+
+if [ "$2" = "$1" ]; then
+  echo Please don\'t use the same transcript name, it wont work.
+  exit
+fi
+
+if [ -e $2 ]; then
+  rm $2
+fi
+
+cat $1 | awk '{ print $2 }' | sed -e 's/\\b/\\ /g' | xargs -n1 fsdiff -c sha1 -1 &gt;&gt; $2
+</code></pre>
+
+<p>I used to use this script to update the radmind tools themselves, since there were rarely new files.  I'd run the installer, then run this script, then upload it.</p>
+
+<h3>Get notified when a command finishes</h3>
+
+<p>Sometimes when your run commands on the radmind server it takes forever.  You can cause Terminal to beep even if you are ssh'ed into it with this command.</p>
+
+<pre><code>tput bel
+</code></pre>
+
+<p>If you are running the commands on the local machine you can use the say command.</p>
+
+<pre><code>say hey you I am done
+</code></pre>
+
+<p>You can even text your phone if you run a command on a client and have to walk away.</p>
+
+<pre><code>curl http://textbelt.com/text -d number=8005551234 -d message="done"
+</code></pre>
+
+<h3>Fixing lmerge's hard links</h3>
+
+<p>The lmerge command combines overloads and it uses hard links for the files.  This is good if you want to save filespace, but bad if you want to modify either of the merged overload but not affect un-merged overloads (or vise versa).  To get rid of the hard links, I run lmerge like this:</p>
+
+<pre><code>/usr/local/bin/lmerge your_overloads.T merged_transcript.T
+</code></pre>
+
+<p>Then I run this script using "merged_transcript.T" as the argument (or whatever is correct).</p>
+
+<pre><code>#!/bin/sh
+
+cd /var/radmind/file
+merged_overload="$1"
+ditto ${merged_overload} ${merged_overload}2
+mv ${merged_overload} ${merged_overload}3
+mv ${merged_overload}2 ${merged_overload}
+rm -r ${merged_overload}3
+tput bel
+</code></pre>
+
+<h3>Verify all transcripts on server</h3>
+
+<pre><code>cd /var/radmind/transcript
+find . -name "*.T" -print -exec /usr/local/bin/lcksum -Incsha1 \{\} \;
+</code></pre>
+
+<p>This command takes a long time.</p>
+
+<h3>Download a single file on the client</h3>
+
+<pre><code>twhich /path/to/file | lapply -h radmind.example.com
+</code></pre>
+
+<h3>Download a single overload</h3>
+
+<p>You can easily download a single overload by using this one liner.</p>
+
+<pre><code> perl -e 'print "overload.T:\n";' -pe 's/^([fa])/+ $1/' \
+ /var/radmind/client/overload.T  | lapply -CFh radmind.example.com
+</code></pre>
+
+<p>Note, this will download the files regardless if the file exists and regardless of if the file is the same or not.  It just plain downloads everything.</p>
+
+<h3>Download multiple overloads</h3>
+
+<p>I have a much more complex downloader.  It works by creating a custom command file with only the transcripts listed.  After scanning the script removes all lines that deletes files.  I'm in the process of rethinking this whole script, but until I'm happy with it, here is my <a href="https://dl.dropboxusercontent.com/u/10761501../blog/954_radmind_trick_staging/download_overload.pl">old download_overload.pl script</a>.</p>
+
+<p>Published: 2015-01-26, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "radmind-tricks.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

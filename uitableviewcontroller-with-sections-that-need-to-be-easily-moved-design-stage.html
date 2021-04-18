@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>UITableViewController with sections that need to be easily moved (design stage) - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li class="active"><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>UITableViewController with sections that need to be easily moved (design stage)</h1>
+
+<div class="horizontal_line"></div>
+
+<p>I have a subclass of a UITableView that basically is a "detail" view for some object. It has lots of different size cells that need to be generated on the fly based on the data in the cell. I found some good examples on the web how to resize a UITableViewCell, but I wasn't (and still am not) sure what order the cells are going to be in.</p>
+
+<p>The way Apple's template is set up, you basically have several methods and the NSIndexPath that says what type of cell is desired. That's easy to handle, I just put it all in a big switch statement.</p>
+
+<p>But what if I wanted swap section 1 with section 3? Sure, I could just copy/paste the code in the switch statement, which is what I've always done before. The problem with this is that to resize a UITableViewCell you need to have code in several locations.</p>
+
+<pre><code>- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+</code></pre>
+
+<p>and</p>
+
+<pre><code>- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+</code></pre>
+
+<p>The problem got worse because I decided to use the section title to identify each cell. Maybe I shouldn't be doing this, but whatever.</p>
+
+<pre><code>- (NSString*) tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section
+</code></pre>
+
+<p>And even worse, some sections had more than one cell.</p>
+
+<pre><code>- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+</code></pre>
+
+<p>That's 4 methods that set the order of everything using switch statements. I knew that down the road I'd regret using a switch statement. So what I did was moved all of the settings out of those methods and each section had a method that returned the desired data for that section only. So here is my versions of those 4 methods.</p>
+
+<pre><code>#define FONT_SIZE 17.0f
+#define CELL_CONTENT_WIDTH 320.0f
+#define CELL_CONTENT_MARGIN 10.0f
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return &#91;&#91;self desiredData:@"numberOfRowsInSection" forSection:section forRow:-1] intValue];
+}
+
+- (NSString*) tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self desiredData:@"titleForHeaderInSection" forSection:section forRow:-1];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *text = [self desiredData:@"text" forSection:[indexPath section] forRow:[indexPath row]];
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), 20000.0f);
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    float height = size.height + &#91;&#91;self desiredData:@"additionalHeight" forSection:[indexPath section] forRow:[indexPath row]] floatValue];
+    return MAX(height, 44.0f) + (CELL_CONTENT_MARGIN * 2);
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UILabel* label = nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = &#91;&#91;[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"Cell"] autorelease];
+        label = &#91;&#91;[UILabel alloc] initWithFrame:CGRectZero] autorelease];
+        [label setLineBreakMode:UILineBreakModeWordWrap];
+        [label setMinimumFontSize:FONT_SIZE];
+        [label setNumberOfLines:0];
+        [label setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+        [label setTag:1];
+        &#91;&#91;cell contentView] addSubview:label];
+        &#91;&#91;cell contentView] addSubview:favoriteButton];
+    }
+    if ( !label )
+        label = (UILabel*)[cell viewWithTag:1];
+
+    // Configure the cell.
+    &#91;&#91;cell textLabel] setText:[self desiredData:@"label" forSection:[indexPath section] forRow:[indexPath row]]];
+    [cell setAccessoryType:&#91;&#91;self desiredData:@"accessoryType" forSection:[indexPath section] forRow:-1] intValue]];
+    [cell setSelectionStyle:&#91;&#91;self desiredData:@"selectionStyle" forSection:[indexPath section] forRow:-1] intValue]];
+
+    // Label
+    NSString *text = [self desiredData:@"text" forSection:[indexPath section] forRow:[indexPath row]];
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), 20000.0f);
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    float height = MAX(size.height, 44.0f);
+    [label setText:text];
+    [label setFrame:CGRectMake(CELL_CONTENT_MARGIN, CELL_CONTENT_MARGIN, CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), height)];
+
+    return cell;
+}
+</code></pre>
+
+<p>All of that is generic (and a lot of it was taken from other people's posts). This next method is the "gate keeper" that determines the real order.</p>
+
+<pre><code>typedef enum {
+    BlaSection,
+    YaSection,
+    QwerSection,
+    AsdfSection
+} TableViewSections;
+
+- (id)desiredData:(NSString*)typeOfInfo forSection:(NSUInteger)section forRow:(NSUInteger)row
+{
+    switch (section) {
+        case BlaSection:
+            return [self blaDataOfType:typeOfInfo forRow:row]; break;
+        case YaSection:
+            return [self yaDataOfType:typeOfInfo forRow:row]; break;
+        case QwerSection:
+            return [self qwerDataOfType:typeOfInfo forRow:row]; break;
+        case AsdfSection:
+            return [self asdfDataOfType:typeOfInfo forRow:row]; break;
+        default:
+            return nil; break;
+    }
+}
+</code></pre>
+
+<p>Then each section determines the data with a method dedicated to it.</p>
+
+<pre><code>- (id)blaDataOfType:(NSString*)typeOfInfo forRow:(NSUInteger)row
+{
+    if ( [typeOfInfo isEqualToString:@"numberOfRowsInSection"] )
+        return [NSNumber numberWithInt:1];
+    else if ( [typeOfInfo isEqualToString:@"titleForHeaderInSection"] )
+        return @"Bla;
+    else if ( [typeOfInfo isEqualToString:@"text"] )
+        return @"This is the resized text;
+    else if ( [typeOfInfo isEqualToString:@"label"] )
+        return @"This text is not resized and is bold (the default) label text";
+    else if ( [typeOfInfo isEqualToString:@"accessoryType"] )
+        return [NSNumber numberWithInt:UITableViewCellAccessoryNone];
+    else if ( [typeOfInfo isEqualToString:@"selectionStyle"] )
+        return [NSNumber numberWithInt:UITableViewCellSelectionStyleNone];
+    else if ( [typeOfInfo isEqualToString:@"additionalHeight"] )
+        return [NSNumber numberWithFloat:44.0]; // This is if I want the cell to be taller than the text
+    return nil;
+}
+</code></pre>
+
+<p>Anyway, I think it's cool. I hope someone likes it. Sorry, I don't have an example project.</p>
+
+<p>[Edit 2012-01-25: I don't know that doing this has worked out so great for me.  But the one thing that I've bumped into over and over, whether using SQL, Cocoa, Perl, whatever, is that being able to rapidly change stuff is CRITICAL. Using something like this makes it easier to change the order and add and remove stuff, but it isn't exactly obvious how to do it, so the obscurity is a drawback and I'm not sure if it makes it worth doing this at all. But yeah I'll probably keep doing it.]</p>
+
+<p>Published: 2010-10-13, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

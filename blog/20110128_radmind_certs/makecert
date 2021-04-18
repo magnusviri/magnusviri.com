@@ -1,0 +1,459 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+# makecert
+#
+# Version 1.2 (2014.05.24)
+#
+# A script to automate the creation of openssl certificates
+# for use with radmind.
+# Must be run as root.
+#
+# Greg Neagle, Walt Disney Feature Animation
+# http://managingosx.wordpress.com/2006/09/22/certificate-creation-for-radmind/
+#
+# Heavily modified by James Reynolds, The University of Utah, Student Computing 
+# Labs, Mac Group
+# http://blog.magnusviri.com/radmind-tls-part-1.html
+#
+#
+#
+#                               READ THIS
+#
+#
+# Before using this script, you must make changes to the top of this file.
+
+# Some things specific to your environment
+# Set $special_file_domain to "" if you don't have your hostnames in DNS (this
+# is only used for special files)
+
+my $special_file_domain = "";
+
+# To automate things, this script gets the passphrase from the /var/radmind/CA/private/password (see
+# path below).  Please chmod private to 700 and make it owned by root.
+
+# This is information that will be included in certs and CA's.
+my $country = "US";
+my $state_province = "Utah";
+my $city_locality = "Salt Lake City";
+my $organization = "Someorg";
+my $organization_unit = "Someone";
+my $email = 'youremail@example.com';
+my $days = "365";
+
+# These are default paths for radmind.  Change if you want.
+my $radmind_dir = "/var/radmind";
+my $relative_path = "."; # Set to "" if you are using absolute paths, "." if you are using relative.
+my $ca_dir = "$radmind_dir/CA";
+my $cert_dir_name = "certs";
+my $transcript_dir = "$radmind_dir/transcript/$cert_dir_name";
+my $file_dir = "$radmind_dir/file/$cert_dir_name";
+my $server_cert_dir = "$radmind_dir/cert";
+my $special_dir = "$radmind_dir/special";
+my $symlink_dir = "/certs"; # This is a dir to store symlinks to the certs so that you can scp them easily.
+
+my $passin = "file:$ca_dir/private/password"; # This is just a text file with your password!
+
+my $fsdiff = "/usr/local/bin/fsdiff";
+my $lsort = "/usr/local/bin/lsort";
+
+###############################################
+# No more edits required below here
+
+sub usage {
+	my $myname = `/usr/bin/basename $0`;
+	print STDERR << "EOF";
+Usage:
+     $myname -o [-d days] [-y] [-h] <client name>
+     $myname -p [-d days] [-y] [-h] <client name>
+     $myname -c [-d days] [-y] [-h] <CA name>
+     $myname -s [-d days] [-y] [-h] <server hostname>
+
+The "CA name" can either be anything (e.g. hostname of server)
+The "client name" is whatever you plan on listing in the config file.
+The "server hostname" is the fully qualified domain name of the server (e.g. radmind.example.com)
+
+Modes:
+-c Create/renew CA
+-o Create a client cert and store it in an overload (this is default)
+-p Create a client cert and store it in $special_dir
+-s Create a server cert
+
+Other options:
+-d Days the cert wil expire (default is 365)
+-h Check name to make sure it is a valid hostname (only use on server)
+-y If a cert already exists, it will be revoked and a new one with the same name will be created.
+
+EOF
+	exit 1;
+}
+
+die "Run me as root (this script shouldn't even be readable by non-root users...).\n" if $> ne 0;
+
+#use strict;
+use Getopt::Std;
+
+my %options;
+
+getopts("cd:hposy",\%options);
+
+my $commonname = $ARGV[0];
+if ( $commonname and $special_file_domain ) {
+	$commonname =~ s/\..*//; # Get the short version of the commonname
+}
+
+$days = (defined $options{'d'}) ? $options{'d'} : $days;
+
+############################################################################
+# Error checking
+##
+
+my $error_message = "";
+
+if ( ! $commonname ) {
+	$error_message .= "Need a hostname/commonname!\n";
+}
+
+if ( ! -d $ca_dir ) {
+	$error_message .= "Missing directiory: $ca_dir.  Please create it and run this script again.\n"
+} else {
+
+	# Create any missing items (this is all first run stuff)
+
+	if ( ! -e "$ca_dir/certs" ) {
+		print "/bin/mkdir -p \"$ca_dir/certs\"\n";
+		`/bin/mkdir -p "$ca_dir/certs"`;
+	}
+	if ( ! -e "$ca_dir/crl" ) {
+		print "/bin/mkdir -p \"$ca_dir/crl\"\n";
+		`/bin/mkdir -p "$ca_dir/crl"`;
+	}
+	if ( ! -e "$ca_dir/newcerts" ) {
+		print "/bin/mkdir -p \"$ca_dir/newcerts\"\n";
+		`/bin/mkdir -p "$ca_dir/newcerts"`;
+	}
+	if ( ! -e "$ca_dir/private" ) {
+		print "/bin/mkdir -p \"$ca_dir/private\"\n";
+		`/bin/mkdir -p "$ca_dir/private"`;
+	}
+	if ( ! -e "$ca_dir/serial" ) {
+		print "/bin/echo 01 > \"$ca_dir/serial\"\n";
+		`/bin/echo 01 > "$ca_dir/serial"`;
+	}
+	if ( ! -e "$ca_dir/index.txt" ) {
+		print "/usr/bin/touch \"$ca_dir/index.txt\"\n";
+		`/usr/bin/touch "$ca_dir/index.txt"`;
+	}
+
+}
+
+if ( ! -e "$ca_dir/private/password" ) {
+	$error_message .= "Missing passpharse file: $ca_dir/private/password.  Please create it and run this script again.\n"
+}
+
+# Fix permissions
+print "/bin/chmod -R go-rwx \"$ca_dir\"\n";
+`/bin/chmod -R go-rwx $ca_dir`;
+
+# Check param errors
+
+if ( ! defined $options{'c'} and ! -f "$ca_dir/ca.pem" ) {
+	$error_message .= "Does not exist: $ca_dir/ca.pem. Please run this script with the -c option to create it.\n"
+}
+
+if ($commonname =~ /^d+$/) {
+	$error_message .= "Common names (hostname or other identifier) may not start with digits (IP's not allowed).\n";
+}
+
+my $flag = 0;
+$flag++ if defined $options{'c'};
+$flag++ if defined $options{'o'};
+$flag++ if defined $options{'p'};
+$flag++ if defined $options{'s'};
+if ( $flag > 1 ) {
+	$error_message .= "Invalid arguments (only one of the following may appear: -c, -o, -p, -s).\n";
+} elsif ( $flag < 1 ) {
+	$options{'o'} = 1;
+}
+
+if ( defined $options{'o'} ) {
+	$error_message .= "The directory $transcript_dir does not exist.\n" if ! -e $transcript_dir;
+	$error_message .= "The directory $file_dir does not exist.\n" if ! -e $file_dir;
+}
+
+if ( $error_message ne "" ) {
+	print $error_message;
+	usage();
+	exit 1;
+}
+
+############################################################################
+############################################################################
+
+# Generate a config file that will tell openssl req how to construct the cert without prompting us
+writeConfigFile( $commonname );
+
+if ( defined $options{'c'} ) {
+
+	if ( ! -e "$ca_dir/ca.pem" ) {
+
+		# Generate a self signed root CA -x509
+		print "/usr/bin/openssl req -passin \"$passin\" -batch -new -keyout \"$ca_dir/private/CAkey.pem\" -out \"$ca_dir/ca.pem\" -days $days -config \"$ca_dir/openssl.cnf\" -x509\n";
+		`/usr/bin/openssl req -passin "$passin" -batch -new -keyout "$ca_dir/private/CAkey.pem" -out "$ca_dir/ca.pem" -days $days -config \"$ca_dir/openssl.cnf\" -x509`;
+
+	} else {
+
+		# Update the ca
+		print "The file $ca_dir/ca.pem already exists, so I'm updating it.  If you wanted to create a new one delete the file and rerun this script.\n";
+		print "/usr/bin/openssl x509 -passin \"$passin\" -in \"$ca_dir/ca.pem\" -out \"$ca_dir/ca.pem\" -days $days -signkey \"$ca_dir/private/CAkey.pem\"\n";
+		`/usr/bin/openssl x509 -passin "$passin" -in "$ca_dir/ca.pem" -out "$ca_dir/ca.pem" -days $days -signkey "$ca_dir/private/CAkey.pem"`;
+
+	}
+
+	if ( ! -e "$file_dir/radmind_ca.T/private/var/radmind/cert" ) {
+		print "/bin/mkdir -p \"$file_dir/radmind_ca.T/private/var/radmind/cert\"\n";
+		`/bin/mkdir -p "$file_dir/radmind_ca.T/private/var/radmind/cert"`;
+	}
+
+	print "/bin/cp \"$ca_dir/ca.pem\" \"server_cert_dir/ca.pem\"\n";
+	`/bin/cp "$ca_dir/ca.pem" "$server_cert_dir/ca.pem"`;
+
+	print "/bin/cp \"$ca_dir/ca.pem\" \"$file_dir/radmind_ca.T/private/var/radmind/cert\"\n";
+	`/bin/cp "$ca_dir/ca.pem" $file_dir/radmind_ca.T/private/var/radmind/cert`;
+
+	print "cd \"$file_dir/radmind_ca.T\"\n";
+	chdir "$file_dir/radmind_ca.T";
+
+	print "chmod 600 ./private/var/radmind/cert/ca.pem\n";
+	`chmod 600 ./private/var/radmind/cert/ca.pem`;
+
+	print "/usr/sbin/chown 0:0 ./private/var/radmind/cert/ca.pem\n";
+	`/usr/sbin/chown 0:0 ./private/var/radmind/cert/ca.pem`;
+
+	print "$fsdiff -c sha1 -1 ./private/var/radmind/cert/ca.pem > \"$transcript_dir/radmind_ca.T\"\n";
+	`$fsdiff -c sha1 -1 ./private/var/radmind/cert/ca.pem > "$transcript_dir/radmind_ca.T"`;
+
+	print "Put \"p $cert_dir_name/radmind_ca.T\" in all client command files.\n";
+
+} else {
+
+	############################################################################
+	# Check to see if there's already a cert with this CN
+	##
+
+	my $flag = 1;
+	my $cert_exists = `/usr/bin/egrep -r "^V.*CN=$commonname/" "$ca_dir/index.txt" | awk '{print \$3}'`;
+	chomp $cert_exists;
+	while ( $cert_exists ne "" ) {
+		if ( ! $options{'y'} ) {
+			print "It looks like there's already a certificate with this name. You must revoke the old cert before creating a new one with the same name. Would you like to do that now (y/[n])? ";
+			my $response = <STDIN>;
+			unless ($response =~ m/^y/i) { exit 0; }
+		}
+		my $cert_path = "$ca_dir/newcerts/$cert_exists.pem";
+		if ( -f $cert_path ) {
+			# Revoking cert (-revoke)
+			print "/usr/bin/openssl ca -batch -passin \"$passin\" -config \"$ca_dir/openssl.cnf\" -revoke \"$cert_path\"\n";
+			`/usr/bin/openssl ca -batch -passin "$passin" -config "$ca_dir/openssl.cnf" -revoke "$cert_path"`;
+		} else {
+			die "Could not find the cert at $cert_path. You will have to find the cert and manually revoke it or edit the index.txt file.\nCommand to revoke a cert: openssl ca -batch -key \"<ca passphrase>\" -config \"$ca_dir/openssl.cnf\" -revoke \"<path to cert>\"";
+		}
+		$cert_exists = `/usr/bin/egrep -r "^V.*CN=$commonname/" "$ca_dir/index.txt" | awk '{print \$3}'`;
+		chomp $cert_exists;
+	}
+
+	############################################################################
+	# Check to see if this is a valid commonname in local DNS.
+	# You should set $special_file_domain to "" if you don't have your
+	# commonnames in DNS.
+	##
+
+	if ( $special_file_domain ne "" and defined $options{'h'} ) {
+		my $hostresult = `/usr/bin/host $commonname`;
+		if ($hostresult =~ /not found/) {
+			print "$commonname doesn't appear to be a valid hostname.\n";
+			print "Do you want to create a certificate anyway (y/n)? ";
+			my $response = <STDIN>;
+			unless ($response =~ m/^y/i) { exit 0; }
+		}
+	}
+
+	###############################################
+	# Make the Cert
+	##
+
+	print "Creating certificate for $commonname...\n";
+
+	# Create a certificate request (-new) and an unencrypted (-nodes) private key (-keyout).
+	print "/usr/bin/openssl req -batch -new -keyout \"$ca_dir/key.pem\" -out \"$ca_dir/req.pem\" -days $days -config \"/tmp/openssl/$commonname.cfg\" -nodes\n";
+	`/usr/bin/openssl req -batch -new -keyout "$ca_dir/key.pem" -out "$ca_dir/req.pem" -days $days -config "/tmp/openssl/$commonname.cfg" -nodes`;
+
+	if ($? == 0) {
+		print "/bin/cat \"$ca_dir/req.pem\" \"$ca_dir/key.pem\" > \"$ca_dir/new-req.pem\"\n";
+		`/bin/cat "$ca_dir/req.pem" "$ca_dir/key.pem" > "$ca_dir/new-req.pem"`;
+
+		# Create a signed (-out) file of the certificate request (-infiles)
+		print "/usr/bin/openssl ca -batch -policy policy_match -passin \"$passin\" -out \"$ca_dir/out.pem\" -config \"$ca_dir/openssl.cnf\" -infiles \"$ca_dir/new-req.pem\"\n";
+		`/usr/bin/openssl ca -batch -policy policy_match -passin "$passin" -out "$ca_dir/out.pem" -config "$ca_dir/openssl.cnf" -infiles "$ca_dir/new-req.pem"`;
+
+		if ($? == 0) {
+			# Combine the certificate and key into one file
+			print "/bin/cat \"$ca_dir/out.pem\" \"$ca_dir/key.pem\" > \"$ca_dir/$commonname-cert.pem\"\n";
+			`/bin/cat "$ca_dir/out.pem" "$ca_dir/key.pem" > "$ca_dir/$commonname-cert.pem"`;
+		} else {
+			die "openssl signing failed.";
+		}
+	} else {
+		die "openssl request failed.";
+	}
+
+	# Remove temporary files
+	print "/bin/rm -f \"$ca_dir/req.pem\" \"$ca_dir/new-req.pem\" \"$ca_dir/out.pem\"\n";
+	`/bin/rm -f "$ca_dir/req.pem" "$ca_dir/new-req.pem" "$ca_dir/out.pem"`;
+
+	###############################################
+	# Store the Cert
+	my $cert_location = '';
+
+	# Make the directories radmind needs to store the cert and copy them there.
+	if ( defined $options{'s'} ) {
+
+		print "Moving server cert to $server_cert_dir.\n";
+
+		print "/bin/mv \"$ca_dir/$commonname-cert.pem\" \"$server_cert_dir/cert.pem\"\n";
+		`/bin/mv "$ca_dir/$commonname-cert.pem" "$server_cert_dir/cert.pem"`;
+		print "/bin/mv \"$ca_dir/$commonname-cert.pem\" \"$server_cert_dir/$commonname-cert.pem\"\n";
+		`/bin/mv "$ca_dir/$commonname-cert.pem" "$server_cert_dir/$commonname-cert.pem"`;
+
+		print "On the radmind server, start the radmind daemon with these options:\n";
+		print "	\"-w 1\" or \"-w 2\"\n";
+		print "	\"-y $server_cert_dir/$commonname-cert.pem\" and \"-z $server_cert_dir/$commonname-cert.pem\"\n";
+		print "Put $ca_dir/ca.pem on clients, and client commands (ktcheck, lapply, lcreate) should use \"-w 1\" or \"-w 2\".\n";
+
+	} elsif ( defined $options{'p'} ) {
+
+		$cert_location = "$special_dir/$commonname/private/var/radmind/cert/$commonname-cert.pem";
+		my $cert_location2 = "$special_dir/$commonname/private/var/radmind/cert/cert.pem";
+
+		print "Moving client cert to radmind special file.\n";
+		print "/bin/mkdir -p \"$special_dir/$commonname/private/var/radmind/cert/\"\n";
+		`/bin/mkdir -p "$special_dir/$commonname/private/var/radmind/cert/"`;
+		print "/bin/cp \"$ca_dir/$commonname-cert.pem\" \"$cert_location\"\n";
+		`/bin/cp "$ca_dir/$commonname-cert.pem" "$cert_location"`;
+
+		print "/bin/mv \"$ca_dir/$commonname-cert.pem\" \"$cert_location2\"\n";
+		`/bin/mv "$ca_dir/$commonname-cert.pem" "$cert_location2"`;
+
+		if ( $special_file_domain ne "" ) {
+			print "/bin/ln -s \"$special_dir/$commonname\" \"$special_dir/$commonname$special_file_domain\"\n";
+			`/bin/ln -s "$special_dir/$commonname" "$special_dir/$commonname$special_file_domain"`;
+			print "Add \"$special_dir/$commonname\" or \"$special_dir/$commonname$special_file_domain\" to your command files.\n";
+		} else {
+			print "Add \"s $relative_path/private/var/radmind/cert/$commonname-cert.pem\" to your command file and use \"$commonname\" in the config file to identify the machine.\n";
+		}
+
+	} else {
+		#my $date = `/bin/date "+%Y.%m.%d"`;
+		#chomp $date;
+
+		#my $overload_name = "${commonname}_$date.T";
+		my $overload_name = "${commonname}.T";
+
+		$cert_location = "$file_dir/$overload_name/private/var/radmind/cert/$commonname-cert.pem";
+		my $cert_location2 = "$file_dir/$overload_name/private/var/radmind/cert/cert.pem";
+
+		print "Moving client cert to radmind overload.\n";
+		print "/bin/mkdir -p \"$file_dir/$overload_name/private/var/radmind/cert\"\n";
+		system "/bin/mkdir -p \"$file_dir/$overload_name/private/var/radmind/cert\"";
+
+		if ( -f "$ca_dir/$commonname-cert.pem" ) {
+			print "/bin/cp \"$ca_dir/$commonname-cert.pem\" \"$cert_location\"\n";
+			system "/bin/cp \"$ca_dir/$commonname-cert.pem\" \"$cert_location\"";
+			print "/bin/mv \"$ca_dir/$commonname-cert.pem\" \"$cert_location2\"\n";
+			system "/bin/mv \"$ca_dir/$commonname-cert.pem\" \"$cert_location2\"";
+		} else {
+			die "$ca_dir/$commonname-cert.pem missing!";
+		}
+
+		if ( -d "$file_dir/$overload_name" ) {
+			print "/bin/cd \"$file_dir/$overload_name\"\n";
+			chdir "$file_dir/$overload_name";
+		} else {
+			die "$file_dir/$overload_name missing!";
+		}
+
+		if ( -f $cert_location ) {
+			print "/usr/sbin/chown root:wheel \"$cert_location\"\n";
+			system "/usr/sbin/chown", "root:wheel", $cert_location;
+
+			print "$fsdiff -c sha1 -1 \"$relative_path/private/var/radmind/cert/cert.pem\" > \"$transcript_dir/cert_temp\"\n";
+			system "$fsdiff -c sha1 -1 \"$relative_path/private/var/radmind/cert/cert.pem\" > \"$transcript_dir/cert_temp\"";
+			print "$fsdiff -c sha1 -1 \"$relative_path/private/var/radmind/cert/$commonname-cert.pem\" >> \"$transcript_dir/cert_temp\"\n";
+			system "$fsdiff -c sha1 -1 \"$relative_path/private/var/radmind/cert/$commonname-cert.pem\" >> \"$transcript_dir/cert_temp\"";
+			
+			print "$lsort -I -o \"$transcript_dir/$overload_name\" \"$transcript_dir/cert_temp\"\n";
+			system "$lsort -I -o \"$transcript_dir/$overload_name\" \"$transcript_dir/cert_temp\"";
+			
+			unlink "$transcript_dir/cert_temp";
+
+		} else {
+			die "$cert_location missing!";
+		}
+
+		print "Add \"$file_dir/$overload_name\" to your command file(s) and use \"$commonname\" in the config file to identify the machine(s).\n";
+
+	}
+
+	# Put the cert somewhere where it can be easily put on clients
+	if ( $cert_location ne '' ) {
+		if ( defined $symlink_dir and $symlink_dir ne "" ) {
+			my $dir_exists = 1;
+			if ( ! -d $symlink_dir ) {
+				mkdir $symlink_dir or $dir_exists = 0;
+			}
+			if ( $dir_exists ) {
+				if ( ! -e $cert_location ) {
+					print "/bin/ln -s $cert_location $commonname\n";
+					system "/bin/ln", "-s", $cert_location, "$symlink_dir/$commonname";
+					print "You can copy the cert to the client by typing this command on the client:\nscp name\@radmind.example.com:/certs/$commonname $radmind_dir/cert/$commonname-cert.pem\n";
+				}
+			} else {
+				print "Couldn't create $symlink_dir so a link will not be placed in that location. If you create the location you can finish this last step with this command:\n/bin/ln -s $cert_location $commonname\n";
+			}
+		}
+	}
+
+}
+
+sub writeConfigFile {
+	my $commonname = $_[0];
+	unless ( -d "/tmp/openssl" ) { `/bin/mkdir "/tmp/openssl"`; }
+
+	open CFG, ">/tmp/openssl/$commonname.cfg";
+
+	print CFG<<EOF;	
+HOME					= .
+RANDFILE				= \$ENV::HOME/.rnd
+
+[ req ]
+default_bits			= 1024
+default_keyfile			= privkey.pem
+distinguished_name		= req_distinguished_name
+attributes				= req_attributes
+prompt					= no
+
+[ req_distinguished_name ]
+C						= $country
+ST						= $state_province
+L						= $city_locality
+O						= $organization
+OU						= $organization_unit
+CN						= $commonname
+emailAddress			= $email
+
+[ req_attributes ]
+EOF
+
+	close CFG;
+}

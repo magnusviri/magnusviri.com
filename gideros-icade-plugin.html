@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Gideros iCade Plugin - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li class="active"><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Gideros iCade Plugin</h1>
+
+<div class="horizontal_line"></div>
+
+<p>This is an iCade plugin for Gideros</p>
+
+<p>Forum discussion
+- <a href="http://giderosmobile.com/forum/discussion/758/keyinput-plugin-was-icade-plugin">KeyInput Plugin-was iCade plugin</a>
+- <a href="http://giderosmobile.com/forum/discussion/741/icade-plugin">iCade Plugin</a>
+- <a href="http://giderosmobile.com/forum/discussion/869/tnt-virtual-pad-video-preview#Item_25">TNT Virtual Pad</a></p>
+
+<p><a href="../blog/iCade.zip">Download iCade.zip</a> (last updated May 10th, 2012).</p>
+
+<p>I've modified my iCade plugin to work interchangably with TNT Virtual Pad. I added the following code to the bottom of TNT VP's example2 project and that's all it takes to add iCade support to a project using TNT Virtual Pad.</p>
+
+<pre><code>require "icade"
+icade = iCade.new()
+icade:start()
+
+icade:addEventListener(ICADE.LEFTPAD_EVENT, leftJoy, self)
+icade:addEventListener(ICADE.BUTTON7_EVENT, fire, self)
+icade:addEventListener(ICADE.BUTTON8_EVENT, protection, self)
+</code></pre>
+
+<p>There is no connection between the iCade behavior and what the TNT Virtual Pad looks like. The TNT Virtual Pad will dim automatically and I think that's probably the best way to handle it.</p>
+
+<p>This iCade plugin produces events with data that looks exactly like TNT Virtual Pad events.  The iCade events are named differently though, because I don't want to trigger events twice.</p>
+
+<p>When using the TNT Virtual Pad and the iCade at the same time (one hand on the joystick, one finger on the screen), the joystick values add up, which can produce some unintended side effects (moving twice as fast or canceling out the movement). Shooting can be achieved twice as fast as well.</p>
+
+<p>This is how I'm deciding to avoid simultaneous input from the Virtual Pad and iCade.  I added an iCade table field to all iCade generated events.  If the event is a Virtual Pad event I record the os.time() and wont evaluate any iCade events if a Virtual Pad event happened in the last second.</p>
+
+<p>This is the modified example 2.</p>
+
+<pre><code>local timeVirtualPadLastUsed
+local function preventVirtualPadICadeSimultaneousUsage(e)
+    if e.data.icade == true then
+        -- It's the iCade, make sure the virtual pad wasn't used in the last second
+        if os.difftime( os.time(), timeVirtualPadLastUsed ) &gt;= 1 then
+            return true
+        else
+            return false
+        end
+    else
+        -- It's the virtual pad
+        timeVirtualPadLastUsed = os.time()
+        return true
+    end
+end
+local function leftJoy(e)
+    if preventVirtualPadICadeSimultaneousUsage(e) then
+        if e.data.power &gt; 0.2 then
+            textfield:setText("Power: "..tostring(e.data.power).." Angle: "..tostring(e.data.angle))
+            biPlane:move(e.data.angle, (e.data.power*150)*e.data.deltaTime)
+        end
+    end
+end
+local function fire(e)
+    if preventVirtualPadICadeSimultaneousUsage(e) then
+        if e.data.state == PAD.STATE_BEGIN then
+            local fire = CLASS_fire.new(biPlane.xPos, biPlane.yPos-20)
+            stage:addChild(fire)
+        end
+    end
+end
+local function protection(e)
+    if preventVirtualPadICadeSimultaneousUsage(e) then
+        if e.data.state == PAD.STATE_DOWN then
+            biPlane.protection:setVisible(true)
+        else
+            biPlane.protection:setVisible(false)
+        end
+    else
+        -- reset everything to defaults to since an iCade button release will now be ignored and could leave the protection on forever
+        biPlane.protection:setVisible(false)
+    end
+end
+</code></pre>
+
+<p>Obviously there is no iCade right pad and it supports 8 buttons and right now it isn't really configurable. I don't believe there is even anything to configure...</p>
+
+<p>I did notice some stuttering with my plugin (didn't happen with plugin removed) so maybe I need to optimize it a bit.</p>
+
+<p>One other annoyance is that when the iCade is connected to the iOS device the keyboard shows then hides. I am not sure how to get around that.</p>
+
+<p>Published: 2012-05-10, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "gideros-icade-plugin.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Radmind and "Applefiles" - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li class="active"><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Radmind and "Applefiles"</h1>
+
+<div class="horizontal_line"></div>
+
+<p>When using radmind on OS X radmind has to deal with some filesystem quirks that are unique to OS X.  A file is not just a file.  Besides the contents of the file, each file has metadata, information about the file.  The most basic metadata is the file name.  Other metadata includes permissions, creation date, last modification date, size, etc.,.  OS X also has metadata called extended file attributes.  Files can have an arbitrary number of extended attributes and the attributes have a name and data.</p>
+
+<p>Radmind stores typical metadata like owner, permissions, and modification dates in transcripts.  Extended attributes need to be saved somehow or else some files could actually be destroyed.  Folders on OS X also have metadata beyond the typical and that data is stored in 2 places, as an extended attribute named com.apple.FinderInfo and in .DS_Store files that are in the folder.</p>
+
+<p>Although some extended attributes (like the com.apple.ResourceFork) are absolutely required or else the file is destroyed, most is completely irrelevant and we do not ever want to upload it to the radmind server.  The radmind tool fsdiff is the tool that senses if a file has extended attributes or not and it does not have any way of deciding if extended attributes should be saved or not, so it saves it all.  So if you want to avoid uploading files with extended attributes to the server, you need to remove the extended attributes before you run fsdiff.</p>
+
+<p>The different attributes are stored in different forks.  Forks are just different ways of linking data with the same file.  In the pre-OS X days of Mac OS, the "resource" forks stored images and other data like GUI information, and the "data" fork stored the normal data stored in files.</p>
+
+<h2>Extended attributes and radmind</h2>
+
+<p>This is what fsdiff prints when it scans a file and folder with extended attributes.</p>
+
+<pre><code>d ../Help/Contents  0755   0    0 AAAAAAAAAAABAAABAAAAAAAAAAAAAAAAAIAAAAAAAAA=
+a ../Help/Contents/Info.plist   0755   0    0 1217351645     836 4sKSZzoaSYAHSoI/wY+lXImdGQY=
+</code></pre>
+
+<p>The capital letters after the permissions on the directory is base64 encoded com.apple.FinderInfo extended attributes.  The "a" that starts the file line is the flag that the extended attributes for the file has been combined with with the file data, which is what radmind calls an "applefile."</p>
+
+<p>Note, the term "applefile" is used exclusively by the radmind community, so be aware that non-radmind users wont know what an applefile is.  However, the applefile is really an AppleSingle, which is a format defined by Apple.</p>
+
+<p>If you open an applefile in BBEdit you will see something like this:</p>
+
+<pre><code>&gt; ^ : %o ,TEXT 2 2
+??30 2MWBB
+O^^&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+...
+</code></pre>
+
+<p>The first part is binary data that is the meta information (it looks weird because the binary data is being show as if it were ascii characters, many of which are unprintable so there are spaces for those spots).  The <code>"&lt;?xml"</code> begins the actual file.</p>
+
+<p>If you ever plan on editing files on the radmind server, you do NOT want to edit the file if it is an applefile.  If you really must, you need to remove all applefile data and then change the transcript from "a" to "f".</p>
+
+<h2>The applefile manpage</h2>
+
+<p>Here is the "applefile" manpage (this man page comes with radmind).  Yes, I'm just going to quote the whole thing.  Skip it if you want, but it is kind of required reading.</p>
+
+<pre><code>To  provide  support for Mac OS X, radmind is aware of the Mac OS meta-
+data used on HFS+-formatted drives. When lcreate uploads a file denoted
+in  the  transcript as an applefile (type 'a'), it encodes the file and
+the file's metadata to the server as an AppleSingle file. The AppleSin-
+gle  file  is an archive containing a file's relevant metadata and data
+in a single file stream. The radmind AppleSingle file has the following
+format:
+
+1)  The AppleSingle header, consisting of a 4-byte magic number, 4-byte
+version number, 16-byte filler, 2-byte number denoting  the  number  of
+entries in the archive, and 3 header entries, each describing the items
+in the archive and containing a 4-byte entry  id,  4-byte  offset,  and
+4-byte length;
+
+2)  The  file's  Finder information (32 bytes), which stores the file's
+Type and Creator codes, as well its position in the Finder window;
+
+3) The file's Resource Fork, which contains things like images, sounds,
+and other data not easily or appropriately stored in the Data Fork;
+
+4)  The  file's Data Fork, the portion visible from the Finder, and the
+only part which is considered valid by flat file systems.
+
+The radmind tool lapply similarly decodes the applefile from the server
+and  restores it to the client Mac OS X machine running on an HFS+-for-
+matted drive.
+</code></pre>
+
+<h2>Desirable extended attributes</h2>
+
+<p>So do you know what extended attributes are needed and which are not needed?  Right now I only know of a few reasons for distributing extended attributes with radmind.</p>
+
+<p>Hidden folders (notice the 1 B?  That tells the Finder the folder is hidden):</p>
+
+<pre><code>d ./Users/template  0770     502     80   AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+</code></pre>
+
+<p>Icon files for folders (File name is "Icon\r":</p>
+
+<pre><code>a ./Applications/Microsoft\bOffice\bX/Icon\r    0755   0    0 1003474800   58422 PS1n4dm97H+In25geiIvxuScc04=
+</code></pre>
+
+<p>Icon files for files.  There is no way to see this within a transcript.  It will just look like any "a" line.</p>
+
+<p>Alias files.  There is no way to see this within a transcript.  It will just look like any "a" line.</p>
+
+<p>File that end with ".webloc" or ".textClipping" files (they are really the same thing, just different extension):</p>
+
+<pre><code>a ./Users/template/Desktop/Report\ba\bproblem.webloc    0644 606    20 1322003670  271022 jmTWIrG7PDgPnsqck1xXsSPVyUI=
+</code></pre>
+
+<p>If you are dealing with a file or folder that doesn't have either of those, that means it is probably useless information.  Although it isn't mandatory that you remove it, it makes things cleaner.</p>
+
+<p>As a side note, .DS<em>Store files also store metadata for folders, and besides icon positions on the Desktop, we haven't found a single reason to distribute a .DS</em>Store file.</p>
+
+<h2>Useless extended attributes</h2>
+
+<p>What types of extended attributes can you get rid of?  Probably everything except the few mentioned above.  But honestly, you never really know what is required without looking.  But one thing you can do is get rid of the common attributes that you will see when you've installed something for the first time.  Do that with these 2 commands.</p>
+
+<pre><code>xattr -dr com.apple.FinderInfo /
+xattr -dr com.apple.quarantine /
+</code></pre>
+
+<p>After you get rid of these attributes, you will want to see if there are any others remaining.  You can do that with this command.</p>
+
+<pre><code>ls -lR@ | grep "    "
+</code></pre>
+
+<p>That grep is looking for the tab character (between the quotes).  You can't type that command in the shell because the tab key is used for tab completion.  There is probably a way to do it but I don't know how.  So to run that command, I saved it to a file and ran the file.  I saved it to ~/print_xattrs and I ran it with <code>sh ~/print_xattrs</code>.  There is probably a better way to do this, but I don't exactly know what to look for to find it.</p>
+
+<p>What other type of extended attributes are out there?  I scanned my hard drive and this is my list.  I don't really want to figure out how much of this would really be needed.  Most of it is com.apple.FinderInfo and not needed.  Most of this is also created by the OS, not by installers.</p>
+
+<pre><code>app_description
+AppCrashCount
+AppDuration
+bug_type
+com.apple.AddressBook.ImageTransform.ABClipRect_1
+com.apple.AddressBook.ImageTransform.ABClipRect_1_hash
+com.apple.backup.SnapshotNumber
+com.apple.backup.SnapshotVersion
+com.apple.backupd.BackupMachineAddress
+com.apple.backupd.HostUUID
+com.apple.backupd.ModelID
+com.apple.backupd.SnapshotCompletionDate
+com.apple.backupd.SnapshotContainer
+com.apple.backupd.SnapshotStartDate
+com.apple.backupd.SnapshotState
+com.apple.backupd.SnapshotType
+com.apple.backupd.SnapshotVolumeFSEventStoreUUID
+com.apple.backupd.SnapshotVolumeLastFSEventID
+com.apple.backupd.SnapshotVolumeUUID
+com.apple.backupd.VolumeBytesUsed
+com.apple.backupd.VolumeIsCaseSensitive
+com.apple.diskimages.fsck
+com.apple.diskimages.recentcksum
+com.apple.DTDeviceKit.screenshot.device_id
+com.apple.FinderInfo
+com.apple.metadata:_kTimeMachineNewestSnapshot
+com.apple.metadata:_kTimeMachineOldestSnapshot
+com.apple.metadata:com_apple_backup_excludeItem
+com.apple.metadata:FileSyncAgentExcludeItem
+com.apple.metadata:kMDItemAttributeChangeDate
+com.apple.metadata:kMDItemDownloadedDate
+com.apple.metadata:kMDItemFinderComment
+com.apple.metadata:kMDItemIsScreenCapture
+com.apple.metadata:kMDItemLastUsedDate
+com.apple.metadata:kMDItemScreenCaptureType
+com.apple.metadata:kMDItemSupportFileType
+com.apple.metadata:kMDItemWhereFroms
+com.apple.metadata:kMDLabel_zya2exypzrhulknkk5enqbj33y
+com.apple.Preview.UIstate.v1
+com.apple.quarantine
+com.apple.ResourceFork
+com.apple.TextEncoding
+com.apple.xcode.PlistType
+com.apple.XcodeGenerated
+com.dropbox.attributes
+com.macromates.caret
+com.vmware.backupReenabled
+displayName
+LAST_UPLOADED
+name
+NSImageMetadata
+os_version
+ReopenPath
+SampleWeight
+SubmissionSkipped
+SystemCrashCount
+UserDuration
+UserMissingLibrary
+version
+</code></pre>
+
+<h2>Digging into extended attributes</h2>
+
+<p>If you want to learn how to figure it out what to keep and what not to, here are a few commands to show you how to identify extended attributes from Terminal.</p>
+
+<p>Whenever you use <code>ls -l</code>, it will list an @ when the file has extended attributes.</p>
+
+<pre><code>ls -al /Users/template/Desktop/
+...
+-rw-rw-r--@  1 template  staff  134 Nov 22 16:14 Report a problem.webloc
+</code></pre>
+
+<p>To view the names of the extended attribute, just add "@" (for attribute) to ls.</p>
+
+<pre><code>ls -al@ /Users/template/Desktop/
+...
+-rw-rw-r--@  1 template  staff  134 Nov 22 16:14 Report a problem.webloc
+    com.apple.FinderInfo     32
+    com.apple.ResourceFork  270794
+</code></pre>
+
+<p>To actually view the extended attribute, use the xattr command with -p (for print).</p>
+
+<pre><code>xattr -p com.apple.FinderInfo /Users/template/Desktop/Report\ a\ problem.webloc
+00 00 00 00 00 00 00 00 04 50 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</code></pre>
+
+<p>To delete extended attributes, use xattr again with -d (for delete).  If you forget the flags, just type "man xattr".</p>
+
+<pre><code>xattr -d com.apple.FinderInfo Report\ a\ problem.webloc
+ls -al@ /Users/template/Desktop/
+...
+-rw-rw-r--@  1 template  staff  134 Nov 22 16:14 Report a problem.webloc
+    com.apple.ResourceFork  270794
+</code></pre>
+
+<p>If you want to see what com.apple.FinderInfo is then use a tool that comes with the developer tools, /Developer/Tools/GetFileInfo. This is for a hidden directory.</p>
+
+<pre><code>/Developer/Tools/GetFileInfo /Volumes
+directory: "/Volumes"
+attributes: aVbstclinmedz
+created: 02/03/2012 17:32:10
+modified: 03/08/2012 17:36:27
+</code></pre>
+
+<p>This is for a file.</p>
+
+<pre><code>/Developer/Tools/GetFileInfo /Users/template/Desktop/Report\ a\ problem.webloc
+file: "/Users/template/Desktop/Report a problem.webloc"
+type: "\0\0\0\0"
+creator: "\0\0\0\0"
+attributes: avbstclinmedz
+created: 11/22/2011 16:14:30
+modified: 11/22/2011 16:14:30
+</code></pre>
+
+<p>This is the meaning of the letters (this comes from the man page on GetFileInfo).  Lowercase is off, uppercase is on.</p>
+
+<pre><code>a        Alias file
+b        Has bundle
+c        Custom icon (allowed on folders)
+d        Located on the desktop (allowed on folders)
+e        Extension is hidden (allowed on folders)
+i        Inited - Finder is aware of this file and has given it a location in a window. (allowed on folders)
+l        Locked
+m        Shared (can run multiple times)
+n        File has no INIT resource
+s        System file (name locked)
+t        "Stationery Pad" file
+v        Invisible (allowed on folders)
+z        Busy (allowed on folders)
+</code></pre>
+
+<h2>More info</h2>
+
+<p>Here are some links to discussions extended attributes.</p>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Resource_fork">http://en.wikipedia.org/wiki/Resource_fork</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Extended_file_attributes">http://en.wikipedia.org/wiki/Extended<em>file</em>attributes</a></li>
+<li><a href="http://support.apple.com/kb/TA20578?viewlocale=en_US&amp;locale=en_US">http://support.apple.com/kb/TA20578?viewlocale=en<em>US&amp;locale=en</em>US</a></li>
+</ul>
+
+<p>Published: 2012-03-13, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "radmind-and-applefiles.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

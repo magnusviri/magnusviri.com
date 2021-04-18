@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Apple Boot Partition - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li class="active"><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Apple Boot Partition</h1>
+
+<div class="horizontal_line"></div>
+
+<p>In Mac OS X 10.7 Apple started creating partitions named "Recover HD" that don't show when you boot the computer unless you hold down the option key while booting it.  This is discussed elsewhere on the web so I'm  not going to discuss it.  Rather, I'm going to talk about what we did with this.</p>
+
+<p>To make it short and sweet, we created a 10 GB partition on all of the computers we manage, changed its type to Apple_Boot, and put a minimal OS that is under 10 GB on it.  The purpose of this blog is to document the command that turns a partition to Apple_Boot (because I can never remember it and <em>it isn't documented on the asr man page</em>), assuming the partition that you want to convert is disk0s3.</p>
+
+<pre><code>diskutil unmount disk0s3
+asr adjust -target /dev/disk0s3 -settype Apple_Boot
+</code></pre>
+
+<p>The main purpose of our admin partition is to upgrade the OS on the main partition.  We struggled every time we had to do a major OS upgrade since 10.2.  Back then we upgrade the OS while booted to it and the upgrade would either stall, leaving half of the disk the old OS and half the new OS, which usually resulted in a non-bootable disk, or if the upgrade would finish, it never restarted and we'd have to go around and manually restart every machine, which isn't that big of a deal but upgrading the OS is full of so much work that eliminating even a small step saved us a ton of time.</p>
+
+<p>We also had to spend development time with every major OS upgrade testing or redoing the upgrade process.  I remember the year that we tried to implement a chrooted OS.  I also remember downloading the new OS and swapping it out after it was all downloaded.  We tried many tricks but nothing seemed reliable.</p>
+
+<p>Using an admin partition is so much more stable then anything we've tried in the past.  And best of all, we no longer have to wonder if the method we used with the last major OS upgrade will work on the next one.</p>
+
+<p>The secondary purpose of the admin partition is to have a bootable partition that we can use to save computers that no longer boot.  We would also like to use it for other maintenance like running DiskWarrior but we haven't gotten around to that yet.  It sure beats walking around with Firewire drives.</p>
+
+<h2>Tools and Changes</h2>
+
+<p>Switching to the admin partition wasn't simple.  We had to build a set of tools and make other changes.</p>
+
+<p>The first tool we wrote created the admin partition using diskutil to create the 10 GB partition and then use the asr command to switch it to Apple_Boot.</p>
+
+<p>Next we had to create a tool that automatically generated a minimal OS by duplicating our radmind transcript for the OS baseload and edit out what we didn't think was needed.  It used a symlink for the files so that we didn't have duplicated files on the radmind server.</p>
+
+<p>We had to rewrite our radmind script so that it worked relatively.  We had already started to use our old script relative more and more but it was written to log to the root disk, and it also used the certs and client files of the root disk.  We started writing our original radmind script back in 2002, based on a script written by UMich's RSUG group.  Our original radmind script was how I learned Perl.  It was also used by other groups including Disney and on some government research lab's grid computer (not because it was so good, but because it was one of the first public script that did the job).  It was ugly.  Anyway, I rewrote it in python for 2 reasons: Python could up it's own max open file limit (we were way past the default 256 limit), and it could run a shell command (like ktcheck, fsdiff and lapply) and allow us to grab stdout and stderr and do whatever we wanted with them, print them to stdout, save them to a log file, parse them, whatever.  I do believe it is slower, but I don't know if I care.  The new script is called xradmind.py.</p>
+
+<p>Part of our xradmind.py rewrite was to give it robust cert handling, that is, to allow us to use any cert path.  But we also had to have the cert tools working.  I've blogged about this with the articles titled <a href="http://www.magnusviri.com/radmind-tls-part-1.html">radmind tls part 1</a> and <a href="http://www.magnusviri.com/radmind-tls-part-2.html">radmind tls part 2</a>.  Our cert setup is to use certs on all computers, but only a few care about which cert they use, mainly our firewire drives and this admin partition.  Every other computer has a cert that allows it to connect but their IP is used to select the command file.  This is all determined by what is listed first in the radmind config file on the server.  If the cert is listed first, then the cert specifies the command file.  If the IP is listed first, the IP is used.</p>
+
+<p>The final tool and change we had to make is to make sure that the admin partition always had the correct network prefs.  The way we accomplished this was to create a startup script that checked to see if network prefs exist at startup, which means it had to run before they were auto created and we did that by running the script by executing it with /etc/rc.server, a script that runs before any launchd jobs run (the old /etc/rc scripts were moved into launchd and is easily visible in the launchd source code except for /etc/rc.server).  If the network prefs don't exist, the script creates a trigger file and a later script modifies the network prefs with the correct IP.  The "correct IP" is whatever is set in an NVRAM variable.  We set the NVRAM variable when we run radmind on a box, because presumably the IP when it runs radmind, no matter when it runs, is the "correct IP" since we use mostly use IP to determine the whole computer configuration.  I mentioned earlier we don't use certs to identify what command file a machine should use, we use IP, so that's what I mean by it being the "correct IP."</p>
+
+<p>Published: 2014-01-17, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "apple-boot-partition.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

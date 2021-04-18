@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Mobile Game Programming Lesson 5 - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li class="active"><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Mobile Game Programming Lesson 5</h1>
+
+<div class="horizontal_line"></div>
+
+<h2>Animation</h2>
+
+<p>In this lesson we will look at several different ways to animate.  The first method of animation we will look at uses multiple bitmaps to give our sprites the appearance of movement.  This is how motion pictures work.  To do this we will need to find or make some images.</p>
+
+<p>The next method of animation is to move or change how visible the sprite is using gradual changes so that the sprites appear to have life-like motion and nice fade in and outs.</p>
+
+<p>We are going to look at more example applications that come with Gideros Studio.</p>
+
+<h2>Bird Animation Example</h2>
+
+<p>The bird animation example shows us how to animate a sprite.  In this case, the animation is a series of images and each image is a frame of the animation.  When the images are shown after each other it appears that the sprite is animating.</p>
+
+<p>The main.lua file specifies the images that will be a part of our sprites and creates the sprite objects and adds them to the stage.  The main code is in the bird.lua file, where the Bird class is created.  Let's talk a little bit more about creating a class.</p>
+
+<p>In the main.lua file we create a new bird object with this code.</p>
+
+<pre><code>local bird1 = Bird.new(frames1)
+</code></pre>
+
+<p>When Bird.new(frames1) is executed, it jumps to the bird.lua file to the code <code>function Bird:init(frameList)</code>. Inside of Bird:init() we create Bitmaps of the images and save them into self.frames.  Then we save the number of frames into self.nframes.  We keep track of which frame is shown in self.frame.  And we show that frame by adding the frame with addChild().  Then we add the bird sprite to the stage and give it a random speed and place it off screen to the right.</p>
+
+<p>Every time the screen is rendered, onEnterFrame() is executed.  It has a counter, self.subframe.  When self.subframe is greater than 10, it resets that counter to 0 and it swaps the bitmap shown with the next one.  This is how it creates the illusion of animation, by swapping images quickly.  In this case, onEnterFrame is called 60 times a second, and we are waiting every 10 frames to advance frames, so the image will change 6 times a second.  There happen to be 3 images in the sequence, so it will repeat the sequence 2 times a second.  If you start the example and watch a clock, you will notice that the bird's wings move with each second.</p>
+
+<h2>Creating Bitmaps</h2>
+
+<p>In the previous example you noticed that we had to load a lot of images.  There are four methods for obtaining images.  The method you choose depends on the state of the images you want to use or if you used the "Gideros Texture Packer" tool to create a single image.</p>
+
+<p>The Bird Animation loaded the images by using a table with the filenames and then loading them with a for loop.  This is probably the best method to use if you have a lot of separate images files.</p>
+
+<pre><code>local frameList = {
+    "frame_01.png",
+    "frame_02.png",
+    "frame_03.png",
+    "frame_04.png"
+}
+local frameBitmaps = {}
+for ii = 1, #frameList do
+    frameBitmaps[ii] = Bitmap.new(Texture.new(frameList[ii]))
+    stage:addChild(frameBitmaps[ii])
+end
+</code></pre>
+
+<p>The next method involves loading multiple image files with the TexturePack class.  This code does the same thing as the above example.  Note that instead of keeping a frameBitmaps table, we have a TexturePack object (pointed to by the variable <code>pack</code>).</p>
+
+<pre><code>local frameList = {
+    "frame_01.png",
+    "frame_02.png",
+    "frame_03.png",
+    "frame_04.png"
+}
+local pack = TexturePack.new(frameList)
+for ii = 1, #frameList do
+    local region = pack:getTextureRegion(frameList[ii])
+    local bitmap = Bitmap.new(Texture.new(region))
+    stage:addChild(frameBitmaps[ii])
+end
+</code></pre>
+
+<p>The last two methods involves combining all of the images into one large image called a texture atlas.  This way we only have to load and store one image.  It's a larger image, but by using texture atlases there are performance improvements (games load faster).  A texture atlas is also known as texture map or sprite sheet.</p>
+
+<p>The first method of using a texture atlas is to load a texture the way we have always loaded a texture but then to specify where the smaller images are located using pixel coordinates.  The first 2 numbers are the top corner and the last 2 numbers are the size.  In this example all of the images are 100x100 pixels so the last 2 parameters are 100, 100 for all of them.  The first 2 parameters are different and specify the top corner for each image.  It splits the texture atlas into 4 even squares.</p>
+
+<pre><code>local texture = Texture.new("atlas.png")
+local regionList = {
+    TextureRegion.new(texture, 0,   0,   100, 100),
+    TextureRegion.new(texture, 100, 0,   100, 100),
+    TextureRegion.new(texture, 100, 100, 100, 100),
+    TextureRegion.new(texture, 0,   100, 100, 100)
+}
+for ii = 1, #regionList do
+    local bitmap = Bitmap.new(regionList[ii])
+    stage:addChild(bitmap)
+end
+</code></pre>
+
+<p>The last method to load a serious of images is probably the best method.  This method uses a texture atlas just like the previous example, but it requires you to use "Gideros Texture Packer" tool to create the texture atlas file and an accompanying text file that includes the locations of all of the smaller images.</p>
+
+<pre><code>local frameList = {
+    "frame_01.png",
+    "frame_02.png",
+    "frame_03.png",
+    "frame_04.png"
+}
+local pack = TexturePack.new("frames.txt", "frames.png")
+for ii = 1, #frameList do
+    local region = pack:getTextureRegion(frameList[ii])
+    local bitmap = Bitmap.new(Texture.new(region))
+    stage:addChild(frameBitmaps[ii])
+end
+</code></pre>
+
+<p>When you create a texture atlas with the "Gideros Texture Packer" tool it creates a large image with all of the smaller images and a text file that lists the names of the smaller files and where they are located in the big image.  So even though you've combined all of the smaller files you still need to remember their names, or you could just look at the text file.</p>
+
+<p>The Gideros Studio "Texture Pack" example loads multiple images this way.  Try it out and see what it does.  It is a little character in a canoe.  Notice that when the paddle reaches the back of the canoe it does a very strange teleportation trick and appears on the opposite side of the canoe suddenly.  The animation isn't setup correctly.  Can you figure out how to fix it?  I'll give the answer in the next paragraph.  If you want to figure it out on your own, don't read on but try to figure it out first.</p>
+
+<p>The example animation includes a list of bitmaps in a table and self.anim points to it.  That list includes frames 1 to 13.  You need to change that list so that after it gets to 13 it decreases down to 12, 11, 10, until it gets to 1.</p>
+
+<p>If you aren't sure how to fix it then just start making changes.  Don't be afraid to experiment.  Change the numbers for the bitmaps and run it and see what happens.  For fun, you could change the order of the numbers so that the frames are completely of order and jump all over.  Or you could make the paddle do a wiggle motion by toggling between 2 frames over and over.</p>
+
+<h2>MovieClip Animations</h2>
+
+<p>To create a complex animation like a character that walks in 4 directions (north, east, south, and west) with actions like standing, walking, running, jumping, and swinging a sword you will need frames for all directions and actions.  That can add up to a lot of frames and turn into some complex code.</p>
+
+<p>The MovieClip class makes it easy to animate lots of frames.  The MovieClip class can store all of the frames of an animation and play it on its own.  You can store all of the different directions in the MovieClip and you can even tell it to loop so that when it reaches a certain frame it will jump to another image so you can have multiple loops in the same MovieClip.</p>
+
+<p>Here is some demo code showing how to load and use a MovieClip frame animation.  Load it and see what it does.</p>
+
+<pre><code>AnimatedSprite = Core.class(Sprite)
+
+function AnimatedSprite:init(bitmaps, directions, frames, animation_speed)
+
+    self.bitmaps = bitmaps
+    self.directions = directions
+    self.frames = frames
+    self.animation_speed = animation_speed
+
+    local movieclip_parts = {}
+    local movieclip_actions = {}
+    for ii = 0, self.directions-1 do
+        for jj = 0, self.frames-1 do
+
+            -- Store the bitmap and timing
+            local frame = ii * self.frames + jj
+            bitmap = self.bitmaps[frame + 1]
+            local start_time = frame * self.animation_speed + 1
+            local end_time = start_time + self.animation_speed - 1
+            movieclip_parts[#movieclip_parts+1] = {start_time, end_time, bitmap}
+
+        end
+
+        -- Add the looping actions
+        local start_time = ii * self.frames * self.animation_speed + 1
+        local end_time = (ii+1) * self.frames * self.animation_speed
+        movieclip_actions[#movieclip_actions+1] = {end_time, start_time}
+
+    end
+
+    self.movieclip = MovieClip.new(movieclip_parts)
+    for ii = 1, #movieclip_actions do
+        self.movieclip:setGotoAction(movieclip_actions[ii][1], movieclip_actions[ii][2])
+    end
+    self:addChild(self.movieclip)
+    self.direction = 0
+end
+
+function AnimatedSprite:setDirection(d)
+    self.direction = d % 8
+    --local current_frame = self.movieclip:getFrame()%self.animation_speed*self.frames
+    self.movieclip:gotoAndPlay(self.direction*self.animation_speed*self.frames+1) -- +current_frame
+end
+
+-- Create the bitmaps (this will change depending on your image source)
+function bitmapsFromTextureAtlas(filename, width, height, directions, frames)
+    local texture = Texture.new(filename)
+    local bitmaps = {}
+    for yy = 0, directions-1 do
+        for xx = 0, frames-1 do
+            local region = TextureRegion.new(texture, width*xx, height*yy, width, height)
+            local bitmap = Bitmap.new(region)
+            bitmap:setAnchorPoint(.5, .5)
+            bitmaps[#bitmaps+1] = bitmap
+        end
+    end
+    return bitmaps
+end
+
+local bitmaps = bitmapsFromTextureAtlas("dragon.png", 75, 70, 8, 10) -- 750/10, 560/8
+
+-- Create the animated sprite, set its position, and add it to the stage
+sprite = AnimatedSprite.new(bitmaps, 8, 10, 4)
+sprite:setPosition(application:getContentWidth()/2, application:getContentHeight()/2)
+stage:addChild(sprite)
+
+-- Randomly change directions
+local function onTimer(event)
+    sprite:setDirection(math.random(1,8))
+end
+local timer = Timer.new(600*math.random(1,4), 0)
+timer:addEventListener(Event.TIMER, onTimer)
+timer:start()
+</code></pre>
+
+<p>The first half is the code that manages the MovieClip for us, that is our AnimatedSprite definition.  We won't need to change much there.  The second half of the example starts with the comment <code>-- Create the bitmaps</code>.  We will want to customize everything from that point on in the future.</p>
+
+<p>The first thing we will want to customize is how we obtain our bitmaps.  Earlier in this lesson we looked at all of the ways of creating bitmaps.  In this example we are getting the bitmaps from a texture atlas that wasn't created with "Gideros Texture Packer" so we have to specify the location of all of the smaller bitmaps.</p>
+
+<p>The next part creates the animated sprite, sets its position, and adds it to the stage.  The last parameter of AnimatedSprite.new() determines how fast the animation is, in this case it is set to 4.  The application displays 60 frames per second. The number 4 represents how many of those frames each bitmap will stay on the screen.  If we changed the 4 to a 1 then each MovieClip frame will flash for a 60th of a second.  A value of 30 means each bitmap would display for a half a second.  60 would be an entire second.  Why don't you change the values and see how the animation changes.</p>
+
+<p>The last section of the code example above randomly changes the direction after a random time.  We will eventually remove that code and replace it with user input.</p>
+
+<h2>TNT Animator Studio</h2>
+
+<p><a href="http://www.tntengine.com/">TNT Animator Studio</a> is a 3rd party solution that allows you to easily create animations, and it is free.  To use the app you need to have a texture pack that was created with Gideros Texture Packer.  Once you have a texture pack, you can load it with TNT Animator and then export out a .tan file.  In your Gideros project you want to add the file exported by TNT Animator (it will end with ".tan") and the tntanimator library files.  Be sure to right click on the library files and select "Exclude for Execution".  Be sure to look at the examples that come with TNT Animator.</p>
+
+<p>This code will run and load an animation.</p>
+
+<pre><code>local function is32bit()
+    return string.dump(is32bit):byte(9) == 4
+end
+if is32bit() then
+    require("tntanimator32")
+else
+    require("tntanimator64")
+end
+
+-- Create the texture pack (Use Gideros Texture Packer to create this)
+local sprites = TexturePack.new("sprites.txt", "sprites.png")
+
+-- Create a TNT Animator Loader
+local spritesLoader = CTNTAnimatorLoader.new()
+spritesLoader:loadAnimations("sprites.tan", sprites, true)
+
+-- Create a TNT Animator
+local anim = CTNTAnimator.new(spritesLoader)
+
+anim:setAnimation("RUN_RIGHT") -- This name is defined in TNT Animator, it it isn't defined you will get an error!
+anim:addChildAnimation(anim)
+anim:playAnimation()
+anim:setPosition(160, 240)
+stage:addChild(anim)
+</code></pre>
+
+<h2>MovieClip Tweening</h2>
+
+<p>The MovieClip class can do more than just manage your frame animations for you.  The MovieClip class also allows you to blend and move the bitmaps around in fancy ways using tweening.  Tweening is short for "inbetweening".  In animation you always have a starting and ending point for each motion.  The important frames are called keyframes.  Tweened frames are the frames between keyframes and they are usually figured out by some sort of automation.</p>
+
+<p>The following MovieClip properties can be tweened.</p>
+
+<pre><code>x
+y
+rotation
+scale
+scaleX
+scaleY
+alpha
+redMultiplier
+greenMultiplier
+blueMultiplier
+alphaMultiplier
+</code></pre>
+
+<p>That means any of those values can be automated so that they have a start value, an end value, and everything in between is tweened.  There are multiple ways those tweened values can be calculated.  For example, if you were tweening the position of a MovieClip it can either move at a constant rate, you can have it slowly speed up, slow down, or speed up and then slow down. The way that the tween values are calculated is called the easing function.</p>
+
+<p>Most easing functions have an "in", an "out", and an "inOut" variety.  The "in" functions start slow and speed up, it is going "in" to the motion.  The "out" functions start fast and slow down.  The "inOut" functions speed up then slow down.</p>
+
+<p>There are 11 easing types.  Instead of trying to describe them, run this sample code to see "linear" and the "inOut" varieties of the other 10.</p>
+
+<pre><code>local t = {
+    "linear", "inOutSine", "inOutQuadratic", "inOutCubic",
+    "inOutQuartic", "inOutQuintic", "inOutExponential",
+    "inOutCircular", "inOutBack", "inOutElastic", "inOutBounce",
+}
+for i,v in ipairs(t) do
+    local textfield = TextField.new(nil, v)
+    textfield:setTextColor(0xff00ff)
+    local mc = MovieClip.new({{1, 120, textfield, {
+        y = i*25,
+        x = {50, 150, v},
+    }}})
+    mc:setGotoAction(120,1)
+    stage:addChild(mc)
+end
+</code></pre>
+
+<p>7 easing types always move towards the goal: "sine", "quadratic", "cubic", "quartic", "quintic", "exponential", and "circular".  The difference between them is the speed of acceleration.  3 of them actually move towards and away from the goal: "back", "bounce", and "elastic".  The "linear" type moves towards the goal at a constant speed, it has no acceleration.</p>
+
+<p>If you want to have some fun after the <code>x = {50, 150, v},</code> add these lines.</p>
+
+<pre><code>        rotation = {0, 360, v},
+        redMultiplier = {1, 0, v},
+        blueMultiplier = {0, 1, v},
+</code></pre>
+
+<p>The values you use to tween matter.  The x and y values are coordinates.  Rotation is degrees (0 to 360).  The scale, alpha, and multiplier values are all 0 to 1.  The color multipliers only work if that color is present in the original sprite.  So if the sprite is black, the color multipliers don't do anything.</p>
+
+<p>One very fun thing to do is to find a sprite that is mostly one color and has highlights of another color and to tween the highlight color up and down, as if it were glowing.</p>
+
+<h2>GTween</h2>
+
+<p>Tweening position isn't used as much for moving game characters since character movement is usually managed by user input.  Tweening objects like doors or game elements like buttons or the whole UI make much more sense and look very good.  Alpha is one of the items that can be tweened and by tweening alpha you can make a sprite fade in, so you will actually want to use that often.  However, you may not want to create a MovieClip object for that since you will only do it once or twice when a user uses your game.</p>
+
+<p>GTween is lua file that you can include in your project to do the same things to sprites that aren't MovieClips. It uses the same set of easing functions but you have to name it with "easing.name".  It has a few more tricks up it's sleeve like options for delay, repeatCount, and reflect.  You can open the GTween example that comes with Gideros Studio to see how to use it.  The main code is below.</p>
+
+<pre><code>local sprite = Bitmap.new(Texture.new("box.png"))
+stage:addChild(sprite)
+
+GTween.new(sprite, 2, {x = 240}, {delay = 0.2, ease = easing.outBounce, repeatCount = 2, reflect = true})
+</code></pre>
+
+<p>To understand more about tweening, read the <a href="http://hosted.zeh.com.br/tweener/docs/en-us/">Tweener docs</a> (written for Flash, but still applies to GTween).  These docs also apply to MovieClip tweening.</p>
+
+<h2>Activity</h2>
+
+<p>Now that you have the tools to create animatable sprites and some cool tweening effects you should go to the Gideros Mobile website and download the AssetLibrary and look in the "Sprites" and "Texture/spritelib_gpl" folders and see if you can turn any of them into animations.  I should give you a warning that this is a long and difficult process the first time you do it.  It isn't as easy as you think.</p>
+
+<p>You could also go to the internet to get the images used in the AssetLibrary.  Here are the URL's:</p>
+
+<ul>
+<li><a href="http://www.widgetworx.com/widgetworx/resources/spritelib_gpl.zip">http://www.widgetworx.com/widgetworx/resources/spritelib_gpl.zip</a></li>
+<li><a href="http://opengameart.org/content/fireball-spell">http://opengameart.org/content/fireball-spell</a></li>
+</ul>
+
+<p>You may also want to do a web search to find even more sprite sheets or search <a href="http://opengameart.org">opengameart.org</a>.</p>
+
+<p>You should also experiment by tweening an object around the screen, either moving, rotating, scaling, changing color, appearing and disappearing, etc.</p>
+
+<p>If you have an image editor you can also make your own images.  A good Mac image editor is <a href="http://pixenapp.com/">Pixen</a>.  You can also use the Gideros Texture Packer if you create a sequence of images.</p>
+
+<p>Published: 2012-07-31, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "mobile-game-programming-lesson-5.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

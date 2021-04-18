@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>OS X Server - Sieve - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li class="active"><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>OS X Server - Sieve</h1>
+
+<div class="horizontal_line"></div>
+
+<p>[Update 2019-04-13: I no longer run a Mac OS X Server and <a href="https://support.apple.com/en-us/HT208312">Mac OS X Server is dead</a>.]</p>
+
+<p>Dovecot uses Sieve to do server side filtering.  I had this information on the Dovecot page, but it kept growing, so I decided it deserved it's own page.</p>
+
+<p>Note, this post is part of a series.  Here are the other posts.</p>
+
+<ul>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-basics.html">Basics</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-managing-user-accounts.html">Managing user accounts</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix.html">Postfix</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-dovecot.html">Dovecot</a></li>
+<li>OS X Server - Sieve (this page)</li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix-queues.html">Postfix Queues</a></li>
+</ul>
+
+<h2>Sieve</h2>
+
+<p>Sieve is this thing that lets you do server side filtering.  It seems to work best with Thunderbird and the 3rd party <a href="https://github.com/thsmi/sieve/blob/master/nightly/README.md">sieve add-on</a>.  I think the "stable" builds don't work, but the nightly build does.</p>
+
+<p>The online documentation for Sieve seems to be rather disorganized.  Every implementation of Sieve might be slightly different.  I couldn't find a comprehensive description of the language, just RFC's and such.</p>
+
+<p>Here is an example sieve script.</p>
+
+<pre><code>require ["fileinto", "envelope"];
+if anyof ( address :is "from" "yahoo-inc.com",
+           address :is "from" "yahoo.com" ) {
+  fileinto "yahoo";
+
+} elsif anyof ( address :is "from" "usatoday.com",
+                address :contains "from" "desnews.com",
+                address :contains "from" "foxnews.com" ) {
+  fileinto "News";
+
+} else {
+  # The rest goes into INBOX
+  # default is "implicit keep", we do it explicitly here
+  keep;
+}
+</code></pre>
+
+<p>You can also create sieve folders for your users on the server.  They are stored in /Library/Server/Mail/Data/rules/.  Each user will have a folder in there.  You can find out exactly what the directory is for a user by running <code>doveadm user &lt;name&gt;</code> and looking for "sieve" or "sieve_dir".  Make the directory if it doesn't exist already.  Place your script in there and run these 2 commands.</p>
+
+<pre><code>cd &lt;path/to/use/sieve_dir&gt;
+ln your_file.sieve dovecot.sieve
+sievec dovecot.sieve
+</code></pre>
+
+<p>The server might run the <code>sievec</code> command for you, but just in case it wont hurt to run it manually.</p>
+
+<h2>Data types</h2>
+
+<p>Again, this isn't suppose to be comprehensive or a tutorial, these are just my notes.  So this might well not be all of the possible data types, just what I've found.</p>
+
+<p>Comments: <code># ...</code> or <code>/* ... */</code>
+Identifier: <code>bla</code>
+Tag: <code>:bla</code>
+Number: <code>123</code> or <code>1K</code> or <code>1M</code> or <code>1G</code>
+String: <code>"bla"</code>
+String list: <code>["here", "there", "anywhere"]</code>
+Multi-line string:</p>
+
+<pre><code>text:
+text here
+.
+</code></pre>
+
+<p>or
+    text:-EOT
+    .
+    EOT</p>
+
+<p>Headers (subset of strings): <code>From</code> (headers do not contain colons)
+Addresses (subset of strings): <code>me@example.com</code> or <code>Me &lt;me@example.com&gt;</code></p>
+
+<h2>Commands</h2>
+
+<p>Basic structure:</p>
+
+<pre><code>command-name [optional args] &lt;required args&gt;;
+</code></pre>
+
+<p>Actual commands</p>
+
+<pre><code>stop; # Stops the script
+keep; # Default command if none have been specified
+discard; # Silently throw away
+fileinto "Spam"; # Moves message into mailbox
+reject "Spam someone else"; # Sends a rejection message with an explaination.
+redirect "johndoe@example.com"; # Redirects the message to the specfied address.
+</code></pre>
+
+<h2>Control Flow</h2>
+
+<pre><code>if condition { ... }
+if condition { … } else { … }
+if cond1 { … } elsif cond2 { … } else { … }
+</code></pre>
+
+<h2>Tests</h2>
+
+<p>Match types</p>
+
+<pre><code>:is
+:contains
+:matches
+:regex
+:over
+:under
+:value relation
+:count relation
+</code></pre>
+
+<p>Match wildcards</p>
+
+<p><code>*</code> - zero or more characters (not regex)<br />
+<code>?</code> - single character</p>
+
+<p>This means you have to use "\*" and "\?" in strings if you want those characters.</p>
+
+<p>Valid relations (same as Perl's)</p>
+
+<pre><code>eq
+ne
+gt
+ge
+lt
+le
+</code></pre>
+
+<p>Parts of an email address</p>
+
+<pre><code>:all
+:localpart
+:domain
+</code></pre>
+
+<p>Comparators</p>
+
+<pre><code>i;ascii-casemap
+i;octet
+</code></pre>
+
+<p>Logic</p>
+
+<pre><code>and
+or
+</code></pre>
+
+<h2>Built-in Tests</h2>
+
+<pre><code>not
+false
+true
+allof
+anyof
+address [address-part] [comparator] [match-type] header-names key-list
+envelope [address-part] [comparator] [match-type] envelope-part(string-list) key-list(string-list)
+exists header-names(string-list)
+header [comparator] [match-type] [:mime] header-names(string-list) key-list(string-list)
+size [:over | :under] limit(number)
+</code></pre>
+
+<p>Note: commands that require string lists can use a</p>
+
+<h2>Examples</h2>
+
+<p>I have not tested these.  Most of them were extracted from other websites.</p>
+
+<p>Throw away anything that doesn't have a "From" and "Date" header.</p>
+
+<pre><code>if not exists ["From","Date"] { discard; }
+</code></pre>
+
+<p>Throw away everything from someone you@example.com</p>
+
+<pre><code>if address :is :all "from" "you@example.com" { discard; }
+</code></pre>
+
+<p>Throw away everything from example.com</p>
+
+<pre><code>if address :is :domain "from" "example.com" { discard; }
+</code></pre>
+
+<p>Throw away everything from someone you@example.com</p>
+
+<pre><code>require "envelope";
+if envelope :all :is "from" "you@example.com" { discard; }
+</code></pre>
+
+<p>Throw away messages that don't have "From" and "Date" headers, or if it's from "you@example.com".</p>
+
+<pre><code>if anyof (not exists ["From", "Date"], header :contains "from" "you@example.edu") { discard; }
+</code></pre>
+
+<p>Throw away messages from 2 addresses</p>
+
+<pre><code>if header :contains "from" ["a@example.com","b@example.com"] { discard; }
+</code></pre>
+
+<p>Throw away message if they are FROM or TO a specific address</p>
+
+<pre><code>if header :contains ["From", "To"] "a@example.com" { discard; }
+</code></pre>
+
+<p>Wildcard example</p>
+
+<pre><code>if envelope :matches "from" "*spammy-???@*" { discard; }
+</code></pre>
+
+<p>Search the body for certain text</p>
+
+<pre><code>require "body";
+if body :text :contains ["spammy", "mortgages", "drugs", "phishy"] { discard; }
+</code></pre>
+
+<p>Move into spam folder</p>
+
+<pre><code>if anyof (
+    not address :all :contains ["To", "Cc", "Bcc"] "me@example.com",
+    header :matches "subject" ["*make*money*fast*", "*university*dipl*mas*"])
+{
+    fileinto "spam";
+}
+</code></pre>
+
+<p>Throw away large messages</p>
+
+<pre><code>if size :over 100K { discard; }
+</code></pre>
+
+<p>Reject large messages</p>
+
+<pre><code>if size :over 1M {
+    reject text:
+Please do not send me large attachments.
+Put your file on a server and send me the URL.
+Thank you.
+.... Fred
+.
+;
+    stop;
+}
+</code></pre>
+
+<h2>Other commands</h2>
+
+<pre><code>#inclue "filename"
+
+require string;
+require string-list;
+</code></pre>
+
+<h2>Vacation replies</h2>
+
+<p>Vacation out-of-office auto-replies can be implemented using Sieve.  Here is a example script.</p>
+
+<pre><code>require ["fileinto", "vacation"];
+# Move spam to spam folder
+if header :contains "X-Spam-Flag" "YES" {
+  fileinto "spam";
+  # Stop here so that we do not reply on spams
+  stop;
+}
+vacation
+  # Reply at most once a day to a same sender
+  :days 1
+  :subject "Out of office reply"
+  # List of additional recipient addresses which are included in the auto replying.
+  # If a mail's recipient is not the envelope recipient and it's not on this list,
+  # no vacation reply is sent for it.
+  :addresses ["j.doe@company.dom", "john.doe@company.dom"]
+"I'm out of office, please contact Joan Doe instead.
+Best regards
+John Doe";
+</code></pre>
+
+<p><a href="http://wiki2.dovecot.org/Pigeonhole/Sieve/Examples#Vacation_auto-reply">Vacation auto-reply docs</a></p>
+
+<h2>More info</h2>
+
+<p>More can be found out about sieve at these sites.</p>
+
+<ul>
+<li><a href="http://wiki2.dovecot.org/Pigeonhole/ManageSieve">wiki2.dovecot.org/Pigeonhole/ManageSieve</a></li>
+<li><a href="http://sieve.info">sieve.info</a></li>
+<li><a href="http://mailutils.org/manual/html_chapter/Sieve-Language.html">mailutils.org/manual/html_chapter/Sieve-Language.html</a></li>
+<li><a href="http://www.faqs.org/rfcs/rfc3028.html">www.faqs.org/rfcs/rfc3028.html</a></li>
+</ul>
+
+<p>Published: 2014-11-12, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "os-x-server-sieve.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

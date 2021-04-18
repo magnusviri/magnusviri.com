@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>OS X Server - Managing user accounts - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li class="active"><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>OS X Server - Managing user accounts</h1>
+
+<div class="horizontal_line"></div>
+
+<p>[Update 2019-04-13: I no longer run a Mac OS X Server and <a href="https://support.apple.com/en-us/HT208312">Mac OS X Server is dead</a>.]</p>
+
+<p>Here are my notes on managing user accounts on OS X Server (3.1.2) on Mavericks 10.9.4 for a mail server.  This includes but is not limited to Open Directory (OpenLDAP) users.  I'll also show some setup, maintenance, and debugging tasks for Open Directory.  This all assumes you know the basics of starting Open Directory and understanding most of what the Server.app GUI is doing.</p>
+
+<p>Note, this post is part of a series.  Here are the other posts.</p>
+
+<ul>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-basics.html">Basics</a></li>
+<li>OS X Server - Managing user accounts (this page)</li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix.html">Postfix</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-dovecot.html">Dovecot</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-sieve.html">Sieve</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix-queues.html">Postfix Queues</a></li>
+</ul>
+
+<h2>Working with the Open Directory service</h2>
+
+<h4>Check the status</h4>
+
+<pre><code>sudo serveradmin fullstatus dirserv
+</code></pre>
+
+<h4>Stop the Open Directory service</h4>
+
+<pre><code>sudo serveradmin stop dirserv
+</code></pre>
+
+<h4>Start the Open Directory service</h4>
+
+<pre><code>sudo serveradmin start dirserv
+</code></pre>
+
+<h4>A full list of settings</h4>
+
+<pre><code>sudo serveradmin settings dirserv
+</code></pre>
+
+<h2>Adding/editing users</h2>
+
+<p>Use dsexport to get format for dsimport.  You may want to add more excludes (-e parameters)</p>
+
+<pre><code>dsexport -e dsAttrTypeStandard:AuthenticationAuthority -e dsAttrTypeStandard:Expire \
+-e dsAttrTypeStandard:Change -e dsAttrTypeStandard:AltSecurityIdentities \
+&lt;users_file&gt; /LDAPv3/127.0.0.1 dsRecTypeStandard:Users
+</code></pre>
+
+<p>Once you construct an input file, then you can run dsimport</p>
+
+<pre><code>dsimport &lt;users_file&gt; /LDAPv3/127.0.0.1 M --username &lt;diradmin&gt; &lt;dirpassword&gt;
+</code></pre>
+
+<p>"/LDAPv3/127.0.0.1" specifies Open Directory.</p>
+
+<p>The "M" in the above command specifies merge, and as such, it will create the record or merge the records if they already exist.  This effectively allows you to edit a record as well as add it using the same command.</p>
+
+<p>Here is an example of a simple import file.</p>
+
+<blockquote>
+  <p>0x0A 0x5C 0x3A 0x2C dsRecTypeStandard:Users 8 dsAttrTypeStandard:FirstName dsAttrTypeStandard:UserShell dsAttrTypeStandard:PrimaryGroupID dsAttrTypeStandard:RecordName dsAttrTypeStandard:LastName dsAttrTypeStandard:RealName dsAttrTypeStandard:NFSHomeDirectory dsAttrTypeStandard:EMailAddress<br />
+James:/usr/bin/false:20:james:R:James R:/dev/null:james@example.com<br />
+Anton:/usr/bin/false:20:anton:R:Anton R:/dev/null:anton@example.com</p>
+</blockquote>
+
+<h4>Changing a user’s password</h4>
+
+<p>This command will change a password.</p>
+
+<pre><code>pwpolicy -a &lt;diradmin&gt; -u &lt;user_name&gt; -setpassword
+</code></pre>
+
+<p>Also, you can see when a password was last changed with this command.</p>
+
+<pre><code>sudo /usr/sbin/slapcat -b cn=authdata | egrep 'KerberosPrincName|passwordModDate:|^$'
+</code></pre>
+
+<p>This script will print out usernames and when they changed their password, sorted by date and by name.</p>
+
+<pre><code>#!/usr/bin/perl -w
+
+use strict;
+
+my @output = `sudo /usr/sbin/slapcat -b cn=authdata | egrep 'KerberosPrincName|passwordModDate:|^\$'`;
+
+my $dates = {};
+my $users = {};
+my $bucket = {};
+foreach my $line ( @output ) {
+    chomp $line;
+    if ( $line eq '' ) {
+        if ( $bucket-&gt;{'user'} and defined $bucket-&gt;{'date'} ) {
+            $users-&gt;{$bucket-&gt;{'user'}} = $bucket-&gt;{'date'};
+            push @{$dates-&gt;{$bucket-&gt;{'date'}}}, $bucket-&gt;{'user'};
+        }
+        $bucket = {};
+    } elsif ( $line =~ /KerberosPrincName: (.*)/ ) {
+        $bucket-&gt;{'user'} = $1;
+    } elsif ( $line =~ /passwordModDate: (\d\d\d\d)(\d\d)(\d\d)/ ) {
+        $bucket-&gt;{'date'} = "$1-$2-$3";
+    }
+}
+
+foreach my $date ( sort keys $dates ) {
+    print "$date:\n";
+    foreach my $name ( sort @{$dates-&gt;{$date}} ) {
+        print "\t$name\n";
+    }
+}
+print "--------------------\n";
+foreach my $name ( sort keys $users ) {
+    print "$name: $users-&gt;{$name}\n";
+}
+</code></pre>
+
+<h2>Adding users to groups</h2>
+
+<h4>Adding a user to a group (which is how mail lists are implemented for the mail service)</h4>
+
+<p>Use <code>dseditgroup</code> to add users to a group.</p>
+
+<pre><code>dseditgroup -o edit -n /LDAPv3/127.0.0.1 -u &lt;diradmin&gt; &lt;dirpassword&gt; -a &lt;user_name&gt; \
+-t user &lt;group_name&gt;
+</code></pre>
+
+<h4>Configuring access to services</h4>
+
+<p>To give users access to the various services you need to add them to the appropriate group.  You can do that with <code>dseditgroup</code>.  To see a list of the different groups run the command <code>ls /var/db/dslocal/nodes/Default/groups/com.apple.access*</code>.</p>
+
+<p>Note, these are local groups, not LDAP groups.  That's why in the following commands you see "/Local/Default" instead of "/LDAPv3/127.0.0.1".</p>
+
+<p>If you were running an email server, you'd add the user to the com.apple.access_mail group.  Here is how you would add a user to the email group.</p>
+
+<pre><code>dseditgroup -o edit -n /Local/Default -u &lt;admin_user&gt; &lt;admin_password&gt; \
+&lt;user_name&gt; -t user &lt;group_name&gt;
+</code></pre>
+
+<p>This is an example of adding the user "reynolds" to the group com.apple.access_mail.</p>
+
+<pre><code>dseditgroup -o edit -n /Local/Default -u diradmin s3cReT reynolds \
+-t user com.apple.access_mail
+</code></pre>
+
+<p>You'll have to run this command for every user, or you could use <code>dsexport</code> and <code>dsimport</code> except specify /Local/Default dsRecTypeStandard:Groups, like this.</p>
+
+<pre><code>dsexport &lt;group_file&gt; /Local/Default dsRecTypeStandard:Groups
+dsimport &lt;group_file&gt; /Local/Default M --username &lt;diradmin&gt; &lt;dirpassword&gt;
+</code></pre>
+
+<h2>Aliases, forwards, and lists using Server.app</h2>
+
+<h4>Adding aliases using Server.app/Workgroup Manager/CLI</h4>
+
+<p>I am including this to be thorough (and I couldn't easily find documentation how to do it), I don't actually think this is the way to go.  This setting is <em>not</em> stored in any postfix config files but in the OpenLDAP database (located in /var/db/openldap/).</p>
+
+<p>In Server.app -> Users, right click on a user and select "Advanced Options..." and add aliases.</p>
+
+<p><img class="full" src="../blog/20140716_2_osxserver_managing_user_accounts/add_alias_server_app.png" /></p>
+
+<p>Or in Workgroup Manager, add extra shortnames.</p>
+
+<p><img class="full" src="../blog/20140716_2_osxserver_managing_user_accounts/add_alias_workgroup_manager.png" /></p>
+
+<p>Doing this from the command line requires you to run dsimport with a comma separated list of recordnames.  I'm going to use a line from the example import file from a previous section.  Change this:</p>
+
+<pre><code>James:/usr/bin/false:20:james:R:James R:/dev/null:james@example.com
+</code></pre>
+
+<p>to this ("reynolds" is the alias):</p>
+
+<pre><code>James:/usr/bin/false:20:james,reynolds:R:James R:/dev/null:james@example.com
+</code></pre>
+
+<h4>Adding forwards using Server.app/CLI</h4>
+
+<p>I am including this to be thorough, I don't actually think this is the way to go. This setting is <em>not</em> stored in Open Directory or postfix config files but in a plist file located at /Library/Server/Mail/Data/db/.mailusersettings.plist.</p>
+
+<p>In Server.app -> Users create a user record. After you are done editing it, go to the user list and right click on the user and select "Edit Mail Options...".  Change the popup labeled "Mail should be:" from "stored locally" to "forwarded" and enter the to email address.</p>
+
+<p>Use <code>set_user_mail_opts</code> to change this from the command line.</p>
+
+<pre><code>set_user_mail_opts -f &lt;forward_email&gt; -g &lt;user guid&gt;
+</code></pre>
+
+<p>Or</p>
+
+<pre><code>set_user_mail_opts -f &lt;forward_email&gt; -u &lt;user id&gt;
+</code></pre>
+
+<p>You can use <code>set_user_mail_opts</code> to see the list of forwards.</p>
+
+<pre><code>set_user_mail_opts -f list
+</code></pre>
+
+<h4>Adding mail lists using Server.app</h4>
+
+<p>Create a group, add members to the group, and then open the group in Server.app and check "Enable group mailing list" and "Allow mail from non-group members".</p>
+
+<p><img class="full" src="../blog/20140716_2_osxserver_managing_user_accounts/add_list_server_app.png" /></p>
+
+<p>Both of these settings are stored in plist files located at /Library/Server/Mail/Config/MailServicesOther.plist and /Library/Server/Mail/Config/listserver/prefs/<em>GUID</em>.plist. I don't know of any way to gracefully edit these via the command line.</p>
+
+<h2>Aliases, forwards, and lists using postfix (these are not Open Directory accounts!)</h2>
+
+<h4>Adding aliases using postfix</h4>
+
+<p>Edit the /etc/aliases file, put in your desired changes, then run <code>newaliases</code> to tell postfix to re-read the file.</p>
+
+<p>An alias is just an alternate name for a user, for example, reynolds@example.com and james@example.com can point to the same account using aliases.</p>
+
+<p>The format is as follows.</p>
+
+<pre><code>&lt;alias&gt;: &lt;accountname&gt;
+</code></pre>
+
+<p>Here is an example of "james" being an alias for the account named "reynolds".</p>
+
+<pre><code>james: reynolds
+</code></pre>
+
+<p>Very simple.</p>
+
+<p>Always run <code>newaliases</code> after changing /etc/aliases.</p>
+
+<h4>Adding forwards using postfix</h4>
+
+<p>Use /etc/aliases again.  Here is an example line from /etc/aliases that forwards james to james@mail2.example.com.</p>
+
+<pre><code>james: james@mail2.example.com
+</code></pre>
+
+<p>Always run <code>newaliases</code> after changing /etc/aliases.</p>
+
+<p>Note, doing it this way does <em>not</em> require a user account for the email, but using the Server.app or <code>set_user_mail_opts</code> does require a user account.</p>
+
+<h4>Adding mail lists using postfix</h4>
+
+<p>Use /etc/aliases again.  Here is an example line from /etc/aliases that sends mail to one address to multiple accounts (a mail list).</p>
+
+<pre><code>help: reynolds, martin, nadauld
+</code></pre>
+
+<p>To wrap a line, just start the wrapped line with a space, like this.</p>
+
+<pre><code>help: reynolds, martin
+  nadauld
+</code></pre>
+
+<p>You can also specify an absolute path to a file that includes a list of names.</p>
+
+<pre><code>help: :include:/path/to/file
+</code></pre>
+
+<p>/path/to/file would contain a list of names separated by commas, spaces, or newlines.  The following examples are all valid for an alias include file.</p>
+
+<pre><code>reynolds, martin, nadauld
+
+reynolds martin nadauld
+
+reynolds
+martin
+nadauld
+</code></pre>
+
+<p>Always run <code>newaliases</code> after changing /etc/aliases.</p>
+
+<p>Note, doing it this way does <em>not</em> require a group account for the email, but using the Server.app does require a group account.</p>
+
+<h2>Getting a list of users using the CLI</h2>
+
+<p>Yes, you can use <code>dscl</code>.  And there is lots of documentation on that, including <a href="http://www.magnusviri.com/dscl.html">some dscl documentation</a> that I wrote.</p>
+
+<p>But I want to show you <code>ldapsearch</code>.</p>
+
+<p>Get the searchbase first.  The search base for a site named example.com will look like this: "dc=example,dc=com".  The searchbase can be totally different then the FQDN of the server.  OS X Server determines the searchbase when you first create the directory.  It doesn't really matter what it is, so if you change your server IP or something, you don't need to worry if the searchbase doesn't match the FQDN.</p>
+
+<pre><code>serveradmin settings dirserv:LDAPSettings:LDAPSearchBase
+</code></pre>
+
+<p>It will return something like this.</p>
+
+<pre><code>dirserv:LDAPSettings:LDAPSearchBase = "dc=example,dc=com"
+</code></pre>
+
+<p>Take the quoted text from the above command and use that as your search base, for example, "dc=example,dc=com".</p>
+
+<p>This command will dump everything from openldap.</p>
+
+<pre><code>ldapsearch -h &lt;ip of server&gt; -x -b &lt;searchbase&gt;
+</code></pre>
+
+<p>Here is an example of getting the users by adding "cn=users," to the start of the searchbase.  If I run this on the server I can use 127.0.0.1 for the IP.  I'm using the searchbase "dc=example,dc=com" as an example.</p>
+
+<pre><code>ldapsearch -h 127.0.0.1 -x -b "cn=users,dc=example,dc=com"
+</code></pre>
+
+<p>To view just one user.</p>
+
+<pre><code>ldapsearch -h 127.0.0.1 -x -b "cn=users,dc=example,dc=com" uid=diradmin
+</code></pre>
+
+<p>To see the loginShell and homeDirectory for one user ("uid=diradmin" is called a filter).</p>
+
+<pre><code>ldapsearch -h 127.0.0.1 -x -b "cn=users,dc=example,dc=com" uid=diradmin \
+loginShell homeDirectory
+</code></pre>
+
+<p>This is the output of the above command.</p>
+
+<pre><code># extended LDIF
+#
+# LDAPv3
+# base &lt;cn=users,dc=biomail,dc=biology,dc=utah,dc=edu&gt; with scope subtree
+# filter: uid=diradmin
+# requesting: loginShell homeDirectory
+#
+
+# diradmin, users, biomail.biology.utah.edu
+dn: uid=diradmin,cn=users,dc=biomail,dc=biology,dc=utah,dc=edu
+loginShell: /bin/tcsh
+homeDirectory: /private/var/root
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+</code></pre>
+
+<p>This is an example of a complex filter (searching for 2 terms and using a wildcard).</p>
+
+<pre><code>ldapsearch -h 127.0.0.1 -x -b "cn=users,dc=example,dc=com" \
+"(&amp;(gidNumber=20)(loginShell=*sh))"
+</code></pre>
+
+<p>To view groups.</p>
+
+<pre><code>ldapsearch -h 127.0.0.1 -x -b "cn=groups,dc=example,dc=com"
+</code></pre>
+
+<p>To view members of a group.</p>
+
+<pre><code>ldapsearch -h 127.0.0.1 -x -b "cn=groups,dc=example,dc=com" \
+apple-group-realname="Open Directory Administrators" memberUid
+</code></pre>
+
+<p>This is the output from the above command.</p>
+
+<pre><code># extended LDIF
+#
+# LDAPv3
+# base &lt;cn=groups,dc=biomail,dc=biology,dc=utah,dc=edu&gt; with scope subtree
+# filter: apple-group-realname=Open Directory Administrators
+# requesting: memberUid
+#
+
+# admin, groups, biomail.biology.utah.edu
+dn: cn=admin,cn=groups,dc=biomail,dc=biology,dc=utah,dc=edu
+memberUid: diradmin
+memberUid: okun
+memberUid: streeter
+memberUid: reynolds
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+</code></pre>
+
+<h2>Maintenance</h2>
+
+<h4>Check for open directory corruption</h4>
+
+<pre><code>/usr/libexec/slapd -Tt
+slaptest -f /private/etc/openldap/slapd.conf -v
+</code></pre>
+
+<h4>Getting status of the service.</h4>
+
+<pre><code>serveradmin fullstatus dirserv
+</code></pre>
+
+<h4>Repair corruption</h4>
+
+<p>If server is running, stop it first, then use the db_recover command.</p>
+
+<pre><code>serveradmin stop dirserv
+db_recover -h /var/db/openldap/openldap-data/
+serveradmin start dirserv
+</code></pre>
+
+<h4>Archive Open Directory data using the command line</h4>
+
+<pre><code>sudo slapconfig -backupdb /full/path/to/archive
+</code></pre>
+
+<p>It will ask for a password.</p>
+
+<p>If you turn on Time Machine this will occur automatically and will be saved at /var/backups/ServerBackup_OpenDirectoryMaster.sparseimage.  Turning on TimeMachine will also create /.ServerBackups.</p>
+
+<p>Or you can automate by creating a periodic script.  Here is an example.</p>
+
+<p>/etc/periodic/daily/500.backup-openldap</p>
+
+<pre><code>#!/usr/bin/expect -f
+
+set date [timestamp -format "%Y_%m_%d"]
+set archive_path "/Backups/ldap_backups"
+set archive_password "yourpassgoeshere"
+set archive_name "servername_ldap_$date"
+spawn /usr/sbin/slapconfig -backupdb $archive_path/$archive_name
+expect "Enter archive password"
+send "$archive_password\r"
+expect eof
+</code></pre>
+
+<p>Or you could use <a href="http://robotcloud.screenstepslive.com/s/2459/m/5322/l/94467-bender-automated-backup-of-os-x-server-settings">Bender</a>.  In my setup, I installed the Bender script but not the launchdaemon.  I called the Bender script using a periodic script.</p>
+
+<p>I hacked up the Bender script a lot, for example, changing the password, and changed the SendAlert function.  I <a href="http://www.magnusviri.com/os-x-server-basics.html#periodic">configured periodic to send email</a>, then the email will include the stdout from this script.</p>
+
+<h4>Restore Open Directory data using the command line</h4>
+
+<pre><code>sudo slapconfig -restoredb /full/path/to/archive.sparseimage
+</code></pre>
+
+<p>It will ask for a password.</p>
+<p>Published: 2014-07-16, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "os-x-server-managing-user-accounts.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

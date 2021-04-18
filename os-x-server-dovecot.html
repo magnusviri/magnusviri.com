@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>OS X Server - Dovecot - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li class="active"><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>OS X Server - Dovecot</h1>
+
+<div class="horizontal_line"></div>
+
+<p>[Update 2019-04-13: I no longer run a Mac OS X Server and <a href="https://support.apple.com/en-us/HT208312">Mac OS X Server is dead</a>.]</p>
+
+<p>Dovecot gets email handed to it by postfix (called "local delivery") and dovecot stores the email until an email client connects and retrieves email.  Dovecot does IMAP or POP, not SMTP.  Postfix does SMTP.</p>
+
+<p>Here are my notes on managing dovecot on OS X Server (3.1.2) on Mavericks 10.9.4.  This all assumes you know the basics of starting and configuring the Mail service using Server.app.</p>
+
+<p>Note, this post is part of a series.  Here are the other posts.</p>
+
+<ul>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-basics.html">Basics</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-managing-user-accounts.html">Managing user accounts</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix.html">Postfix</a></li>
+<li>OS X Server - Dovecot (this page)</li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-sieve.html">Sieve</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix-queues.html">Postfix Queues</a></li>
+<li>OS X Server - <a href="http://www.magnusviri.com/os-x-server-postfix-queues.html">Postfix Queues</a></li>
+</ul>
+
+<h2>Learning Dovecot</h2>
+
+<p><a href="http://help.apple.com/advancedserveradmin/mac/3.1/#apdDCC9970C-9253-47C4-8152-7A5272CF753E">Apple's mail server architecture documentation</a> includes a good explanation how all of the services (postfix and dovecot) fit together.  If you don’t have a basic idea, it’s good to just look this over.</p>
+
+<p>Here are links to the official dovecot site and documentation.</p>
+
+<ul>
+<li><a href="http://www.dovecot.org">Dovecot.org</a>, note, OS X Server includes dovecot v2.2.5 (Find by running <code>dovecotd --version</code>)</li>
+<li><a href="http://wiki2.dovecot.org/FrontPage">Dovecot wiki</a>
+man pages: doveadm(1), doveconf(1), dovecot-lda(1), dsync(1)</li>
+<li><a href="http://wiki2.dovecot.org/TestInstallation">TestInstallation</a></li>
+<li>[TestPop3Installation0](http://wiki2.dovecot.org/TestPop3Installation0</li>
+</ul>
+
+<p>Dovecot is not installed by default on OS X.  It is included in the Server.app bundle, located at /Applications/Server.app/Contents/ServerRoot/usr/libexec/dovecot.</p>
+
+<h2>Dovecot Basics</h2>
+
+<h4>Start Dovecot</h4>
+
+<pre><code>dovecotd
+</code></pre>
+
+<h4>Stop Dovecot</h4>
+
+<pre><code>dovecotd stop
+</code></pre>
+
+<h4>To re-read configuration files (after you make a change), enter:</h4>
+
+<pre><code>dovecotd reload
+</code></pre>
+
+<h2>Dovecot Settings</h2>
+
+<p>Display settings that are not default.</p>
+
+<pre><code>doveconf -n
+</code></pre>
+
+<p>The config file is located at /Library/Server/Mail/Config/dovecot/dovecot.conf.</p>
+
+<p>To see how Mac OS X configures Dovecot differently than the default, run these commands.</p>
+
+<pre><code>doveconf -a &gt; /tmp/doveconf_all
+doveconf -d &gt; /tmp/doveconf_default
+diff /tmp/doveconf_all /tmp/doveconf_default
+</code></pre>
+
+<h2>Dovecot Logging</h2>
+
+<p>To find the location of the logs use</p>
+
+<pre><code>doveadm log find
+</code></pre>
+
+<p>They are located at /Library/Logs/Mail/.  Here's all of the log files I've got in there.</p>
+
+<pre><code>amavis.log
+clamav.log
+freshclam.log
+junkmail.log
+listserver.log
+mail-debug.log
+mail-err.log
+mail-info.log
+mail-info.log.0.bz2
+</code></pre>
+
+<p>If I run <code>tail -f /Library/Logs/Mail/mail-info.log</code> I'll see all of my user's connections.  You'll also notice that the old log files are bzipped.  You can search them using <code>bzgrep</code> and you can display them using <code>bzcat</code>.</p>
+
+<p>This is how I'd find out when a user named "matt" last logged in (assuming my server IP was 10.0.0.1).</p>
+
+<pre><code>bzgrep -r "Login: user=&lt;matt" mail-info.log.* | grep -v rip=10.0.0.1| tail -n1
+grep -r "Login: user=&lt;matt" mail-info.log | grep -v rip=10.0.0.1| tail -n1
+</code></pre>
+
+<p>I've use this regular expression to convert the log entries to tab delimited format so I can put it in a spreadsheet.  My replacement syntax is for BBEdit.</p>
+
+<pre><code>Search: .*mail-info.log.*:(\w+ \w+ \w+:\w+:\w+) (\w+)-login: Info: Login: user=&lt;(.+)&gt;, method=(.+), rip=([:.\d]+), lip=([:.\d]+), mpid=(\d+),? ?(.*)
+
+Replace: \1\t\2\t\3\t\4\t\5\t\6\t\7\t\8
+</code></pre>
+
+<p>This script will do an exhaustive search to find all of the last Dovecot and Postfix logins (including looking for aliases).</p>
+
+<pre><code>#!/usr/bin/perl
+
+my $ignore_users = "^vpn|^diradmin";
+my $logs_dir = "/Library/Logs/Mail";
+
+my $dovecot_logins = {};
+my @old_logs = `ls -tr $logs_dir/mail-info.log.*`;
+foreach my $old_log ( @old_logs ) {
+    parse_dovecot_logins( "bzgrep -r \"Login: user=&lt;\" $old_log", $dovecot_logins );
+}
+parse_dovecot_logins( "grep -r \"Login: user=&lt;\" $logs_dir/mail-info.log", $dovecot_logins );
+
+my $postfix_logins = {};
+parse_postfix_logins( "grep username= /var/log/mail.log", $postfix_logins );
+
+my @user_names = @ARGV;
+if ( $#user_names &lt; 0 ) {
+    @records = `dscl /LDAPv3/127.0.0.1 -list /Users`;
+    foreach my $record ( @records ) {
+        chomp $record;
+        if ( $record !~ /$ignore_users/ ) {
+            push ( @user_names, $record );
+        }
+    }
+}
+
+print "Server\tDate\tUser\tProtocol\tAuthType\tIP\tDNS\tEncryption\n";
+
+foreach my $user ( @user_names ) {
+    my $check_for_aliases = `dscl /LDAPv3/127.0.0.1 -read /Users/$user RecordName`;
+    chomp $check_for_aliases;
+    my @aliases = split(/ /, $check_for_aliases);
+    shift @aliases;
+    my @logins = ();
+    my $dovecot_login = 0;
+    my $postfix_login = 0;
+    foreach my $alias ( @aliases ) {
+        if ( $$dovecot_logins{$alias} ) {
+            my $logins = $$dovecot_logins{$alias};
+            my $last_login = pop @$logins;
+            print "Dovecot\t$$last_login{date}\t$alias\t$$last_login{proto}\t$$last_login{authtype}\t$$last_login{RIP}\t\t$$last_login{encrypt}\n";
+            $dovecot_login = 1;
+        }
+        if ( $$postfix_logins{$alias} ) {
+            my $logins = $$postfix_logins{$alias};
+            my $last_login = pop @$logins;
+            print "Postfix\t$$last_login{date}\t$alias\tsmtp\t$$last_login{authtype}\t$$last_login{ip}\t$$last_login{dns}\t\n";
+            $postfix_login = 1;
+        }
+    }
+    if ( ! $dovecot_login ) {
+        print "Dovecot\tNever\t$user\t\t\t\n";
+    }
+    if ( ! $postfix_login ) {
+        print "Postfix\tNever\t$user\t\t\t\n";
+    }
+
+}
+
+sub parse_dovecot_logins {
+    my ( $command, $hash ) = @_;
+    my @lines = `$command`;
+    foreach my $line ( @lines ) {
+        if ( $line =~ /.*mail-info.log.*:(\w+ +\w+ \w+:\w+:\w+) (\w+)-login: Info: Login: user=&lt;(.+)&gt;, method=(.+), rip=([:.\d]+), lip=([:.\d]+), mpid=(\d+),? ?(.*)/ ) {
+            my $user = $3;
+            my $login_hash =  {'date'=&gt;$1,'proto'=&gt;$2,'authtype'=&gt;$4,'RIP'=&gt;$5,'encrypt'=&gt;$8,};
+            if ( $$hash{$user} ) {
+                push @{$$hash{$user}}, $login_hash;
+            } else {
+                $$hash{$user} = [$login_hash];
+            }
+        }
+    }
+}
+
+sub parse_postfix_logins {
+    my ( $command, $hash ) = @_;
+    my @lines = `$command`;
+    foreach my $line ( @lines ) {
+        if ( $line =~ /^(\w+ +\w+ \w+:\w+:\w+) .* postfix\/smtpd\[\d+\]: (.*): client=(.*)\[([\.\d]+)\], sasl_method=(.*), sasl_username=(.*)/ ) {
+            my $user = $6;
+            my $login_hash =  {'date'=&gt;$1,'dns'=&gt;$3,'ip'=&gt;$4,'authtype'=&gt;$5,};
+            if ( $$hash{$user} ) {
+                push @{$$hash{$user}}, $login_hash;
+            } else {
+                $$hash{$user} = [$login_hash];
+            }
+        }
+    }
+}
+</code></pre>
+
+<h2>Authentication methods</h2>
+
+<p><a href="http://help.apple.com/advancedserveradmin/mac/3.1/#apdF077011B-DA71-475C-B95A-3F4855CE9C78">Apple's mail service documentation</a> lists the available authentication mechanisms in the "Change authentication settings” section.  This means this is how the password is dealt with, not the connection type.  Here is the list that OS X Supports.  These change</p>
+
+<pre><code>• Digest-MD5
+• Digest (CRAM-MD5)
+• APOP
+• Cleartext (if SSL is enabled)
+• Kerberos (when connected to an Open Directory server)
+</code></pre>
+
+<p>This page lists all of the methods that dovecot has</p>
+
+<p>http://wiki2.dovecot.org/Authentication/Mechanisms</p>
+
+<p>Here are the descriptions on that webpage that OS X Server is configured to use.</p>
+
+<pre><code>• Plaintext authentication - see the webpage for a really good discussion about this.
+• CRAM-MD5: Protects the password in transit against eavesdroppers. Somewhat good support in clients.
+• DIGEST-MD5: Somewhat stronger cryptographically than CRAM-MD5, but clients rarely support it.
+• APOP: This is a POP3-specific authentication. Similar to CRAM-MD5, but requires storing password in plaintext.
+• GSSAPI: Kerberos v5 support.
+</code></pre>
+
+<h2>Connection Encryption</h2>
+
+<p>The above authentication methods have nothing to do with the connection, or SSL/TLS, that is an entirely different matter.  <a href="http://help.apple.com/advancedserveradmin/mac/3.1/#apdC34BB415-E458-4C5D-9B2B-A4A92330C3C6">Apple's mail SSL documentation</a> describes using SSL on OS X Server.</p>
+
+<p><a href="http://wiki2.dovecot.org/SSL">Dovecot has some SSL documentation</a> as well, and it is especially useful in describing the difference between SSL, TLS, and STARTTLS.</p>
+
+<p>I also have a section on my <a href="http://www.magnusviri.com/os-x-server-postfix.html#TLS">postfix page about SSL/TLS</a>.  It is especially useful because it talks about what you have to do to get rid of client certificate warnings.</p>
+
+<p>Unencrypted at first (STARTTLS switches it to encrypted):</p>
+
+<ul>
+<li>SMTP 25/587 - STARTTLS</li>
+<li>IMAP 143 - STARTTLS</li>
+<li>POP 110 - STARTTLS</li>
+</ul>
+
+<p>Encrypted the whole time:</p>
+
+<ul>
+<li>SMTP 465 - SSL/TLS</li>
+<li>IMAP 993 - SSL/TLS</li>
+<li>POP 995 - SSL/TLS</li>
+</ul>
+
+<h2>doveadm</h2>
+
+<p>The doveadm tool is your gateway to all things dovecot.  Dovecot stores email in it's own "home" directories, not system home directories.  That's because dovecot email accounts might not be system accounts.  You do <strong>not</strong> want to manually change anything in those directories because dovecot keeps indexes of everything in there and any changes that dovecot doesn't know about will ruin the indexes.</p>
+
+<p>The doveadm tool allows you to make all the types of changes you'd normally want to, but it makes sure that all of the meta data it keeps stays good.</p>
+
+<p>The first thing to know about the doveadm too is that you have to know how to specify what to work with, either users or mail.  I'll discuss searching next, but I wanted to list what types of things doveadm can do.</p>
+
+<ul>
+<li>Create/delete/list mailboxes (<code>doveadm-mailbox</code>)</li>
+<li>Move messages between mailboxes (<code>doveadm-move</code>)</li>
+<li>Show (fetch) message content (`man doveadm-fetch)</li>
+<li>Delete (expunge) messages (<code>man doveadm-expunge</code>)</li>
+<li>Delete (purge) messages that are marked as deleted (<code>man doveadm-purge</code>)</li>
+<li>View quota (<code>man doveadm-quota</code>)</li>
+<li>Search mailboxes or messages, results are id's, not message contents (<code>man doveadm-search</code>)</li>
+</ul>
+
+<p>To display information on a user named "matt".</p>
+
+<pre><code>doveadm user matt
+</code></pre>
+
+<p>Would print something like this.</p>
+
+<pre><code>field   value
+uid 214
+gid 6
+home
+mail    maildir:/Library/Server/Mail/Data/mail/8C088880-2DA0-4752-AE11-719BAF76FF87
+quota   maildir:User quota:noenforcing
+quota_rule  *:storage=0
+mail_location   maildir:/Library/Server/Mail/Data/mail/8C088880-2DA0-4752-AE11-719BAF76FF87
+sieve   /Library/Server/Mail/Data/rules/8C088880-2DA0-4752-AE11-719BAF76FF87/dovecot.sieve
+sieve_dir   /Library/Server/Mail/Data/rules/8C088880-2DA0-4752-AE11-719BAF76FF87
+sieve_storage   /Library/Server/Mail/Data/rules/8C088880-2DA0-4752-AE11-719BAF76FF87
+</code></pre>
+
+<p>/Library/Server/Mail/Data/mail/8C088880-2DA0-4752-AE11-719BAF76FF87 is dovecot's "home" directory for the user.</p>
+
+<p>To specify a users, use -u.</p>
+
+<pre><code>doveadm quota get -u matt
+</code></pre>
+
+<h2>doveadm mailbox</h2>
+
+<p>To list the mailboxes for a user, use this.</p>
+
+<pre><code>doveadm mailbox list -u matt
+</code></pre>
+
+<p>You should see something like this.</p>
+
+<pre><code>Deleted Items
+Deleted Messages
+Drafts
+Junk E-mail
+Notes
+Sent Items
+Sent Messages
+INBOX
+</code></pre>
+
+<p>To create a mailbox use this.</p>
+
+<pre><code>doveadm mailbox create -u matt Junk
+</code></pre>
+
+<h2>Searching with grep</h2>
+
+<p>Maybe you don't want to use doveadm to search, either you don't know how to use doveadm yet, because the index is corrupt, or because you want to search a Time Machine backup.  Here's how you would do that.</p>
+
+<p>This shows you the part of each file that matches.</p>
+
+<pre><code>grep -r --exclude "dovecot*index*" "text" /Library/Server/Mail/Data/mail/users/matt
+</code></pre>
+
+<p>This shows the list of files.</p>
+
+<pre><code>grep -rl --null --exclude "dovecot*index*" "text" /Library/Server/Mail/Data/mail/users/matt | xargs -0 ls -l
+</code></pre>
+
+<p>This shows the first 15 lines of each message.</p>
+
+<pre><code>grep -rl --null --exclude "dovecot*index*" "text" /Library/Server/Mail/Data/mail/users/matt | xargs -0 head -n15
+</code></pre>
+
+<p>This searches Time Machine.</p>
+
+<pre><code>grep -rl --null --exclude "dovecot*index*" "text" /Volumes/TimeMachine/Backups.backupdb/Your_Server/*/Macintosh\ HD/Library/Server/Mail/Data/mail/users/matt
+</code></pre>
+
+<p>Do not modify the files you find with grep.  If you change the files you will corrupt the Dovecot indexes.</p>
+
+<h2>doveadm search</h2>
+
+<p>Study the <a href="http://wiki2.dovecot.org/Tools/Doveadm/SearchQuery">dovecot search documentation</a>.  And read the man page.</p>
+
+<pre><code>man doveadm-search-query
+</code></pre>
+
+<p>Here is a list of available search keys (based on IMAP version 4 revision, RFC 3501, section 6.4.4).</p>
+
+<pre><code>   ALL
+   ANSWERED
+   BCC pattern
+   BEFORE date specification
+   BODY pattern
+   CC pattern
+   DELETED
+   DRAFT
+   FLAGGED
+   FROM pattern
+   HEADER field pattern
+   KEYWORD keyword
+   LARGER size
+   MAILBOX name
+   MAILBOX-GUID guid
+   NEW
+   NOT search key
+   OLD
+   ON date specification
+   search key OR search key
+   RECENT Matches messages with the IMAP flag \Recent set.
+   SEEN   Matches messages with the IMAP flag \Seen set.
+   SENTBEFORE date specification
+   SENTON date specification
+   SENTSINCE date specification
+   SINCE date specification
+   SMALLER size
+   SUBJECT pattern
+   TEXT pattern
+   TO pattern
+   UID sequence
+   UNANSWERED
+   UNDELETED
+   UNDRAFT
+   UNFLAGGED
+   UNKEYWORD keyword
+   UNSEEN Matches messages, which do not have the IMAP flag \Seen set.
+</code></pre>
+
+<p>Additional dovecot search keys.</p>
+
+<pre><code>   SAVEDBEFORE date specification
+   SAVEDON date specification
+   SAVEDSINCE date specification
+</code></pre>
+
+<p>Dovecot has a method of indicating the date, either as day-month-year (e.g. "13-Apr-2007"), an interval (e.g. "1w", "1weeks", "7days"), as a <a href="http://www.epochconverter.com">unix timestamp</a> (e.g. "1176418800"), or using YYYY-MM-DD (e.g. "2007-04-13").</p>
+
+<p>Dovecot also has a size representation format that can specify octets, bytes, kilobytes, megabytes, gigabytes, or terabytes (e.g. "1M" or "1024k").</p>
+
+<h2>Search examples</h2>
+
+<p>Count number of messages in matt's INBOX</p>
+
+<pre><code>doveadm search -u matt mailbox INBOX all | wc -l
+</code></pre>
+
+<p>List messages older then 30 days in user matt’s Inbox</p>
+
+<pre><code>doveadm search -u matt mailbox INBOX savedbefore 30d
+</code></pre>
+
+<p>It will show a list of message ID's like this.  The first number is the mailbox-guid, the second number is the message uid.</p>
+
+<pre><code>08fb930926bbb5532bb00000fdd69a3a 5136
+08fb930926bbb5532bb00000fdd69a3a 5143
+08fb930926bbb5532bb00000fdd69a3a 5145
+</code></pre>
+
+<p>To view one of those messages, specify it's uid.  I'll discuss fetch more later.</p>
+
+<pre><code>doveadm fetch -u matt body uid 5143
+</code></pre>
+
+<p>List messages from joe@example.com</p>
+
+<pre><code>doveadm search -u matt from "joe@example.com"
+</code></pre>
+
+<p>List messages to joe@example.com</p>
+
+<pre><code>doveadm search -u matt to "joe@example.com"
+</code></pre>
+
+<p>List messages with the subject "This is a test"</p>
+
+<pre><code>doveadm search -u matt subject "This is a test"
+</code></pre>
+
+<p>List messages that matt has looked at</p>
+
+<pre><code>doveadm search -u matt -- SEEN
+</code></pre>
+
+<p>Find a message sent from joe@example.com on November 7th, 2014.</p>
+
+<pre><code>doveadm search -A from "joe@example.com" senton "2014-11-07"
+</code></pre>
+
+<p>It's pretty easy to search once you realize you have to specify the user, the key, and the value.  You can include as many search keys as you want for an "and" search.</p>
+
+<pre><code>doveadm search -u matt mailbox INBOX subject "This is a test"
+
+doveadm search -u matt mailbox INBOX savedbefore 1d new
+</code></pre>
+
+<p>Use "or" and "not" as well.</p>
+
+<pre><code>doveadm search -u matt mailbox INBOX or mailbox Trash
+
+doveadm search -u matt mailbox INBOX not savedafter 4d
+</code></pre>
+
+<p>Searching for a message that has some text in the body</p>
+
+<pre><code>doveadm search -u matt mailbox INBOX BODY phish
+</code></pre>
+
+<h2>Once you know how to search...</h2>
+
+<p>Once you know how to search, then you can work with those messages.  The first task is to actually look at the messages (respect your users' privacy please).</p>
+
+<p>A single message.</p>
+
+<pre><code>doveadm fetch -u matt "hdr body" uid 5143
+</code></pre>
+
+<p>All messages in the inbox</p>
+
+<pre><code>doveadm fetch -u matt hdr mailbox INBOX all | egrep "Date|From|Subject"
+</code></pre>
+
+<p>All seen messages</p>
+
+<pre><code>doveadm fetch -u matt -- hdr SEEN | egrep "Date"
+</code></pre>
+
+<p>I'll discuss the things you can display in a fetch next.</p>
+
+<p>You can also delete (expunge) all messages older then 7 days in matt’s Trash folder.</p>
+
+<pre><code>doveadm expunge -u matt mailbox Trash savedbefore 7d
+</code></pre>
+
+<p>Empty matt's INBOX</p>
+
+<pre><code>doveadm expunge -u matt mailbox INBOX all
+</code></pre>
+
+<h2>What to fetch</h2>
+
+<p>You can fetch many fields in an email message.  They must be in quotes.</p>
+
+<p>This will fetch the body and date received of all messages in the inbox.</p>
+
+<pre><code>doveadm fetch -u matt "body date.received" mailbox INBOX
+</code></pre>
+
+<p>Here is a list of fields that can be fetch.</p>
+
+<pre><code>body   The body of a message.
+date.received
+date.saved
+date.sent
+flags  (A message's IMAP flags.)
+guid   (A message's globally unique identifier.)
+hdr    (The header of the message.)
+imap.body
+imap.bodystructure
+imap.envelope
+mailbox
+mailbox-guid
+pop3.uidl (A message's unique (POP3) identifier within a mailbox.)
+seq    (A message's sequence number in a mailbox.)
+size.physical
+size.virtual
+text   (The header and body.)
+text.utf8
+uid
+user
+</code></pre>
+
+<h2>/usr/local/bin/doveall</h2>
+
+<p>"-A" is suppose to specify all users, but for some reason it doesn't work on my server, and worse, when you try to control-c the command, it takes forever to exit.  I tried to debug it but it was easier to just write a script that I call "doveall".</p>
+
+<pre><code>#!/usr/bin/perl -w
+
+my $ignore_users = "^vpn|^diradmin";
+my @commands = qw /altmove backup batch copy deduplicate expunge fetch force-resync import index move purge search sync/;
+
+my $command = shift @ARGV;
+if ( ! $command or $command eq "" ) {
+    print "Missing command\n";
+    usage();
+}
+if ( ! grep /^$command$/, @commands ) {
+    print "Unknown command: $command\n";
+    usage();
+}
+
+my $user_arg = shift @ARGV;
+if ( ! $user_arg or ( $user_arg ne "-u" and $user_arg ne "-A" ) ) {
+    print "-u or -A is required as the second argument, instead I got $user_arg.\n";
+    usage();
+}
+
+my @user_names = ();
+if ( $user_arg eq "-u" ) {
+    my $flag = 1;
+    while ( $flag ) {
+        if ( $#ARGV &lt; 0 ) {
+            print "When using -u, a \"--\" is required.\n";
+            usage();
+        }
+        my $arg = shift @ARGV;
+        if ( $arg ne "--" ) {
+            push @user_names, $arg;
+        } else {
+            $flag = 0;
+        }
+    }
+} elsif ( $user_arg eq "-A" ) {
+    @records = `dscl /LDAPv3/127.0.0.1 -list /Users`;
+    foreach my $record ( @records ) {
+        chomp $record;
+        if ( $record !~ /$ignore_users/ ) {
+            push ( @user_names, $record );
+        }
+    }
+}
+
+if ( $#user_names &gt;= 0 ) {
+    foreach my $user ( @user_names ) {
+        print "doveadm $command -u $user @ARGV\n";
+        system "doveadm", $command, "-u", $user, @ARGV;
+    }
+} else {
+    print "No users specified.\n";
+    usage();
+}
+
+sub usage {
+    print "Usage: $0 &lt;command&gt; ( -u user [.. user] -- | -A ) &lt;args&gt;\n";
+    print "\tCommands: @commands\n";
+    print "\tSee `man doveadm` for a list of valid args\n";
+    exit 1;
+}
+</code></pre>
+
+<p>I use it like this to delete phishing emails.</p>
+
+<pre><code>doveadm search -u matt -- from phisher@example.com
+doveall search -A from phisher@example.com
+doveall fetch -A body from phisher@example.com
+doveall expunge -A mailbox inbox from phisher@example.com
+</code></pre>
+
+<p>Or</p>
+
+<pre><code>doveall fetch -A hdr subject "Important Account Verification" | egrep "dove|Subject|Date"
+</code></pre>
+
+<p>It also allows me to specify a user list instead of -A, like this.</p>
+
+<pre><code>doveadm search -u matt joe jack -- from phisher@example.com
+</code></pre>
+
+<h2>/usr/local/bin/dovephish</h2>
+
+<p>I'm getting so much phishing emails lately that it became burdensome to search for them all.  So I wrote a script to help me search and expunge these emails quickly.  It's interactive, so no need to explain how to use it.  It only searches inboxes (since the mailbox-guid returned by <code>doveadm search</code> isn't usable with <code>doveadm expunge</code>, and I didn't think it was important enough to figure out how to map mailbox-guid's to mailbox names).</p>
+
+<pre><code>#!/usr/bin/perl -w
+
+use strict;
+die( "Run me as root.\n"  ) if $&gt; ne 0;
+
+my @all_users = `dscl /LDAPv3/127.0.0.1 -list /Users`;
+chomp( @all_users );
+@all_users = grep !/^vpn_|^diradmin$|^_ldap_replicator$/, @all_users;
+
+my @user_list = ();
+my $search_group;
+my $search_by;
+my $search_query;
+
+if ( 1 ) {
+    $search_group = ask_question( 'Search (A)ll users or specify (U)sers? ', '^[AaUu]$' );
+    if ( lc($search_group) eq 'u' ) {
+        my %all_users_hash = map {$_ =&gt; 1} @all_users;
+        my %defined_users = ();
+        while ( 1 ) {
+            my $result = ask_question( 'Specify a user (leave blank to finish): ', '' );
+            if ( ! $result ) {
+                if ( $#user_list &gt;= 0 ) {
+                    last;
+                } else {
+                    print "I need at least 1 user to search.\n";
+                }
+            } elsif ( $all_users_hash{$result} ) {
+                if ( ! $defined_users{$result} ) {
+                    push @user_list, $result;
+                    $defined_users{$result} = 1;
+                } else {
+                    print "User already specified.\n";
+                }
+            } else {
+                print "Unknown user: $result.\n";
+            }
+        }
+    } else {
+        @user_list = @all_users;
+    }
+    $search_by = ask_question( 'Search (F)rom or (S)ubject? ', '^[FfSs]$' );
+    $search_query = ask_question( 'Search query? ', '.' );
+} else {
+    # STUB CODE FOR TESTING
+    @user_list = @all_users;
+    $search_group = 'a';
+    $search_by = 'f';
+    $search_query = 'bad@example.com';
+}
+
+my $command;
+my $header = "from" if $search_by eq lc 'f';
+$header = "subject" if $search_by eq lc 's';
+
+foreach my $user ( @user_list ) {
+    print "doveadm search -u $user $header $search_query\n";
+    my @results = `doveadm search -u $user mailbox INBOX $header \"$search_query\"`;
+    my $result_count = @results;
+    print "$result_count results found.\n";
+
+    for my $result ( @results ) {
+        chomp $result;
+        my ( $mb_guid, $uid ) = split / /, $result;
+        print "doveadm fetch -u $user hdr mailbox INBOX uid $uid\n";
+        my @full_header = `doveadm fetch -u $user hdr mailbox INBOX uid $uid`;
+        my $small_header = join '', grep /^(Return-Path: |Date: |Subject: |From: |To: )/, @full_header;
+        print "------------------\n";
+        print $small_header;
+
+        my $flag = 1;
+        while ( $flag ) {
+            my $next = ask_question( 'What now? (N)ext, View full (H)eader, (B)ody, or (Expunge)? ', '^(N|n|H|h|B|b|Expunge)$' );
+            if ( $next eq 'Expunge' ) {
+                print "doveadm expunge -u $user mailbox INBOX uid $uid\n";
+                system "doveadm expunge -u $user mailbox INBOX uid $uid";
+                $flag = 0;
+            } elsif ( $next eq lc 'n' ) {
+                $flag = 0;
+                next;
+            } elsif ( $next eq lc 'b' ) {
+                print "doveadm fetch -u $user body mailbox INBOX uid $uid\n";
+                system "doveadm fetch -u $user body mailbox INBOX uid $uid";
+            } elsif ( $next eq lc 'h' ) {
+                print "doveadm fetch -u $user hdr mailbox INBOX uid $uid\n";
+                print @full_header;
+            }
+        }
+    }
+}
+
+sub ask_question {
+    my ( $message, $regex_exit ) = @_;
+    while ( 1 ) {
+        print "$message";
+        my $input;
+        chop( $input = &lt;STDIN&gt; );
+        if ( defined $input and $input =~ /$regex_exit/ ) {
+            return $input;
+        }
+    }
+}
+</code></pre>
+
+<h2>Sieve and Vacation replies</h2>
+
+<p>Sieve is this thing that lets you do server side filtering, including vacation replies.  I now have a page dedicated to <a href="http://www.magnusviri.com/os-x-server-sieve.html">Sieve</a>.</p>
+
+<h2>Debugging</h2>
+
+<p>Here's links to debugging documentation.</p>
+
+<ul>
+<li><a href="http://wiki2.dovecot.org/Debugging/Authentication">Authentication</a></li>
+<li><a href="http://wiki2.dovecot.org/Logging">Logging</a></li>
+<li><a href="http://help.apple.com/advancedserveradmin/mac/3.1/#apdD29208D8-0DC5-4A6A-B908-BD12897A39FE">Logging</a></li>
+<li><a href="http://support.apple.com/kb/TS3023">Mac OS X Server: Microsoft Outlook clients may not be able to send mail</a></li>
+<li><a href="http://help.apple.com/advancedserveradmin/mac/3.1/#apd6D06DB3C-4AD7-49AB-BE65-5B3E9D2DB668">Configure additional Mail service support for 8-bit MIME</a></li>
+<li><a href="http://support.apple.com/kb/HT1277?viewlocale=en_US">Mail settings you might need from your email provider</a></li>
+</ul>
+<p>Published: 2014-10-15, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "os-x-server-dovecot.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

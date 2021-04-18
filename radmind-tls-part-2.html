@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Radmind TLS (part 2) - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li class="active"><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Radmind TLS (part 2)</h1>
+
+<div class="horizontal_line"></div>
+
+<p>Setting up -w2 is the same as setting up -w1 except for one big difference, you are going to create a cert for every command file that you want to associate with a cert.  That is potentially a lot of certs.  For that reason, this article is only going to briefly discuss the client cert creation process and then focus on automating it so that you can easily create and update the certs.</p>
+
+<p>If you don't know how to create certs and you haven't read <a href="http://www.magnusviri.com/radmind-tls-part-1.html">part 1</a>, there is no point reading this.</p>
+
+<h2>Authorization -w1 requirements</h2>
+
+<p>Client</p>
+
+<ul>
+<li>/var/radmind/cert/ca.pem</li>
+</ul>
+
+<p>Server default cert path (if you only have one server)</p>
+
+<ul>
+<li>/var/radmind/cert/cert.pem</li>
+<li>/Library/LaunchDaemons/com.example.radmind<em>server</em>secure_port.plist</li>
+</ul>
+
+<h2>Authorization -w2 requirements</h2>
+
+<p>Client
+- /var/radmind/cert/ca.pem (part of -w1)
+- /var/radmind/cert/cert.pem (unique for each command file)</p>
+
+<p>Server</p>
+
+<ul>
+<li>/var/radmind/cert/ca.pem (same file as above)</li>
+<li>/var/radmind/cert/cert.pem (unique for each server, part of -w1)</li>
+<li>/Library/LaunchDaemons/com.example.radmind<em>server</em>secure_port.plist (modified!)</li>
+</ul>
+
+<h2>CA on Server</h2>
+
+<p>In <a href="http://www.magnusviri.com/radmind-tls-part-1.html">part 1</a> I showed how to create a ca.pem file.  You need to put that file on your clients at /var/radmind/cert/ca.pem.</p>
+
+<pre><code>cp /var/radmind/CA/ca.pem /var/radmind/cert/
+</code></pre>
+
+<h2>Certificates on clients</h2>
+
+<p>This is pretty much the same as the previous post when you created a cert for the server. However, the common name (CN) is not the same.  The CN is the name that radmind looks for in the config file.</p>
+
+<p>However, because this process needs to be repeated often, I'm not going to list teh commands because if you had to do this for each certificate, you wont!  I'm just going to list a script below that will do almost all of it.  It will create a cert and make an overload for it.  If you try to create a cert that already exists, it will ask if you want to revoke the old one and if you do then it will revoke the old one and create a new cert (revoking a cert doesn't seem to prevent stop to the server from the old cert).</p>
+
+<p>The only thing the script doesn't do is decide which command files are going to use the cert.  So you must open up a command file and put the cert in it.</p>
+
+<p>You also need to put the cert on the client.  The script creates symlinks from</p>
+
+<pre><code>/certs/&lt;name&gt;
+</code></pre>
+
+<p>to</p>
+
+<pre><code>/var/radmind/file/certs/&lt;name&gt;.T/private/var/radmind/cert/cert.pem
+</code></pre>
+
+<p>This makes it easier to transfer certs manually using to clients by running the following command on the client.</p>
+
+<pre><code>sudo scp user@radmind.example.com:/certs/&lt;name&gt; /var/radmind/cert/cert.pem
+</code></pre>
+
+<p>If you are ever in doubt what the CN is for a cert, type the following command.</p>
+
+<pre><code>grep Subject /path/to/cert.pem
+</code></pre>
+
+<p>Look for the text <code>CN=...</code>.</p>
+
+<h2>Certificates and the config file</h2>
+
+<p>You can use the cert in the config file to specify which command file a client should use.  You can still use IP if you want, but using a cert as an identifier may be easier for you.  If you want to mix IP and cert identification, then have a cert that wont be used for identification.  I use a cert named "identify<em>by</em>ip".</p>
+
+<p>The main reason I use certs is if test boxes that have multiple partitions with different command files and for firewire drives that are managed by radmind but are run on machines that have other command files associated with them.  This allows us to boot a firewire drive to any computer and not care what the IP is and it can run radmind and get the right command file.  Anther good reason to use certs is if you are entirely DHCP and you can't control what IP goes to what machine.</p>
+
+<p>So if the CN for a client cert is "generic<em>lab" then you would put the following in the config file to specify the command file named "some</em>file.K"</p>
+
+<pre><code>generic_lab     some_file.K
+</code></pre>
+
+<h2>Radmind server daemon running with -w2</h2>
+
+<p>Change your LaunchD plist files to use -w2 instead of the -w1 example listed in part 1 (change the 1 to 2 in the plist file).</p>
+
+<p>After you make the change, you should unload it and reload it.</p>
+
+<pre><code>launchctl unload /Library/LaunchDaemons/com.example.radmind_server_secure_port.plist
+</code></pre>
+
+<p>Make sure that the radmind daemon listening on the port you intend to use is not running by running the command "ps awwx | grep radmind". If it is running, just kill it (if it isn't unloaded launchd will just relaunch it so make sure you unload it first). Next reload it.</p>
+
+<pre><code>launchctl load /Library/LaunchDaemons/edu.utah.scl.radmind_server_secure_port.plist
+</code></pre>
+
+<p>I'm sure there will be other issues. And you should test.</p>
+
+<h2>The script</h2>
+
+<p>Save this script to /usr/local/bin/makecert on your server.  Make sure you change the header information.  You need to have the openssl.conf file discussed in part one.  You need to create a file with the plaintext version of your password.  Then run the script.  It tries to do everything and protect you from mess up.</p>
+
+<ul>
+<li><a href="../blog/20110128_radmind_certs/makecert">Download The Script</a></li>
+</ul>
+
+<h2>Links</h2>
+
+<ul>
+<li><a href="http://webapps.itcs.umich.edu/radmind/index.php/TLS_Cookbook">http://webapps.itcs.umich.edu/radmind/index.php/TLS_Cookbook</a></li>
+<li><a href="http://managingosx.wordpress.com/2006/09/22/certificate-creation-for-radmind/">http://managingosx.wordpress.com/2006/09/22/certificate-creation-for-radmind/</a></li>
+</ul>
+
+<p>Published: 2012-04-02, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "radmind-tls-part-2.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

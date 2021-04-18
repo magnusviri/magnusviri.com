@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Mobile Game Programming Lesson 2 - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li class="active"><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Mobile Game Programming Lesson 2</h1>
+
+<div class="horizontal_line"></div>
+
+<h2>Numbers</h2>
+
+<p>In the last lesson we were zoomed out and talked about the larger picture of a game.  Now let's zoom in and examine how numbers work in a computer program.</p>
+
+<p>Open up a new project and create a new file, name it main.lua.  Type the following into the file.</p>
+
+<pre><code>textField1 = TextField.new(nil, "")
+textField1:setPosition(10,10)
+stage:addChild(textField1)
+</code></pre>
+
+<p>Copy that text and paste it 3 times.  Change the names in each one so that you have textField1, textField2, textField3, and textField4.  Then change the setPosition so that each one is at a different place.</p>
+
+<p>This type of copy and pasting is very common when programming so get use to it.  It's also a source of many errors, so beware when doing it, don't zone out.  Pay attention and keep outside distractions to a minimum.  It's boring and listening to music helps me to not look for something else to do that is less tedious.  If you do something like this and then try to run your program but it doesn't work, you know where the problem probably is.</p>
+
+<p>All of our examples in this lesson are going to use these textFields to display something on the screen so just leave this code at the top of the file.  Put the code in the examples below these 4 textfields.  It should look like this.</p>
+
+<pre><code>textField1 = TextField.new(nil, "")
+textField1:setPosition(10,10)
+stage:addChild(textField1)
+
+textField2 = TextField.new(nil, "")
+textField2:setPosition(10,30)
+stage:addChild(textField2)
+
+textField3 = TextField.new(nil, "")
+textField3:setPosition(10,50)
+stage:addChild(textField3)
+
+textField4 = TextField.new(nil, "")
+textField4:setPosition(10,70)
+stage:addChild(textField4)
+
+-- example code goes here
+</code></pre>
+
+<h2>Math</h2>
+
+<p>Add this line below the code shown above.</p>
+
+<pre><code>textField1:setText( 1 + 2 )
+</code></pre>
+
+<p>Save the program and run it.  You should see a 3 on the screen!  Not very interesting.</p>
+
+<p>Let's see what other math we can do.  The only thing that is different from what you expect is that to multiply use * not x and to divide use /.</p>
+
+<p>Replace the line above with these 4 lines, save it, and run it.</p>
+
+<pre><code>textField1:setText( 2 * 3 )
+textField2:setText( 4 - 5 )
+textField3:setText( 6 / 7 )
+textField4:setText( 1.23 + 2.34 )
+</code></pre>
+
+<p>You should see these numbers on the screen.</p>
+
+<pre><code>6
+-1
+0.85714285714286
+3.57
+</code></pre>
+
+<p>Try changing the numbers in the source code and rerun it until you understand what is going on.  This is a good way to figure out why things happen the way they do, just change a number and see what happens.</p>
+
+<h2>Operator Precedence</h2>
+
+<p>Add, subtract, multiply, divide, they are called operators.  Precedence says which ones go first.  It isn't always left to right.  Sometimes things happen right to left.  These are the rules that determine what happens first.  And for now, there is only two rules you need to know.</p>
+
+<p>Everything in parenthesis happen first.  Multiply and divide always happen before add and subtract.</p>
+
+<pre><code>textField1:setText( 1 + 3 * 5 )
+textField2:setText( 2 / 4 + 1 )
+textField3:setText( 1.5 * 2 - 3 )
+</code></pre>
+
+<p>The above code could also be written with parenthesis to set what happens first (and in these cases, it changes nothing because the parenthesis surround the things that already happened first).</p>
+
+<pre><code>textField1:setText( 1 + ( 3 * 5 ) )
+textField2:setText( ( 2 / 4 ) + 1 )
+textField3:setText( ( 1.5 * 2 ) - 3 )
+</code></pre>
+
+<p>The examples are the same and print these numbers.</p>
+
+<pre><code>16
+1.5
+0
+</code></pre>
+
+<p>If you want to change the order of operations you put parenthesis around the other things you want to happen first.</p>
+
+<pre><code>textField1:setText( ( 1 + 3 ) * 5 )
+textField2:setText( 2 / ( 4 + 1 ) )
+textField3:setText( 1.5 * ( 2 - 3 ) )
+</code></pre>
+
+<p>The above code prints the following, which is very different.</p>
+
+<pre><code>20
+0.4
+-1.5
+</code></pre>
+
+<p>Whew, we are done with the math.  Sort of...</p>
+
+<h2>Spaces</h2>
+
+<p>You will notice that all of these examples use spaces around the parenthesis, the numbers, and the math operators.  Most of the time the computer doesn't care where you put spaces.  But <em>you</em> should care.  Spaces determine how readable your code is.  Look at the next example and you decide which one is easier to read.</p>
+
+<pre><code>textField1:setText(54.32*(13-6*2)/54.32)
+textField2:setText( 54.32 * ( 13 - 6 * 2 ) / 54.32  )
+</code></pre>
+
+<p>Space placement is a matter of preference and you should decide what is easiest to read and looks best.</p>
+
+<h2>Activity</h2>
+
+<p>Write a program that prints the following.</p>
+
+<ul>
+<li>How many seconds in a minute.</li>
+<li>How many seconds in an hour.</li>
+<li>How many seconds in day.</li>
+<li>How many seconds in a week.</li>
+<li>How many days are in 31536000 seconds.</li>
+</ul>
+
+<p>You may notice that this is actually not that easy.  How do you go about doing these things?  The real task here is converting an idea into steps that a computer can understand.</p>
+
+<p>First, we want to print something, so we use <code>textField1:setText()</code>.  Second, we want the number of seconds in a minute.  That is easy enough.  So just put the answer in between the parenthesis.</p>
+
+<p>To get the other numbers, you just need to put in the correct math functions in between the parenthesis.  For example, an hour is made up of minutes and seconds.  So to get the number of seconds, you need to multiply the number of minutes by the number of seconds.  Same goes for the day and week.  Just do lots of multiplications.</p>
+
+<p>To find out how many days are in that big number, you need to divide by the correct numbers.  So first convert the number from seconds to minutes (divide by the number of seconds in a minute), then convert minutes to hours, and finally hours to days, all division.</p>
+
+<p>The answers are at the end of this lesson.</p>
+
+<h2>This example is not a game</h2>
+
+<p>So for this to be a good lesson I thought it appropriate to show you how to do your homework with a computer.  But don't cheat because if you do then you wont pass the tests.  This program will draw a graph of an equation.  The shape of the graph is determined by the code <code>yy = xx + 2</code>.</p>
+
+<p>You may be asking why I'm naming the variable "yy" and "xx".  That's not 2 y's or 2 x's.  yy and xx are the names of the variables.  Well, how come I'm doing that?  This is a matter of preference, but personally I use the find command on the computer to search for variables all the time.  If you use a single letter variable, like "x" and "y", you find every time an x or y appears, which often isn't what you want.  So by repeating the letter it is easier to find when doing text searches.  That's the only reason I'm using xx and yy.</p>
+
+<p>Copy and paste all of the following code into a new Gideros project.  Run it to see what it does.  After you run it, change the line <code>return xx + 2</code> to something like <code>return (xx + 2) * (xx - 2)</code> or <code>return (xx + 2) * (xx - 2) * xx</code> or even <code>return (xx + 2) * (xx - 2) * (xx + 1) * (xx - 1)</code>.  See what happens.</p>
+
+<pre><code>-- Draw a Graph
+
+-- The all important function!
+
+function fy( xx )
+    return xx + 2
+end
+
+-- This code draws the line
+
+function draw_line( line, width, height, scale )
+    line:clear()
+    line:setFillStyle(Shape.NONE)
+    line:setLineStyle(1,0x0000ff)
+    line:beginPath(Shape.NON_ZERO)
+    for screen_x = 0,width,4 do
+        local xx = screen_x - width / 2
+        line:lineTo( screen_x, height / 2 - fy( xx/scale )* scale )
+    end
+    line:endPath()
+end
+
+-- Find out how big the screen is
+
+local width = application:getContentWidth()
+local height = application:getContentHeight()
+
+-- Set the number of pixels per whole number on the graph
+local scale = 30
+
+-- Draw the crosshair
+local axis = Shape.new()
+axis:setFillStyle(Shape.NONE)
+axis:setLineStyle(1,0x000000)
+axis:beginPath(Shape.NON_ZERO)
+axis:moveTo(0, height/2)
+axis:lineTo(width, height/2)
+axis:moveTo(width/2, 0)
+axis:lineTo(width/2, height)
+for xx = 0,width/2,scale do
+    axis:moveTo(width/2+xx, height/2-3)
+    axis:lineTo(width/2+xx, height/2+3)
+    axis:moveTo(width/2-xx, height/2-3)
+    axis:lineTo(width/2-xx, height/2+3)
+end
+for yy = 0,height/2,scale do
+    axis:moveTo(width/2-3, height/2+yy)
+    axis:lineTo(width/2+3, height/2+yy)
+    axis:moveTo(width/2-3, height/2-yy)
+    axis:lineTo(width/2+3, height/2-yy)
+end
+axis:closePath()
+axis:endPath()
+stage:addChild(axis)
+
+-- Create the line in memory (so we can modify it later)
+local line = Shape.new()
+stage:addChild(line)
+
+-- This draws the line
+draw_line( line, width, height, scale )
+</code></pre>
+
+<h2>Answers</h2>
+
+<p>Here are the answers for the activity earlier in the lesson.</p>
+
+<pre><code>-- How many seconds in a minute
+textField1:setText( 60 )
+
+-- How many seconds in an hour (60 seconds * 60 minutes = 1 hour)
+textField1:setText( 60 * 60 )
+
+-- How many seconds in day (60 seconds * 60 minutes * 24 hours = 1 day)
+textField1:setText( 60 * 60 * 24 )
+
+-- How many seconds in a week (60 seconds * 60 minutes * 24 hours * 7 days = 1 week)
+textField1:setText( 60 * 60 * 24 * 7 )
+
+-- How many days are in 31536000 seconds (31536000 seconds / 60 seconds / 60 minutes / 24 hours = ?...)
+textField1:setText( 31536000 / 60 / 60 / 24 )
+</code></pre>
+
+<p>Published: 2012-05-26, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "mobile-game-programming-lesson-2.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Gideros UIKit Plugin API - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li class="active"><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Gideros UIKit Plugin API</h1>
+
+<div class="horizontal_line"></div>
+
+<p>This is an API for the <a href="http://giderosmobile.com">Gideros</a> <a href="https://github.com/carolight/MHUIKit">UIKit Plugin</a> written by <a href="http://www.whiteskygames.com">Michael Hartlef</a></p>
+
+<p>Forum discussion</p>
+
+<ul>
+<li><a href="http://giderosmobile.com/forum/discussion/754/mhuikit-how-do-you-make-the-screen-scroll-up-when-keyboard-covers-textfield">How do you make the screen scroll up when keyboard covers textfield</a></li>
+<li><a href="http://giderosmobile.com/forum/discussion/578/uikit-plugin-example">UIKit Plugin Example</a></li>
+<li><a href="http://giderosmobile.com/forum/discussion/723/gideros-uikit-plugin-api">Gideros UIKit Plugin API</a></li>
+</ul>
+
+<p>To use the plugin:</p>
+
+<p>Copy uikit.mm to Xcode project "plugins" directory and then add to Xcode project.</p>
+
+<p>In the lua file:</p>
+
+<pre><code>require "ui"
+</code></pre>
+
+<p>The following is a somewhat hodgepodge collection of the classes, inheritance, and function names with the return values listed in C and the Lua parameters that are expected..</p>
+
+<p>Global functions:</p>
+
+<pre><code>int hideStatusBar(bool show)
+int addToRootView(view v)
+int removeFromRootView(view v)
+NSArray luaTableToArray(table t)
+</code></pre>
+
+<p>View : GEventDispatcherProxy</p>
+
+<pre><code>new()
+void addView(view childView)
+void removeFromParent()
+void setPosition(int x, int y)
+void setSize(int width, int height)
+</code></pre>
+
+<p>Button : View</p>
+
+<pre><code>new()
+void setTitle(string title)
+void setTitleColor(float r, float g, float b)
+void setBGColor(float r, float g, float b)
+void setFont(string fontname, float s)
+void setImage(string imagefile)
+void setBGImage(string imagefile)
+
+Generated event: "onButtonClick"
+</code></pre>
+
+<p>Label : View</p>
+
+<pre><code>new()
+void setText(string text)
+void setTextColor(float r, float g, float b)
+void setBGColor(float r, float g, float b)
+void setFont(string fontname, float s)
+</code></pre>
+
+<p>AlertView : GEventDispatcherProxy</p>
+
+<pre><code>new(string title, string message, string button)
+void show()
+void addButton(string title)
+
+Generated event: "complete"
+</code></pre>
+
+<p>Switch : View</p>
+
+<pre><code>new()
+void setState(bool state)
+bool getState()
+
+Generated event: "onSwitchClick"
+</code></pre>
+
+<p>Slider : View</p>
+
+<pre><code>new(float min, float max)
+void setValue(float value)
+int getValue()
+void setThumbImage(string imagefile)
+
+Generated event: "onSliderChange"
+</code></pre>
+
+<p>TextField2 : View</p>
+
+<pre><code>void create(string text)
+void setText(string text)
+string getText()
+void setTextColor(float r, float g, float b)
+void setBGColor(float r, float g, float b)
+void showKeyboard()
+
+Generated events: "onTextFieldEdit", "onTextFieldReturn"
+</code></pre>
+
+<p>WebView : View</p>
+
+<pre><code>new(string url)
+void loadLocalFile(string filename)
+
+Generated events: "onWebViewNavigation"
+</code></pre>
+
+<p>PickerView : View</p>
+
+<pre><code>new(table items)
+virtual int getRowCount()
+virtual void setRow(int row)
+virtual int getPickedRow()
+virtual string getPickedItem()
+
+Generated event: "onPickerRows"
+</code></pre>
+
+<p>Toolbar : View</p>
+
+<pre><code>new()
+void addButton()
+void addTextButton(string caption)
+void add(view xview)
+//void setValue(float value)
+//void setThumbImage(string imagefile)
+
+Generated event: "onToolbarClick"
+</code></pre>
+
+<p>ScrollView : View</p>
+
+<pre><code>new(float x, float y, float w, float h, float cw, float ch)
+void add(view v)
+
+Generated event: onScrollViewClick
+</code></pre>
+
+<p>TableView : View</p>
+
+<pre><code>new()
+void setData(NSArray data) -- use luaTableToArray()
+void setCellText(string text)
+setPosition(x, y)
+setSize(width, height)
+
+Generated events: "cellForRowAtIndexPath", "didSelectRowAtIndexPath"
+event table includes the additional field: "Row" (event.Row)
+</code></pre>
+
+<p>Published: 2012-05-10, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "gideros-uikit-plugin-api.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

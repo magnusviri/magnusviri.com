@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>Mobile Game Programming Lesson 3 - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li class="active"><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>Mobile Game Programming Lesson 3</h1>
+
+<div class="horizontal_line"></div>
+
+<h2>Words</h2>
+
+<p>In the last lesson we looked at how numbers work in a computer program.  Programs have lots of numbers but far more words.  This lesson will discuss how letters and words are used.</p>
+
+<p>There are several uses for words.  The first usage of a word is as a command to the computer.  Those commands can take many different forms.  I wont discuss those in this lesson because the rest of the book is basically going to discuss them.  The second usage is text that is displayed to the computer user, and those are called strings.  The last usage is as a comment to the computer programmer, you.  I'll discuss strings and comments in this lesson.</p>
+
+<h2>Strings</h2>
+
+<p>To create strings you use 2 single or double quotes to surround some text.  If any text is in quotes, the computer will not execute it.  If it is outside of quotes, the computer will execute it as a command.</p>
+
+<p>The quotes are not part of the string.  You can think of a string as dialog in a book, for example, she excitedly said, "My aren't we happy today!"  Here are some examples of strings.</p>
+
+<pre><code>"This is a string of characters, not a string of pearls."
+"The computer does care about the contents of strings, only people do."
+"Strings aren't just letters but numb3r5 and 5ymb0|5 t00!"
+'Strings can begin and end with a single quote too.'
+</code></pre>
+
+<p>In Lua, there is no difference between single and double quotes (in some languages they are different).  If you start a string with a double quote, it must end with a double quote, and vise-versa.  Using a double quote is most common so stick with double quotes.</p>
+
+<p>You may also create multi-line strings using 2 square braces.</p>
+
+<pre><code>&#91;&#91;
+A long time ago,
+In an ant hill,
+Far far away...
+]]
+</code></pre>
+
+<h2>Errors</h2>
+
+<p>If you do not use quotes or the braces, you do not have a string, you have an error!  In the next example, the computer thinks it is being told to do things, but it wont have any idea what those things mean and it will error instead.</p>
+
+<pre><code>this is an error because there are no quotes or double brackets!!!!
+</code></pre>
+
+<p>If you run this code you will get this error.</p>
+
+<pre><code>newfile.lua:1: '=' expected near 'is'
+</code></pre>
+
+<p>This error doesn't really make any sense because the computer doesn't know you wanted a string, so it tries it's best to read the text as if it were commands, and it tells you what it thinks should happen based on what it thinks.  That is how errors messages usually work. The computer doesn't really know what you are trying to do. It only knows how to speak it's language, and it will tell you when it firsts finds something that doesn't make any sense.  In this case, by the time it got to the second word, "is", it didn't know what was going on.</p>
+
+<h2>Comments</h2>
+
+<p>Code talks to the computer.  Strings talk to the users.  Comments talk to you, the programmer.  That is, nearly all programmers forget and comments are reminders.  Many projects can take months, sometimes years to complete.  Most programmers do not remember why they did something after a few months and so comments help explain things.</p>
+
+<p>Any time you have difficulty writing something, you should comment why you did it and any thing that you think could be helpful to yourself when you read it in the future.  Don't write comments to other people.  As a beginner it's hard to predict who will read your code and if the comments will help them or not.  Just focus the comments for yourself.</p>
+
+<p>There are two types of comments.  A single line comment begins with "--" and ends at the end of the line.  A single line comment can come after commands, but no commands can come after the 2 hyphens.  A block comment begins with "--&#91;&#91;" and ends with "]]".</p>
+
+<pre><code>-- This is a single line comment.  It is ignored by the computer.
+message = "Hello world!" -- This is a comment that comes after a command.
+--&#91;&#91;
+This is a multiline comment.
+This way multiple lines are ignored.
+]]
+</code></pre>
+
+<p>You can use comments to comment out real code.  That way if you decide you don't want something to run, but you don't want to delete it totally, you just comment it out.</p>
+
+<pre><code>-- message = "This line begins with 2 hyphens, so it wont ever run!"
+--&#91;&#91;
+message = "This is inside of a block comment, so it wont ever run!"
+]]
+message = "This really runs."
+</code></pre>
+
+<h2>Quotes Inside of Quoted Strings</h2>
+
+<p>Now back to strings.  Quotes signal the end of the string.  If you want to put quotes inside of a string, you have to do a little more work.  First, you can use one type of quote to include the other type.</p>
+
+<pre><code>"   '   " -- Ok
+'   "   ' -- Ok
+</code></pre>
+
+<p>These strings are not ok, they will produce an error.</p>
+
+<pre><code>"   "   " -- Error!
+'   '   ' -- Error!
+</code></pre>
+
+<p>If you need to use both types of quotes in a string, then you can use the backslash right before the quote.</p>
+
+<pre><code>"   \"   " -- Ok
+'   \'   ' -- Ok
+</code></pre>
+
+<h2>Escaping Backslash with Backslash</h2>
+
+<p>The backslash is called the escape character.  The escape character basically tells the computer you are escaping out of the string of characters and the next character has a special meaning.  In the case of escaping a quote character, you are telling the computer not to end the string but that the quote is part of the string.</p>
+
+<p>There are other things you could tell the computer.  For example, because backslash means escape, if you really wanted a backslash, you need to escape it with a backslash!</p>
+
+<pre><code>"A backslash: \\." -- A backslash: \.
+</code></pre>
+
+<h2>Combining Strings</h2>
+
+<p>You can combine two strings by using two dots.  This is called concatenation.</p>
+
+<pre><code>message = "Hello " .. "Scaredy Pants" .. ", welcome to the dungeon!  Mwahahahaha!"
+</code></pre>
+
+<p>The above code create this string</p>
+
+<pre><code>Hello Scaredy Pants, welcome to the dungeon!  Mwahahahaha!
+</code></pre>
+
+<p>Notice that I must have spaces and commas in the string.  Compare it with this example.</p>
+
+<pre><code>message = "Hello" .. "Scaredy Pants" .. "welcome to the dungeon!  Mwahahahaha!"
+</code></pre>
+
+<p>The above code creates the following string, which is not a computer error, so it will run without crashing, but it is certainly an error.</p>
+
+<pre><code>HelloScaredy Pantswelcome to the dungeon!  Mwahahahaha!
+</code></pre>
+
+<h2>The Difference between "10" and 10</h2>
+
+<p>"10" is a string.  10 is a number.  When you want to add 2 numbers you use a +.  When you want to combine strings together you use "..".</p>
+
+<pre><code>"10 .. 10"
+"10" .. "10"
+"10 + 10"
+10 + 10
+</code></pre>
+
+<p>The above code creates the following values.</p>
+
+<pre><code>10 .. 10 (string)
+1010 (string)
+10 + 10 (string)
+20 (number)
+</code></pre>
+
+<h2>Converting Between Strings and Numbers</h2>
+
+<p>There are 2 ways to convert a string to a number or a number to a string.  I think this example speaks for itself.</p>
+
+<pre><code>tonumber("10")
+tostring(10)
+</code></pre>
+
+<p>Also, if you use ".." with 2 numbers that will automatically convert it to a string.  And if you use + with 2 strings, it will attempt to convert the string to a number.</p>
+
+<pre><code>10 .. 10 -- 1010 (string)
+"10" + "10" -- 20 (number)
+"hi mom!" + 10 -- Error: attempt to perform arithmetic on a string value
+</code></pre>
+
+<p>The text "hi mom!" can not be converted to a number because there are no digits in that string.</p>
+
+<h2>The String Library</h2>
+
+<p>There are a bunch of things you can do with strings.  Here are some of the commands that work with strings in the Lua string library.</p>
+
+<pre><code>string.byte
+string.char
+string.dump
+string.find
+string.format
+string.gmatch
+string.gsub
+string.len
+string.lower
+string.match
+string.rep
+string.reverse
+string.sub
+string.upper
+</code></pre>
+
+<p>Using these commands you can do things like search a string, replace characters in the string with other characters, change the case, reverse the order, and more.  I'm not going to discuss how to use these commands here.  This goal of this book isn't to teach you everything about Lua or programming, but how to program a computer game.  So you shouldn't even try to learn what any of these commands do until you need to do string stuff.  When you need to learn, look online at the Lua documentation or some other tutorial.</p>
+
+<h2>Which Way Game</h2>
+
+<p>However, I am going to give you an example of a game that uses the string library quite a bit to do some interesting things.  In this game, you have to go right or left.  There is a message telling you which way is the correct way.  However, the message is garbled!  You have to try to unscramble the message enough to know which way to go.</p>
+
+<p>See if you can find the code that garbles the characters and comment it out by putting "--&#91;&#91;" and "]]" around it.  I bet the game is a lot easier if you comment out that code.</p>
+
+<pre><code>function scrambleWord(word)
+    local chars = {}
+    for ii=1,string.len(word),1 do
+        chars[ii] = string.sub(word,ii,ii)
+    end
+    local newWord = ""
+    for ii=1,table.getn(chars),1 do
+        newWord = newWord..table.remove(chars, math.random(table.getn(chars)))
+    end
+    return newWord
+end
+
+function newChoice()
+
+    -- Randome direction
+    direction = math.random(2)
+
+    -- Random phrase
+    local positiveChoice
+    local choiceTable
+    if math.random(2) == 1 then
+        positiveChoice = true
+        choiceTable = positive
+    else
+        positiveChoice = false
+        choiceTable = negative
+    end
+
+    -- Add the direction to the text
+    local directionText
+    if ( direction == 1 and positiveChoice ) or
+        ( direction == 2 and not positiveChoice ) then
+        directionText = "left"
+    else
+        directionText = "right"
+    end
+    local choiceIndex = math.random(table.getn(choiceTable)) -- random
+    local text = choiceTable[choiceIndex] -- get the phrase
+    text = string.gsub(text, "x", directionText) -- subtitute x with the direction
+    prescrambledText = text
+
+    if true then
+        -- Find words, scramble them
+        local newText = ""
+        for word in string.gfind(text, "([^ ]+)") do -- split into words
+            newText = newText.." "..scrambleWord(word) -- scramble
+        end
+        text = string.gsub(newText, "^ (.-)$", "%1") -- remove the first space
+    else
+        -- Captialize
+        local _, _, firstChar, remainingChars = string.find(text, "(.)(.*)")
+        text = string.upper(firstChar)..remainingChars
+    end
+
+    messageField:setText(text)
+end
+
+function buttonPressed(button, event)
+    if button:hitTestPoint(event.x, event.y) then
+        if direction == button.direction then
+            statusField:setText("You made it!")
+        else
+            application:vibrate()
+            statusField:setText("OUCH! "..prescrambledText)
+        end
+        newChoice()
+        event:stopPropagation()
+    end
+end
+
+BoxTextField = Core.class(Shape)
+function BoxTextField:init(text,...)
+    self.textfield = TextField.new(nil, text)
+    self:addChild(self.textfield)
+    local textfieldX
+    local textfieldY
+    if arg.n &gt; 0 then
+        self.width = arg[1]
+        textfieldX = (self.width-self.textfield:getWidth())/2
+    else
+        self.width = self.textfield:getWidth()
+        textfieldX = 0
+    end
+    if arg.n &gt; 1 then
+        self.height = arg[2]
+        textfieldY = (self.height+self.textfield:getHeight())/2
+    else
+        self.height = self.textfield:getHeight()
+        textfieldY = self.height
+    end
+    self.textfield:setPosition( textfieldX, textfieldY )
+    if arg.n &gt; 2 then
+        self:setBackgroundColor(arg[3])
+    end
+end
+
+function BoxTextField:setBackgroundColor(color)
+    self:setFillStyle(Shape.SOLID, color, 1.0)
+    self:beginPath(Shape.NON_ZERO)
+    self:moveTo(0, 0)
+    self:lineTo(0, self.height)
+    self:lineTo(self.width, self.height)
+    self:lineTo(self.width, 0)
+    self:lineTo(0, 0)
+    self:closePath()
+    self:endPath()
+end
+
+math.randomseed( os.time() )
+
+positive = {
+    "x welcomes you",
+    "proceed x",
+    "try to go x",
+    "head towards x",
+    "x is the correct way",
+    "better go x",
+    "you should go x",
+    "x is the best way",
+    "x is the right way",
+    "choose the x",
+}
+negative = {
+    "beware of x",
+    "don't go x",
+    "try not to go x",
+    "avoid x",
+    "stay away from x",
+    "x is forbidden",
+    "x is the wrong way",
+    "x is the worst way",
+    "x would be wrong",
+    "flee the x",
+}
+direction = 1
+prescrambledText = ""
+
+titleField = TextField.new(nil, "Which way?")
+titleField:setPosition(10,30)
+stage:addChild(titleField)
+
+messageField = TextField.new(nil, "")
+messageField:setPosition(10,50)
+stage:addChild(messageField)
+
+statusField = TextField.new(nil, "")
+statusField:setPosition(10,70)
+stage:addChild(statusField)
+
+leftButton = BoxTextField.new("Go Left", 140, 80)
+stage:addChild(leftButton)
+leftButton:setBackgroundColor(0xaaaaaa)
+leftButton:setPosition(10, 200)
+leftButton:addEventListener(Event.MOUSE_DOWN, buttonPressed, leftButton)
+leftButton.direction = 1
+
+rightButton = BoxTextField.new("Go Right", 140, 80)
+stage:addChild(rightButton)
+rightButton:setBackgroundColor(0xaaaaaa)
+rightButton:setPosition(160+10, 200)
+rightButton:addEventListener(Event.MOUSE_DOWN, buttonPressed, rightButton)
+rightButton.direction = 2
+
+newChoice()
+</code></pre>
+
+<p>Published: 2012-05-27, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "mobile-game-programming-lesson-3.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

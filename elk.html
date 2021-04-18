@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>ELK - Magnusviri</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/magnusviri.css" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li class="first"><a href="index.html" title="Home" >Home</a></li>
+<li class="menuheading">SysAdmin<ul><li class="first"><a href="raspberry-pi-apc-ups.html" title="Raspbery Pi's and APC UPS'es" >Raspbery Pi's and APC UPS'es</a></li>
+<li><a href="seconds-until-next-day.html" title="Perl script that finds the seconds until the next day." >Seconds Until Next Day</a></li>
+<li><a href="reading-keychain-with-perl.html" title="Reading the keychain with a perl script" >Reading the keychain with a perl script</a></li>
+<li><a href="click-that-mouse.html" title="Click that mouse" >Click that mouse</a></li>
+<li><a href="using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html" title="Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code" >Perl/Python/Ruby heredocs in ARD</a></li>
+<li><a href="removing-mac-os-x-acls-and-extended-attributes.html" title="Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups" >Removing macOS ACL's, etc</a></li>
+<li><a href="intro-to-computer-networking.html" title="Intro to Computer Networking" >Intro to Computer Networking</a></li>
+<li><a href="what-is-var-folders.html" title="What is "/var/folders"?" >What is "/var/folders"?</a></li>
+<li class="last"><a href="find-and-replace-text-recursively-with-one-command.html" title="Find and Replace Text Recursively with One Command" >Recursive Find and Replace Text</a></li>
+</ul></li>
+<li class="menuheading">Blog<ul><li class="first"><a href="my-favorite-articles.html" title="My Favorite Articles" >my-favorite-articles</a></li>
+<li><a href="classic-video-games.html" title="Classic Video Games" >classic-video-games</a></li>
+<li><a href="marzipan-cakes.html" title="Marzipan Cakes" >Marzipan Cakes</a></li>
+<li><a href="mei-travel-bags.html" title="MEI Travel Bags" >MEI Travel Bags</a></li>
+<li><a href="pov-ray-lego-clips.html" title="POV-Ray Lego clips" >POV-Ray Lego Clips</a></li>
+<li class="last"><a href="fixing-the-dishwasher.html" title="Fixing the Dishwasher" >fixing-the-dishwasher</a></li>
+</ul></li>
+<li class="menuheading">Archive<ul><li class="first"><a href="what-is-emond.html" title="What is emond?" >What is emond?</a></li>
+<li><a href="virtualbox-uefi.html" title="The VirtualBox Interactive Shell" >The VirtualBox Interactive Shell</a></li>
+<li><a href="virtualbox-vdi-mount.html" title="Mounting VirtualBox HFS+ VDI files on OS X" >Mounting VirtualBox HFS+ VDI files on OS X</a></li>
+<li><a href="mac-os-x-100-1010-information-and-system-requirements.html" title="Mac OS X 10.0-10.10 info" >Mac OS X 10.0-10.10 info</a></li>
+<li><a href="radmind-tricks.html" title="Radmind Tricks" >Radmind Tricks</a></li>
+<li class="active"><a href="elk.html" title="ELK" >ELK</a></li>
+<li><a href="dscl.html" title="DSCL" >DSCL</a></li>
+<li><a href="os-x-server-basics.html" title="OS X Server - Basics" >OS X Server - Basics</a></li>
+<li><a href="os-x-server-managing-user-accounts.html" title="OS X Server - Managing user accounts" >OS X Server - Managing user accounts</a></li>
+<li><a href="os-x-server-postfix.html" title="OS X Server - Postfix" >OS X Server - Postfix</a></li>
+<li><a href="os-x-server-postfix-queues.html" title="OS X Server - Postfix Queues" >OS X Server - Postfix Queues</a></li>
+<li><a href="os-x-server-dovecot.html" title="OS X Server - Dovecot" >OS X Server - Dovecot</a></li>
+<li><a href="os-x-server-sieve.html" title="OS X Server - Sieve" >OS X Server - Sieve</a></li>
+<li><a href="supercollider.html" title="SuperCollider" >supercollider</a></li>
+<li><a href="os-x-recovery.html" title="How to recover an OS X computer" >How to recover an OS X computer</a></li>
+<li><a href="apple-boot-partition.html" title="Apple Boot Partition" >Apple Boot Partition</a></li>
+<li><a href="radmind-tls-part-1.html" title="Radmind TLS (part 1)" >Radmind TLS (part 1)</a></li>
+<li><a href="radmind-tls-part-2.html" title="Radmind TLS (part 2)" >Radmind TLS (part 2)</a></li>
+<li><a href="radmind-quick-temporary-radmind-replicas.html" title="Quick Temporary Radmind Replicas" >Quick Temporary Radmind Replicas</a></li>
+<li><a href="radmind-open-item-service.html" title="Open Radmind Item Service" >Open Radmind Item Service</a></li>
+<li><a href="radmind-and-applefiles.html" title="Radmind and "Applefiles"" >Radmind and "Applefiles"</a></li>
+<li><a href="mobile-game-programming-lesson-1.html" title="Mobile Game Programming Lesson 1" >Mobile Game Programming Lesson 1</a></li>
+<li><a href="mobile-game-programming-lesson-2.html" title="Mobile Game Programming Lesson 2" >Mobile Game Programming Lesson 2</a></li>
+<li><a href="mobile-game-programming-lesson-3.html" title="Mobile Game Programming Lesson 3" >Mobile Game Programming Lesson 3</a></li>
+<li><a href="mobile-game-programming-lesson-4.html" title="Mobile Game Programming Lesson 4" >Mobile Game Programming Lesson 4</a></li>
+<li><a href="mobile-game-programming-lesson-5.html" title="Mobile Game Programming Lesson 5" >Mobile Game Programming Lesson 5</a></li>
+<li><a href="mobile-game-programming-lesson-6.html" title="Mobile Game Programming Lesson 6" >Mobile Game Programming Lesson 6</a></li>
+<li><a href="gideros-uikit-plugin-api.html" title="Gideros UIKit Plugin API" >Gideros UIKit Plugin API</a></li>
+<li><a href="gideros-icade-plugin.html" title="Gideros iCade Plugin" >Gideros iCade Plugin</a></li>
+<li><a href="gideros-gamekit-plugin-api.html" title="Gideros GameKit Plugin API" >Gideros GameKit Plugin API</a></li>
+<li><a href="gideros-downloader.html" title="Gideros Downloader" >Gideros Downloader</a></li>
+<li><a href="cfaliasdata-vs-bookmarkdata.html" title="CFAliasData vs BookmarkData" >CFAliasData vs BookmarkData</a></li>
+<li><a href="diy-capacitive-stylus-for-ipad-and-iphone.html" title="DIY Capacitive Stylus for iPad and iPhone" >diy-capacitive-stylus-for-ipad-and-iphone</a></li>
+<li><a href="uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html" title="UITableViewController with sections that need to be easily moved (design stage)" >UITableViewController on iPad</a></li>
+<li><a href="shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html" title="shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers" >shouldAutorotateBlaBla on the iPad</a></li>
+<li class="last"><a href="os-x-terminal.html" title="OS X Terminal" >OS X Terminal</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>ELK</h1>
+
+<div class="horizontal_line"></div>
+
+<p>This page explains how to set up a central syslog server on OS X using ELK.</p>
+
+<p>There is a lot of documentation out there on the ELK stack, Elasticsearch, Logstash, and Kibana.  The ELK stack is very powerful and can do many different things.  However, I am only interested in a central syslog server on OS X.</p>
+
+<p>For this setup I used OS X 10.9, Elasticsearch 1.3.4, Logstash 1.4.2 and Kibana 3.1.1.  I also run it all on one computer, the server.  The only other computers are the clients, and there is only one thing you need to do on them and it's easy so I'll actually explain that first.</p>
+
+<p>Then I describe how to download and get everything running but not as daemons.  After you have it all working then I explain how to daemonize everything.</p>
+
+<h2>Configure syslog on the Clients</h2>
+
+<h4>OS X (syslog)</h4>
+
+<p>To have OS X computers send log information to your server, edit /etc/syslog.conf and add this line to the end.  Replace "10.0.0.1" with the IP of your server.</p>
+
+<pre><code>*.*          @10.0.0.1:5000
+</code></pre>
+
+<p>Then tell syslogd to reread the config files.</p>
+
+<pre><code>sudo killall -HUP syslogd
+</code></pre>
+
+<p>That's it.</p>
+
+<p>Note, I'm using port 5000 instead of the default 514.  The reason I'm using port 5000 is so that I can daemonize Logstash and have it run as an unprivileged user, which means  that the port has to be greater than 1023.</p>
+
+<h4>Windows and Linux (rsyslog, syslog-ng)</h4>
+
+<p>You can also have <a href="http://krypted.com/windows-server/stashbox-turning-a-mac-mini-into-a-logstash-server/">Windows</a>, Linux, and even network hardware send their logs to your server.</p>
+
+<p>Linux might have syslog, rsyslog or syslog-ng, look in /etc to see what config files you've got.  You configure rsyslog exactly how you configure syslog except edit /etc/rsyslog.conf.  To configure syslog-ng, edit /etc/syslog-ng.conf and find a line that starts with "source", something like "source s_sys {...}".  Then add these lines to the end of that file, and replace "s_sys" with the name above, usually something like "s_sys", "src", "s_all", or "s_local".</p>
+
+<pre><code>destination d_elk {
+    udp("10.0.0.1" port(5000));
+};
+
+# Replace "s_sys"
+log {
+    source(s_sys);
+    destination(d_elk);
+};
+</code></pre>
+
+<p>All of the rest of the instructions are for the server.</p>
+
+<h2>Download and install everything</h2>
+
+<p>Go to <a href="http://www.elasticsearch.org">www.elasticsearch.org</a> and download Elasticsearch, Logstash, and Kibana, decompress.  I saved them to /usr/local/elk/ and so all of the paths on this page refer to that path, but you can put them anywhere really, just make sure you've got the correct paths listed in all of your files.</p>
+
+<p>Install Java.  You can use <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Oracle's installer</a>, or you can run Elasticsearch (Open Terminal and <code>cd</code> to the elasticsearch dir and type <code>./bin/elasticsearch</code>) and the OS will tell you what to do.</p>
+
+<h2>Elasticsearch</h2>
+
+<p>Once you've got it downloaded, open Terminal and type these commands.</p>
+
+<h4>Run it</h4>
+
+<pre><code>/usr/local/elk/elasticsearch/bin/elasticsearch
+</code></pre>
+
+<h4>Test it</h4>
+
+<pre><code>curl 'http://localhost:9200/_search?pretty'
+</code></pre>
+
+<p>You should see something like this.</p>
+
+<pre><code>{
+  "took" : 0,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 0,
+    "successful" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 0,
+    "max_score" : 0.0,
+    "hits" : [ ]
+  }
+}
+</code></pre>
+
+<p>Wow that was easy.</p>
+
+<p>Unless you get a crash like the text below.  If that happens, make sure you installed a version of Java that includes "JDK" in the name.  There are actually several versions of Java.</p>
+
+<pre><code>Exception in thread "main" java.lang.UnsupportedClassVersionError: org/elasticsearch/bootstrap/Elasticsearch : Unsupported major.minor version 51.0
+    at java.lang.ClassLoader.defineClass1(Native Method)
+    at java.lang.ClassLoader.defineClassCond(ClassLoader.java:637)
+    at java.lang.ClassLoader.defineClass(ClassLoader.java:621)
+    at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+    at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+    at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+    at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+    at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+    at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+    at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+</code></pre>
+
+<h2>Logstash</h2>
+
+<h4>Configure it</h4>
+
+<p>The following code is from <a href="http://logstash.net/docs/1.4.2/tutorials/getting-started-with-logstash">Getting started with Logstash</a> (I changed it a little). Save the text in a file, it doesn't matter where you put it.  I saved it to /usr/local/elk/elk.conf.  Note, again, I'm using port 5000.  You can choose whatever port you like, just configure your clients to use what you specify here.</p>
+
+<pre><code>input {
+    udp {
+        port =&gt; 5000
+        type =&gt; syslog
+    }
+}
+
+filter {
+    if [type] == "syslog" {
+        grok {
+            match =&gt; { "message" =&gt; "%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} %{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: %{GREEDYDATA:syslog_message}" }
+            add_field =&gt; [ "received_at", "%{@timestamp}" ]
+            add_field =&gt; [ "received_from", "%{host}" ]
+        }
+        syslog_pri { }
+        date {
+            match =&gt; [ "syslog_timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
+        }
+    }
+}
+
+output {
+    elasticsearch { host =&gt; localhost }
+}
+</code></pre>
+
+<h4>Run it</h4>
+
+<pre><code>/usr/local/elk/logstash/bin/logstash -f /usr/local/elk/elk.conf
+</code></pre>
+
+<h4>Test it</h4>
+
+<p>Note, I use the word "Supertastic" in my telnet test because if you've setup your clients already, then they are probably already saving messages to your server and I wanted to use a word that probably wont be in any log message.</p>
+
+<pre><code>telnet localhost 5000
+Supertastic
+</code></pre>
+
+<p>To exit telnet, type <code>cntl-]</code> then <code>quit</code>.  Search Elasticsearch to see if it worked.  Note, it might take a second or two for the data to show up in Elasticsearch, so if it isn't there, run the command a few times and see if it eventually shows up.</p>
+
+<pre><code>curl 'http://localhost:9200/_search?q=Supertastic&amp;pretty'
+</code></pre>
+
+<p>You should see this.</p>
+
+<pre><code>{
+  "took" : 2,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 10,
+    "successful" : 10,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1,
+    "max_score" : 3.5194955,
+    "hits" : [ {
+      "_index" : "logstash-2014.11.05",
+      "_type" : "syslog",
+      "_id" : "jSuTg_-_T3ON3R19QQurQw",
+      "_score" : 3.5194955,
+      "_source":{"message":"Supertastic\r","@version":"1","@timestamp":"2014-11-05T00:30:35.230Z","host":"10.0.0.1:54888","type":"syslog"}
+    } ]
+  }
+}
+</code></pre>
+
+<p>If it worked you now have Elasticsearch and Logstash running.  If your setup isn't working you've probably got bigger problems because everything up to now is suppose to be super easy.  If you need to debug more, try following the instructions on <a href="http://logstash.net/docs/1.4.2/tutorials/getting-started-with-logstash">Getting started with Logstash</a> because it shows how to run Logstash without Elasticsearch, which might help you figure out where the problem is.</p>
+
+<h4>Test clients</h4>
+
+<p>If you haven't setup your clients, now might be a good time to do so (instructions are at the top).  You can see if your clients are working by running the same command as above but without the <code>q=Supertastic</code> part.</p>
+
+<pre><code>curl 'http://localhost:9200/_search?pretty'
+</code></pre>
+
+<p>If you get a lot of hits, well, your clients are saving log messages.  A syslog hit looks like this (yes, there is irony in this real message):</p>
+
+<pre><code>{
+    "_index" : "logstash-2014.11.04",
+    "_type" : "syslog",
+    "_id" : "eRjVdiNpQq6aXN5XDTUZ1g",
+    "_score" : 1.0,
+    "_source":{"message":"&lt;45&gt;Nov  4 16:26:57 example syslogd[27]: Configuration Notice:\n\tASL Module \"com.apple.securityd\" claims selected messages.\n\tThose messages may not appear in standard system log files or in the ASL database.\n","@version":"1","@timestamp":"2014-11-04T23:27:05.688Z","type":"syslog","host":"10.0.0.2"}
+},
+</code></pre>
+
+<p>If the telnet test from above worked but you don't get anything from your clients, try going to a client and run <code>logger Dangit</code> and search for that using this.</p>
+
+<pre><code>curl 'http://localhost:9200/_search?q=Dangit&amp;pretty'
+</code></pre>
+
+<p>If it still doesn't work, you can rule out network or firewall problems by configuring the server's /etc/syslog.conf to send messages to Logstash.</p>
+
+<p>Now let's add Kibana to the mix.</p>
+
+<h2>Start a webserver</h2>
+
+<p>Kibana requires a web server.  The webserver doesn't have to be the server running Elasticsearch or Logstash, but later on when I secure the system I only discuss securing Kibana when it is running on the same server as Elasticsearch and Logstash.</p>
+
+<p>Use OS X Server, <a href="http://clickontyler.com/web-sharing/">the Web Sharing System Preference Pane</a>, run <code>sudo apachectl start</code>, or install and run your favorite webserver.  Describing more about this is beyond the scope of these instructions.</p>
+
+<p>You can also use Elasticsearch as a webserver if you'd like.  Just put the Kibana folder at /usr/local/elk/elasticsearch/plugins/kibana/_site (so all of the files including index.html are inside of "_site").</p>
+<h2>Kibana</h2>
+
+<p>Move the Kibana folder into your web directory.  On OS X Server that is at /Library/Server/Web/Data/Sites/Default/.  If you use the Web Sharing Preference Pane or start apache manually it's /Library/WebServer/Documents/.  I'm assuming the folder name is "kibana", not "kibana-3.1.1" or something.</p>
+
+<p>Open http://localhost/kibana/index.html and you should see an intro page.  Click the link to Logstash and you should see a graph with bars.</p>
+
+<p>If you are using Elasticsearch as your webserver, the URL is: http://localhost:9200/_plugin/kibana/</p>
+
+<p>If you put in a lot of test data into Elasticsearch while setting it up, you can clean out the Elasticsearch database by running this.</p>
+
+<pre><code>curl -XDELETE 'http://localhost:9200/_all/_query?q=*'
+</code></pre>
+
+<p>Note, Kibana doesn't have any daemons or CGI's running on your webserver.  Kibana is JavaScript that runs in the web browser and so the web browser is connecting to the server over port 9200.  To be specific, the web browser is running javascript that is using this url to access your data.</p>
+
+<pre><code>'http://localhost:9200/logstash/_search?pretty'
+</code></pre>
+
+<p>To verify this, in the top right of every Kibana viewport there is a round icon with an "i" in it.  Click that and you will see the exact URL that Kibana is using to show the current viewport.</p>
+
+<p>Next I will talk about how to secure this so that only you can view your data.</p>
+
+<h2>Limit access</h2>
+
+<p>I want to block the ports that we've opened so far, 9200 and 5000.</p>
+
+<p>I'm using ipfw here because it's easiest.  However it's deprecated and you should use pf.  When I figure out how to use pf I'll update this page.  For now (10.9, I haven't tested 10.10), this works.</p>
+
+<p>To block port 9200 (Elasticsearch).</p>
+
+<pre><code>sysctl net.inet.ip.fw.enable=1
+ipfw add deny ip from any to any 9200 in
+</code></pre>
+
+<p>Note, the services running on the server can still connect to the port.  This means that when Logstash runs on the same computer as Elasticsearch they can still connect.</p>
+
+<p>It also means that if you load the Kibana website on the same machine using http://localhost/kibana/ you can connect.  But you can't open Kibana from any other computer.  That is, it will read the Kibana files, but it won't show any data.</p>
+
+<p>If you want to read Kibana from other computers you'll have to poke holes for those IP's or setup a reverse proxy.  The following commands will poke a hole.  Replace 10.0.0.1/24 with the CIDR that meets your needs.</p>
+
+<pre><code>ipfw -f flush
+ipfw add allow ip from 10.0.0.1/24 to any 9200 in
+ipfw add deny ip from any to any 9200 in
+</code></pre>
+
+<p>Now I want to limit who can save log messages to the syslog server.  First, I want to poke a hole for the allowed clients, then I want to block everything else.</p>
+
+<pre><code>ipfw add allow ip from 10.0.0.1/24 to any 5000 in
+ipfw add deny ip from any to any 5000 in
+</code></pre>
+
+<h2>Daemonize everything</h2>
+
+<h4>Create elk user</h4>
+
+<p>To make this as secure as possible, I want to create an unprivileged user named Elk, and all it does is run Elasticsearch and Logstash, it can't login.  This is so that if there are security vulnerabilities in any of the ELK daemons, then the damage possible is limited to what the Elk user can do (at least it's not root).  I basically duplicated and modified the www user plist file.  I used the uid/gid of 400 because it's greater than the system users (none of the system users/groups were above 300), less than the users created by System Preferences (those start at 501), and less than the users created by OS X Server (those start at the 1000).</p>
+
+<p>Just putting these 2 files in place does not give life to the user.  I probably could've restarted DirectoryServices to get the system to recognize the new users.  But I wanted to restart after I had all of the following files created to see if it was working at startup. So at the end of this section just reboot.</p>
+
+<p>/var/db/dslocal/nodes/Default/users/_elk.plist is:</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;generateduid&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;FFFFEEEE-DDDD-CCCC-BBBB-AAAA00000190&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;gid&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;400&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;home&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/local/elk&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;name&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;_elk&lt;/string&gt;
+        &lt;string&gt;elk&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;passwd&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;*&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;realname&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;ELK&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;shell&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/bin/false&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;uid&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;400&lt;/string&gt;
+    &lt;/array&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>/var/db/dslocal/nodes/Default/groups/_elk.plist is:</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;generateduid&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;ABCDEFAB-CDEF-ABCD-EFAB-CDEF00000190&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;gid&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;400&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;groupmembers&lt;/key&gt;
+    &lt;array/&gt;
+    &lt;key&gt;name&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;_elk&lt;/string&gt;
+        &lt;string&gt;elk&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;passwd&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;*&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;realname&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;ELK&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;users&lt;/key&gt;
+    &lt;array/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>Be sure to run <code>chown -R 400:400 /usr/local/elk</code>.</p>
+
+<p>These two LaunchDaemons will start everything up at startup.</p>
+
+<p>/Library/LaunchDaemons/org.elasticsearch.elasticsearch.plist</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;org.elasticsearch.elasticsearch&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/local/elk/elasticsearch/bin/elasticsearch&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;KeepAlive&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;UserName&lt;/key&gt;
+    &lt;string&gt;_elk&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>/Library/LaunchDaemons/net.logstash.logstash.plist</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;net.logstash.logstash&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/local/elk/logstash/bin/logstash&lt;/string&gt;
+        &lt;string&gt;-f&lt;/string&gt;
+        &lt;string&gt;/usr/local/elk/elk.conf&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;KeepAlive&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;UserName&lt;/key&gt;
+    &lt;string&gt;_elk&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>Also make sure your Logstash config file (/usr/local/elk/elk.conf) does not have stdin or stdout as an input or ouptut.</p>
+
+<p>The very last piece is to start the firewall at startup.  This is the absolutely simplest firewall startup script ever.  There are better scripts out there.  Modify this to meet your needs.</p>
+
+<p>/usr/local/bin/firewall.sh</p>
+
+<pre><code>#!/bin/sh
+
+sysctl net.inet.ip.fw.enable=1
+ipfw -f flush
+
+ipfw add allow ip from 10.0.0.1/24 to any 9200 in
+ipfw add deny ip from any to any 9200 in
+
+ipfw add allow ip from 10.0.0.1/24 to any 5000 in
+ipfw add deny ip from any to any 5000 in
+</code></pre>
+
+<p>Be sure the script is executable (<code>chmod 755 /usr/local/bin/firewall.sh</code>).</p>
+
+<p>/Library/LaunchDaemons/firewall.plist</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;firewall&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/local/bin/firewall.sh&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;KeepAlive&lt;/key&gt;
+    &lt;false/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>Restart your server then run this command to make sure Elasticsearch and Logstash are running as daemons.</p>
+
+<pre><code>ps axj | grep elk
+</code></pre>
+
+<p>You should see something like this (note, the user running the processes is _elk).</p>
+
+<pre><code>_elk            11454     1 11454      0    0 Ss     ??    2:51.24 /usr/bin/java -Xms256m -Xmx1g -Xss256k -Djava.awt.headless=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -XX:+DisableExplicitGC -Delasticsearch -Des.foreground=yes -Des.path.home=/usr/local/elk/elasticsearch -cp :/usr/local/elk/elasticsearch/lib/elasticsearch-1.3.4.jar:/usr/local/elk/elasticsearch/lib/*:/usr/local/elk/elasticsearch/lib/sigar/* org.elasticsearch.bootstrap.Elasticsearch
+_elk            11456     1 11456      0    0 Ss     ??    1:12.41 /usr/bin/java -Xmx500m -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -Djava.awt.headless=true -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -jar /usr/local/elk/logstash/vendor/jar/jruby-complete-1.7.11.jar -I/usr/local/elk/logstash/lib /usr/local/elk/logstash/lib/logstash/runner.rb agent -f /usr/local/elk/elk.conf
+root            15698  9396 15697      0    2 S+   s000    0:00.00 grep elk
+</code></pre>
+
+<p>Check your Kibana interface to make sure that is still getting data.</p>
+
+<p>Now all that is left is figuring out how to use Kibana.</p>
+
+<h2>Read more</h2>
+
+<ul>
+<li>http://logstash.net/docs/1.4.2/tutorials/getting-started-with-logstash</li>
+<li>http://krypted.com/windows-server/stashbox-turning-a-mac-mini-into-a-logstash-server/</li>
+<li>http://krypted.com/mac-security/redirect-logs-to-a-syslog-server-in-os-x/</li>
+<li>http://krypted.com/windows-server/use-syslog-on-windows</li>
+</ul>
+
+<p>Published: 2014-11-05, last edited: 2020-05-11</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright 2020 James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "elk.html";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>
