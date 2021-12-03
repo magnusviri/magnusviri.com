@@ -3,7 +3,7 @@ layout:     default
 title:      "DIY Capacitive Stylus for iPad and iPhone"
 date:       2012-10-02
 editdate:   2020-05-11
-categories: Tech
+categories: Blog
 disqus_id:  diy-capacitive-stylus-for-ipad-and-iphone.html
 ---
 

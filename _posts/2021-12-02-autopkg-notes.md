@@ -2,6 +2,7 @@
 layout:     default
 title:      "AutoPkg Recipe patterns"
 date:       2021-12-02
+editdate:   2021-12-02
 categories: 
 disqus_id:  autopkg-notes.html
 ---

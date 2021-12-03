@@ -3,7 +3,7 @@ layout:     default
 title:      "UITableViewController with sections that need to be easily moved (design stage)"
 date:       2010-10-13
 editdate:   2020-05-11
-categories: Graveyard
+categories: CocoaTouch
 disqus_id:  uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html
 render_with_liquid: false
 ---

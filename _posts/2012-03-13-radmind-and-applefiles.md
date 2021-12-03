@@ -3,7 +3,7 @@ layout:     default
 title:      Radmind and "Applefiles"
 date:       2012-03-13
 editdate:   2020-05-11
-categories: Graveyard
+categories: Radmind MacAdmin
 disqus_id:  radmind-and-applefiles.html
 ---
 

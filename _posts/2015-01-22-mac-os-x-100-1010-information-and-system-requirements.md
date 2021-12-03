@@ -4,7 +4,7 @@ title:      Mac OS X 10.0-10.10 information and system requirements
 shorttitle: Mac OS X 10.0-10.10 info
 date:       2015-01-22
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  mac-os-x-100-1010-information-and-system-requirements.html
 ---
 

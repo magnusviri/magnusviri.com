@@ -3,7 +3,7 @@ layout:     default
 title:      "Intro to Computer Networking"
 date:       2014-03-19
 editdate:   2020-05-11
-categories: Tech
+categories: Networking
 disqus_id:  intro-to-computer-networking.html
 ---
 

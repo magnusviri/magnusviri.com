@@ -3,7 +3,7 @@ layout:     default
 title:      "OS X Terminal"
 date:       2008-01-01
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin Terminal
 disqus_id:  os-x-terminal.html
 ---
 

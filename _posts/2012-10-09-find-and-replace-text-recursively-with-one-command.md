@@ -3,7 +3,7 @@ layout:     default
 title:      "Find and Replace Text Recursively with One Command"
 date:       2012-10-09
 editdate:   2020-05-11
-categories: Tech
+categories: Terminal
 disqus_id:  find-and-replace-text-recursively-with-one-command.html
 render_with_liquid: false
 ---

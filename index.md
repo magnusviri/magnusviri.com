@@ -3,7 +3,7 @@ layout: default
 shorttitle: Home
 title: Magnusviri
 date: "sometime early 1996"
-editdate: "2020-06-05"
+editdate: "2021-12-02"
 disqus_id: home.html
 ---
 

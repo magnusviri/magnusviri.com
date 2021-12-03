@@ -3,7 +3,7 @@ layout:     default
 title:      "Radmind TLS (part 1)"
 date:       2012-03-15
 editdate:   2020-05-11
-categories: Graveyard
+categories: Radmind MacAdmin
 disqus_id:  radmind-tls-part-1.html
 render_with_liquid: false
 ---

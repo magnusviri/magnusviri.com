@@ -3,7 +3,7 @@ layout:     default
 title:      "Raspbery Pi's and APC UPS'es"
 date:       2017-02-08
 editdate:   2020-05-11
-categories: Tech
+categories: Linux RaspberryPi
 disqus_id:  raspberry-pi-apc-ups.html
 ---
 

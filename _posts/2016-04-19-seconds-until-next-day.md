@@ -3,7 +3,7 @@ layout:     default
 title:      "Perl script that finds the seconds until the next day"
 date:       2016-04-19
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  seconds-until-next-day.html
 render_with_liquid: false
 ---

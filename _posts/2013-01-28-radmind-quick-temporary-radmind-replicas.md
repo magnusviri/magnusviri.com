@@ -3,7 +3,7 @@ layout:     default
 title:      "Quick Temporary Radmind Replicas"
 date:       2013-01-28
 editdate:   2020-05-11
-categories: Graveyard
+categories: Radmind MacAdmin
 disqus_id:  quick-temporary-radmind-replicas.html
 ---
 

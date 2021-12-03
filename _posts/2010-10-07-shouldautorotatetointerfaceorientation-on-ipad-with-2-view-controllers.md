@@ -3,7 +3,7 @@ layout:     default
 title:      "shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers"
 date:       2010-10-07
 editdate:   2020-05-11
-categories: Graveyard
+categories: CocoaTouch
 disqus_id:  shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html
 ---
 

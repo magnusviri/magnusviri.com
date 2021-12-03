@@ -3,7 +3,7 @@ layout:     default
 title:      "SuperCollider"
 date:       2014-07-15
 editdate:   2020-05-11
-categories: Tech
+categories: Music
 disqus_id:  supercollider.html
 render_with_liquid: false
 ---

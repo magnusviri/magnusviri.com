@@ -3,7 +3,7 @@ layout:     default
 title:      "The VirtualBox Interactive Shell"
 date:       2015-09-08
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  virtual-box-uefi.html
 ---
 

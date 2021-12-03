@@ -3,7 +3,7 @@ layout:     default
 title:      "Mobile Game Programming Lesson 4"
 date:       2012-06-21
 editdate:   2020-05-11
-categories: Graveyard
+categories: Gideros
 disqus_id:  mobile-game-programming-lesson-4.html
 render_with_liquid: false
 ---

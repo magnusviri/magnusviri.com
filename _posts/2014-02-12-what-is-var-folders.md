@@ -3,7 +3,7 @@ layout:     default
 title:      What is "/var/folders"?
 date:       2014-02-12
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  what-is-var-folders.html
 ---
 

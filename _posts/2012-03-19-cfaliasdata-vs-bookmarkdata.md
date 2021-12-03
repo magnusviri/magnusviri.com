@@ -3,7 +3,7 @@ layout:     default
 title:      "CFAliasData vs BookmarkData"
 date:       2012-03-19
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  cfaliasdata-vs-bookmarkdata.html
 render_with_liquid: false
 ---

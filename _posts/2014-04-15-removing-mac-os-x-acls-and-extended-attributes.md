@@ -3,7 +3,7 @@ layout:     default
 title:      "Removing Mac OS X ACLs and Extended Attributes, and deleting Time Machine backups"
 date:       2014-04-15
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  removing-mac-os-x-acls-and-extended-attributes.html
 ---
 

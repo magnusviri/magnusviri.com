@@ -3,7 +3,7 @@ layout:     default
 title:      "Open Radmind Item Service"
 date:       2012-01-11
 editdate:   2020-05-11
-categories: Graveyard
+categories: Radmind MacAdmin
 disqus_id:  open-radmind-item-service.html
 render_with_liquid: false
 ---

@@ -3,7 +3,7 @@ layout:     default
 title:      "What is emond?"
 date:       2016-04-07
 editdate:   2020-05-11
-categories: Life
+categories: MacAdmin
 disqus_id:  what-is-emond.html
 render_with_liquid: false
 ---

@@ -3,7 +3,7 @@ layout:     default
 title:      "Gideros Downloader"
 date:       2012-03-21
 editdate:   2020-05-11
-categories: Graveyard
+categories: Gideros
 disqus_id:  gideros-downloader.html
 render_with_liquid: false
 ---

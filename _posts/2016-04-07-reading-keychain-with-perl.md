@@ -3,7 +3,7 @@ layout:     default
 title:      "Reading the keychain with a perl script"
 date:       2016-04-07
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  reading-keychain-with-perl.html
 render_with_liquid: false
 ---

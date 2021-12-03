@@ -3,7 +3,7 @@ layout:     default
 title:      "Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code"
 date:       2014-04-18
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html
 render_with_liquid: false
 ---

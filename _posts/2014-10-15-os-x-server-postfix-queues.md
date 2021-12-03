@@ -3,7 +3,7 @@ layout:     default
 title:      "OS X Server - Postfix Queues"
 date:       2014-10-15
 editdate:   2020-05-11
-categories: Mac
+categories: MacOSXServer
 disqus_id:  os-x-server-postfix-queues.html
 render_with_liquid: false
 ---

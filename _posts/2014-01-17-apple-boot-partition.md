@@ -3,7 +3,7 @@ layout:     default
 title:      "Apple Boot Partition"
 date:       2014-01-17
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  apple-boot-partition.html
 ---
 

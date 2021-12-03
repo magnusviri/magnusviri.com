@@ -3,7 +3,7 @@ layout:     default
 title:      Mounting VirtualBox HFS+ VDI files on OS X
 date:       2015-09-08
 editdate:   2020-05-11
-categories: Mac
+categories: MacAdmin
 disqus_id:  virtualbox-vdi-mount.html
 ---
 

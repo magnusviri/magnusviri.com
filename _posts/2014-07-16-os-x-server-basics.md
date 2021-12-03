@@ -3,7 +3,7 @@ layout:     default
 title:      "OS X Server - Basics"
 date:       2014-07-16
 editdate:   2020-05-11
-categories: Mac
+categories: MacOSXServer
 disqus_id:  os-x-server-basics.html
 render_with_liquid: false
 ---
