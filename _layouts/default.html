@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/" />
+<meta charset="UTF-8" />
+<title>{% if page.shorttitle %}{{ page.shorttitle }} - {% else %}{% if page.title %}{{ page.title }} - {% endif %}{% endif %}{{ site.title }}</title>
+<meta name="description" content="">
+<meta name="author" content="Magnusviri">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="{{ "/magnusviri.css" | prepend: site.baseurl }}" type="text/css" />
+</head>
+
+<body>
+<nav>
+<input type="checkbox" id="hamburger" name="check" value="None" />
+<label for="hamburger"></label>
+<ul><li{% if page.url == "/" %} class="active"{% endif %}><a href="/index.html">Home</a></li>
+{%- for item in site.data.navigation.toc %}
+<li class="menuheading">{{ item.title }}<ul>
+{%- for entry in item.subfolderitems -%}
+<li{% if page.url == entry.url %} class="active"{% endif %}><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+{% endfor -%}
+</ul></li>
+{%- endfor %}
+</ul>
+</nav>
+
+<div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+
+<div class="content">
+<h1>{{ page.title }}</h1>
+
+<div class="horizontal_line"></div>
+
+{{ content }}
+<p>Published: {{ page.date | date: "%Y-%m-%d" }}, last edited: {{ page.editdate | date: "%Y-%m-%d" }}</p>
+
+<div class="horizontal_line"></div>
+
+<p>Copyright {{ "2020-01-01" | date: "%Y" }} James Reynolds</p>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_identifier = "{{page.disqus_id}}";
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'https://magnusviri.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</body>
+</html>

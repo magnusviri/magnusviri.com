@@ -1,0 +1,31 @@
+# Site settings
+title: Magnusviri
+email: ""
+description: ""
+baseurl: ""
+url: "http://magnusviri.com"
+twitter_username: magnusviri
+github_username:  magnusviri
+
+# Build settings
+markdown: kramdown
+
+permalink: /:title.html
+exclude:
+  - 404.html
+  - feed.xml
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  auto_ids: false
+  syntax_highlighter_opts:
+    disable : true
+  typographic_symbols: {hellip: ..., mdash: ---, ndash: --}

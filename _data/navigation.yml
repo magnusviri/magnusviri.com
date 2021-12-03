@@ -1,0 +1,109 @@
+toc:
+  - title: SysAdmin
+    subfolderitems:
+      - page: Raspbery Pi's and APC UPS'es
+        url: /raspberry-pi-apc-ups.html
+      - page: Seconds Until Next Day
+        url: /seconds-until-next-day.html
+      - page: Reading the keychain with a perl script
+        url: /reading-keychain-with-perl.html
+      - page: Click that mouse
+        url: /click-that-mouse.html
+      - page: Perl/Python/Ruby heredocs in ARD
+        url: /using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html
+      - page: Removing macOS ACL's, etc
+        url: /removing-mac-os-x-acls-and-extended-attributes.html
+      - page: Intro to Computer Networking
+        url: /intro-to-computer-networking.html
+      - page: What is "/var/folders"?
+        url: /what-is-var-folders.html
+      - page: Recursive Find and Replace Text
+        url: /find-and-replace-text-recursively-with-one-command.html
+  - title: Blog
+    subfolderitems:
+      - page: My Favorite Articles
+        url: /my-favorite-articles.html
+      - page: Classic Video Games
+        url: /classic-video-games.html
+      - page: Marzipan Cakes
+        url: /marzipan-cakes.html
+      - page: MEI Travel Bags
+        url: /mei-travel-bags.html
+      - page: POV-Ray Lego Clips
+        url: /pov-ray-lego-clips.html
+      - page: Fixing the Dishwasher
+        url: /fixing-the-dishwasher.html
+  - title: Archive
+    subfolderitems:
+      - page: What is emond?
+        url: /what-is-emond.html
+      - page: The VirtualBox Interactive Shell
+        url: /virtualbox-uefi.html
+      - page: Mounting VirtualBox HFS+ VDI files on OS X
+        url: /virtualbox-vdi-mount.html
+      - page: Mac OS X 10.0-10.10 info
+        url: /mac-os-x-100-1010-information-and-system-requirements.html
+      - page: Radmind Tricks
+        url: /radmind-tricks.html
+      - page: ELK
+        url: /elk.html
+      - page: DSCL
+        url: /dscl.html
+      - page: OS X Server - Basics
+        url: /os-x-server-basics.html
+      - page: OS X Server - Managing user accounts
+        url: /os-x-server-managing-user-accounts.html
+      - page: OS X Server - Postfix
+        url: /os-x-server-postfix.html
+      - page: OS X Server - Postfix Queues
+        url: /os-x-server-postfix-queues.html
+      - page: OS X Server - Dovecot
+        url: /os-x-server-dovecot.html
+      - page: OS X Server - Sieve
+        url: /os-x-server-sieve.html
+      - page: SuperCollider
+        url: /supercollider.html
+      - page: How to recover an OS X computer
+        url: /os-x-recovery.html
+      - page: Apple Boot Partition
+        url: /apple-boot-partition.html
+      - page: Radmind TLS (part 1)
+        url: /radmind-tls-part-1.html
+      - page: Radmind TLS (part 2)
+        url: /radmind-tls-part-2.html
+      - page: Quick Temporary Radmind Replicas
+        url: /radmind-quick-temporary-radmind-replicas.html
+      - page: Open Radmind Item Service
+        url: /radmind-open-item-service.html
+      - page: Radmind and "Applefiles"
+        url: /radmind-and-applefiles.html
+      - page: Mobile Game Programming Lesson 1
+        url: /mobile-game-programming-lesson-1.html
+      - page: Mobile Game Programming Lesson 2
+        url: /mobile-game-programming-lesson-2.html
+      - page: Mobile Game Programming Lesson 3
+        url: /mobile-game-programming-lesson-3.html
+      - page: Mobile Game Programming Lesson 4
+        url: /mobile-game-programming-lesson-4.html
+      - page: Mobile Game Programming Lesson 5
+        url: /mobile-game-programming-lesson-5.html
+      - page: Mobile Game Programming Lesson 6
+        url: /mobile-game-programming-lesson-6.html
+      - page: Gideros UIKit Plugin API
+        url: /gideros-uikit-plugin-api.html
+      - page: Gideros iCade Plugin
+        url: /gideros-icade-plugin.html
+      - page: Gideros GameKit Plugin API
+        url: /gideros-gamekit-plugin-api.html
+      - page: Gideros Downloader
+        url: /gideros-downloader.html
+      - page: CFAliasData vs BookmarkData
+        url: /cfaliasdata-vs-bookmarkdata.html
+      - page: DIY Capacitive Stylus for iPad and iPhone
+        url: /diy-capacitive-stylus-for-ipad-and-iphone.html
+      - page: UITableViewController on iPad
+        url: /uitableviewcontroller-with-sections-that-need-to-be-easily-moved-design-stage.html
+      - page: shouldAutorotateBlaBla on the iPad
+        url: /shouldautorotatetointerfaceorientation-on-ipad-with-2-view-controllers.html
+      - page: OS X Terminal
+        url: /os-x-terminal.html
