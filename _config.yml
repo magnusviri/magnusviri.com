@@ -6,13 +6,13 @@ baseurl: ""
 url: "http://magnusviri.com"
 twitter_username: magnusviri
 github_username:  magnusviri
+include: ["_redirects"]
 
 # Build settings
 markdown: kramdown
 
 permalink: /:title.html
 exclude:
-  - 404.html
   - feed.xml
   - README.md
   - Gemfile
