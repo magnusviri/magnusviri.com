@@ -1,3 +1,5 @@
+http://blog.magnusviri.com/*   https://magnusviri.com/:splat 301!
+https://blog.magnusviri.com/*  https://magnusviri.com/:splat 301!
 /Mac/*           /:splat
 /OS_X_Admin/*    /:splat
 /Radmind/*       /:splat
