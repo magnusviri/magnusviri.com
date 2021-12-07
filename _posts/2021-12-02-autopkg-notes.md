@@ -11,6 +11,10 @@ These are my [AutoPkg](https://github.com/autopkg/autopkg/) notes.
 
 - [My autopkg recipes](https://github.com/magnusviri/magnusviri-recipes)
 
+## Mass Verify
+
+	autopkg verify-trust-info -v $(<AutoPkgr/All.txt)
+
 ## Getting png files from icns files:
 
 	sips -s format png "path/to/file.icns" --out "path/to/file.png"
@@ -27,6 +31,12 @@ Convert plist to yaml
 	find .. -name "*.recipe" -exec ./[plistyamlplist.py](https://github.com/grahampugh/plist-yaml-plist) \{\} \{\} \;
 
 ## Download Recipe Patterns
+
+### Specify the Recipe dir path
+
+Say you just want to put the item in the Recipe directory.
+
+	<string>%RECIPE_DIR%</string>
 
 ### Just specify a URL
 
@@ -56,7 +66,7 @@ Convert plist to yaml
 		<string>URLTextSearcher</string>
 	</dict>
 
-### How to ignore self signed certs (curl -k)
+### Ignore self signed certs (curl -k)
 
 	<dict>
 		<key>Arguments</key>
@@ -283,3 +293,94 @@ If I deploy a downloaded pkg I need to also specify pkgroot.
 
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+
+## Other interesting processors
+
+These might come in handy someday
+
+		<dict>
+			<key>Processor</key>
+			<string>com.github.dataJAR-recipes.Shared Processors/DistributionPkgInfo</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>Processor</key>
+			<string>FileMover</string>
+			<key>Arguments</key>
+			<dict>
+				<key>source</key>
+				<string>%pathname%</string>
+				<key>target</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pathname</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>sourcelist</key>
+				<array>
+					<string>/Applications/GarageBand.app</string>
+					<string>/Library/Application Support/GarageBand</string>
+					<string>/Library/Application Support/Logic</string>
+					<string>/Library/Audio/Apple Loops</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>com.scriptingosx.processors/PathListCopier</string>
+		</dict>
+
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>info_path</key>
+				<string>%pathname%/Applications/GarageBand.app</string>
+				<key>plist_keys</key>
+				<dict>
+					<key>CFBundleIdentifier</key>
+					<string>bundleid</string>
+					<key>CFBundleShortVersionString</key>
+					<string>version</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
+		</dict>
+
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%pathname%/Applications/GarageBand.app</string>
+				<key>mas_action</key>
+				<string>dummy</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.scriptingosx.processors/MASReceipt</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Applications/GarageBand.app/Contents/Info.plist</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.autopkg.novaksam-recipes.Processors/MinimumOSExtractor</string>
+		</dict>
+
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>cask_name</key>
+				<string>jamovi</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
+		</dict>
