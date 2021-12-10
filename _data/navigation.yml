@@ -1,6 +1,14 @@
 toc:
   - title: SysAdmin
     subfolderitems:
+      - page: Erasing a Mac Disk
+        url: /erasing-a-mac-disk.html
+      - page: macOS System Logs
+        url: /macos-system-logs.html
+      - page: macOS Cmdline Network Settings
+        url: /macos-cmdline-network-settings.html
+      - page: Autopkg Notes
+        url: /autopkg-notes.html
       - page: Raspbery Pi's and APC UPS'es
         url: /raspberry-pi-apc-ups.html
       - page: Seconds Until Next Day
