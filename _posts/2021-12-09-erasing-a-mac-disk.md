@@ -49,8 +49,8 @@ If you just erased your entire startup disk, it might boot the macOS that came w
 
 Sources
 
-[Mac startup key combinations](https://support.apple.com/en-us/HT201255)
-[About macOS Recovery on Intel-based Mac computers](https://support.apple.com/en-us/HT201314)
-[How to reinstall macOS](https://support.apple.com/en-us/HT204904)
-[Create a bootable installer](https://support.apple.com/en-us/HT201372)
-[How to get old versions of macOS](https://support.apple.com/en-us/HT211683)
+- [Mac startup key combinations](https://support.apple.com/en-us/HT201255)
+- [About macOS Recovery on Intel-based Mac computers](https://support.apple.com/en-us/HT201314)
+- [How to reinstall macOS](https://support.apple.com/en-us/HT204904)
+- [Create a bootable installer](https://support.apple.com/en-us/HT201372)
+- [How to get old versions of macOS](https://support.apple.com/en-us/HT211683)
