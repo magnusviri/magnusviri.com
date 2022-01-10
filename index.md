@@ -62,7 +62,7 @@ James earned a BMus degree from the University of Utah. He has been in various p
 
 James began using computers back in the Atari 400 and Commodore 64 days. In 1999, he started managing Macintosh computers (Mac OS 9). He was part of the MacOSXLabs and MacEnterprise groups that helped make Mac OS X easier to mass deploy and manage. He has spoken at several conferences, including Apple's WWDC 2005, about things like scripting and deployment methods. He's written articles for various online mediums and has many messages scattered across various online forums and email lists regarding Mac or Linux Administration and sometimes programming. He regularly presents at the [University of Utah Mac Admins](https://apple.lib.utah.edu/) meetings.
 
-He currently manages about 150 Mac systems using Jamf and a few ESXi servers and Linux VM's. James also designs and maintains some websites for small clients.
+He currently manages about 150 Mac systems using Jamf and a few ESXi servers and Linux VM's. James also designs and maintains some websites for small clients. Hi.
 
 James can also be found at:
 
