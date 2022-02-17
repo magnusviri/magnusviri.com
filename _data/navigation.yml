@@ -29,6 +29,8 @@ toc:
         url: /find-and-replace-text-recursively-with-one-command.html
   - title: Blog
     subfolderitems:
+      - page: Wordle
+        url: /wordle.html
       - page: My Favorite Articles
         url: /my-favorite-articles.html
       - page: Classic Video Games

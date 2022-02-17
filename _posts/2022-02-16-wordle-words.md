@@ -1,0 +1,126 @@
+---
+layout:     default
+title:      Wordle
+date:       2022-02-16
+editdate:   2022-02-16
+categories: Life
+disqus_id:  wordle.html
+---
+
+Here's my Wordle notes.
+
+## The time machine
+
+Tired of waiting 24 hours? [Wordle Time Machine](https://mottaquikarim.github.io/wordle_timemachine/) to the rescue.
+
+## Not cheating
+
+I used grep to find words that contain the most common letters in the English language and don't repeat any letters (until word 4).
+
+1. antre
+2. solid
+3. chump
+4. gawky (repeats the a)
+
+Or try these
+
+1. inter
+2. scald
+3. bumph
+4. fogey (repeats the e)
+
+This should help you out. I have had more luck with the 1st set of words.
+
+## Cheating
+
+So I've played several different word guessing games and I can't help but cheat with grep because I don't like losing and part of knowing how to use computers means doing things better and easier. Steve Jobs did say that [computers are bicycles for our minds](https://www.youtube.com/watch?v=rTRzYjoZhIY) ya know. I'm just using my bicycle.
+
+Here's how I would use grep to solve Wordle. I'm on macOS so my grep doesn't have look-ahead or look-behinds (I think the gnu version does--yeah I could install it with brew, I just haven't done it).
+
+### Get the word list
+
+I recommend downloading the [wordle word list](https://github.com/tabatkins/wordle-list).
+
+Or you can use /usr/share/dict/words, but there's words in there that aren't in the Wordle list (like "gawby". This will save all 5 character words and convert to lower case.
+
+	egrep "^.{5}$" /usr/share/dict/words | awk '{print tolower($0)}' > words.txt
+
+### Counting words
+
+You can count the words by piping to `wc -l`. 
+
+	cat words.txt | grep e | wc -l
+    3416
+
+### Character classes
+
+A character class lets you search for 2 characters and acts like an or.
+
+	cat words.txt | grep a | grep e | wc -l
+    1103
+	cat words.txt | grep "[ae]" | wc -l
+    5570
+
+Note, egrep can do the same thing as character classes with the "|" or.
+
+	cat words.txt | egrep "a|e" | wc -l
+    5570
+
+### Green letters
+
+Require letters in specific places. The "t" in the 3rd position. The periods mean any character.
+
+	cat words.txt | grep "..t.."
+
+### Grey letters
+
+This will remove all words with any of these characters.
+
+	cat words.txt | grep -v "[bfgkl]"
+
+### Yellow letters
+
+Require words with these letters. The position is not specific. Note, you can't use a character class here because you want to require all the letters.
+
+	cat words.txt | grep a | grep e
+
+Remove words with letters from the specific locations with the -v flag. Use `egrep` and `|` (or) to specify multiple patterns.
+
+	cat words.txt | egrep -v "...e.|.a..."
+
+Combine them.
+
+	cat words.txt | grep a | grep e | egrep -v "...e.|.a..."
+
+### Putting it all together
+
+This is the regex I'd use if I tried the words, "antre", "solid", "chump", and "gawky".
+
+	cat words.txt | grep "..t.." | grep -v "[nrolidchumpgwky]" | grep a | grep e | grep s | egrep -v "a....|....e|s...."
+
+And here's the possible words. The last letter is either "b", "f" or "z".
+
+	bates
+	betas
+	fates
+	fetas
+	zetas
+
+I can use a word with "b", "f" or "z" to find the last letter. Here's a grep to find a word with those letters.
+
+	cat words.txt | grep b | grep f | grep z
+
+There's none. So let's search for "b", "f", and "a" in the 2nd position (to distinguish between the ".a.e." and ".e.a." words).
+
+	cat words.txt | grep b | grep f | grep ".a..."
+
+Any of these words will work. This would be the 5th guess, leaving one last guess.
+
+	bafts
+	barfi
+	barfs
+	fable
+
+If the "b" and "f" are grey, the word is "zetas". If the "b" is present but the "a" is yellow, the word is "betas". If the "b" is present and the "a" is green, the word is "bates". If the "f" is present and the "a" is yellow, the word is "fetas". And the last word possibility is "fates".
+
+Have fun.
