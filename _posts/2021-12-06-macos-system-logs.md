@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "macOS system log"
+title:      macOS system log
 date:       2021-12-06
 editdate:   2021-12-06
 categories: MacAdmin Networking
@@ -130,6 +130,12 @@ Operators (see [this page for more info](https://developer.apple.com/library/arc
 Add `[c]` to any of these to make them case insensitive, e.g. `CONTAINS[c]`.
 
 Add `[d]` to make it diacritic insensitive, e.g., `CONTAINS[cd] schon` will match "Schön", "Bitte schön", and "schönen" but afaik not "schoen".
+
+## Find preferences using logs
+
+I haven't tried this yet but I want to. Sounds cool.
+
+- [Config Profile and manage ALL the things...just about](https://boberito.medium.com/config-profile-and-manage-all-the-things-just-about-cafea8627d4b)
 
 ## Links
 

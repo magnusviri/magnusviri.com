@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "What is emond?"
+title:      What is emond?
 date:       2016-04-07
 editdate:   2020-05-11
 categories: MacAdmin

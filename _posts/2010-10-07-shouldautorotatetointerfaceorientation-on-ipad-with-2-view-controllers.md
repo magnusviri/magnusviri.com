@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers"
+title:      shouldAutorotateToInterfaceOrientation on iPad with 2 view controllers
 date:       2010-10-07
 editdate:   2020-05-11
 categories: CocoaTouch

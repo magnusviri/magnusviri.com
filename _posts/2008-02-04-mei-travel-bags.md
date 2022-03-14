@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "MEI Travel Bags"
+title:      MEI Travel Bags
 date:       2008-02-04
 editdate:   2020-05-11
 categories: Blog

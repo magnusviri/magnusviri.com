@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "CFAliasData vs BookmarkData"
+title:      CFAliasData vs BookmarkData
 date:       2012-03-19
 editdate:   2020-05-11
 categories: MacAdmin

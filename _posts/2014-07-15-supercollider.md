@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "SuperCollider"
+title:      SuperCollider
 date:       2014-07-15
 editdate:   2020-05-11
 categories: Music

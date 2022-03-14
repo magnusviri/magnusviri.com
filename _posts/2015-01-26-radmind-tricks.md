@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Radmind Tricks"
+title:      Radmind Tricks
 date:       2015-01-26
 editdate:   2020-05-11
 categories: Radmind

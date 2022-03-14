@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "POV-Ray Lego clips"
+title:      POV-Ray Lego clips
 date:       2007-11-15
 editdate:   2020-05-11
 categories: Blog

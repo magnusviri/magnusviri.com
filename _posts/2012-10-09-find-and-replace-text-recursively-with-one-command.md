@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Find and Replace Text Recursively with One Command"
+title:      Find and Replace Text Recursively with One Command
 date:       2012-10-09
 editdate:   2020-05-11
 categories: Terminal

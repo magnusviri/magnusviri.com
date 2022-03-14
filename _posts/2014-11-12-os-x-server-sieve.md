@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "OS X Server - Sieve"
+title:      OS X Server - Sieve
 date:       2014-11-12
 editdate:   2020-05-11
 categories: MacOSXServer

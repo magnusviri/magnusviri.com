@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Raspbery Pi's and APC UPS'es"
+title:      Raspbery Pi's and APC UPS'es
 date:       2017-02-08
 editdate:   2020-05-11
 categories: Linux RaspberryPi

@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Mobile Game Programming Lesson 5"
+title:      Mobile Game Programming Lesson 5
 date:       2012-07-31
 editdate:   2020-05-11
 categories: Gideros

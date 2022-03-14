@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "OS X Server - Managing user accounts"
+title:      OS X Server - Managing user accounts
 date:       2014-07-16
 editdate:   2020-05-11
 categories: MacOSXServer

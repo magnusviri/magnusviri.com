@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Gideros iCade Plugin"
+title:      Gideros iCade Plugin
 date:       2012-05-10
 editdate:   2020-05-11
 categories: Gideros

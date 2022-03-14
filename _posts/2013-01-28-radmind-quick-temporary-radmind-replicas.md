@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Quick Temporary Radmind Replicas"
+title:      Quick Temporary Radmind Replicas
 date:       2013-01-28
 editdate:   2020-05-11
 categories: Radmind MacAdmin

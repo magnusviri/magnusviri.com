@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "macOS Cmdline Network Settings"
+title:      macOS Cmdline Network Settings
 date:       2021-12-03
 editdate:   2021-12-03
 categories: MacAdmin Networking

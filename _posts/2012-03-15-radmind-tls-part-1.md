@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Radmind TLS (part 1)"
+title:      Radmind TLS (part 1)
 date:       2012-03-15
 editdate:   2020-05-11
 categories: Radmind MacAdmin

@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "AutoPkg Recipe patterns"
+title:      AutoPkg notes
 date:       2021-12-02
 editdate:   2021-12-02
 categories: 
@@ -29,6 +29,14 @@ These are my [AutoPkg](https://github.com/autopkg/autopkg/) notes.
 Convert plist to yaml
 
 	find .. -name "*.recipe" -exec ./[plistyamlplist.py](https://github.com/grahampugh/plist-yaml-plist) \{\} \{\} \;
+
+## AutoPkg in the cloud notes
+
+I really want to do this.
+
+- [JNUC 2021 video](https://www.youtube.com/watch?v=0CoXfhHqdEY)
+- [MSA 2021 video](https://www.macsysadmin.se/video/day1session3.mp4)
+- [MSA 2021 Slides](https://drive.google.com/file/d/1L-MPtE1KtC2jGUaU7332nfZMABuuQX-a/edit)
 
 ## Download Recipe Patterns
 

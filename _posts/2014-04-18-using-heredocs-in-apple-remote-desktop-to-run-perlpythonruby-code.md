@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code"
+title:      Using heredocs in Apple Remote Desktop to run Perl/Python/Ruby code
 date:       2014-04-18
 editdate:   2020-05-11
 categories: MacAdmin

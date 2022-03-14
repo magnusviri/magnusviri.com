@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Fixing the Dishwasher"
+title:      Fixing the Dishwasher
 date:       2005-10-04
 editdate:   2020-05-11
 categories: Blog

@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "How to recover an OS X computer"
+title:      How to recover an OS X computer
 date:       2014-02-27
 editdate:   2020-05-11
 categories: MacAdmin

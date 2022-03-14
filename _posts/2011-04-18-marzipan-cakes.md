@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Marzipan Cakes"
+title:      Marzipan Cakes
 date:       2011-04-18
 editdate:   2020-05-11
 categories: Blog

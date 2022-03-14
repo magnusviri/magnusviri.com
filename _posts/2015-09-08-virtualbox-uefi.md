@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "The VirtualBox Interactive Shell"
+title:      The VirtualBox Interactive Shell
 date:       2015-09-08
 editdate:   2020-05-11
 categories: MacAdmin

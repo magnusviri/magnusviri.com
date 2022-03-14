@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Click that mouse"
+title:      Click that mouse
 date:       2015-09-07
 editdate:   2020-05-11
 categories: Mac

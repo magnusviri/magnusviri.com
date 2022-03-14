@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Classic Video Games"
+title:      Classic Video Games
 date:       2012-05-10
 editdate:   2020-05-11
 categories: Blog

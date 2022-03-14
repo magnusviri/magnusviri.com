@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "My Favorite Articles"
+title:      My Favorite Articles
 date:       2013-02-04
 editdate:   2019-04-13
 categories: Blog

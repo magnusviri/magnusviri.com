@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "OS X Terminal"
+title:      OS X Terminal
 date:       2008-01-01
 editdate:   2020-05-11
 categories: MacAdmin Terminal

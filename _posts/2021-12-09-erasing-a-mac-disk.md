@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Erasing a Mac Disk"
+title:      Erasing a Mac Disk
 date:       2021-12-09
 editdate:   2021-12-09
 categories: MacAdmin

@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Intro to Computer Networking"
+title:      Intro to Computer Networking
 date:       2014-03-19
 editdate:   2020-05-11
 categories: Networking

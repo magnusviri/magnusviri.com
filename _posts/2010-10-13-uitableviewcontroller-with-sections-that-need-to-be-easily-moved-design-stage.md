@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "UITableViewController with sections that need to be easily moved (design stage)"
+title:      UITableViewController with sections that need to be easily moved (design stage)
 date:       2010-10-13
 editdate:   2020-05-11
 categories: CocoaTouch

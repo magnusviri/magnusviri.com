@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Perl script that finds the seconds until the next day"
+title:      Perl script that finds the seconds until the next day
 date:       2016-04-19
 editdate:   2020-05-11
 categories: MacAdmin

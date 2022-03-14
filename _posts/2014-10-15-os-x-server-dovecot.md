@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "OS X Server - Dovecot"
+title:      OS X Server - Dovecot
 date:       2014-10-15
 editdate:   2020-05-11
 categories: MacOSXServer

@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Open Radmind Item Service"
+title:      Open Radmind Item Service
 date:       2012-01-11
 editdate:   2020-05-11
 categories: Radmind MacAdmin

@@ -1,6 +1,6 @@
 ---
 layout:     default
-title:      "Gideros GameKit Plugin API"
+title:      Gideros GameKit Plugin API
 date:       2012-05-10
 editdate:   2020-05-11
 categories: Gideros
