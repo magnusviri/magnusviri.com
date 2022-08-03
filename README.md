@@ -1,4 +1,4 @@
-# [magnusviri.com](http://magnusviri.com)
+# [magnusviri.com](https://magnusviri.com)
 
 My personal website.
 
