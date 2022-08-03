@@ -3,7 +3,7 @@ title: Magnusviri
 email: ""
 description: ""
 baseurl: ""
-url: "http://magnusviri.com"
+url: "https://magnusviri.com"
 twitter_username: magnusviri
 github_username:  magnusviri
 include: ["_redirects"]
