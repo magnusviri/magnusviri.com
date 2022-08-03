@@ -75,6 +75,24 @@ To completely delete *all* backups use bypass.  Note, you should not use this to
 
     sudo /System/Library/Extensions/TMSafetyNet.kext/Helpers/bypass rm -rfv /Volumes/[disk]/Backups.backupdb
 
+#### Restore Time Machine backup
+
+Single file.
+
+	sudo /usr/bin/tmutil restore /Volumes/[disk]/Backups.backupdb/HOST/DATE_FOLDER/HardDisk/Users/james/Desktop/file /Users/james/Desktop/file2
+
+Folder.
+
+	sudo /usr/bin/tmutil restore /Volumes/[disk]/Backups.backupdb/HOST/DATE_FOLDER/HardDisk/Users/james/Desktop /Users/james/Desktop2
+
+Whole disk (WARNING: will replace contents of /Volumes/HardDisk with the backup).
+
+	sudo /usr/bin/tmutil restore -v "/Volumes/[disk]/Backups.backupdb/HOST/Latest/HardDisk" "/Volumes/HardDisk"
+
+Don't trust Time Machine.
+
+- [tmutil man page](https://ss64.com/osx/tmutil.html)
+
 #### Disabling SIPs (System Integrity Protection)
 
 Starting in 10.11 Apple added a feature called [System Integrity Protection](https://en.wikipedia.org/wiki/System_Integrity_Protection) that prevents users from removing certain files, mainly system files.  Among the protected directories are: /System, /bin, /sbin, /usr (but not /usr/local) and others.
