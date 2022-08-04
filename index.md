@@ -9,6 +9,10 @@ disqus_id: home.html
 
 ## What's New
 
+2022-08-03 - [macOS Info](/macos-info.html)
+
+2022-08-03 - [fs_usage](/fs_usage.html)
+
 2022-03-13 - [Gollum Wiki](/gollum-wiki.html)
 
 2022-02-16 - [Wordle](/wordle.html)
