@@ -1,0 +1,18 @@
+<div class="container">
+<nav>
+  <i id="hamburger" class="fa fa-lg fa-bars"></i>
+  <ul>
+    <li{% if page.url == "/" %} class="active"{% endif %}><a href="/index.html">Home</a></li>
+{%- for item in site.data.navigation.toc %}
+    <li class='sub-menu'>
+  	  <a href='#'><i class="fa fa-angle-right" aria-hidden="true"></i> {{ item.title }}</a>
+	    <ul>
+{%- for entry in item.subfolderitems -%}
+		    <li{% if page.url == entry.url %} class="active"{% endif %}><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+{% endfor -%}
+      </ul>
+    </li>
+{%- endfor %}
+  </ul>
+</nav>
+</div>

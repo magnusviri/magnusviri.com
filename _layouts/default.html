@@ -8,23 +8,14 @@
 <meta name="author" content="Magnusviri">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="stylesheet" href="{{ "/magnusviri.css" | prepend: site.baseurl }}" type="text/css" />
+<link rel="stylesheet" href="{{ "/assets/magnusviri.css" | prepend: site.baseurl }}" type="text/css" />
+<link rel="stylesheet" href="{{ "/assets/nav.css" | prepend: site.baseurl }}" type="text/css" />
+<link rel="stylesheet" href="{{ "/assets/font-awesome-5.15.4/all.min.css" | prepend: site.baseurl }}" />
+
 </head>
 
 <body>
-<nav>
-<input type="checkbox" id="hamburger" name="check" value="None" />
-<label for="hamburger"></label>
-<ul><li{% if page.url == "/" %} class="active"{% endif %}><a href="/index.html">Home</a></li>
-{%- for item in site.data.navigation.toc %}
-<li class="menuheading">{{ item.title }}<ul>
-{%- for entry in item.subfolderitems -%}
-<li{% if page.url == entry.url %} class="active"{% endif %}><a href="{{ entry.url }}">{{ entry.page }}</a></li>
-{% endfor -%}
-</ul></li>
-{%- endfor %}
-</ul>
-</nav>
+{% include nav.html %}
 
 <div class="title"><img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
 
@@ -38,11 +29,13 @@
 
 <div class="horizontal_line"></div>
 
-<p>Copyright {{ "2020-01-01" | date: "%Y" }} James Reynolds</p>
+<p>Copyright &copy; {{ "now" | date: "%Y" }} James Reynolds</p>
 
 </div>
 
 <div id="disqus_thread"></div>
+<script src="/assets/jquery-2.1.3/jquery.min.js"></script>
+<script src="/assets/nav.js"></script>
 <script type="text/javascript">
 var disqus_identifier = "{{page.disqus_id}}";
 (function() {
@@ -51,6 +44,7 @@ var disqus_identifier = "{{page.disqus_id}}";
  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 </script>
+
 
 </body>
 </html>
