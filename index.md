@@ -5,6 +5,7 @@ title: Magnusviri
 date: "sometime early 1996"
 editdate: "2021-12-06"
 disqus_id: home.html
+titleimg: 1
 ---
 
 ## What's New
