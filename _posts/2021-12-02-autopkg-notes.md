@@ -3,7 +3,7 @@ layout:     default
 title:      AutoPkg notes
 date:       2021-12-02
 editdate:   2021-12-02
-categories: 
+categories:
 disqus_id:  autopkg-notes.html
 ---
 
@@ -145,7 +145,7 @@ Get the appcast_url:
 
 ### [EndOfCheckPhase](https://github.com/autopkg/autopkg/wiki/Processor-EndOfCheckPhase)
 
-This "serves as a marker to signal where AutoPkg should stop when the -c/--check options are used." 
+This "serves as a marker to signal where AutoPkg should stop when the -c/--check options are used."
 
 		<dict>
 			<key>Processor</key>
