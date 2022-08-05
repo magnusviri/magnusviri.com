@@ -1,4 +1,7 @@
 _site
 .DS_Store
-.jekyll-cache/
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
 Gemfile.lock
+Home.md
