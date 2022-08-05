@@ -9,3 +9,4 @@ https://blog.magnusviri.com/*  https://magnusviri.com/:splat 301!
 /OS_X_Server/*   /:splat
 /Legos/*         /:splat
 /Cocoa/*         /:splat
+/mac-os-x-100-1010-information-and-system-requirements.html /macos-info.html 301!
