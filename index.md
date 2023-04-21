@@ -3,12 +3,16 @@ layout: default
 shorttitle: Home
 title: Magnusviri
 date: "sometime early 1996"
-editdate: "2021-12-06"
+editdate: "2023-04-21"
 disqus_id: home.html
 titleimg: 1
 ---
 
 ## What's New
+
+2023-04-19 - [AI for MacAdmins](https://stream.lib.utah.edu/index.php?c=details&id=13574)
+
+2023-01-18 - [jctl](https://stream.lib.utah.edu/index.php?c=details&id=13542)
 
 2022-08-03 - [macOS Info](/macos-info.html)
 
@@ -33,8 +37,10 @@ titleimg: 1
 ## My Main Github repos
 
 - [jctl](https://github.com/magnusviri/jctl) and [python-jamf](https://github.com/magnusviri/python-jamf) - Turn 1000 clicks into 1 by automating Jamf tasks via the API and Python.
-- [fcos_portainer_fw](https://github.com/magnusviri/fcos_portainer_fw) - Files to set up Fedora CoreOS, Portainer, and a host firewall.
 - [dockerfiles](https://github.com/magnusviri/dockerfiles) - My Jamf and FreeOrion server dockerfiles
+
+<!--
+- [fcos_portainer_fw](https://github.com/magnusviri/fcos_portainer_fw) - Files to set up Fedora CoreOS, Portainer, and a host firewall.
 - [dotfiles](https://github.com/magnusviri/dotfiles) - How I set up my computers.
 - [courses-frontend](https://github.com/magnusviri/courses-frontend) and [courses-backend](https://github.com/magnusviri/courses-backend) - An Angular app I wrote for the School of Biological Sciences.
 - [DigitalDisplay](https://github.com/magnusviri/DigitalDisplay) - Theme that turns Wordpress into a web kiosk for a digital display.
@@ -42,18 +48,20 @@ titleimg: 1
 Watch a [presentation](https://stream.lib.utah.edu/index.php?c=details&id=13043) (2018.02.21).
 - [plcat](https://github.com/magnusviri/plcat) - Super simple crutch to print binary plist files on macOS.
 - [textart](https://github.com/magnusviri/textart) - Converts images to html or terminal text.
+-->
 
 ## U of U Mac Managers
 
 I regularly present at the University of Utah Mac Managers meetings. Here is a list of the latest presentations.
 
+- [AI for MacAdmins](https://stream.lib.utah.edu/index.php?c=details&id=13574) (2023-04-19)
+- [jctl](https://stream.lib.utah.edu/index.php?c=details&id=13542) (2023-01-18)
 - [Docker for Beginners](https://stream.lib.utah.edu/index.php?c=details&id=13418) (2021.02.17)
 - [Electron.js and the Browser Wars](https://stream.lib.utah.edu/index.php?c=details&id=13353) (2020.06.17)
 - [DIY HID](https://stream.lib.utah.edu/index.php?c=details&id=13332) (2020.02.19)
 - [SAINTCON 2019](https://stream.lib.utah.edu/index.php?c=details&id=13304) (2019.11.20)
 - [Replacing NetBoot](https://stream.lib.utah.edu/index.php?c=details&id=13211) (2019.03.20)
 - [VMware ESXi, Mac & macOS](https://stream.lib.utah.edu/index.php?c=details&id=13132) (2018.09.18)
-
 
 [View all presentations](https://stream.lib.utah.edu/index.php?c=browse&m=results&q=james+reynolds&cat=&sort=newest).
 
@@ -75,4 +83,5 @@ He currently manages about 150 Mac systems using Jamf and a few ESXi servers and
 
 James can also be found at:
 
+- [Twitter](https://twitter.com/magnusviri)
 - [Github](https://github.com/magnusviri)
