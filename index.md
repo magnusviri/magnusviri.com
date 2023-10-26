@@ -10,7 +10,11 @@ titleimg: 1
 
 ## What's New
 
+2023-10-26 - [Understanding AI SaintCON Slides](/ai-saintcon-2023.pdf)
+
 2023-04-19 - [AI for MacAdmins](https://stream.lib.utah.edu/index.php?c=details&id=13574)
+
+2023-04-06 - [AI-enabled packaging](https://www.youtube.com/watch?v=Wj-4pIInrmo)
 
 2023-01-18 - [jctl](https://stream.lib.utah.edu/index.php?c=details&id=13542)
 
