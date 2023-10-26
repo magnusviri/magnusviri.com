@@ -10,7 +10,7 @@ titleimg: 1
 
 ## What's New
 
-2023-10-26 - [Understanding AI SaintCON Slides](/ai-saintcon-2023.pdf)
+2023-10-26 - [Understanding AI SaintCON Slides](/dl/ai-saintcon-2023.pdf)
 
 2023-04-19 - [AI for MacAdmins](https://stream.lib.utah.edu/index.php?c=details&id=13574)
 
