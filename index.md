@@ -14,7 +14,7 @@ titleimg: 1
 
 2024-03-19 - Understanding AI, Aprés Cyber Slopes [Slides](/dl/apres-cyber-slopes-2024.pdf)
 
-2023-10-26 - Understanding AI, SaintCON [Video]((https://www.youtube.com/watch?v=kIMOb74dSkU)) and [Slides](/dl/ai-saintcon-2023.pdf)
+2023-10-26 - Understanding AI, SaintCON [Video](https://www.youtube.com/watch?v=kIMOb74dSkU) and [Slides](/dl/ai-saintcon-2023.pdf)
 
 2023-04-19 - [AI for MacAdmins](https://stream.lib.utah.edu/index.php?c=details&id=13574)
 
