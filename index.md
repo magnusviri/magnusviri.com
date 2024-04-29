@@ -12,7 +12,7 @@ titleimg: 1
 
 2024-04-26 - Understanding AI, Lunch & Learn [Slides](/dl/lunch-and-learn-2024.pdf)
 
-2024-03-19 - Understanding AI, Aprés Cyber Slopes [Slides](/dl/aprés-cyber-slopes-2024.pdf)
+2024-03-19 - Understanding AI, Aprés Cyber Slopes [Slides](/dl/apres-cyber-slopes-2024.pdf)
 
 2023-10-26 - Understanding AI, SaintCON [Video]((https://www.youtube.com/watch?v=kIMOb74dSkU)) and [Slides](/dl/ai-saintcon-2023.pdf)
 
