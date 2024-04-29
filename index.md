@@ -10,7 +10,7 @@ titleimg: 1
 
 ## What's New
 
-2024-04-26 - Understanding AI, Lunch & Learn [Slides]](/dl/lunch-and-learn-2024.pdf)
+2024-04-26 - Understanding AI, Lunch & Learn [Slides](/dl/lunch-and-learn-2024.pdf)
 
 2024-03-19 - Understanding AI, Aprés Cyber Slopes [Slides](/dl/aprés-cyber-slopes-2024.pdf)
 
