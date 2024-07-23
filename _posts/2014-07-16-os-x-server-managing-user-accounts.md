@@ -64,7 +64,7 @@ Here is an example of a simple import file.
 > James:/usr/bin/false:20:james:R:James R:/dev/null:james@example.com<br />
 > Anton:/usr/bin/false:20:anton:R:Anton R:/dev/null:anton@example.com
 
-#### Changing a user’s password
+#### Changing a user's password
 
 This command will change a password.
 

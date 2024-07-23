@@ -1598,7 +1598,7 @@ However, what if you aren't sure what is going on? If the screensaver on the rem
 
 <pre><code>  screencapture filename.png</code></pre>
 
-Then <code>scp</code> that file to your machine and voilà, poor man's VNC (except VNC is free). It is a neat trick anyway.
+Then <code>scp</code> that file to your machine and voil&agrave;, poor man's VNC (except VNC is free). It is a neat trick anyway.
 
 An even neater trick is if you have an isight, and you think someone is using your computer. Use <a href="http://www.intergalactic.de/hacks.html">isightcapture</a> to take a picture of them (You'll have to download this).
 

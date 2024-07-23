@@ -99,8 +99,8 @@ Control Flow
 ----
 
     if condition { ... }
-    if condition { … } else { … }
-    if cond1 { … } elsif cond2 { … } else { … }
+    if condition { ... } else { ... }
+    if cond1 { ... } elsif cond2 { ... } else { ... }
 
 Tests
 ----

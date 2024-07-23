@@ -21,7 +21,7 @@ In fact, since the change to unified logging, no matter how much I study it I've
 
 Still works.
 
-	sudo sysdiagnose –f ~/Desktop/
+	sudo sysdiagnose -f ~/Desktop/
 
 Or press these all at once: Shift + Control + Option + Command + Period .
 
@@ -101,7 +101,7 @@ Examples
 - `category`
 - `eventMessage`
 - `eventType` - type of events that created the entry
-- `messageType` – type or level of a log entry
+- `messageType` - type or level of a log entry
 - `processImagePath` - process that logged the event
 - `senderImagePath` - process, library, executable, etc that logged the event
 - `subsystem` - Look in /System/Library/Preferences/Logging/Subsystems/ (On macOS 11.6 there are 247 files in there)
@@ -122,14 +122,14 @@ Operators (see [this page for more info](https://developer.apple.com/library/arc
 - `ENDSWITH`
 - `LIKE` - Uses ? and * for wildcards (like the shell)
 - `MATCHES` - [ICU v3 regex](https://unicode-org.github.io/icu/userguide/strings/regexp.html)
-- `ANY`, `SOME` - e.g. `ANY children.age < 18` ¯\\_(ツ)_/¯
+- `ANY`, `SOME` - e.g. `ANY children.age < 18` &#175;&#92;_(&#12484;)_&#47;&#175;
 - `NONE`, `ALL`, `FALSE`, `NO`, `BETWEEN`, `FIRST`, `LAST`, etc
 - `IN` - Equivalent to an SQL IN, e.g. `name IN { 'Ben', 'Melissa', 'Nick' }`
 - `NULL` - a NULL response, e.g. "with error (NULL)"
 
 Add `[c]` to any of these to make them case insensitive, e.g. `CONTAINS[c]`.
 
-Add `[d]` to make it diacritic insensitive, e.g., `CONTAINS[cd] schon` will match "Schön", "Bitte schön", and "schönen" but afaik not "schoen".
+Add `[d]` to make it diacritic insensitive, e.g., `CONTAINS[cd] schon` will match "Sch&ouml;n", "Bitte sch&ouml;n", and "sch&ouml;nen" but afaik not "schoen".
 
 ## Find preferences using logs
 

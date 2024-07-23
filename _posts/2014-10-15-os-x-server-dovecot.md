@@ -27,7 +27,7 @@ Note, this post is part of a series.  Here are the other posts.
 Learning Dovecot
 -----------
 
-[Apple's mail server architecture documentation](http://help.apple.com/advancedserveradmin/mac/3.1/#apdDCC9970C-9253-47C4-8152-7A5272CF753E) includes a good explanation how all of the services (postfix and dovecot) fit together.  If you don’t have a basic idea, it’s good to just look this over.
+[Apple's mail server architecture documentation](http://help.apple.com/advancedserveradmin/mac/3.1/#apdDCC9970C-9253-47C4-8152-7A5272CF753E) includes a good explanation how all of the services (postfix and dovecot) fit together.  If you don't have a basic idea, it's good to just look this over.
 
 Here are links to the official dovecot site and documentation.
 
@@ -198,13 +198,13 @@ This script will do an exhaustive search to find all of the last Dovecot and Pos
 Authentication methods
 -----------
 
-[Apple's mail service documentation](http://help.apple.com/advancedserveradmin/mac/3.1/#apdF077011B-DA71-475C-B95A-3F4855CE9C78) lists the available authentication mechanisms in the "Change authentication settings” section.  This means this is how the password is dealt with, not the connection type.  Here is the list that OS X Supports.  These change
+[Apple's mail service documentation](http://help.apple.com/advancedserveradmin/mac/3.1/#apdF077011B-DA71-475C-B95A-3F4855CE9C78) lists the available authentication mechanisms in the "Change authentication settings" section.  This means this is how the password is dealt with, not the connection type.  Here is the list that OS X Supports.  These change
 
-    • Digest-MD5
-    • Digest (CRAM-MD5)
-    • APOP
-    • Cleartext (if SSL is enabled)
-    • Kerberos (when connected to an Open Directory server)
+- Digest-MD5
+- Digest (CRAM-MD5)
+- APOP
+- Cleartext (if SSL is enabled)
+- Kerberos (when connected to an Open Directory server)
 
 This page lists all of the methods that dovecot has
 
@@ -212,11 +212,11 @@ http://wiki2.dovecot.org/Authentication/Mechanisms
 
 Here are the descriptions on that webpage that OS X Server is configured to use.
 
-    • Plaintext authentication - see the webpage for a really good discussion about this.
-    • CRAM-MD5: Protects the password in transit against eavesdroppers. Somewhat good support in clients.
-    • DIGEST-MD5: Somewhat stronger cryptographically than CRAM-MD5, but clients rarely support it.
-    • APOP: This is a POP3-specific authentication. Similar to CRAM-MD5, but requires storing password in plaintext.
-    • GSSAPI: Kerberos v5 support.
+- Plaintext authentication - see the webpage for a really good discussion about this.
+- CRAM-MD5: Protects the password in transit against eavesdroppers. Somewhat good support in clients.
+- DIGEST-MD5: Somewhat stronger cryptographically than CRAM-MD5, but clients rarely support it.
+- APOP: This is a POP3-specific authentication. Similar to CRAM-MD5, but requires storing password in plaintext.
+- GSSAPI: Kerberos v5 support.
 
 Connection Encryption
 -----------
@@ -389,7 +389,7 @@ Count number of messages in matt's INBOX
 
     doveadm search -u matt mailbox INBOX all | wc -l
 
-List messages older then 30 days in user matt’s Inbox
+List messages older then 30 days in user matt's Inbox
 
     doveadm search -u matt mailbox INBOX savedbefore 30d
 
@@ -458,7 +458,7 @@ All seen messages
 
 I'll discuss the things you can display in a fetch next.
 
-You can also delete (expunge) all messages older then 7 days in matt’s Trash folder.
+You can also delete (expunge) all messages older then 7 days in matt's Trash folder.
 
     doveadm expunge -u matt mailbox Trash savedbefore 7d
 

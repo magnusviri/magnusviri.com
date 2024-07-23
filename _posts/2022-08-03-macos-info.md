@@ -171,7 +171,7 @@ Version | Build   | Release            | Darwin Version
 - Finder Zip support built-in
 - Finder icon changed
 - Fast user switching
-- Exposé
+- Expos&eacute;
 - Safari introduced
 - Font Book introduced
 - TextEdit opens .doc files

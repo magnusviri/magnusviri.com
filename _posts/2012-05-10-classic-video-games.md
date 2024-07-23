@@ -31,7 +31,7 @@ Dark Castle
 <param name="allowscriptaccess" value="always" />
 </object>
 
-Shufflepuck Café
+Shufflepuck Caf&eacute;
 
 <object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="http://www.youtube.com/v/vVtYVyyX5NY?version=3">
 <param name="movie" value="http://www.youtube.com/v/vVtYVyyX5NY?version=3" />
@@ -348,15 +348,15 @@ I've been reading the journals about the making of Prince of Persia. Blast from 
 [Get a pdf sample](http://jordanmechner.com/wp-content/uploads/resources/POP_sample.pdf)
 
 Page 15:
-> She said that Broderbund is a really nice, warm, friendly place to work, but for programmers it’s actually not that great a deal. The older ones, like Chris and David, are starting to get scared, because programming’s the only marketable skill they have, and it’s a young man’s game. The new crop of kids coming up are willing to work harder and cheaper, and don’t have girlfriends or families yet to cut into their working hours. And nobody knows how long the games market will be around, or what it’ll be like next year.
+> She said that Broderbund is a really nice, warm, friendly place to work, but for programmers it's actually not that great a deal. The older ones, like Chris and David, are starting to get scared, because programming's the only marketable skill they have, and it's a young man's game. The new crop of kids coming up are willing to work harder and cheaper, and don't have girlfriends or families yet to cut into their working hours. And nobody knows how long the games market will be around, or what it'll be like next year.
 
 Page 17:
-> Then a strange thing happened. I started getting images in my head of the characters: the Sultan. the Princess. the Boy. I saw the scenes in my mind as if it were a Disney movie. So I wrote up a scenario — churned it out in an hour.
+> Then a strange thing happened. I started getting images in my head of the characters: the Sultan. the Princess. the Boy. I saw the scenes in my mind as if it were a Disney movie. So I wrote up a scenario - churned it out in an hour.
 
 Page 31:
-> Visited Danny Gorlin. He’s sunk more money into developing the development system to end all development systems. Saw the final version of Airheart. It’s got some staggering special effects and it’s no fun at all to play.
+> Visited Danny Gorlin. He's sunk more money into developing the development system to end all development systems. Saw the final version of Airheart. It's got some staggering special effects and it's no fun at all to play.
 >
-> Danny thinks spending a million bucks on a development system will give him an edge. He might be right. But the best Apple games have been developed on a plain Apple II with two disk drives. Lucasfilm spent a million bucks to make Rescue on Fractalus and Ball Blaster, and those games aren’t signicantly better than, or different from, the competition. The real strides forward – Raster Blaster, Choplifter, (what the hell) Karateka – were the work of solo programmers with no special resources.
+> Danny thinks spending a million bucks on a development system will give him an edge. He might be right. But the best Apple games have been developed on a plain Apple II with two disk drives. Lucasfilm spent a million bucks to make Rescue on Fractalus and Ball Blaster, and those games aren't signicantly better than, or different from, the competition. The real strides forward - Raster Blaster, Choplifter, (what the hell) Karateka - were the work of solo programmers with no special resources.
 
 Page 37:
-> Everyone in the office has been playing a lot of Tetris – a Russian submission for the IBM PC. It’s a classic, like Breakout. But I don’t think Broderbund is going to publish it. The knaves.
+> Everyone in the office has been playing a lot of Tetris - a Russian submission for the IBM PC. It's a classic, like Breakout. But I don't think Broderbund is going to publish it. The knaves.
