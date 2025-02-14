@@ -1,6 +1,8 @@
 toc:
   - title: SysAdmin
     subfolderitems:
+      - page: Fix Empty Trash Hang
+        url:  /how-to-fix-macos-finder-empty-trash-hang.html
       - page: macOS Info
         url:  /macos-info.html
       - page: fs_usage
