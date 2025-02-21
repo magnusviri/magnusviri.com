@@ -27,7 +27,7 @@ filecoord   913               root   27r      DIR               1,13         256
 filecoord   913               root   28r      DIR               1,13        7808           115826471 /Users/james/.Trash
 ```
 
-Turns out that "~/.Trash/Photos Library.photoslibrary" exists! Why is "~/.Trash/Photos Library.photoslibrary" in the trash? I didn't put that there. In fact, I don't even use Photos. And I don't use ~/Pictures. There's nothing in that folder (except a .DS_Store). In fact, I hide that folder (`chflags hidden ~/Pictures`). Could that be why this is happening? It would be strange if it was.
+Turns out that ".Trash/Photos Library.photoslibrary" exists! Why is ".Trash/Photos Library.photoslibrary" in the trash? I didn't put that there. In fact, I don't even use Photos. And I don't use ~/Pictures. There's nothing in that folder (except a .DS_Store). In fact, I hide that folder (`chflags hidden ~/Pictures`). Could that be why this is happening? It would be strange if it was.
 
 What is `filecoord`? Well, it's `/usr/sbin/filecoordinationd`. What is that? Well, it has a man page. And boy, you have to love Apple's man pages.
 
