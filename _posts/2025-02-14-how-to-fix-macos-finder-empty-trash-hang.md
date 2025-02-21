@@ -60,12 +60,19 @@ So basically, filecoordinationd is letting something perform actions on "Photos 
 Can I uninstall Photos?
 
 ```
-mdfind Photos.app
+> mdfind Photos.app
 2025-02-21 09:04:47.475 mdfind[38171:1101942] [UserQueryParser] Loading keywords and predicates for locale "en_US"
 2025-02-21 09:04:47.475 mdfind[38171:1101942] [UserQueryParser] Loading keywords and predicates for locale "en"
 /System/Applications/Photos.app
+> rm -rf /System/Applications/Photos.app
+rm: /System/Applications/Photos.app/Contents/_CodeSignature/CodeResources: Operation not permitted
+rm: /System/Applications/Photos.app/Contents/_CodeSignature: Operation not permitted
+rm: /System/Applications/Photos.app/Contents/MacOS/PhotosRelauncher: Operation not permitted
+rm: /System/Applications/Photos.app/Contents/MacOS/Photos: Operation not permitted
+rm: /System/Applications/Photos.app/Contents/MacOS: Operation not permitted
+...
 ```
 
-Hm, /System is immutable. I guess I can't uninstall it. Shucks.
+"Operation not permitted" always means SIPS (Apple's manditory access control). "Permssion denied" always means Unix file permissions. So /System is immutable. I guess I can't uninstall it. Shucks. (I actually knew that already, I'm just being ornery)
 
-Last sarcastic side note (I guess I'm in an ornery mood this morning). Don't you just love how mdfind **ALWAYS** prints those "UserQueryParser" messages now? Maybe someone should've told Apple it's a regression before it got backed into the OS as a now permanent "feature." I'm using Ventura (yes, I know, I'm slow to upgrade). But I just checked Seqoia and it's still there. Wonderful.
+Last sarcastic side note. Don't you just love how mdfind **ALWAYS** prints those "UserQueryParser" messages now? Maybe someone should've told Apple it's a regression before it got backed into the OS as a now permanent "feature." I'm using Ventura (yes, I know, I'm slow to upgrade). But I just checked Seqoia and it's still there. Wonderful.
