@@ -17,22 +17,22 @@ lsof | grep Trash
 
 And what do you know? Some process has /Users/james/.Trash/iPhotoLibrary (or something like that) open. Well, that file doesn't exist. So I tried to `kill` it. But it didn't die so I `kill -9` it. Trash empties! And what's even better? It doesn't hang anymore! Yay!
 
-## Update 1
+## Update 1 (2025-02-21)
 
 It happened to me again! But now I know how to fix it! I decided to try to figure out more what is going on. I ran `lsof` again and this is the process that's hanging it.
 
 ```
 sudo lsof | grep Trash
-filecoord   913               root   27r      DIR               1,13         256           208863238 /Users/u0076374/.Trash/Photos Library.photoslibrary
-filecoord   913               root   28r      DIR               1,13        7808           115826471 /Users/u0076374/.Trash
+filecoord   913               root   27r      DIR               1,13         256           208863238 /Users/james/.Trash/Photos Library.photoslibrary
+filecoord   913               root   28r      DIR               1,13        7808           115826471 /Users/james/.Trash
 ```
 
-Why is "/Users/u0076374/.Trash/Photos Library.photoslibrary" in the trash? I didn't put that there. In fact, I don't even use Photos. And I don't use ~/Pictures. There's nothing in that folder (except a .DS_Store). In fact, I hide that folder (`chflags hidden ~/Pictures`). Could that be why this is happening? It would be strange if it was.
+Turns out that "~/.Trash/Photos Library.photoslibrary" exists! Why is "~/.Trash/Photos Library.photoslibrary" in the trash? I didn't put that there. In fact, I don't even use Photos. And I don't use ~/Pictures. There's nothing in that folder (except a .DS_Store). In fact, I hide that folder (`chflags hidden ~/Pictures`). Could that be why this is happening? It would be strange if it was.
 
 What is `filecoord`? Well, it's `/usr/sbin/filecoordinationd`. What is that? Well, it has a man page. And boy, you have to love Apple's man pages.
 
 ```
-filecoordinationd(8)                   System Manager's Manual                  filecoordinationd(8)
+filecoordinationd(8)        System Manager's Manual       filecoordinationd(8)
 
 NAME
      filecoordinationd – system-wide file access coordination
@@ -41,13 +41,14 @@ SYNOPSIS
      filecoordinationd
 
 DESCRIPTION
-     filecoordinationd is used by the Foundation framework's NSFileCoordinator class to coordinate
-     access to files by multiple processes, and to message registered NSFilePresenters.
+     filecoordinationd is used by the Foundation framework's NSFileCoordinator
+     class to coordinate access to files by multiple processes, and to message
+     registered NSFilePresenters.
 
-     There are no configuration options to filecoordinationd. Users should not run filecoordinationd
-     manually.
+     There are no configuration options to filecoordinationd. Users should not
+     run filecoordinationd manually.
 
-Mac OS X                                   March 15, 2011                                   Mac OS X
+Mac OS X                        March 15, 2011                        Mac OS X
 ```
 
 That tells you everything you need to know. I guess the [NSFileCoordinator](https://developer.apple.com/documentation/foundation/nsfilecoordinator) actually is good docs. Here's a quote (emphasis is mine):
