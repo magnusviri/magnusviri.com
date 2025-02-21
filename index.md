@@ -10,6 +10,8 @@ titleimg: 1
 
 ## What's New
 
+2025-02-21 - [How to Fix macOS Finder Empty Trash Hang](https://magnusviri.com/how-to-fix-macos-finder-empty-trash-hang)
+
 2024-04-26 - Understanding AI, Lunch & Learn [Slides](/dl/lunch-and-learn-2024.pdf)
 
 2024-03-19 - Understanding AI, Aprés Cyber Slopes [Slides](/dl/apres-cyber-slopes-2024.pdf)
