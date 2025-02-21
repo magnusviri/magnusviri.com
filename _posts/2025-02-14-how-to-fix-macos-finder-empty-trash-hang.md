@@ -73,6 +73,6 @@ rm: /System/Applications/Photos.app/Contents/MacOS: Operation not permitted
 ...
 ```
 
-"Operation not permitted" always means SIPS (Apple's manditory access control). "Permssion denied" always means Unix file permissions. So /System is immutable. I guess I can't uninstall it. Shucks. (I actually knew that already, I'm just being ornery)
+"Operation not permitted" always means SIPS (Apple's manditory access control). "Permssion denied" always means Unix file permissions. So it turns out that /System is immutable. I guess I can't uninstall it. Shucks. (I actually knew that already, I'm just being ornery)
 
-Last sarcastic side note. Don't you just love how mdfind **ALWAYS** prints those "UserQueryParser" messages now? Maybe someone should've told Apple it's a regression before it got backed into the OS as a now permanent "feature." I'm using Ventura (yes, I know, I'm slow to upgrade). But I just checked Seqoia and it's still there. Wonderful.
+Last sarcastic side note. Don't you just love how `mdfind` **ALWAYS** prints those "UserQueryParser" messages now? Maybe someone should've told Apple it's a regression before it got baked into the OS as a now permanent "feature." I'm using Ventura (yes, I know, I'm slow to upgrade). But I just checked Seqoia and it's still there. Wonderful.
