@@ -67,7 +67,7 @@ It's public domain.
 
 ## Sources
 
-The sources for this are either linked above or from Wikipedia. AI did not write any of this, although I used it to verify a few things and fix a little bit of grammar (although I still leave a lot of mistakes in&emdash;I'm not a journalist).
+The sources for this are either linked above or from Wikipedia. AI did not write any of this, although I used it to verify a few things and fix a little bit of grammar (although I still leave a lot of mistakes in&mdash;I'm not a journalist or much of an academic).
 
 - [a](https://en.wikipedia.org/wiki/George_Frideric_Handel)
 - [b](https://en.wikipedia.org/wiki/Messiah_(Handel))

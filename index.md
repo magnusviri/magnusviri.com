@@ -10,19 +10,23 @@ titleimg: 1
 
 ## What's New
 
+2025-10-14 - [Handel's Hallelujah Chorus](hallelujah.html)
+
 2025-09-12 - [U of U IT Rendezvous Conference](https://itcon.utah.edu/)
 
 2025-07-10 - [CLI](cli.html)
 
 2025-02-21 - [How to Fix macOS Finder Empty Trash Hang](https://magnusviri.com/how-to-fix-macos-finder-empty-trash-hang)
 
+2024-09-18 - [How BeyondTrust EPM Changes macOS Behavior](https://stream.lib.utah.edu/index.php?c=details&id=13664)
+
+2024.07.17 - [IT Documentation](https://stream.lib.utah.edu/index.php?c=details&id=13652)
+
 2024-04-26 - Understanding AI, Lunch & Learn [Slides](/dl/lunch-and-learn-2024.pdf)
 
 2024-03-19 - Understanding AI, Aprés Cyber Slopes [Slides](/dl/apres-cyber-slopes-2024.pdf)
 
 2023-10-26 - Understanding AI, SaintCON [Video](https://www.youtube.com/watch?v=kIMOb74dSkU) and [Slides](/dl/ai-saintcon-2023.pdf)
-
-2023-04-19 - [AI for MacAdmins](https://stream.lib.utah.edu/index.php?c=details&id=13574)
 
 ## My Main Github repos
 
@@ -49,7 +53,7 @@ Not really what I hoped to be famous, but "[What is /var/folders](http://magnusv
 
 James earned a BMus degree from the University of Utah. He has been in various performing organizations, the most notable was the Utah Symphony Chorus, but he hasn't done much public musical stuff except in his local community.
 
-James began using computers back in the Atari 400 and Commodore 64 days. In 1999, he started managing Macintosh computers at the University of Utah College of Fine Arts, then the Marriott Library, and now at the College of Science. In the early 2000's he was part of the MacOSXLabs and MacEnterprise groups that helped make Mac OS X easier to mass deploy and manage and that led to him speaking at several conferences, including Apple's WWDC 2005, about things like scripting and deployment methods. He's written articles for various online mediums and has many messages scattered across various online forums and email lists regarding Mac or Linux Administration and sometimes programming. He regularly presents at the [University of Utah Mac Admins](https://apple.lib.utah.edu/) meetings.
+James began using computers back in the Atari 400 and Commodore 64 days. In 1999, he started managing Macintosh computers at the University of Utah College of Fine Arts, then the Marriott Library, and now at the College of Science. In the early 2000's he was part of the MacOSXLabs and MacEnterprise groups that helped make Mac OS X easier to mass deploy and manage and that led to him speaking at several conferences, including Apple's WWDC 2005, about things like scripting and deployment methods. He's written articles for various online mediums and has many messages scattered across various online forums and email lists regarding Mac or Linux Administration and sometimes programming. He presents at the [University of Utah Mac Admins](https://apple.lib.utah.edu/) meetings about once or twice a year. He is currently on the [IT Professionals Board](https://itprofessionals.utah.edu/) and the [IT Rendezvous Organizing Committee](https://itcon.utah.edu/). He also is a volunteer for the [SAINTCON](https://www.saintcon.org/) computer security conference.
 
 He currently manages about 150 Mac systems using Jamf and a few ESXi servers and Linux VM's. James also designs and maintains some websites for small clients.
 
