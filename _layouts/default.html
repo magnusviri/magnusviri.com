@@ -14,9 +14,9 @@
 </head>
 
 <body>
-{% include nav.html %}
+{%- unless page.nonav %}{% include nav.html %}
 
-{%- if page.titleimg %}<div class="title">{% else %}<div class="titlesm">{% endif %}<img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>
+{%- if page.titleimg %}<div class="title">{% else %}<div class="titlesm">{% endif %}<img class="full" src="/images/magnusviri.svg" alt="magnusviri"></div>{% endunless %}
 
 <div class="content">
 <h1>{{ page.title }}</h1>
@@ -24,14 +24,13 @@
 <div class="horizontal_line"></div>
 
 {{ content }}
-<p>Published: {{ page.date | date: "%Y-%m-%d" }}, last edited: {{ page.editdate | date: "%Y-%m-%d" }}</p>
 
 <div class="horizontal_line"></div>
 
-<p>Copyright &copy; {{ "now" | date: "%Y" }} James Reynolds</p>
+<p>Published: {{ page.date | date: "%Y-%m-%d" }}{%- if page.editdate %}, last edited: {{ page.editdate | date: "%Y-%m-%d" }}{% endif %}, Copyright &copy; {{ "now" | date: "%Y" }} James Reynolds</p>
 
 </div>
-
+{%- unless page.nodisqus %}
 <div id="disqus_thread"></div>
 <script src="/assets/jquery-2.1.3/jquery.min.js"></script>
 <script src="/assets/nav.js"></script>
@@ -43,6 +42,6 @@ var disqus_identifier = "{{page.disqus_id}}";
  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 </script>
-
+{% endunless %}
 </body>
 </html>

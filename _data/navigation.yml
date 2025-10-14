@@ -1,6 +1,8 @@
 toc:
   - title: SysAdmin
     subfolderitems:
+      - page: macOS CLI
+        url:  /cli.html
       - page: Fix Empty Trash Hang
         url:  /how-to-fix-macos-finder-empty-trash-hang.html
       - page: macOS Info
@@ -37,6 +39,8 @@ toc:
         url:  /find-and-replace-text-recursively-with-one-command.html
   - title: Blog
     subfolderitems:
+      - page: Hallelujah!
+        url:  /hallelujah.html
       - page: Wordle
         url:  /wordle.html
       - page: My Favorite Articles
