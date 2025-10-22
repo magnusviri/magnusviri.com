@@ -10,6 +10,8 @@ titleimg: 1
 
 ## What's New
 
+2025-10-21 - [SAINTCON](saintcon2025.html)
+
 2025-10-14 - [Handel's Hallelujah Chorus](hallelujah.html)
 
 2025-09-12 - [U of U IT Rendezvous Conference](https://itcon.utah.edu/)
