@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Kiosk</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: #f9fafb;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      height: 100vh;
+      padding: 2rem 3rem;
+      gap: 2rem;
+    }
+
+    /* Left section */
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #60a5fa;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    ul {
+      list-style: none;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    li {
+      padding: 0.3rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #d1d5db;
+      margin-top: 0.8rem;
+      line-height: 1.4;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #93c5fd;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Right section */
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #60a5fa;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .schedule {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .day {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .day h3 {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #60a5fa;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .event {
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.4rem;
+    }
+
+    .event:last-child {
+      border-bottom: none;
+    }
+
+    .time {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fbbf24;
+    }
+
+    .title {
+      font-size: 0.9rem;
+      color: #f9fafb;
+      line-height: 1.2;
+    }
+
+    .location, .speaker {
+      font-size: 0.8rem;
+      color: #d1d5db;
+    }
+
+    @media (max-width: 1100px) {
+      body {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow-y: auto;
+      }
+      .schedule {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="left">
+    <div class="section-title">What can you do in this village?</div>
+    <ul>
+      <li>Answer the phone!</li>
+      <li>Death By AI (Chromebooks)</li>
+      <li>Colby 9000 (Chromebooks)</li>
+      <li>Galdalf Agent Breaker (Chromebooks)</li>
+      <li>AI Overlord (hidden area)</li>
+      <li>Local AI (Mac Minis)</li>
+      <li>Get your AI questions answered (humans)</li>
+      <li>Get goodies for doing stuff!<li>
+    </ul>
+
+    <div class="section-title">What can you do on this computer?</div>
+    <ul>
+      <li>RAG: LM Studio + AnythingLLM</li>
+      <li>Deepfake Face swap: FaceFusion</li>
+      <li>Deepfake voice: Zonos</li>
+      <li>ImageGen: Invoke</li>
+      <li>VideoGen: ComfyUI and LTX Video</li>
+      <li>SoundGen: ComfyUI and StableAudio</li>
+      <li>Speech to text (stt): WhisperLiveKit</li>
+    </ul>
+
+    <p>Click on the app in the Dock to start. Ask for help if you need it.</p>
+
+    <h2>Why this matters?</h2>
+    <p>Everything here is running locally and not using cloud AI. It's a 5-year-old computer: Mac Mini 2020, M1, 16 GB RAM. Modern computers can do everything much faster.</p>
+  </div>
+
+  <div class="right">
+    <div class="section-title">AI related presentations</div>
+
+    <div class="schedule">
+      <div class="day">
+        <h3>Wednesday</h3>
+
+        <div class="event">
+          <div class="time">1:30 pm - 30 min</div>
+          <div class="title">AI Community: "Vibe coding" using AI to write code.</div>
+          <div class="location">Classroom 4</div>
+        </div>
+
+        <div class="event">
+          <div class="time">2:00 pm - 30 min</div>
+          <div class="title">AI Community: Easy to use local RAG and MCP with LM Studio</div>
+          <div class="speaker">James Reynolds (magnusviri)</div>
+          <div class="location">Classroom 1</div>
+        </div>
+
+        <div class="event">
+          <div class="time">2:30 pm - 30 min</div>
+          <div class="title">AI Community: Building IT support agents using AI.</div>
+          <div class="speaker">blacklight</div>
+          <div class="location">Classroom 1</div>
+        </div>
+
+        <div class="event">
+          <div class="time">3:30 pm - 60 min</div>
+          <div class="title">Findings From Real-World AI Application Assessments</div>
+          <div class="speaker">Jake Williams</div>
+          <div class="location">Ballroom B</div>
+        </div>
+
+        <div class="event">
+          <div class="time">3:30 pm - 60 min</div>
+          <div class="title">Education Security: AI and Student Data Privacy</div>
+          <div class="location">Classroom 3</div>
+        </div>
+      </div>
+
+      <div class="day">
+        <h3>Thursday</h3>
+
+        <div class="event">
+          <div class="time">10:30 am - 30 min</div>
+          <div class="title">AI Community: Image & Video Generation on a MacBook Pro</div>
+          <div class="speaker">James Reynolds (magnusviri)</div>
+          <div class="location">Classroom 4</div>
+        </div>
+
+        <div class="event">
+          <div class="time">10:30 am - 30 min</div>
+          <div class="title">The Real Risks of AI in 2025: Beyond the Hype</div>
+          <div class="speaker">Michael Fischer</div>
+          <div class="location">Ballroom B</div>
+        </div>
+
+        <div class="event">
+          <div class="time">1:30 pm - 60 min</div>
+          <div class="title">Attacking AI</div>
+          <div class="speaker">@jhaddix</div>
+          <div class="location">Ballroom B</div>
+        </div>
+
+        <div class="event">
+          <div class="time">2:00 pm - 30 min</div>
+          <div class="title">AI Community: Beginner AI Agent class using n8n in Docker</div>
+          <div class="speaker">Overgrownasian</div>
+          <div class="location">Classroom 1</div>
+        </div>
+
+        <div class="event">
+          <div class="time">2:30 pm - 30 min</div>
+          <div class="title">AI Community: How to deep fake audio & video locally</div>
+          <div class="speaker">James Reynolds (magnusviri)</div>
+          <div class="location">Classroom 1</div>
+        </div>
+
+        <div class="event">
+          <div class="time">3:30 pm - 60 min</div>
+          <div class="title">A SAINTCON Crash Course: History of Hacking & AI</div>
+          <div class="speaker">Ray [REDACTED]</div>
+          <div class="location">Ballroom C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

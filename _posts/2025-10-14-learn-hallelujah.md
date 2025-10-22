@@ -60,7 +60,7 @@ Note, the Hallelujah Chorus goes very high, especially at the end. Even if you t
 
 ### Everyone
 
-- [Practice Video](https://www.youtube.com/watch?v=tvJUsO0FrY) (Steven Seigart)
+- [Practice Video](https://www.youtube.com/watch?v=-tvJUsO0FrY) (Steven Seigart)
 
 <a name="nosheetmusic"></a>
 
