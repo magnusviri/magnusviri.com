@@ -13,7 +13,7 @@ The last music performance Handel attended was at Covent Garden, April 6, 1759. 
 
 ## *Messiah*
 
-Please read [the History of Hallelujah Chorus from Handel’s *Messiah*](https://www.thetabernaclechoir.org/articles/history-of-handels-hallelujah-chorus.html). It says it so much better than I can. Below I will include a few interesting tidbits and technical things not discussed in that article. 
+Please read [the History of Hallelujah Chorus from Handel’s *Messiah*](https://www.thetabernaclechoir.org/articles/history-of-handels-hallelujah-chorus.html). It says it so much better than I can. Below I will include a few interesting tidbits and technical things not discussed in that article.
 
 The text from *Messiah* was compiled by Charles Jennens from the King James Bible and the Book of Common Prayer. Handel composed the music in 24 days and barely slept or ate. He was often moved to tears while he wrote it.
 
@@ -35,7 +35,7 @@ Part II covers his death, resurrection, ascension, and the Pentecost. It include
 
 Part III covers the end of time, the judgment and resurrection of all mankind. It includes "[Since by man came death](https://www.youtube.com/watch?v=maHsvA1F0KQ)", "[The trumpet shall sound and the dead shall be rais'd](https://www.youtube.com/watch?v=R49LXrPlhjU)", "[O death, where is thy sting?](https://www.youtube.com/watch?v=OlMSza7FZeM)", and "[Worthy is the Lamb that was slain](https://www.youtube.com/watch?v=EZueKR1qRxs)".
 
-Each act is has multiple scenes or movements and there's a total of 53. Each scene is a collection of individual musical numbers. Many of the scenes includes an introduction number that leads straight into a soloist numer, which is also followed immediately by a choir number.
+Each act has multiple scenes or movements and there's a total of 53. Each scene is a collection of individual musical numbers. Many of the scenes includes an introduction number that leads straight into a soloist number, which is also followed immediately by a choir number.
 
 The introductory numbers don't have repeating sections like verses or choruses. Instead, a soloist tells a story and it resembles ordinary speech. These numbers are called "recitatives". Recitatives serve to move the story along or introduce the next number. In the *Messiah*, the recitatives are very short. An example of a recitative is "[Behold, a virgin shall conceive](https://www.youtube.com/watch?v=DCrL-Pbd5iE)" (Note, the recitative part only lasts a few seconds).
 
