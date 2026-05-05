@@ -1,6 +1,10 @@
 toc:
   - title: SysAdmin
     subfolderitems:
+      - page: Configuration Profiles
+        url:  /configuration-profiles.html
+      - page: SaintCon AI stuff
+        url:  /saintcon2025.html
       - page: macOS CLI
         url:  /cli.html
       - page: Fix Empty Trash Hang

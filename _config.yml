@@ -15,6 +15,8 @@ permalink: /:title.html
 exclude:
   - feed.xml
   - README.md
+  - Dockerfile
+  - entry_point.sh
   - Gemfile
   - Gemfile.lock
   - node_modules
