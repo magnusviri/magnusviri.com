@@ -12,6 +12,8 @@ titleimg: 1
 
 2026-09-15 - [U of U IT Rendezvous Conference](https://itcon.utah.edu/)
 
+2026-05-13 - [hashcat-macos-utils](https://github.com/magnusviri/hashcat-macos-utils)
+
 2026-05-05 - [Configuration Profiles](configuration-profiles.html)
 
 2025-10-14 - [Handel's Hallelujah Chorus](hallelujah.html)
@@ -32,7 +34,7 @@ I regularly present at the University of Utah Mac Managers meetings. Here is a l
 
 ## AI Stuff
 
-- [AttenuAI](https://github.com/attenuai/attenuai-demo) (3rd place entry for the University of Utah AI Hackathon) (2026-04-18)
+- [AttenuAI](https://github.com/attenuai/attenuai-demo) (3rd place entry for the University of Utah AI Hackathon) (2026-04-18) [Video demo](https://www.youtube.com/watch?v=ihNMMc6LrSc)
 - [SAINTCON stuff](saintcon2025.html) (2025-10-21)
 - Understanding AI, Lunch & Learn [Slides](/dl/lunch-and-learn-2024.pdf) (2024-04-26)
 - Understanding AI, Aprés Cyber Slopes [Slides](/dl/apres-cyber-slopes-2024.pdf) (2024-03-19)
