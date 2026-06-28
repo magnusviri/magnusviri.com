@@ -1,6 +1,10 @@
 toc:
   - title: SysAdmin
     subfolderitems:
+      - page: macOS Defaults
+        url:  /macos-defaults.html
+      - page: macOS Dock
+        url:  /macos-dock.html
       - page: Configuration Profiles
         url:  /configuration-profiles.html
       - page: SaintCon AI stuff
@@ -43,12 +47,14 @@ toc:
         url:  /find-and-replace-text-recursively-with-one-command.html
   - title: Blog
     subfolderitems:
+      - page: My Favorite Articles
+        url:  /my-favorite-articles.html
+      - page: Multiplication Table
+        url:  /math/multiplication-table
       - page: Hallelujah!
         url:  /hallelujah.html
       - page: Wordle
         url:  /wordle.html
-      - page: My Favorite Articles
-        url:  /my-favorite-articles.html
       - page: Classic Video Games
         url:  /classic-video-games.html
       - page: Marzipan Cakes

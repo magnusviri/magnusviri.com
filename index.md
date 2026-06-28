@@ -12,6 +12,14 @@ titleimg: 1
 
 2026-09-15 - [U of U IT Rendezvous Conference](https://itcon.utah.edu/)
 
+2026-06-27 - Article: [Colors that monitors can't show](my-favorite-articles.html)
+
+2026-06-27 - [Multiplication Table](/math/multiplication-table) - Fun little table built with Codex.
+
+2026-06-04 - [macOS Defaults](macos-defaults.html) - My favorite defaults
+
+2026-05-27 - [macOS Dock](macos-dock.html)
+
 2026-05-13 - [hashcat-macos-utils](https://github.com/magnusviri/hashcat-macos-utils)
 
 2026-05-05 - [Configuration Profiles](configuration-profiles.html)

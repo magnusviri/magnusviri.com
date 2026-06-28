@@ -2,20 +2,18 @@
 layout:     default
 title:      My Favorite Articles
 date:       2013-02-04
-editdate:   2019-04-13
+editdate:   2026-06-27
 categories: Blog
 disqus_id:  my-favorite-articles.html
 ---
 
 <a name="_top"></a>
 
-These are excerpts and links to some of my favorite articles that I've read online.  I know something is my "favorite" when I start repeating it to other people over and over.
-
-I'll update this post with new links when I come across them.  Each time I add a new article I'll move this back to the top of my blog.
+I think this page is what many people consider a real blog. Maybe one day I'll make it a real blog.
 
 Current links:
 
-
+*    [Colors](#colors)
 *    [Leadership](#leadership)
 *    [Social Classes in the US](#social_classes_in_us)
 *    [Stock Market is all about expectations (aka gambling)](#stock_market)
@@ -26,6 +24,14 @@ Current links:
 *    [Commoditization (computer history)](#commoditization)
 
 ---
+
+<a name="colors"></a>
+
+## 2026-06-27 Colors
+
+[Where to Find the Colors Your Screen Can’t Show You](https://moultano.wordpress.com/2026/06/19/where-to-find-the-colors-your-screen-cant-show-you/)
+
+How funny. My website theme colors are red green blue and the logo is turquoise, blue green. I've always been fascinated by iridecense and basically all the colors that can't be shown on the screen. Now I guess I know why.
 
 <a name="leadership"></a>
 

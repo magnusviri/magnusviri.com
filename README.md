@@ -6,4 +6,5 @@ All text, video, and some images are copyright James Reynolds. None of it may be
 
 Serve it with Jekyll locally with
 
-	docker run --rm -it -p4000:4000 -v$PWD:/srv/jekyll jekyll/builder jekyll serve
+	docker build . -t jekyll-local
+	docker run --rm -it -p4000:4000 -v$PWD:/site jekyll-local

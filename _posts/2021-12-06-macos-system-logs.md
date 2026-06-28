@@ -137,6 +137,26 @@ I haven't tried this yet but I want to. Sounds cool.
 
 - [Config Profile and manage ALL the things...just about](https://boberito.medium.com/config-profile-and-manage-all-the-things-just-about-cafea8627d4b)
 
+## Examples
+
+```
+log show --style syslog --predicate 'eventMessage contains "screensharingd: Authentication"' --info --last 4d
+log show --predicate 'processImagePath contains "screensharingd" AND eventMessage contains "User Name"' --last 6d
+sudo log config --subsystem com.avecto.defendpointd --mode persist:debug
+sudo log config --subsystem com.avecto.custodian --mode persist:debug
+sudo log config --subsystem com.avecto.dppolicyserverd --mode persist:debug
+sudo log config --subsystem com.avecto.Defendpoint --mode persist:debug
+
+sudo log stream --debug --predicate 'subsystem contains "com.avecto"'
+
+sudo log config --subsystem com.avecto.defendpointd --mode "default"
+sudo log config --subsystem com.avecto.custodian --mode "default"
+sudo log config --subsystem com.avecto.dppolicyserverd --mode "default"
+sudo log config --subsystem com.avecto.Defendpoint --mode "default"
+
+sudo log config --reset
+```
+
 ## Links
 
 - [Apple](https://developer.apple.com/documentation/os/logging)
