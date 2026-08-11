@@ -1,52 +1,52 @@
 toc:
   - title: SysAdmin
     subfolderitems:
-      - page: Docker
-        url:  /docker.html
-      - page: macOS Defaults
-        url:  /macos-defaults.html
-      - page: macOS Dock
-        url:  /macos-dock.html
+      - page: Autopkg Notes
+        url:  /autopkg-notes.html
+      - page: Click that mouse
+        url:  /click-that-mouse.html
       - page: Configuration Profiles
         url:  /configuration-profiles.html
-      - page: SaintCon AI stuff
-        url:  /saintcon2025.html
-      - page: macOS CLI
-        url:  /cli.html
+      - page: Docker
+        url:  /docker.html
+      - page: Erasing a Mac Disk
+        url:  /erasing-a-mac-disk.html
       - page: Fix Empty Trash Hang
         url:  /how-to-fix-macos-finder-empty-trash-hang.html
-      - page: macOS Info
-        url:  /macos-info.html
       - page: fs_usage
         url:  /fs_usage.html
       - page: Gollum Wiki
         url:  /gollum-wiki.html
-      - page: Erasing a Mac Disk
-        url:  /erasing-a-mac-disk.html
-      - page: macOS System Logs
-        url:  /macos-system-logs.html
-      - page: macOS Cmdline Network Settings
-        url:  /macos-cmdline-network-settings.html
-      - page: Autopkg Notes
-        url:  /autopkg-notes.html
-      - page: Raspbery Pi's and APC UPS'es
-        url:  /raspberry-pi-apc-ups.html
-      - page: Seconds Until Next Day
-        url:  /seconds-until-next-day.html
-      - page: Reading the keychain with a perl script
-        url:  /reading-keychain-with-perl.html
-      - page: Click that mouse
-        url:  /click-that-mouse.html
-      - page: Perl/Python/Ruby heredocs in ARD
-        url:  /using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html
-      - page: Removing macOS ACL's, etc
-        url:  /removing-mac-os-x-acls-and-extended-attributes.html
       - page: Intro to Computer Networking
         url:  /intro-to-computer-networking.html
-      - page: What is "/var/folders"?
-        url:  /what-is-var-folders.html
+      - page: macOS CLI
+        url:  /cli.html
+      - page: macOS Cmdline Network Settings
+        url:  /macos-cmdline-network-settings.html
+      - page: macOS Defaults
+        url:  /macos-defaults.html
+      - page: macOS Dock
+        url:  /macos-dock.html
+      - page: macOS Info
+        url:  /macos-info.html
+      - page: macOS System Logs
+        url:  /macos-system-logs.html
+      - page: Perl/Python/Ruby heredocs in ARD
+        url:  /using-heredocs-in-apple-remote-desktop-to-run-perlpythonruby-code.html
+      - page: Raspbery Pi's and APC UPS'es
+        url:  /raspberry-pi-apc-ups.html
+      - page: Reading the keychain with a perl script
+        url:  /reading-keychain-with-perl.html
       - page: Recursive Find and Replace Text
         url:  /find-and-replace-text-recursively-with-one-command.html
+      - page: Removing macOS ACL's, etc
+        url:  /removing-mac-os-x-acls-and-extended-attributes.html
+      - page: SaintCon AI stuff
+        url:  /saintcon2025.html
+      - page: Seconds Until Next Day
+        url:  /seconds-until-next-day.html
+      - page: What is "/var/folders"?
+        url:  /what-is-var-folders.html
   - title: Blog
     subfolderitems:
       - page: My Favorite Articles
