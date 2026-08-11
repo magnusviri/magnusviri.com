@@ -12,6 +12,8 @@ titleimg: 1
 
 2026-09-15 - [U of U IT Rendezvous Conference](https://itcon.utah.edu/)
 
+2026-08-08 - [Docker stuff: Jamf Pro Container and agent-container](docker.html)
+
 2026-06-27 - Article: [Colors that monitors can't show](my-favorite-articles.html)
 
 2026-06-27 - [Multiplication Table](/math/multiplication-table) - Fun little table built with Codex.

@@ -24,3 +24,13 @@ Undo
 defaults -currentHost delete -globalDomain NSStatusItemSpacing
 defaults -currentHost delete -globalDomain NSStatusItemSelectionPadding
 ```
+
+defaults write com.apple.Finder ShowRecentTags -bool false
+
+
+BBEdit
+
+```
+defaults write com.barebones.bbedit AutoRevealSelectedDocumentInProjectList -bool YES
+```
+

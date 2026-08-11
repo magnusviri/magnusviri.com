@@ -1,6 +1,8 @@
 toc:
   - title: SysAdmin
     subfolderitems:
+      - page: Docker
+        url:  /docker.html
       - page: macOS Defaults
         url:  /macos-defaults.html
       - page: macOS Dock
