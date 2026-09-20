@@ -17,7 +17,7 @@ exclude:
   - "feed.xml"
   - "README.md"
   - "Dockerfile"
-  - "entry_point.sh"
+  - "docker-entry.sh"
   - "Gemfile"
   - "Gemfile.lock"
   - "node_modules"
