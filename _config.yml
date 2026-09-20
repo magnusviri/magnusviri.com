@@ -1,29 +1,30 @@
 # Site settings
-title: Magnusviri
+title: "Magnusviri"
 email: ""
 description: ""
 baseurl: ""
 url: "https://magnusviri.com"
-twitter_username: magnusviri
-github_username:  magnusviri
+twitter_username: "magnusviri"
+github_username:  "magnusviri"
 include: ["_redirects"]
+encode: "utf-8"
 
 # Build settings
-markdown: kramdown
+markdown: "kramdown"
 
 permalink: /:title.html
 exclude:
-  - feed.xml
-  - README.md
-  - Dockerfile
-  - entry_point.sh
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - "feed.xml"
+  - "README.md"
+  - "Dockerfile"
+  - "entry_point.sh"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules"
+  - "vendor/bundle/"
+  - "vendor/cache/"
+  - "vendor/gems/"
+  - "vendor/ruby/"
 
 kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
