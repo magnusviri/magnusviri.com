@@ -3,12 +3,14 @@ layout: default
 shorttitle: Home
 title: Magnusviri
 date: "sometime early 1996"
-editdate: "2025-07-10"
+editdate: "2026-10-28"
 disqus_id: home.html
 titleimg: 1
 ---
 
 ## What's New
+
+2026-10-28 - [SAINTCON 2026](saintcon2026.html)
 
 2026-09-15 - [U of U IT Rendezvous Conference](https://itcon.utah.edu/)
 
@@ -44,8 +46,9 @@ I regularly present at the University of Utah Mac Managers meetings. Here is a l
 
 ## AI Stuff
 
+- [SAINTCON 2026](saintcon2026.html) (2026-10-28)
 - [AttenuAI](https://github.com/attenuai/attenuai-demo) (3rd place entry for the University of Utah AI Hackathon) (2026-04-18) [Video demo](https://www.youtube.com/watch?v=ihNMMc6LrSc)
-- [SAINTCON stuff](saintcon2025.html) (2025-10-21)
+- [SAINTCON 2025](saintcon2025.html) (2025-10-21)
 - Understanding AI, Lunch & Learn [Slides](/dl/lunch-and-learn-2024.pdf) (2024-04-26)
 - Understanding AI, Aprés Cyber Slopes [Slides](/dl/apres-cyber-slopes-2024.pdf) (2024-03-19)
 - Understanding AI, SaintCON [Video](https://www.youtube.com/watch?v=kIMOb74dSkU) and [Slides](/dl/ai-saintcon-2023.pdf) (2023-10-26)
